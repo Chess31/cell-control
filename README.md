@@ -1,2 +1,2 @@
 # cell-control
-Cell battle game
+Cell Arcade Game
