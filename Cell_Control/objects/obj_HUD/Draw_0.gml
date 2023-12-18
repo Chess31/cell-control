@@ -1,10 +1,12 @@
-// Draw the player's ammo count
-// Draw the rest of the HUD
+// Reset Text to White (bug from the menu object) (look into this before release)
+draw_set_color(c_white);
+draw_set_halign(fa_left);
+// Draw the HUD
 draw_text(10, 10, "Ammo: " + string(obj_player.ammo));
 
 draw_text(90, 10, "Health: " + string(obj_player.playerHealth));
 
-draw_text(180, 10, "Wave: " + string(GM.currentWave));
+draw_text(180, 10, "Wave: " + string(global.currentWave));
 
 // Draw the countdown timer in the HUD
 if (obj_player.restartTimer > 0) and (obj_player.playerAlive = 0) {

@@ -1,4 +1,4 @@
-// Decrease the spawn timer
+// Decrease the collectible spawn timer
 spawnTimer -= 1;
 
 // Check if it's time to spawn a new collectible
@@ -15,22 +15,21 @@ if (spawnTimer <= 0) {
 	game_restart()
  }
  
- 
- //Enemy Spawning
- // Check if it's time to spawn a new wave
-if (EspawnTimer <= 0) {
-    // Check if the maximum number of enemies in a wave has been reached
-    if (enemiesSpawned < maxEnemiesInWave) {
-        // Spawn an enemy
-        instance_create_layer(x, y, "Instances", obj_enemy);
-        enemiesSpawned++;
+ //spawn a gate
+ if (global.currentWave >= 1 && !instance_exists(obj_coreGate)) {
+    var spawnX, spawnY;
+
+    // Determine whether to spawn on the horizontal or vertical edge
+    if (irandom(1) == 1) {
+        // Spawn on the left or right edge
+        spawnX = choose(0, room_width);
+        spawnY = random(room_height);
     } else {
-        // Reset the enemy count and restart the spawn timer
-        enemiesSpawned = 0;
-        EspawnTimer = timeBetweenSpawns;
-		currentWave++;
+        // Spawn on the top or bottom edge
+        spawnX = random(room_width);
+        spawnY = choose(0, room_height);
     }
-} else {
-    // Decrement the spawn timer
-    EspawnTimer--;
+
+    // Create the gate
+    instance_create_layer(spawnX, spawnY, "Instances", obj_coreGate);
 }
