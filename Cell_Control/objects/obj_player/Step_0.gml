@@ -35,12 +35,6 @@ if (mouse_check_button_pressed(mb_left) && ammo > 0 && isDeployingWall = false) 
    ammo -= 1;
 }
 
-//Taking Damage
-function TakeDamage()
-{
-	playerHealth -= 1;
-}
-
 // Health check
 if (playerHealth <= 0) {
     // Start the countdown timer
@@ -69,17 +63,37 @@ if (keyboard_check_pressed(ord("W"))) {
 
 // Placement Mode logic
 if (isDeployingWall) {
-    // Set the wall's position to be in front of the player
+   
+   // Check for cycling through building options
+	if (keyboard_check_pressed(ord("Q"))) {
+    global.currentBuildingIndex = (global.currentBuildingIndex - 1 + ds_list_size(global.buildingTypes)) mod ds_list_size(global.buildingTypes);
+	}
+
+	if (keyboard_check_pressed(ord("E"))) {
+    global.currentBuildingIndex = (global.currentBuildingIndex + 1) mod ds_list_size(global.buildingTypes);
+	}
+   
+	// Set the Building's position to be in front of the player
     var BuildingX = x + lengthdir_x(32, playerDirection);
     var BuildingY = y + lengthdir_y(32, playerDirection);
 
-    // Check for confirmation (left mouse button)
-    if (mouse_check_button_pressed(mb_left) && ammo >= wallCost) {
-        // Create a wall object
-        var Building = instance_create_layer(BuildingX, BuildingY, "Instances", obj_wall);
-        Building.image_angle = playerDirection; // Set the wall's direction
-		ammo -= wallCost;
-    }
+    // Check for building placement
+	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) {
+	    // Create a building object based on the current building type
+	    var building = instance_create_layer(BuildingX, BuildingY, "Instances", obj_building);
+
+	    // Check if the creation was successful before setting properties
+	    if (instance_exists(building)) {
+	        building.type = ds_list_find_value(global.buildingTypes, global.currentBuildingIndex);
+	        building.buildingHealth = ds_list_find_value(global.buildingHealths, global.currentBuildingIndex);
+	        building.sprite_index = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex);
+	        building.constructionCost = ds_list_find_value(global.buildingCosts, global.currentBuildingIndex);
+			//Set image angle
+			building.image_angle = playerDirection
+	        // Decrease ammo based on construction cost
+	        ammo -= building.constructionCost;
+	    }
+	}
 }
 
 	

@@ -10,5 +10,10 @@ if (isDeployingWall) {
     var wallY = y + lengthdir_y(32, playerDirection);
 
     // Draw a preview of the wall
-    draw_sprite_ext(s_WallPreview, 0, wallX, wallY, 1, 1, playerDirection, c_white, 1);
+    draw_sprite_ext(ds_list_find_value(global.buildingSprites, global.currentBuildingIndex), 0, wallX, wallY, 1, 1, playerDirection, c_white, .3);
+	
+	// Draw the current building type on the screen (for visual feedback)
+	draw_set_color(c_white);
+	draw_text(x - 20, y + 40, ds_list_find_value(global.buildingTypes, global.currentBuildingIndex));
+	draw_text(x - 20, y + 60, ds_list_find_value(global.buildingCosts, global.currentBuildingIndex));
 }
