@@ -1,3 +1,8 @@
+//starting position
+x = obj_camera.view_w_half;
+y = obj_camera.view_h_half;
+
+//Define starting variables
 ammo = 0; // Initialize ammo
 playerHealth = 15; //Initialize player health
 playerAlive = true; // Player starts alive

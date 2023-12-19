@@ -1,3 +1,7 @@
+//randomize start location
+x = random(room_width);
+y = random(room_height);
+
 // Enemy Waves
 EspawnTimer = 0;
 timeBetweenSpawns = 1000; // Adjust as needed, represents the time between enemy spawns in steps

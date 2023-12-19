@@ -10,6 +10,9 @@ function firstMenu(){
 }
 
 function startGame(){
+	//random_set_seed(1);
+	randomize(); //sets a completely random seed
+	show_debug_message(random_get_seed()); //prints the seed
 	room_goto(Room_Core);
 }
 
