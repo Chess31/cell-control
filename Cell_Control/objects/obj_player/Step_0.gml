@@ -1,26 +1,20 @@
-// Define the speed at which the object follows the mouse
-var followSpeed = 0.1; // You can adjust this value to control the lag effect
-
-// Get the mouse coordinates
-var mouseX = mouse_x;
-var mouseY = mouse_y;
-
-// Calculate the distance to the mouse
-var distanceToMouseX = mouseX - x;
-var distanceToMouseY = mouseY - y;
-
-// Get the direction towards the mouse
-var playerDirection = point_direction(x, y, mouse_x, mouse_y);
-
 // Set the player's image angle to the calculated direction
-image_angle = playerDirection;
+image_angle = point_direction(x, y, mouse_x, mouse_y);
 
-// Move the object towards the mouse using interpolation
-if(mouse_check_button(mb_right))
-{
-	x += distanceToMouseX * followSpeed;
-	y += distanceToMouseY * followSpeed;
-}
+//WASD Movement
+var _key_left = keyboard_check(ord("A"));
+var _key_right = keyboard_check(ord("D"));
+var _key_up = keyboard_check(ord("W"));
+var _key_down = keyboard_check(ord("S"));
+
+var _input_direction = point_direction(0, 0, _key_right - _key_left, _key_down - _key_up);
+var _input_magnitude = (_key_right - _key_left != 0) || (_key_down - _key_up != 0);
+
+hSpeed = lengthdir_x(_input_magnitude * walkSpeed, _input_direction);
+vSpeed = lengthdir_y(_input_magnitude * walkSpeed, _input_direction);
+
+x += hSpeed;
+y += vSpeed;
 
 // Shooting logic
 if (mouse_check_button_pressed(mb_left) && ammo > 0 && isDeployingWall = false) {
@@ -38,12 +32,12 @@ if (mouse_check_button_pressed(mb_left) && ammo > 0 && isDeployingWall = false) 
 // Health check
 if (playerHealth <= 0) {
     // Start the countdown timer
-	playerAlive = false;
+	global.playerAlive = false;
 	//instance_destroy();
 }
 
 // Countdown logic
-if (restartTimer > 0) and (playerAlive = false) {
+if (restartTimer > 0) and (global.playerAlive = false) {
     restartTimer -= 1;
 }
 
@@ -52,27 +46,30 @@ if (restartTimer == 0) {
     game_restart(); // Restart the game
 }
 	
-	
-	
-	
 // Check for Ability Usage
-if (keyboard_check_pressed(ord("W"))) {
+if (keyboard_check_pressed(vk_space)) {
     //Toggle Placement Mode
 	isDeployingWall = !isDeployingWall;
 }
 
 // Placement Mode logic
 if (isDeployingWall) {
-   
-   // Check for cycling through building options
-	if (keyboard_check_pressed(ord("Q"))) {
+    
+	var _scroll_up = mouse_wheel_up();
+	var _scroll_down = mouse_wheel_down();
+	
+    // Check for cycling through building options
+	if (keyboard_check_pressed(ord("Q"))) || (_scroll_up){
     global.currentBuildingIndex = (global.currentBuildingIndex - 1 + ds_list_size(global.buildingTypes)) mod ds_list_size(global.buildingTypes);
 	}
 
-	if (keyboard_check_pressed(ord("E"))) {
+	if (keyboard_check_pressed(ord("E"))) || (_scroll_down){
     global.currentBuildingIndex = (global.currentBuildingIndex + 1) mod ds_list_size(global.buildingTypes);
 	}
-   
+
+	// Get the direction towards the mouse
+	var playerDirection = point_direction(x, y, mouse_x, mouse_y);
+
 	// Set the Building's position to be in front of the player
     var BuildingX = x + lengthdir_x(32, playerDirection);
     var BuildingY = y + lengthdir_y(32, playerDirection);
@@ -95,12 +92,3 @@ if (isDeployingWall) {
 	    }
 	}
 }
-
-	
-	
-	
-	
-	
-	
-	
-	

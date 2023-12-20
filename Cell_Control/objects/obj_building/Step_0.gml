@@ -1,6 +1,5 @@
 // Check for collisions with player bullets
 var playerBullet = instance_place(x, y, obj_bullet);
-
 if (playerBullet != noone) and (type != "Turret"){
     // Destroy the player bullet
     instance_destroy(playerBullet);
@@ -8,7 +7,6 @@ if (playerBullet != noone) and (type != "Turret"){
 
 // Check for collisions with enemy bullets
 var enemyBullet = instance_place(x, y, obj_enemy_bullet); //if an enemy bullet is on our x and y
-
 if (enemyBullet != noone) {
     // Destroy the enemy bullet
     instance_destroy(enemyBullet);
@@ -66,7 +64,7 @@ switch (type) {
         playerInRange = (playerDistance < interactionRange);
 
         // Check for opening the menu
-        if (playerInRange && keyboard_check_pressed(ord("D"))) {
+        if (playerInRange && keyboard_check_pressed(ord("F"))) {
             //spawn menu with shop options
 			MenuCreate(x, y - 200,
 				[

@@ -12,18 +12,13 @@ while (i < 10)
 	i += 1;
 }
 
-//// Enemy Waves - moved to spawner object
-//EspawnTimer = 0;
-//timeBetweenSpawns = 1000; // Adjust as needed, represents the time between enemy spawns in steps
-//maxEnemiesInWave = 3;   // Adjust as needed, represents the maximum number of enemies in a wave
-//enemiesSpawned = 0;
-//currentWave = 0
+//set up cell core
+instance_create_layer(room_width/2, room_height/2, "Instances", obj_cell_core);
 
-//Building Options - dont need this
-//global.buildingTypes = ds_list_create();
-//ds_list_add(global.buildingTypes, "Wall");
-//ds_list_add(global.buildingTypes, "Building1");
-//ds_list_add(global.buildingTypes, "Building2");
+
+
+//Lists of buildings and enemies
+
 global.currentBuildingIndex = 0; //this number will determine which spot in each list to reference
 
 //Building Stats
@@ -35,22 +30,22 @@ global.buildingCosts = ds_list_create();
 // Add building types, healths, sprites, and costs
 ds_list_add(global.buildingTypes, "Wall");
 ds_list_add(global.buildingHealths, 75);
-ds_list_add(global.buildingSprites, s_Wall); // Set the appropriate sprite index for the wall
+ds_list_add(global.buildingSprites, s_Wall);
 ds_list_add(global.buildingCosts, 5);
 
 ds_list_add(global.buildingTypes, "Turret");
 ds_list_add(global.buildingHealths, 15);
-ds_list_add(global.buildingSprites, s_Turret); // Set the appropriate sprite index for Building1
+ds_list_add(global.buildingSprites, s_Turret);
 ds_list_add(global.buildingCosts, 15);
 
 ds_list_add(global.buildingTypes, "Forge");
 ds_list_add(global.buildingHealths, 20);
-ds_list_add(global.buildingSprites, s_Forge); // Set the appropriate sprite index for Building2
+ds_list_add(global.buildingSprites, s_Forge);
 ds_list_add(global.buildingCosts, 30);
 
 ds_list_add(global.buildingTypes, "Upgrader");
 ds_list_add(global.buildingHealths, 50);
-ds_list_add(global.buildingSprites, s_Upgrader); // Set the appropriate sprite index for Building2
+ds_list_add(global.buildingSprites, s_Upgrader);
 ds_list_add(global.buildingCosts, 50);
 
 //Enemy Stats
@@ -69,7 +64,6 @@ ds_list_add(global.enemyTypes, "Blue");
 ds_list_add(global.enemyHealths, 5);
 ds_list_add(global.enemySprites, s_enemy2);
 ds_list_add(global.enemySpeeds, 1);
-
 
 ds_list_add(global.enemyTypes, "Green");
 ds_list_add(global.enemyHealths, 8);

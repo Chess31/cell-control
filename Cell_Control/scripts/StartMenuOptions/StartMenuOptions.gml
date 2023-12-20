@@ -9,6 +9,7 @@ function firstMenu(){
 	);
 }
 
+//First level of menu options
 function startGame(){
 	//random_set_seed(1);
 	randomize(); //sets a completely random seed
@@ -19,7 +20,7 @@ function startGame(){
 function launchOptions(){
 	MenuCreate(room_width/2, room_height/2,
 		[
-			["Controls",firstMenu],
+			["Controls",controlsOptions],
 			["Video",firstMenu],
 			["Sound",firstMenu],
 			["Back", firstMenu]
@@ -30,4 +31,18 @@ function launchOptions(){
 
 function quitGame(){
 	game_end();
+}
+
+//Second level of menu options
+function controlsOptions(){
+	MenuCreate(room_width/2, room_height/2,
+		[
+			["Movement - WASD",controlsOptions],
+			["Shoot - Left Mouse",controlsOptions],
+			["Toggle Building Mode - Space",controlsOptions],
+			["Switch Building - Q & E",controlsOptions],
+			["Back", launchOptions]
+		],
+		"Controls"
+	);
 }
