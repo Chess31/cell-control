@@ -13,3 +13,9 @@ if (playerInRange) {
 	draw_text(centerX, y - 80, textToShow);
 	}
 }
+
+// Mine radius visualization
+if (primed) {
+    draw_set_color(c_white); // Reset drawing color to white
+	draw_circle(x, y, explosionRadius, true);
+}

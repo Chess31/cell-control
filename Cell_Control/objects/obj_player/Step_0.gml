@@ -55,8 +55,8 @@ if (keyboard_check_pressed(vk_space)) {
 // Placement Mode logic
 if (isDeployingWall) {
     
-	var _scroll_up = mouse_wheel_up();
-	var _scroll_down = mouse_wheel_down();
+	var _scroll_up = mouse_wheel_down();
+	var _scroll_down = mouse_wheel_up();
 	
     // Check for cycling through building options
 	if (keyboard_check_pressed(ord("Q"))) || (_scroll_up){

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "StartMenuOptions",
+  "name": "MenuFunction",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

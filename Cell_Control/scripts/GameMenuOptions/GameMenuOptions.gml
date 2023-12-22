@@ -40,9 +40,32 @@ function controlsOptions(){
 			["Movement - WASD",controlsOptions],
 			["Shoot - Left Mouse",controlsOptions],
 			["Toggle Building Mode - Space",controlsOptions],
-			["Switch Building - Q & E",controlsOptions],
+			["Switch Building - Scroll",controlsOptions],
 			["Back", launchOptions]
 		],
 		"Controls"
 	);
+}
+
+//Pause Menu Stuff
+function pauseMenu(){
+	MenuCreate(room_width/2, room_height/2,
+				[
+					["Continue",unPause],
+					["Quit",quitToTitle]
+				],
+				"Game Paused"
+			);
+}
+
+function unPause(){
+	global.isPaused = false;
+	instance_activate_all();
+}
+
+function quitToTitle(){
+	global.isPaused = false;
+	game_restart(); //this is unlikely to be problem free in the future
+	//room_restart();
+	//room_goto(Room_StartScreen);
 }

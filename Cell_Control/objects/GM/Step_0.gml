@@ -10,9 +10,10 @@ if (spawnTimer <= 0) {
     spawnTimer = 10 * 5;
 }
  
- if (keyboard_check_pressed(vk_enter))
+ //restart game hotkey
+ if (keyboard_check_pressed(vk_backspace))
  {
-	game_restart()
+	game_restart();
  }
  
  //spawn a gate

@@ -46,7 +46,12 @@ ds_list_add(global.buildingCosts, 30);
 ds_list_add(global.buildingTypes, "Upgrader");
 ds_list_add(global.buildingHealths, 50);
 ds_list_add(global.buildingSprites, s_Upgrader);
-ds_list_add(global.buildingCosts, 50);
+ds_list_add(global.buildingCosts, 1);
+
+ds_list_add(global.buildingTypes, "Proximity Mine");
+ds_list_add(global.buildingHealths, 5);
+ds_list_add(global.buildingSprites, s_ProxMine);
+ds_list_add(global.buildingCosts, 5);
 
 //Enemy Stats
 global.enemyTypes = ds_list_create();

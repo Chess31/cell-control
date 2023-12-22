@@ -77,6 +77,68 @@ switch (type) {
         }
         break;
 
+	case "Proximity Mine":
+		// Get the total number of instances of obj_enemy
+		var totalEnemies = instance_number(obj_enemy);
+
+		// Rotate the mine during the priming phase
+		if (!primed) {
+		    //set image speed
+			image_speed = 0;
+			
+			// Rotate 45 degrees clockwise
+		    rotationAngle += rotationSpeed;
+			
+			//spin while being primed
+			image_angle += rotationSpeed;
+			
+		    // Check if the rotation is complete
+		    if (rotationAngle >= 45) {
+		        rotationAngle = 45; // Ensure the rotation doesn't exceed 45 degrees
+		        primed = true; // Set the mine as primed
+		    }
+		}
+
+		// Check for nearby enemies and trigger explosion if primed
+		if (primed) {
+		    //set image speed
+			image_speed = 1;
+			
+			for (var i = 0; i < totalEnemies; i++) {
+		        //find all enemies
+				var enemyInstance = instance_find(obj_enemy, i);
+
+		        // Calculate the distance to the enemy
+		        var distanceToEnemy = point_distance(x, y, enemyInstance.x, enemyInstance.y);
+
+		        // Check if the enemy is within the explosion radius
+		        if (distanceToEnemy <= explosionRadius) {
+		            SparkParticles();// Trigger the explosion
+		            instance_destroy(); // Destroy the proximity mine
+
+		            // Damage all buildings within the explosion radius
+		            for (var j = 0; j < instance_number(obj_building); j++) {
+		                var buildingInstance = instance_find(obj_building, j);
+		                if (point_distance(buildingInstance.x, buildingInstance.y, x, y) <= explosionRadius) {
+		                    buildingInstance.buildingHealth -= 10; // Adjust the damage as needed
+		                }
+		            }
+
+		            // Damage all enemies within the explosion radius
+		            for (var k = 0; k < totalEnemies; k++) {
+		                var damagedEnemy = instance_find(obj_enemy, k);
+		                if (point_distance(damagedEnemy.x, damagedEnemy.y, x, y) <= explosionRadius) {
+		                    damagedEnemy.enemyHealth -= 10; // Adjust the damage as needed
+		                }
+		            }
+
+		            // Break the loop since the explosion has occurred
+		            break;
+		        }
+		    }
+		}
+        break;
+
     // Add more cases for other building types if needed
 
     default:

@@ -30,8 +30,3 @@ if ((mouse_check_button_pressed(mb_left) && mouseOver))
 
 mxPrev = mouse_x;
 myPrev = mouse_y;
-
-//if ((obj_building.playerInRange) = false) && (instance_exists(obj_menu))
-//{
-//	instance_destroy();
-//}
