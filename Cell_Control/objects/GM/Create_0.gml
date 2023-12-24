@@ -19,7 +19,7 @@ instance_create_layer(room_width/2, room_height/2, "Instances", obj_cell_core);
 
 //Lists of buildings and enemies
 
-global.currentBuildingIndex = 0; //this number will determine which spot in each list to reference
+global.currentBuildingIndex = 0; //this number will determine which spot in each list to reference when placing a building
 
 //Building Stats
 global.buildingTypes = ds_list_create();
@@ -65,12 +65,5 @@ ds_list_add(global.enemyHealths, 3);
 ds_list_add(global.enemySprites, s_enemy);
 ds_list_add(global.enemySpeeds, 2);
 
-ds_list_add(global.enemyTypes, "Blue");
-ds_list_add(global.enemyHealths, 5);
-ds_list_add(global.enemySprites, s_enemy2);
-ds_list_add(global.enemySpeeds, 1);
-
-ds_list_add(global.enemyTypes, "Green");
-ds_list_add(global.enemyHealths, 8);
-ds_list_add(global.enemySprites, s_enemy3);
-ds_list_add(global.enemySpeeds, 2);
+blue_unlocked = false;
+green_unlocked = false;

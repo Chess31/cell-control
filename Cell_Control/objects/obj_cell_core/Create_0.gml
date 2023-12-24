@@ -18,18 +18,23 @@ wallEast.type = "Wall";
 wallEast.buildingHealth = 75;
 wallEast.sprite_index = s_Wall;
 wallEast.image_angle = 0;
+//wallEast.mask_index = wallEast.sprite_index;
 
 wallWest.type = "Wall";
 wallWest.buildingHealth = 75;
 wallWest.sprite_index = s_Wall;
 wallWest.image_angle = 180;
+wallWest.mask_index = wallWest.sprite_index;
+
 
 wallNorth.type = "Wall";
 wallNorth.buildingHealth = 75;
 wallNorth.sprite_index = s_Wall;
 wallNorth.image_angle = 90;
+wallNorth.mask_index = wallNorth.sprite_index;
 
 wallSouth.type = "Wall";
 wallSouth.buildingHealth = 75;
 wallSouth.sprite_index = s_Wall;
 wallSouth.image_angle = 270;
+wallSouth.mask_index = wallSouth.sprite_index;

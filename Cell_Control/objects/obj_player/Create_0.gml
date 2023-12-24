@@ -8,16 +8,21 @@ vSpeed = 0;
 walkSpeed = 6.0;
 
 //Define starting variables
-ammo = 0; // Initialize ammo
+ammo = 1000; // Initialize ammo
 playerHealth = 10; //Initialize player health
 global.playerAlive = true; // Player starts alive
 restartTimer = 5 * room_speed; //Initialize the restart timer
 isDeployingWall = false; //If the player is building a wall currently
 canTeleport = true;
 
-// Player Object - AddAmmo Function
+//Set Up weapon slots
+primarySlot = "primary1"; // default weapon initially
+shiftSlot = -1; // No weapon initially
+altSlot = -1; // No weapon initially
+
+// AddAmmo Function
 function AddAmmo() {
-    ammo += 1; // You can adjust the amount of ammo added per collectible
+    ammo += 1;
 }
 
 //Take Damage Function

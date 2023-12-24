@@ -3,4 +3,5 @@ if (point_distance(x, y, obj_player.x, obj_player.y) < collectDistance) && keybo
     // Collectible is close to the player, destroy it and increment a score variable
     instance_destroy();
 	obj_player.AddAmmo(); // Call a function in the player object to add ammo
+	obj_player.primarySlot = "primary2";
 }

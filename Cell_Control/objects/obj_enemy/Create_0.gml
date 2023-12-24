@@ -11,7 +11,7 @@ direction = random(360);
 alarm[0] = 1;
 
 //Call When Hit
-function TakeDamage()
+function TakeDamage(_damage)
 {
-	enemyHealth -= 1;
+	enemyHealth -= _damage;
 }

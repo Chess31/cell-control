@@ -18,22 +18,21 @@ y += vSpeed;
 
 // Shooting logic
 if (mouse_check_button_pressed(mb_left) && ammo > 0 && isDeployingWall = false) {
-   // Create a bullet object instance
-   var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
-
-   // Set the bullet's direction and speed
-   bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-   bullet.speed = 8; // Adjust the bullet speed as needed
-
-   // Subtract ammo
-   ammo -= 1;
+	if (keyboard_check(vk_shift) && keyboard_check(vk_alt)){
+		comboWeapon(-1);
+	} else if (keyboard_check(vk_shift)){
+		shiftWeapon(-1);
+	} else if (keyboard_check(vk_alt)){
+		altWeapon(-1);
+	} else {
+		primaryWeapon(primarySlot);
+	}
 }
 
 // Health check
 if (playerHealth <= 0) {
     // Start the countdown timer
 	global.playerAlive = false;
-	//instance_destroy();
 }
 
 // Countdown logic
@@ -46,7 +45,7 @@ if (restartTimer == 0) {
     game_restart(); // Restart the game
 }
 	
-// Check for Ability Usage
+// Check for Building Placement
 if (keyboard_check_pressed(vk_space)) {
     //Toggle Placement Mode
 	isDeployingWall = !isDeployingWall;
@@ -74,8 +73,11 @@ if (isDeployingWall) {
     var BuildingX = x + lengthdir_x(32, playerDirection);
     var BuildingY = y + lengthdir_y(32, playerDirection);
 
+	// Check for collisions with existing buildings
+    var _collision = instance_place(BuildingX, BuildingY, obj_building);
+
     // Check for building placement
-	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) {
+	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.buildingCosts, global.currentBuildingIndex) && !_collision) {
 	    // Create a building object based on the current building type
 	    var building = instance_create_layer(BuildingX, BuildingY, "Instances", obj_building);
 
@@ -86,9 +88,11 @@ if (isDeployingWall) {
 	        building.sprite_index = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex);
 	        building.constructionCost = ds_list_find_value(global.buildingCosts, global.currentBuildingIndex);
 			//Set image angle
-			building.image_angle = playerDirection
+			building.image_angle = playerDirection;
 	        // Decrease ammo based on construction cost
 	        ammo -= building.constructionCost;
+			// Enable precise collision checking for this instance
+			building.mask_index = building.sprite_index;
 	    }
 	}
 }

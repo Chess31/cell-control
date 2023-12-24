@@ -1,6 +1,6 @@
 //Pause Menu Code
 if (keyboard_check_pressed(vk_escape)){
-    global.isPaused = !global.isPaused; // Toggle pause state
+    global.isPaused = true; // Toggle pause state
 }
 
 if (global.isPaused) {
