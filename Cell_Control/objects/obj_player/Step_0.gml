@@ -66,33 +66,82 @@ if (isDeployingWall) {
     global.currentBuildingIndex = (global.currentBuildingIndex + 1) mod ds_list_size(global.buildingTypes);
 	}
 
-	// Get the direction towards the mouse
-	var playerDirection = point_direction(x, y, mouse_x, mouse_y);
+	//removed _player_direction = point_direction (x,y,mouseX,mouseY) because it was redundant
 
 	// Set the Building's position to be in front of the player
-    var BuildingX = x + lengthdir_x(32, playerDirection);
-    var BuildingY = y + lengthdir_y(32, playerDirection);
-
-	// Check for collisions with existing buildings
-    var _collision = instance_place(BuildingX, BuildingY, obj_building);
+    var BuildingX = x + lengthdir_x(32, image_angle);
+    var BuildingY = y + lengthdir_y(32, image_angle);
 
     // Check for building placement
-	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.buildingCosts, global.currentBuildingIndex) && !_collision) {
-	    // Create a building object based on the current building type
-	    var building = instance_create_layer(BuildingX, BuildingY, "Instances", obj_building);
+	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) {
+	    // Create a building instance based on the current building type
+	    var _building = instance_create_layer(BuildingX, BuildingY, "Instances", obj_building);
+		//set its properties
+		_building.index = global.currentBuildingIndex;
+		_building.type = ds_list_find_value(global.buildingTypes, global.currentBuildingIndex);
+	    _building.buildingHealth = ds_list_find_value(global.buildingHealths, global.currentBuildingIndex);
+	    _building.sprite_index = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex);
+	    _building.constructionCost = ds_list_find_value(global.buildingCosts, global.currentBuildingIndex);
+		_building.image_angle = image_angle;
+		//obj_player.AddAmmo(-_building.constructionCost);
+ 
+		if (ds_list_find_value(global.buildingCount, global.currentBuildingIndex) < ds_list_find_value(global.buildingMaxNumber, global.currentBuildingIndex)) {
+		        ds_list_replace(global.buildingCount, global.currentBuildingIndex, ds_list_find_value(global.buildingCount, global.currentBuildingIndex) + 1); //this never gets removed!!! need to fix with the unused funtion in the create event
+				obj_player.AddAmmo(-_building.constructionCost);
+		    } else {
+				//there are too many buildings so remove the one that was just created
+				instance_destroy(_building);
+		        // Show a message or take other actions if the limit is reached
+		        show_max_built_message = true;
+		    }
+		// Increment building count when a building is placed
+		//var buildingType = ds_list_find_value(global.buildingTypes, global.currentBuildingIndex);
+		
+		
+		//var maxBuildingCount;
 
-	    // Check if the creation was successful before setting properties
-	    if (instance_exists(building)) {
-	        building.type = ds_list_find_value(global.buildingTypes, global.currentBuildingIndex);
-	        building.buildingHealth = ds_list_find_value(global.buildingHealths, global.currentBuildingIndex);
-	        building.sprite_index = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex);
-	        building.constructionCost = ds_list_find_value(global.buildingCosts, global.currentBuildingIndex);
-			//Set image angle
-			building.image_angle = playerDirection;
-	        // Decrease ammo based on construction cost
-	        ammo -= building.constructionCost;
-			// Enable precise collision checking for this instance
-			building.mask_index = building.sprite_index;
-	    }
+		//// Set specific limits for each building type
+		//switch (_building.type) {
+		//    case "Wall":
+		//        maxBuildingCount = 30;
+		//        break;
+		//    case "Turret":
+		//        maxBuildingCount = 15;
+		//        break;
+		//	case "Forge":
+		//        maxBuildingCount = 10;
+		//        break;
+		//	case "Upgrader":
+		//        maxBuildingCount = 1;
+		//        break;
+		//	case "Proximity Mine":
+		//        maxBuildingCount = 5;
+		//        break;
+		//    default:
+		//        maxBuildingCount = 10;  // Default limit if not specified for a type
+		//}
+		
+		//if (!ds_map_exists(global.buildingCounts, _building.type)) {
+		//    // If building type doesn't exist in the map, initialize it with a count of 1
+		//    ds_map_add(global.buildingCounts, _building.type, 1);
+		//	obj_player.AddAmmo(-_building.constructionCost);
+		//} else {
+		//    // Increment the count for the existing building type
+		//    var currentCount = ds_map_find_value(global.buildingCounts, _building.type);
+    
+		    
+		//}
+		
+		//// Check for collisions with existing buildings
+		//with (_building){
+		//	var _collision_with_existing_building = place_meeting(x, y, obj_building);
+		//	if(_collision_with_existing_building){
+		//		instance_destroy(_building);
+		//		show_debug_message("tried to place building");
+		//	} else{
+		//		// Decrease ammo based on construction cost
+		//		obj_player.AddAmmo(-_building.constructionCost);
+		//	}
+		//}
 	}
 }

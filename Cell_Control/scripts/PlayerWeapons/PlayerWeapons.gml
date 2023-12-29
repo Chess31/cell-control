@@ -6,7 +6,7 @@ function primaryWeapon(_type){
 
 			// Set the bullet's direction and speed
 			bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-			bullet.speed = 8; // Adjust the bullet speed as needed
+			bullet.speed = 8;
 			bullet.damage = 1;
 
 			// Subtract ammo
@@ -14,17 +14,19 @@ function primaryWeapon(_type){
 	        break;
 			
 		case "primary2":
-			// Create a bullet object instance
-			var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
+			if ((ammo - 5) >= 0){
+				// Create a bullet object instance
+				var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
 
-			// Set the bullet's direction and speed
-			bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-			bullet.speed = 16; // Adjust the bullet speed as needed
-			bullet.damage = 5;
-			bullet.sprite_index = s_cursor;
+				// Set the bullet's direction and speed
+				bullet.direction = point_direction(x, y, mouse_x, mouse_y);
+				bullet.speed = 16;
+				bullet.damage = 5;
+				bullet.sprite_index = s_cursor;
 
-			// Subtract ammo
-			ammo -= 1;
+				// Subtract ammo
+				ammo -= 5;
+			};
 	        break;
 			
 	    default:

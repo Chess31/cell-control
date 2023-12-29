@@ -1,8 +1,9 @@
 // obj_building initial variables
-//also set the sprite
+index = -1;
 type = "";
 buildingHealth = 25;
 constructionCost = 5;
+maxBuildingCount = 1;
 
 //Turret specific variables
 maxDetectionRange = 300

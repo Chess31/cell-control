@@ -17,18 +17,20 @@ if (enemyBullet != noone) {
 if (buildingHealth <= 0)
 {
 	instance_destroy();
+	//remove it from the total building count
+	ds_list_replace(global.buildingCount, index, ds_list_find_value(global.buildingCount, index) - 1);
 }
 
 // Add custom behavior based on building type
+//mask_index = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex); ???
 switch (type) {
     case "Wall":
-        // Wall-specific behavior
-        // For example, walls might not do anything special in the Step Event
+		//add special abilities here
         break;
 
     case "Forge":
         // periodically spawn a collectible
-        if (random(125) < 1) { // % chance every step
+        if (random(120) < 1) { // % chance every step
             // Spawn Collectible
             instance_create_layer(x + lengthdir_x(50, random(360)), y + lengthdir_y(50, random(360)), "Collectibles", obj_collectible);
         }
@@ -114,7 +116,7 @@ switch (type) {
 		        // Check if the enemy is within the explosion radius
 		        if (distanceToEnemy <= explosionRadius) {
 		            SparkParticles();// Trigger the explosion
-		            instance_destroy(); // Destroy the proximity mine
+		            buildingHealth = 0; // Destroy the proximity mine
 
 		            // Damage all buildings within the explosion radius
 		            for (var j = 0; j < instance_number(obj_building); j++) {

@@ -17,41 +17,59 @@ instance_create_layer(room_width/2, room_height/2, "Instances", obj_cell_core);
 
 
 
-//Lists of buildings and enemies
+//Lists for buildings and enemies
 
 global.currentBuildingIndex = 0; //this number will determine which spot in each list to reference when placing a building
+//global.buildingCounts = ds_map_create(); //this tracks all the placed buildings
 
 //Building Stats
 global.buildingTypes = ds_list_create();
 global.buildingHealths = ds_list_create();
 global.buildingSprites = ds_list_create();
 global.buildingCosts = ds_list_create();
+global.buildingCount = ds_list_create();
+global.buildingMaxNumber = ds_list_create();
 
 // Add building types, healths, sprites, and costs
 ds_list_add(global.buildingTypes, "Wall");
 ds_list_add(global.buildingHealths, 75);
 ds_list_add(global.buildingSprites, s_Wall);
 ds_list_add(global.buildingCosts, 5);
+	//number placed lists
+ds_list_add(global.buildingCount, 4);
+ds_list_add(global.buildingMaxNumber, 30);
 
 ds_list_add(global.buildingTypes, "Turret");
 ds_list_add(global.buildingHealths, 15);
 ds_list_add(global.buildingSprites, s_Turret);
 ds_list_add(global.buildingCosts, 15);
+	//number placed lists
+ds_list_add(global.buildingCount, 0);
+ds_list_add(global.buildingMaxNumber, 15);
 
 ds_list_add(global.buildingTypes, "Forge");
 ds_list_add(global.buildingHealths, 20);
 ds_list_add(global.buildingSprites, s_Forge);
 ds_list_add(global.buildingCosts, 30);
+	//number placed lists
+ds_list_add(global.buildingCount, 0);
+ds_list_add(global.buildingMaxNumber, 15);
 
 ds_list_add(global.buildingTypes, "Upgrader");
 ds_list_add(global.buildingHealths, 50);
 ds_list_add(global.buildingSprites, s_Upgrader);
 ds_list_add(global.buildingCosts, 1);
+	//number placed lists
+ds_list_add(global.buildingCount, 0);
+ds_list_add(global.buildingMaxNumber, 1);
 
 ds_list_add(global.buildingTypes, "Proximity Mine");
 ds_list_add(global.buildingHealths, 5);
 ds_list_add(global.buildingSprites, s_ProxMine);
 ds_list_add(global.buildingCosts, 5);
+	//number placed lists
+ds_list_add(global.buildingCount, 0);
+ds_list_add(global.buildingMaxNumber, 5);
 
 //Enemy Stats
 global.enemyTypes = ds_list_create();
