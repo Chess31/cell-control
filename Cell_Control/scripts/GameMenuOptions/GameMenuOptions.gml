@@ -49,7 +49,7 @@ function controlsOptions(){
 
 //Pause Menu Stuff
 function pauseMenu(){
-	MenuCreate(room_width/2, room_height/2,
+	MenuCreate(display_get_gui_width()/2, display_get_gui_width()/2,
 				[
 					["Continue",unPause],
 					["Quit",quitToTitle]

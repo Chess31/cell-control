@@ -17,25 +17,3 @@ if (isDeployingWall) {
 	draw_text(x - 20, y + 40, ds_list_find_value(global.buildingTypes, global.currentBuildingIndex));
 	draw_text(x - 20, y + 60, ds_list_find_value(global.buildingCosts, global.currentBuildingIndex));
 }
-
-// Function to draw the max building alert
-if (show_max_built_message = true) {
-    // Set the draw color, font, and size
-    draw_set_color(c_red);
-    
-    // Calculate the position in the top right corner ?
-    var alertX = display_get_width() - 250;
-    var alertY = 10;
-	var _text_time = 2000;
-    for (var i = 0; i < _text_time; ++i) {
-	    // Draw the alert text
-		draw_text(x, y - 25, "Maximum number of " + string(ds_list_find_value(global.buildingTypes, global.currentBuildingIndex)) + " built!");
-		if (i = _text_time)
-		{
-			show_max_built_message = false;
-		}
-	}
-    //show_max_built_message = false;
-    // Reset draw settings
-    draw_set_color(c_white);
-}

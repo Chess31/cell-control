@@ -1,4 +1,4 @@
-damage = 1;
+damage = 1; //placeholder/default value
 
 
 

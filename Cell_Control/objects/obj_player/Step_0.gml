@@ -13,17 +13,20 @@ var _input_magnitude = (_key_right - _key_left != 0) || (_key_down - _key_up != 
 hSpeed = lengthdir_x(_input_magnitude * walkSpeed, _input_direction);
 vSpeed = lengthdir_y(_input_magnitude * walkSpeed, _input_direction);
 
-x += hSpeed;
-y += vSpeed;
+//x += hSpeed;
+//y += vSpeed;
+
+//move the player based on movement calculation
+move_and_collide(hSpeed, vSpeed, obj_cellWall);
 
 // Shooting logic
 if (mouse_check_button_pressed(mb_left) && ammo > 0 && isDeployingWall = false) {
 	if (keyboard_check(vk_shift) && keyboard_check(vk_alt)){
 		comboWeapon(-1);
 	} else if (keyboard_check(vk_shift)){
-		shiftWeapon(-1);
+		shiftWeapon(shiftSlot);
 	} else if (keyboard_check(vk_alt)){
-		altWeapon(-1);
+		altWeapon(altSlot);
 	} else {
 		primaryWeapon(primarySlot);
 	}
@@ -66,82 +69,32 @@ if (isDeployingWall) {
     global.currentBuildingIndex = (global.currentBuildingIndex + 1) mod ds_list_size(global.buildingTypes);
 	}
 
-	//removed _player_direction = point_direction (x,y,mouseX,mouseY) because it was redundant
-
 	// Set the Building's position to be in front of the player
     var BuildingX = x + lengthdir_x(32, image_angle);
     var BuildingY = y + lengthdir_y(32, image_angle);
 
     // Check for building placement
 	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) {
-	    // Create a building instance based on the current building type
+	    // Create a building instance
 	    var _building = instance_create_layer(BuildingX, BuildingY, "Instances", obj_building);
-		//set its properties
-		_building.index = global.currentBuildingIndex;
+		//set its properties based on the current building type
+		_building.index = global.currentBuildingIndex; //store the index for later use in the building itself
 		_building.type = ds_list_find_value(global.buildingTypes, global.currentBuildingIndex);
 	    _building.buildingHealth = ds_list_find_value(global.buildingHealths, global.currentBuildingIndex);
 	    _building.sprite_index = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex);
 	    _building.constructionCost = ds_list_find_value(global.buildingCosts, global.currentBuildingIndex);
 		_building.image_angle = image_angle;
-		//obj_player.AddAmmo(-_building.constructionCost);
- 
-		if (ds_list_find_value(global.buildingCount, global.currentBuildingIndex) < ds_list_find_value(global.buildingMaxNumber, global.currentBuildingIndex)) {
-		        ds_list_replace(global.buildingCount, global.currentBuildingIndex, ds_list_find_value(global.buildingCount, global.currentBuildingIndex) + 1); //this never gets removed!!! need to fix with the unused funtion in the create event
-				obj_player.AddAmmo(-_building.constructionCost);
-		    } else {
-				//there are too many buildings so remove the one that was just created
-				instance_destroy(_building);
-		        // Show a message or take other actions if the limit is reached
-		        show_max_built_message = true;
-		    }
-		// Increment building count when a building is placed
-		//var buildingType = ds_list_find_value(global.buildingTypes, global.currentBuildingIndex);
-		
-		
-		//var maxBuildingCount;
 
-		//// Set specific limits for each building type
-		//switch (_building.type) {
-		//    case "Wall":
-		//        maxBuildingCount = 30;
-		//        break;
-		//    case "Turret":
-		//        maxBuildingCount = 15;
-		//        break;
-		//	case "Forge":
-		//        maxBuildingCount = 10;
-		//        break;
-		//	case "Upgrader":
-		//        maxBuildingCount = 1;
-		//        break;
-		//	case "Proximity Mine":
-		//        maxBuildingCount = 5;
-		//        break;
-		//    default:
-		//        maxBuildingCount = 10;  // Default limit if not specified for a type
-		//}
-		
-		//if (!ds_map_exists(global.buildingCounts, _building.type)) {
-		//    // If building type doesn't exist in the map, initialize it with a count of 1
-		//    ds_map_add(global.buildingCounts, _building.type, 1);
-		//	obj_player.AddAmmo(-_building.constructionCost);
-		//} else {
-		//    // Increment the count for the existing building type
-		//    var currentCount = ds_map_find_value(global.buildingCounts, _building.type);
-    
-		    
-		//}
-		
-		//// Check for collisions with existing buildings
-		//with (_building){
-		//	var _collision_with_existing_building = place_meeting(x, y, obj_building);
-		//	if(_collision_with_existing_building){
-		//		instance_destroy(_building);
-		//		show_debug_message("tried to place building");
-		//	} else{
-		//		// Decrease ammo based on construction cost
-		//		obj_player.AddAmmo(-_building.constructionCost);
-		//	}
-		//}
+		if (ds_list_find_value(global.buildingCount, global.currentBuildingIndex) < ds_list_find_value(global.buildingMaxNumber, global.currentBuildingIndex)) {
+		    ds_list_replace(global.buildingCount, global.currentBuildingIndex, ds_list_find_value(global.buildingCount, global.currentBuildingIndex) + 1);
+			AddAmmo(-_building.constructionCost);
+		} else {
+		    // Show a message about which building 
+		    var _warning_text = instance_create_layer(x, y - 30, "Instances", obj_message)
+			_warning_text.message_text = "Maximum " + string(_building.type) + "s Built!"
+			
+			//there are too many buildings so remove the one that was just created
+			instance_destroy(_building);
+		}
 	}
 }

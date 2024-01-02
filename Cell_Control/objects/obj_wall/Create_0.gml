@@ -1,1 +1,0 @@
-wallStrength = 25

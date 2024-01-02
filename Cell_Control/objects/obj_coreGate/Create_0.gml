@@ -1,3 +1,3 @@
 isGateOpen = false;
-timeLimit = room_speed * 5; // 60 seconds (adjust as needed)
+timeLimit = room_speed * 50; // 60 seconds (adjust as needed)
 timer = timeLimit;

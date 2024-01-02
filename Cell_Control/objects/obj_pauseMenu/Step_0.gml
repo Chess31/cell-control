@@ -7,10 +7,10 @@ if (global.isPaused) {
     // Stop the game
     instance_deactivate_all(true);
 	instance_activate_object(obj_menu);
-    
+    //call the pause menu
     if (!instance_exists(obj_menu)) {
 		pauseMenu();
-		show_debug_message("menu called");
+		//show_debug_message("pause menu called");
     }
 	
 } else {

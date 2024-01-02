@@ -17,7 +17,7 @@ if (spawnTimer <= 0) {
  }
  
  //spawn a gate
- if (global.currentWave >= 3 && !instance_exists(obj_coreGate)) {
+ if (global.currentWave >= 1 && !instance_exists(obj_coreGate)) {
     var spawnX, spawnY;
 
     // Determine whether to spawn on the horizontal or vertical edge
@@ -53,4 +53,3 @@ if (global.currentWave = 4 && green_unlocked = false){
 	
 	green_unlocked = true;
 }
-
