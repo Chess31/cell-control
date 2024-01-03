@@ -77,6 +77,7 @@ switch (type) {
 				"Select Upgrade"
 			);
         }
+		//instance find is the way to delete this building from the menu probably
         break;
 
 	case "Proximity Mine":

@@ -2,6 +2,7 @@
   "FolderOrderSettings": [
     {"name":"Chunk Loading","order":22,"path":"folders/Objects/Chunk Loading.yy",},
     {"name":"Controllers and Systems","order":23,"path":"folders/Objects/Controllers and Systems.yy",},
+    {"name":"Message Log","order":9,"path":"folders/Objects/Controllers and Systems/Message Log.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"s_ProxMine","order":18,"path":"sprites/s_ProxMine/s_ProxMine.yy",},
@@ -12,6 +13,7 @@
     {"name":"s_enemy2","order":11,"path":"sprites/s_enemy2/s_enemy2.yy",},
     {"name":"Room_Outside","order":2,"path":"rooms/Room_Outside/Room_Outside.yy",},
     {"name":"s_Spark","order":20,"path":"sprites/s_Spark/s_Spark.yy",},
+    {"name":"obj_log_sender_example","order":1,"path":"objects/obj_log_sender_example/obj_log_sender_example.yy",},
     {"name":"UpgraderOptions","order":1,"path":"scripts/UpgraderOptions/UpgraderOptions.yy",},
     {"name":"s_Forge","order":6,"path":"sprites/s_Forge/s_Forge.yy",},
     {"name":"obj_enemySpawner","order":11,"path":"objects/obj_enemySpawner/obj_enemySpawner.yy",},

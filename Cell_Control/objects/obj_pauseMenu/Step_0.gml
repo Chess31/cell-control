@@ -10,8 +10,7 @@ if (global.isPaused) {
     //call the pause menu
     if (!instance_exists(obj_menu)) {
 		pauseMenu();
-		//show_debug_message("pause menu called");
-    }
+}
 	
 } else {
     // Resume the game

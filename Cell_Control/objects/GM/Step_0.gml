@@ -43,6 +43,9 @@ if (global.currentWave = 2 && blue_unlocked = false){
 	ds_list_add(global.enemySpeeds, 1);
 	
 	blue_unlocked = true;
+	
+	var _message_text = "Wave 3 Reached:\nCell Warrior Unlocked";
+    obj_message_log.add_message(_message_text);
 }
 
 if (global.currentWave = 4 && green_unlocked = false){
@@ -52,4 +55,7 @@ if (global.currentWave = 4 && green_unlocked = false){
 	ds_list_add(global.enemySpeeds, 2);
 	
 	green_unlocked = true;
+	
+	var _message_text = "Wave 5 Reached:\nCell Berserker Unlocked";
+    obj_message_log.add_message(_message_text);
 }
