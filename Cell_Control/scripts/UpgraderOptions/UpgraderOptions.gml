@@ -1,9 +1,8 @@
 function tenHealth()
 {
 	obj_player.playerHealth += 20;
-	//with (self){instance_destroy()}
-	//add code here so that each option will destroy the building it was created from
-	//maybe a variable called optionSelected which is set to be true here and is what destroys the upgrader
+	//kill the upgrader
+	with(global.current_upgrader){buildingHealth -= 10000};
 }
 
 function increaseMaxBuild()
@@ -26,4 +25,6 @@ function increaseMaxBuild()
 function addToMaxBuildings()
 {
 	ds_list_replace(global.buildingMaxNumber, global.random_building, ds_list_find_value(global.buildingMaxNumber, global.random_building) + 5);
+	//kill the upgrader
+	with(global.current_upgrader){buildingHealth -= 10000};
 }

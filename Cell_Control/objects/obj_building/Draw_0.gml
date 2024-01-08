@@ -19,3 +19,10 @@ if (primed) {
     draw_set_color(c_white); // Reset drawing color to white
 	draw_circle(x, y, explosionRadius, true);
 }
+
+if (type = "Feeder"){
+	draw_set_color(c_black);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text(x, y, string(enemy_kill_goal - enemies_defeated));
+}

@@ -46,26 +46,10 @@ ds_list_add(global.buildingCosts, 15);
 ds_list_add(global.buildingCount, 0);
 ds_list_add(global.buildingMaxNumber, 15);
 
-ds_list_add(global.buildingTypes, "Forge");
-ds_list_add(global.buildingHealths, 20);
-ds_list_add(global.buildingSprites, s_Forge);
-ds_list_add(global.buildingCosts, 30);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 15);
-
-ds_list_add(global.buildingTypes, "Upgrader");
-ds_list_add(global.buildingHealths, 50);
-ds_list_add(global.buildingSprites, s_Upgrader);
-ds_list_add(global.buildingCosts, 1);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 1);
-
-ds_list_add(global.buildingTypes, "Proximity Mine");
-ds_list_add(global.buildingHealths, 5);
-ds_list_add(global.buildingSprites, s_ProxMine);
-ds_list_add(global.buildingCosts, 5);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 20);
+forge_unlocked = false;
+upgrader_unlocked = false;
+proximity_mine_unlocked = false;
+feeder_unlocked = false;
 
 //Enemy Stats
 global.enemyTypes = ds_list_create();
@@ -79,5 +63,10 @@ ds_list_add(global.enemyHealths, 3);
 ds_list_add(global.enemySprites, s_enemy);
 ds_list_add(global.enemySpeeds, 2);
 
+//display wave one message after the message log object is created (it doesn't exist yet)
+alarm[0] = 1;
+
 blue_unlocked = false;
 green_unlocked = false;
+
+global.feeder_active = false;

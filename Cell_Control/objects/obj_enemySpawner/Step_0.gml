@@ -16,7 +16,7 @@ if (EspawnTimer <= 0) {
     } else {
         // Reset the enemy count and restart the spawn timer
         enemiesSpawned = 0;
-        EspawnTimer = timeBetweenSpawns;
+        EspawnTimer = max(timeBetweenSpawns - (global.currentWave * 20), 100);
 		global.currentWave++;
     }
 } else {

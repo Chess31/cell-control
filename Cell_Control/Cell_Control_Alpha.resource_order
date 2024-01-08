@@ -1,6 +1,5 @@
 {
   "FolderOrderSettings": [
-    {"name":"Chunk Loading","order":22,"path":"folders/Objects/Chunk Loading.yy",},
     {"name":"Controllers and Systems","order":23,"path":"folders/Objects/Controllers and Systems.yy",},
     {"name":"Message Log","order":9,"path":"folders/Objects/Controllers and Systems/Message Log.yy",},
   ],
@@ -12,6 +11,7 @@
     {"name":"s_cursor","order":12,"path":"sprites/s_cursor/s_cursor.yy",},
     {"name":"s_enemy2","order":11,"path":"sprites/s_enemy2/s_enemy2.yy",},
     {"name":"Room_Outside","order":2,"path":"rooms/Room_Outside/Room_Outside.yy",},
+    {"name":"obj_particle","order":24,"path":"objects/obj_particle/obj_particle.yy",},
     {"name":"s_Spark","order":20,"path":"sprites/s_Spark/s_Spark.yy",},
     {"name":"obj_log_sender_example","order":1,"path":"objects/obj_log_sender_example/obj_log_sender_example.yy",},
     {"name":"UpgraderOptions","order":1,"path":"scripts/UpgraderOptions/UpgraderOptions.yy",},
@@ -37,6 +37,7 @@
     {"name":"obj_menu","order":4,"path":"objects/obj_menu/obj_menu.yy",},
     {"name":"s_CoreGate","order":15,"path":"sprites/s_CoreGate/s_CoreGate.yy",},
     {"name":"Room_StartScreen","order":1,"path":"rooms/Room_StartScreen/Room_StartScreen.yy",},
+    {"name":"s_Feeder","order":21,"path":"sprites/s_Feeder/s_Feeder.yy",},
     {"name":"obj_collectible","order":1,"path":"objects/obj_collectible/obj_collectible.yy",},
     {"name":"obj_mapGen","order":3,"path":"objects/obj_mapGen/obj_mapGen.yy",},
     {"name":"obj_coreGate","order":13,"path":"objects/obj_coreGate/obj_coreGate.yy",},

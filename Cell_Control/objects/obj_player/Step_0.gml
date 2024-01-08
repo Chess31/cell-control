@@ -57,8 +57,9 @@ if (keyboard_check_pressed(vk_space)) {
 // Placement Mode logic
 if (isDeployingWall) {
     
-	var _scroll_up = mouse_wheel_down();
-	var _scroll_down = mouse_wheel_up();
+	//these are supposed to be flipped because lists are weird
+	var _scroll_up = mouse_wheel_up();
+	var _scroll_down = mouse_wheel_down();
 	
     // Check for cycling through building options
 	if (keyboard_check_pressed(ord("Q"))) || (_scroll_up){
@@ -88,6 +89,15 @@ if (isDeployingWall) {
 		if (ds_list_find_value(global.buildingCount, global.currentBuildingIndex) < ds_list_find_value(global.buildingMaxNumber, global.currentBuildingIndex)) {
 		    ds_list_replace(global.buildingCount, global.currentBuildingIndex, ds_list_find_value(global.buildingCount, global.currentBuildingIndex) + 1);
 			AddAmmo(-_building.constructionCost);
+			
+			//if it is a special building store its id
+			if (_building.type = "Upgrader"){
+				global.current_upgrader = _building.id;	
+			} else if (_building.type = "Feeder"){
+				global.feeder_active = true;
+				global.current_feeder = _building.id;
+			}
+			
 		} else {
 		    // Show a message about which building 
 		    var _warning_text = instance_create_layer(x, y - 30, "Instances", obj_message)

@@ -9,11 +9,12 @@ walkSpeed = 6.0;
 
 //Define starting variables
 ammo = 0; // Initialize ammo
-playerHealth = 10; //Initialize player health
+playerHealth = 15; //Initialize player health
 global.playerAlive = true; // Player starts alive
 restartTimer = 5 * room_speed; //Initialize the restart timer
 isDeployingWall = false; //If the player is building a wall currently
 canTeleport = true;
+global.current_upgrader = noone;
 
 //Set Up weapon slots
 primarySlot = "primary1"; // default weapon initially

@@ -10,5 +10,11 @@ for (var i = 0; i < numberOfItems; i++) {
     instance_create_layer(x + random_range(-10, 10), y + random_range(-10, 10), "Instances", selectedItem);
 }
 
+if (global.feeder_active = true){
+	//spawn the "soul" particle and move it to the feeder
+	var _particle = instance_create_layer(x, y, "Instances", obj_particle);
+	_particle.target = global.current_feeder;
+}
+
 // Clean up the loot pool
 ds_list_destroy(enemyLootPool);
