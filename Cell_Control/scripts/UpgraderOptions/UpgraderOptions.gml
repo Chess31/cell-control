@@ -9,7 +9,7 @@ function increaseMaxBuild()
 {
 	//select available upgrades (not upgrader)
 	var _random_number = irandom(ds_list_size(global.buildingTypes) - 1);
-	while (_random_number = ds_list_find_index(global.buildingTypes, "Upgrader")){
+	while ((_random_number = ds_list_find_index(global.buildingTypes, "Upgrader")) || (_random_number = ds_list_find_index(global.buildingTypes, "Feeder"))){
 		_random_number = irandom(ds_list_size(global.buildingTypes) - 1);
 	}
 	var _random_building_1 = ds_list_find_value(global.buildingTypes, _random_number);

@@ -1,1 +1,1 @@
-draw_sprite_ext(s_Collectible, 0, x, y, 1, 1, direction, c_yellow, 1);
+draw_sprite_ext(s_Collectible, image_index, x, y, 1, 1, direction, c_yellow, 1);

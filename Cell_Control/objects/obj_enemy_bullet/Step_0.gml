@@ -6,5 +6,6 @@ if (x < 0 || y < 0 || x > room_width || y > room_height) {
 // Check for collision with enemies and destroy them
 if (place_meeting(x, y, obj_player)) {
     instance_destroy();
-    obj_player.TakeDamage();
+    obj_player.TakeDamage(damage);
+	SparkParticles();
 }

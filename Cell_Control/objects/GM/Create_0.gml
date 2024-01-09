@@ -70,3 +70,4 @@ blue_unlocked = false;
 green_unlocked = false;
 
 global.feeder_active = false;
+global.enemy_kill_goal = 3;

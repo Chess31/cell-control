@@ -7,7 +7,7 @@ if (spawnTimer <= 0) {
     instance_create_layer(random(room_width), random(room_height), "Collectibles",obj_collectible);
     
     // Reset the spawn timer
-    spawnTimer = 10 * 5;
+    spawnTimer = 50;
 }
 
  //restart game hotkey
@@ -36,7 +36,7 @@ if (spawnTimer <= 0) {
 					//}
 
 //Unlock enemies and buildings on specific waves (enemy types should be added the wave before they need to show up)
-if (global.currentWave = 2 && blue_unlocked = false){
+if (global.currentWave >= 2 && blue_unlocked = false){
 	ds_list_add(global.enemyTypes, "Blue");
 	ds_list_add(global.enemyHealths, 5);
 	ds_list_add(global.enemySprites, s_enemy2);
@@ -59,7 +59,7 @@ if (global.currentWave = 2 && blue_unlocked = false){
     obj_message_log.add_message(_message_text_2);
 }
 
-if (global.currentWave = 3 && upgrader_unlocked = false){
+if (global.currentWave >= 3 && upgrader_unlocked = false){
 	ds_list_add(global.buildingTypes, "Upgrader");
 	ds_list_add(global.buildingHealths, 50);
 	ds_list_add(global.buildingSprites, s_Upgrader);
@@ -77,7 +77,7 @@ if (global.currentWave = 3 && upgrader_unlocked = false){
     obj_message_log.add_message(_message_text_2);
 }
 
-if (global.currentWave = 4 && green_unlocked = false){
+if (global.currentWave >= 4 && green_unlocked = false){
 	ds_list_add(global.enemyTypes, "Green");
 	ds_list_add(global.enemyHealths, 8);
 	ds_list_add(global.enemySprites, s_enemy3);
@@ -86,7 +86,7 @@ if (global.currentWave = 4 && green_unlocked = false){
 	green_unlocked = true;
 }
 
-if (global.currentWave = 5 && proximity_mine_unlocked = false){
+if (global.currentWave >= 5 && proximity_mine_unlocked = false){
 	ds_list_add(global.buildingTypes, "Proximity Mine");
 	ds_list_add(global.buildingHealths, 5);
 	ds_list_add(global.buildingSprites, s_ProxMine);
@@ -104,7 +104,7 @@ if (global.currentWave = 5 && proximity_mine_unlocked = false){
     obj_message_log.add_message(_message_text_2);
 }
 
-if (global.currentWave = 7 && feeder_unlocked = false){
+if (global.currentWave >= 1 && feeder_unlocked = false){
 	ds_list_add(global.buildingTypes, "Feeder");
 	ds_list_add(global.buildingHealths, 300);
 	ds_list_add(global.buildingSprites, s_Feeder);

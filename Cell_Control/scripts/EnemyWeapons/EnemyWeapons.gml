@@ -25,7 +25,7 @@ function EnemyWeapons(){
 				    var directionToPlayer = point_direction(x, y, obj_player.x, obj_player.y);
 
 				    // Set up the bullet spread parameters
-				    var spreadAngle = 10; // Adjust the spread angle as needed
+				    var spreadAngle = 10;
 				    var numBullets = 3;
 
 				    // Loop through the number of bullets to create
@@ -40,7 +40,7 @@ function EnemyWeapons(){
 				        bullet.direction = adjustedDirection;
 
 				        // Optional: You can set other bullet properties here (speed, sprite, etc.)
-				        bullet.speed = 8; // Adjust the bullet speed as needed
+				        bullet.speed = 8;
 				    }
 					// Reset the shoot cooldown
 					shootCooldown = 150 + random(300); // Adjust the time between shots

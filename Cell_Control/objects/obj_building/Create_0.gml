@@ -23,4 +23,3 @@ primed = false;
 
 //Feeder specific variables
 enemies_defeated = 0;
-enemy_kill_goal = 20;

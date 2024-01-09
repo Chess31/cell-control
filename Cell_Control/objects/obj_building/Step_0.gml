@@ -130,13 +130,13 @@ switch (type) {
 
 	case "Feeder":
 		//once kill count has been reached:
-		if (enemies_defeated >= enemy_kill_goal){
+		if (enemies_defeated >= global.enemy_kill_goal){
 			global.feeder_active = false;
 			//killing this building with damage causes two loot drops to happen (maybe not anymore, becuase of the increasing kill recquiremnt
 			instance_destroy();
 			//remove it from the total building count
 			ds_list_replace(global.buildingCount, index, ds_list_find_value(global.buildingCount, index) - 1);
-			//enemy_kill_goal += 10;
+			global.enemy_kill_goal += 10;
 			
 			if (!instance_exists(obj_coreGate)){
 			//spawn a portal math

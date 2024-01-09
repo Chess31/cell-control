@@ -4,5 +4,8 @@ var _display_y = 50;//10;
 
 for (var i = 0; i < ds_list_size(global.messages); i+=2) {
     var _message = ds_list_find_value(global.messages, i);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	draw_set_color(c_white);
     draw_text(_display_x, _display_y + ((i * 20)/2), _message);
 }

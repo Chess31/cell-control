@@ -8,8 +8,8 @@ vSpeed = 0;
 walkSpeed = 6.0;
 
 //Define starting variables
-ammo = 0; // Initialize ammo
-playerHealth = 15; //Initialize player health
+ammo = 100000; // Initialize ammo
+playerHealth = 150000; //Initialize player health
 global.playerAlive = true; // Player starts alive
 restartTimer = 5 * room_speed; //Initialize the restart timer
 isDeployingWall = false; //If the player is building a wall currently
@@ -27,7 +27,7 @@ function AddAmmo(_amount) {
 }
 
 //Take Damage Function
-function TakeDamage()
+function TakeDamage(_amount)
 {
-	playerHealth -= 1;
+	playerHealth -= _amount;
 }
