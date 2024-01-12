@@ -54,6 +54,7 @@
     {"name":"PlayerWeapons","order":7,"path":"scripts/PlayerWeapons/PlayerWeapons.yy",},
     {"name":"obj_building","order":9,"path":"objects/obj_building/obj_building.yy",},
     {"name":"s_Cell_Core","order":17,"path":"sprites/s_Cell_Core/s_Cell_Core.yy",},
+    {"name":"WaveAttack","order":8,"path":"scripts/WaveAttack/WaveAttack.yy",},
     {"name":"s_Upgrader","order":8,"path":"sprites/s_Upgrader/s_Upgrader.yy",},
   ],
 }
