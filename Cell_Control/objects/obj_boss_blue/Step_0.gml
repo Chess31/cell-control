@@ -33,3 +33,31 @@ if (wave_attack_cooldown <= 0) {
 } else {
     wave_attack_cooldown--;
 }
+
+//Big attack
+
+if (big_attack_cooldown <= 0) {	
+	attackDirection = point_direction(x, y, obj_player.x, obj_player.y);
+
+	var bullet = instance_create_layer(x, y, "Instances", obj_enemy_bullet);
+	// Set bullet properties such as speed, damage, direction, etc.
+	bullet.speed = 3;
+	bullet.damage = 2000;
+	bullet.direction = attackDirection;
+	bullet.image_angle = attackDirection;
+	//bullet.image_xscale = 5;
+	//bullet.image_yscale = 5;
+	bullet.big = true;
+	bullet.piercing = true;
+	
+    big_attack_cooldown = room_speed * 5;
+} else {
+    big_attack_cooldown--;
+}
+
+
+
+
+
+// Inherit the parent event
+event_inherited();

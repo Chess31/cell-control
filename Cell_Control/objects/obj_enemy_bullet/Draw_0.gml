@@ -1,1 +1,6 @@
-draw_sprite_ext(sprite_index, 0, x, y, 1, 1, direction, c_white, 1);
+if big = true {
+	draw_sprite_ext(sprite_index, 0, x, y, 4, 4, direction, c_white, 1);
+	//sprite_collision_mask(true, 1, 0, 0, 0, 0, 0, 0);
+} else {
+	draw_sprite_ext(sprite_index, 0, x, y, 1, 1, direction, c_white, 1);
+}

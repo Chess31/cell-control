@@ -97,8 +97,8 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Room_StartScreen","path":"rooms/Room_StartScreen/Room_StartScreen.yy",},},
-    {"roomId":{"name":"Room_Core","path":"rooms/Room_Core/Room_Core.yy",},},
     {"roomId":{"name":"Room_Outside","path":"rooms/Room_Outside/Room_Outside.yy",},},
+    {"roomId":{"name":"Room_Core","path":"rooms/Room_Core/Room_Core.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

@@ -1,5 +1,6 @@
 //blue specific variables
 wave_attack_cooldown = room_speed * 2;
+big_attack_cooldown = room_speed * 5;
 
 //wave attack variables
 _wave_spread = 90; //angle of the wave attack

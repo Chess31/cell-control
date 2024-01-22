@@ -9,3 +9,21 @@ if (place_meeting(x, y, obj_player)) {
     obj_player.TakeDamage(damage);
 	SparkParticles();
 }
+
+// Check for collision with cell walls
+if (room = Room_Outside) && (piercing = false) {
+	if (place_meeting(x, y, obj_cellWall)) {
+	    var _wall = instance_place(x, y, obj_cellWall);
+	    instance_destroy();
+	    _wall.buildingHealth -= damage;
+	}
+}
+
+// Check for collision with cell walls
+if (room = Room_Outside) && (piercing = true) {
+	if (place_meeting(x, y, obj_cellWall)) {
+	    var _wall = instance_place(x, y, obj_cellWall);
+	    //instance_destroy();
+	    _wall.buildingHealth -= damage;
+	}
+}
