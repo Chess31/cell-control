@@ -46,12 +46,12 @@ ds_list_add(global.buildingCosts, 15);
 ds_list_add(global.buildingCount, 0);
 ds_list_add(global.buildingMaxNumber, 15);
 
-ds_list_add(global.buildingTypes, "Crafter");
-ds_list_add(global.buildingHealths, 20);
-ds_list_add(global.buildingSprites, s_Crafter);
-ds_list_add(global.buildingCosts, 1);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 5);
+//ds_list_add(global.buildingTypes, "Crafter");
+//ds_list_add(global.buildingHealths, 20);
+//ds_list_add(global.buildingSprites, s_Crafter);
+//ds_list_add(global.buildingCosts, 1);
+//ds_list_add(global.buildingCount, 0);
+//ds_list_add(global.buildingMaxNumber, 5);
 
 forge_unlocked = false;
 upgrader_unlocked = false;

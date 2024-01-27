@@ -42,7 +42,7 @@ if (big_attack_cooldown <= 0) {
 	var bullet = instance_create_layer(x, y, "Instances", obj_enemy_bullet);
 	// Set bullet properties such as speed, damage, direction, etc.
 	bullet.speed = 3;
-	bullet.damage = 2000;
+	bullet.damage = 20;
 	bullet.direction = attackDirection;
 	bullet.image_angle = attackDirection;
 	//bullet.image_xscale = 5;

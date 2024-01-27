@@ -35,6 +35,7 @@
     "IDEVersion": "2023.8.2.108",
   },
   "resources": [
+    {"id":{"name":"obj_item","path":"objects/obj_item/obj_item.yy",},},
     {"id":{"name":"s_ProxMine","path":"sprites/s_ProxMine/s_ProxMine.yy",},},
     {"id":{"name":"obj_HUD","path":"objects/obj_HUD/obj_HUD.yy",},},
     {"id":{"name":"obj_message","path":"objects/obj_message/obj_message.yy",},},
@@ -74,6 +75,7 @@
     {"id":{"name":"s_CoreGate","path":"sprites/s_CoreGate/s_CoreGate.yy",},},
     {"id":{"name":"Room_StartScreen","path":"rooms/Room_StartScreen/Room_StartScreen.yy",},},
     {"id":{"name":"s_Feeder","path":"sprites/s_Feeder/s_Feeder.yy",},},
+    {"id":{"name":"obj_inventory","path":"objects/obj_inventory/obj_inventory.yy",},},
     {"id":{"name":"obj_collectible","path":"objects/obj_collectible/obj_collectible.yy",},},
     {"id":{"name":"obj_mapGen","path":"objects/obj_mapGen/obj_mapGen.yy",},},
     {"id":{"name":"obj_coreGate","path":"objects/obj_coreGate/obj_coreGate.yy",},},
@@ -81,6 +83,7 @@
     {"id":{"name":"s_enemy3","path":"sprites/s_enemy3/s_enemy3.yy",},},
     {"id":{"name":"s_Bullet","path":"sprites/s_Bullet/s_Bullet.yy",},},
     {"id":{"name":"obj_boss_parent","path":"objects/obj_boss_parent/obj_boss_parent.yy",},},
+    {"id":{"name":"init_game","path":"scripts/init_game/init_game.yy",},},
     {"id":{"name":"EnemyWeapons","path":"scripts/EnemyWeapons/EnemyWeapons.yy",},},
     {"id":{"name":"s_Menu","path":"sprites/s_Menu/s_Menu.yy",},},
     {"id":{"name":"s_CellWall","path":"sprites/s_CellWall/s_CellWall.yy",},},

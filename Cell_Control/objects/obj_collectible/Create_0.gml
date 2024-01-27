@@ -1,1 +1,1 @@
-collectDistance = 50; // Adjust this distance as needed
+collectDistance = 55; // Adjust this distance as needed

@@ -4,6 +4,7 @@
     {"name":"Message Log","order":9,"path":"folders/Objects/Controllers and Systems/Message Log.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"obj_item","order":27,"path":"objects/obj_item/obj_item.yy",},
     {"name":"s_ProxMine","order":18,"path":"sprites/s_ProxMine/s_ProxMine.yy",},
     {"name":"obj_HUD","order":2,"path":"objects/obj_HUD/obj_HUD.yy",},
     {"name":"obj_message","order":5,"path":"objects/obj_message/obj_message.yy",},
@@ -40,6 +41,7 @@
     {"name":"s_CoreGate","order":15,"path":"sprites/s_CoreGate/s_CoreGate.yy",},
     {"name":"Room_StartScreen","order":1,"path":"rooms/Room_StartScreen/Room_StartScreen.yy",},
     {"name":"s_Feeder","order":21,"path":"sprites/s_Feeder/s_Feeder.yy",},
+    {"name":"obj_inventory","order":10,"path":"objects/obj_inventory/obj_inventory.yy",},
     {"name":"obj_collectible","order":1,"path":"objects/obj_collectible/obj_collectible.yy",},
     {"name":"obj_mapGen","order":3,"path":"objects/obj_mapGen/obj_mapGen.yy",},
     {"name":"obj_coreGate","order":13,"path":"objects/obj_coreGate/obj_coreGate.yy",},
@@ -47,6 +49,7 @@
     {"name":"s_enemy3","order":13,"path":"sprites/s_enemy3/s_enemy3.yy",},
     {"name":"s_Bullet","order":2,"path":"sprites/s_Bullet/s_Bullet.yy",},
     {"name":"obj_boss_parent","order":26,"path":"objects/obj_boss_parent/obj_boss_parent.yy",},
+    {"name":"init_game","order":8,"path":"scripts/init_game/init_game.yy",},
     {"name":"EnemyWeapons","order":3,"path":"scripts/EnemyWeapons/EnemyWeapons.yy",},
     {"name":"s_Menu","order":9,"path":"sprites/s_Menu/s_Menu.yy",},
     {"name":"s_CellWall","order":16,"path":"sprites/s_CellWall/s_CellWall.yy",},
