@@ -104,7 +104,7 @@ if (global.currentWave >= 5 && proximity_mine_unlocked = false){
     obj_message_log.add_message(_message_text_2);
 }
 
-if (global.currentWave >= 1 && feeder_unlocked = false){
+if (global.currentWave >= 7 && feeder_unlocked = false){
 	ds_list_add(global.buildingTypes, "Feeder");
 	ds_list_add(global.buildingHealths, 300);
 	ds_list_add(global.buildingSprites, s_Feeder);

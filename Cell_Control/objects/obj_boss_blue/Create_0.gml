@@ -1,3 +1,7 @@
+//start position
+x = random(room_width);
+y = random(room_height);
+
 //blue specific variables
 wave_attack_cooldown = room_speed * 2;
 big_attack_cooldown = room_speed * 5;

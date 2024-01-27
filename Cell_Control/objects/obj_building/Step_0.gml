@@ -9,8 +9,8 @@ if (playerBullet != noone) and (type != "Turret"){
 var enemyBullet = instance_place(x, y, obj_enemy_bullet); //if an enemy bullet is on our x and y
 if (enemyBullet != noone) {
     // Destroy the enemy bullet
-    instance_destroy(enemyBullet);
-	buildingHealth -= 1;
+	buildingHealth -= enemyBullet.damage;
+	if (enemyBullet.piercing = false) {instance_destroy(enemyBullet)};
 }
 
 //Building Health Check
@@ -160,7 +160,11 @@ switch (type) {
 			instance_create_layer(x + irandom_range(-100, 100), y + irandom_range(-100, 100), "Instances", obj_pickup_temp);
 		}
         break;
-
+	
+	case "Crafter":
+		
+		break;
+		
     // Add more cases for other building types if needed
 
     default:
