@@ -67,7 +67,7 @@ global.enemySpeeds = ds_list_create();
 //Add enemy types
 ds_list_add(global.enemyTypes, "Red");
 ds_list_add(global.enemyHealths, 3);
-ds_list_add(global.enemySprites, s_enemy);
+ds_list_add(global.enemySprites, s_enemyR);
 ds_list_add(global.enemySpeeds, 2);
 
 //display wave one message after the message log object is created (it doesn't exist yet)
