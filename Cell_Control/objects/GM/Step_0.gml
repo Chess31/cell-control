@@ -10,30 +10,11 @@ if (spawnTimer <= 0) {
     spawnTimer = 50;
 }
 
- //restart game hotkey
- if (keyboard_check_pressed(vk_backspace))
- {
+//restart game hotkey
+if (keyboard_check_pressed(vk_backspace))
+{
 	game_restart();
- }
-
-					// //spawn a gate if one does not exist by wave 3
-					// if (global.currentWave >= 3 && !instance_exists(obj_coreGate)) {
-					//    var spawnX, spawnY;
-
-					//    // Determine whether to spawn on the horizontal or vertical edge
-					//    if (irandom(1) == 1) {
-					//        // Spawn on the left or right edge
-					//        spawnX = choose(0, room_width);
-					//        spawnY = random(room_height);
-					//    } else {
-					//        // Spawn on the top or bottom edge
-					//        spawnX = random(room_width);
-					//        spawnY = choose(0, room_height);
-					//    }
-
-					//    // Create the gate
-					//    instance_create_layer(spawnX, spawnY, "Instances", obj_coreGate);
-					//}
+}
 
 //Unlock enemies and buildings on specific waves (enemy types should be added the wave before they need to show up)
 if (global.currentWave >= 2 && blue_unlocked = false){
