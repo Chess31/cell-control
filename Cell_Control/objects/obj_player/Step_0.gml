@@ -108,3 +108,11 @@ if (isDeployingWall) {
 		}
 	}
 }
+
+//Hot Keys for Buildings:
+if (keyboard_check_pressed(ord("1"))){global.currentBuildingIndex = 0 mod ds_list_size(global.buildingTypes)};
+if (keyboard_check_pressed(ord("2"))){global.currentBuildingIndex = 1 mod ds_list_size(global.buildingTypes)};
+if (keyboard_check_pressed(ord("3"))){global.currentBuildingIndex = 2 mod ds_list_size(global.buildingTypes)};
+if (keyboard_check_pressed(ord("4"))){global.currentBuildingIndex = 3 mod ds_list_size(global.buildingTypes)};
+if (keyboard_check_pressed(ord("5"))){global.currentBuildingIndex = 4 mod ds_list_size(global.buildingTypes)};
+if (keyboard_check_pressed(ord("6"))){global.currentBuildingIndex = 5 mod ds_list_size(global.buildingTypes)};

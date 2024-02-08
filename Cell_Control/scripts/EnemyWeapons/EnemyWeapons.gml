@@ -11,6 +11,7 @@ function EnemyWeapons(){
 					// Set the bullet's direction and speed towards the player
 					bullet.direction = point_direction(x, y, obj_player.x, obj_player.y);
 					bullet.speed = 6; // Adjust the bullet speed as needed
+					bullet.bcolor = c_red;
 
 					// Reset the shoot cooldown
 					shootCooldown = 150 + random(200); // Adjust the time between shots
@@ -38,9 +39,8 @@ function EnemyWeapons(){
 
 				        // Set the bullet's direction
 				        bullet.direction = adjustedDirection;
-
-				        // Optional: You can set other bullet properties here (speed, sprite, etc.)
 				        bullet.speed = 8;
+						bullet.bcolor = c_blue;
 				    }
 					// Reset the shoot cooldown
 					shootCooldown = 150 + random(300); // Adjust the time between shots
@@ -63,6 +63,61 @@ function EnemyWeapons(){
 						SparkParticles();
 				    }
 					shootCooldown = 50;
+				}
+			break;
+		
+		case "Purple":
+				shootCooldown -= 1;
+				
+				if (shootCooldown <= 0)
+				{
+					//get the nearest enemy
+					var _nearest_enemy = instance_nearest(x, y, obj_enemy);
+					
+					//Check to see if it is in range
+					if (point_distance(x,y,_nearest_enemy.x,_nearest_enemy.y) < heal_range)
+					{
+						//It was so heal all nearby enemies
+						for (var i = 0; i < instance_number(obj_enemy); i++)
+						{
+							var enemyInstance = instance_find(obj_enemy, i);
+							if (point_distance(enemyInstance.x, enemyInstance.y, x, y) <= heal_range) && (enemyInstance.enemyType != "Purple")
+							{
+								enemyInstance.enemyHealth += heal_per_hit;
+							}
+						}
+					}
+					shootCooldown = 90;
+				}
+				
+			break;
+		
+		case "Yellow":
+				shootCooldown -= 1;
+
+				if (shootCooldown <= 0 && instance_exists(obj_player)) {
+					// Calculate the direction to the player
+				    var directionToPlayer = point_direction(x, y, obj_player.x, obj_player.y);
+
+				    // Set up the bullet spread parameters
+				    var spreadAngle = 45;
+				    var numBullets = 8;
+
+				    // Loop through the number of bullets to create
+				    for (var i = 0; i < numBullets; i++) {
+				        // Calculate the adjusted direction for each bullet in the spread
+				        var adjustedDirection = directionToPlayer + (i - (numBullets - 1) / 2) * spreadAngle;
+
+				        // Create a bullet
+				        var bullet = instance_create_layer(x, y, "Instances", obj_enemy_bullet);
+
+				        // Set the bullet's direction
+				        bullet.direction = adjustedDirection;
+				        bullet.speed = 3;
+						bullet.bcolor = c_yellow;
+				    }
+					// Reset the shoot cooldown
+					shootCooldown = 150 + random(300); // Adjust the time between shots
 				}
 			break;
 		

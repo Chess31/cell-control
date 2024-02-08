@@ -19,6 +19,7 @@ if (wave_attack_cooldown <= 0) {
 			var _wave_adjustment = ((_wave_spread + random_range(-10,10)) - (global.current_bullet * (_wave_spread/totalBullets)));
 			bullet.direction = attackDirection + _wave_adjustment;
 			bullet.image_angle = attackDirection + _wave_adjustment;
+			bullet.bcolor = c_blue;
 		}
 		
 		timeline_index = global.tl;
@@ -49,6 +50,7 @@ if (big_attack_cooldown <= 0) {
 	//bullet.image_yscale = 5;
 	bullet.big = true;
 	bullet.piercing = true;
+	bullet.bcolor = c_blue;
 	
     big_attack_cooldown = room_speed * 5;
 } else {

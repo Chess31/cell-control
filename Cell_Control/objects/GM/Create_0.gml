@@ -75,6 +75,8 @@ alarm[0] = 1;
 
 blue_unlocked = false;
 green_unlocked = false;
+purple_unlocked = false;
+yellow_unlocked = false;
 
 global.feeder_active = false;
 global.enemy_kill_goal = 10;

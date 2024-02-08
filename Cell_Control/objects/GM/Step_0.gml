@@ -66,7 +66,7 @@ if (global.currentWave >= 4 && green_unlocked = false){
 	
 	green_unlocked = true;
 }
-
+//only one wave 5 tag needs to be checked, all others will correctly flip
 if (global.currentWave >= 5 && proximity_mine_unlocked = false){
 	ds_list_add(global.buildingTypes, "Proximity Mine");
 	ds_list_add(global.buildingHealths, 5);
@@ -77,12 +77,28 @@ if (global.currentWave >= 5 && proximity_mine_unlocked = false){
 	
 	proximity_mine_unlocked = true;
 	
+	ds_list_add(global.enemyTypes, "Purple");
+	ds_list_add(global.enemyHealths, 5);
+	ds_list_add(global.enemySprites, s_enemyP);
+	ds_list_add(global.enemySpeeds, 1);
+	
+	//waiting until wave 6 starts to tag purple_unlocked as true so the message can fire correctly
+	
 	var _message_text_3 = "Cell Berserker's are attacking!";
     obj_message_log.add_message(_message_text_3);
 	var _message_text = "Proximity Mine Unlocked";
     obj_message_log.add_message(_message_text);
 	var _message_text_2 = "Wave 5 Reached";
     obj_message_log.add_message(_message_text_2);
+}
+
+if (global.currentWave >= 6 && purple_unlocked = false){
+	var _message_text = "Cell Healers are attacking!";
+    obj_message_log.add_message(_message_text);
+	var _message_text_2 = "Wave 6 Reached";
+    obj_message_log.add_message(_message_text_2);
+	
+	purple_unlocked = true;
 }
 
 if (global.currentWave >= 7 && feeder_unlocked = false){
@@ -95,8 +111,22 @@ if (global.currentWave >= 7 && feeder_unlocked = false){
 	
 	feeder_unlocked = true;
 
+	ds_list_add(global.enemyTypes, "Yellow");
+	ds_list_add(global.enemyHealths, 10);
+	ds_list_add(global.enemySprites, s_enemyY);
+	ds_list_add(global.enemySpeeds, 1);
+
 	var _message_text = "Feeder Unlocked";
     obj_message_log.add_message(_message_text);
 	var _message_text_2 = "Wave 7 Reached";
     obj_message_log.add_message(_message_text_2);
+}
+
+if (global.currentWave >= 8 && yellow_unlocked = false){
+	var _message_text = "Cell Splitters are attacking!";
+    obj_message_log.add_message(_message_text);
+	var _message_text_2 = "Wave 8 Reached";
+    obj_message_log.add_message(_message_text_2);
+	
+	yellow_unlocked = true;
 }
