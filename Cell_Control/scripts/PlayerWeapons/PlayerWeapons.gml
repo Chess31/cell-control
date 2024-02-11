@@ -14,19 +14,19 @@ function primaryWeapon(_type){
 	        break;
 			
 		case "primary2":
-			if ((ammo - 5) >= 0){
-				// Create a bullet object instance
-				var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
+			//if ((ammo - 5) >= 0){
+			//	// Create a bullet object instance
+			//	var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
 
-				// Set the bullet's direction and speed
-				bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-				bullet.speed = 16;
-				bullet.damage = 5;
-				bullet.sprite_index = s_cursor;
+			//	// Set the bullet's direction and speed
+			//	bullet.direction = point_direction(x, y, mouse_x, mouse_y);
+			//	bullet.speed = 16;
+			//	bullet.damage = 5;
+			//	bullet.sprite_index = s_cursor;
 
-				// Subtract ammo
-				ammo -= 5;
-			};
+			//	// Subtract ammo
+			//	ammo -= 5;
+			//};
 	        break;
 			
 	    default:
@@ -38,6 +38,7 @@ function primaryWeapon(_type){
 function shiftWeapon(_type){
 	switch (_type) {
 	    case "shift1":
+			//Disk launcher
 	        if ((ammo - 5) >= 0){
 				// Create a bullet object instance
 				var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
@@ -66,7 +67,21 @@ function shiftWeapon(_type){
 function altWeapon(_type){
 	switch (_type) {
 	    case "alt1":
-	        // code here
+			//Gravity ball gun
+	        if ((ammo - 10) >= 0){
+				// Create a bullet object instance
+				var bullet = instance_create_layer(x, y, "Instances", obj_gravity_ball);
+
+				// Set the bullet's direction and speed
+				bullet.direction = point_direction(x, y, mouse_x, mouse_y);
+				bullet.speed = 5;
+				bullet.damage = 1;
+				bullet.piercing = true;
+				//bullet.sprite_index = s_GravityBall;
+
+				// Subtract ammo
+				ammo -= 10;
+			};
 	        break;
 			
 		case "alt2":

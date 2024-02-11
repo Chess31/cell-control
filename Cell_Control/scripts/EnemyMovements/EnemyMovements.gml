@@ -73,9 +73,12 @@ function EnemyMovements(){
 				    var nearestBuilding = instance_nearest(x, y, obj_building);
 
 				    // Move towards the nearest building
-				    var directionToBuilding = point_direction(x, y, nearestBuilding.x, nearestBuilding.y);
-				    var moveX = lengthdir_x(enemySpeed, directionToBuilding);
-				    var moveY = lengthdir_y(enemySpeed, directionToBuilding);
+				    direction = point_direction(x, y, nearestBuilding.x, nearestBuilding.y);
+					
+					//directionToBuilding = direction;
+					
+				    var moveX = lengthdir_x(enemySpeed, direction);
+				    var moveY = lengthdir_y(enemySpeed, direction);
 
 				    // Move towards the building
 				    x += moveX;

@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_Pickup_Temp",
-    "path": "sprites/s_Pickup_Temp/s_Pickup_Temp.yy",
+    "name": "s_Temp_Alt",
+    "path": "sprites/s_Temp_Alt/s_Temp_Alt.yy",
   },
   "spriteMaskId": null,
   "visible": true,
