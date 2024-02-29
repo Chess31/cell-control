@@ -77,7 +77,7 @@ function EnemyWeapons(){
 					//Check to see if it is in range
 					if (point_distance(x,y,_nearest_enemy.x,_nearest_enemy.y) < heal_range)
 					{
-						//It was so heal all nearby enemies
+						//It was so heal all nearby enemies in range
 						for (var i = 0; i < instance_number(obj_enemy); i++)
 						{
 							var enemyInstance = instance_find(obj_enemy, i);

@@ -8,3 +8,10 @@ if (point_distance(x, y, obj_player.x, obj_player.y) < collectDistance) && keybo
 }
 
 //maybe just write an equip funciton
+
+
+
+
+//Plan for upgrades:
+//make the shiftSlot variable a integer so we can increment it with an upgrader option
+//each boss is what unlocks the next weapon slot; upgrade coins are dropped from the feeder

@@ -1,4 +1,6 @@
 //start position
+//image_xscale = 3;
+//image_yscale = 3;
 x = random(room_width);
 y = random(room_height);
 

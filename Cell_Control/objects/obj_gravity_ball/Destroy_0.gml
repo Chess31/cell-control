@@ -2,7 +2,9 @@
 // You can write your code in this editor
 
 with (obj_enemy) {
-	enemySpeed = ds_list_find_value(global.enemySpeeds, ds_list_find_index(global.enemyTypes, enemyType));
+	if (gravity_affected = true) {
+		enemySpeed = ds_list_find_value(global.enemySpeeds, ds_list_find_index(global.enemyTypes, enemyType));
+	}
 }
 
 

@@ -29,7 +29,7 @@ if (!place_meeting(x + moveX, y + moveY, obj_building)) {
 	direction += 180 + random_range(-30,30);
 }
 
-if (boss_health <= 0)
+if (enemyHealth <= 0)
 {
 	instance_destroy();
 	//drop loot function

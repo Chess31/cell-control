@@ -74,7 +74,7 @@ function altWeapon(_type){
 
 				// Set the bullet's direction and speed
 				bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-				bullet.speed = 5;
+				bullet.speed = 3;
 				bullet.damage = 1;
 				bullet.piercing = true;
 				//bullet.sprite_index = s_GravityBall;

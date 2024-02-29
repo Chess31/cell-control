@@ -8,7 +8,7 @@ if (EspawnTimer <= 0) {
 		var randomEnemy = random(ds_list_size(global.enemyTypes));
         var enemy = instance_create_layer(x, y, "Instances", obj_enemy);
         enemiesSpawned++;
-		enemy.enemyType = ds_list_find_value(global.enemyTypes, randomEnemy);
+		enemy.enemyType = "Purple";//ds_list_find_value(global.enemyTypes, randomEnemy);
 		enemy.enemyHealth = ds_list_find_value(global.enemyHealths, randomEnemy);
 		enemy.sprite_index = ds_list_find_value(global.enemySprites, randomEnemy);
 		enemy.enemySpeed = ds_list_find_value(global.enemySpeeds, randomEnemy);

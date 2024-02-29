@@ -157,7 +157,7 @@ switch (type) {
 			var _particle = instance_create_layer(x, y, "Instances", obj_particle);
 			_particle.target = _target;
 			}
-			instance_create_layer(x + irandom_range(-100, 100), y + irandom_range(-100, 100), "Instances", obj_pickup_temp);
+			instance_create_layer(x + irandom_range(-100, 100), y + irandom_range(-100, 100), "Instances", obj_shiftUnlock);
 		}
         break;
 	
