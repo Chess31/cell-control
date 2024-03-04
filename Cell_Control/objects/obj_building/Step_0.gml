@@ -137,6 +137,7 @@ switch (type) {
 			//remove it from the total building count
 			ds_list_replace(global.buildingCount, index, ds_list_find_value(global.buildingCount, index) - 1);
 			global.enemy_kill_goal += 10;
+			global.feeders_complete ++;
 			
 			if (!instance_exists(obj_coreGate)){
 			//spawn a portal math

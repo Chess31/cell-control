@@ -54,6 +54,7 @@
     {"name":"s_enemyG","order":25,"path":"sprites/s_enemyG/s_enemyG.yy",},
     {"name":"EnemyMovements","order":2,"path":"scripts/EnemyMovements/EnemyMovements.yy",},
     {"name":"s_enemy3","order":12,"path":"sprites/s_enemy3/s_enemy3.yy",},
+    {"name":"Sprite32","order":31,"path":"sprites/Sprite32/Sprite32.yy",},
     {"name":"DEBUGGER","order":11,"path":"objects/DEBUGGER/DEBUGGER.yy",},
     {"name":"obj_gravity_ball","order":1,"path":"objects/obj_gravity_ball/obj_gravity_ball.yy",},
     {"name":"s_Bullet","order":2,"path":"sprites/s_Bullet/s_Bullet.yy",},

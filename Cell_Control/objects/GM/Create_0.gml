@@ -80,3 +80,4 @@ yellow_unlocked = false;
 
 global.feeder_active = false;
 global.enemy_kill_goal = 10;
+global.feeders_complete = 0;

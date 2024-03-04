@@ -89,6 +89,7 @@
     {"id":{"name":"s_enemyG","path":"sprites/s_enemyG/s_enemyG.yy",},},
     {"id":{"name":"EnemyMovements","path":"scripts/EnemyMovements/EnemyMovements.yy",},},
     {"id":{"name":"s_enemy3","path":"sprites/s_enemy3/s_enemy3.yy",},},
+    {"id":{"name":"Sprite32","path":"sprites/Sprite32/Sprite32.yy",},},
     {"id":{"name":"DEBUGGER","path":"objects/DEBUGGER/DEBUGGER.yy",},},
     {"id":{"name":"obj_gravity_ball","path":"objects/obj_gravity_ball/obj_gravity_ball.yy",},},
     {"id":{"name":"s_Bullet","path":"sprites/s_Bullet/s_Bullet.yy",},},
