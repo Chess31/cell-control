@@ -27,12 +27,14 @@ if (EspawnTimer <= 0) {
 // Move the spawner
 motion_set(direction, speed);
 //switch to this for better collisions possibly, move_and_collide()
+//bouce off all solid objects
+move_bounce_solid(true);
 
-// Check for collisions with buildings
-if (place_meeting(x, y, obj_building)) {
-    // Reverse the direction upon collision with buildings
-    direction += 180;
-}
+//// Check for collisions with buildings
+//if (place_meeting(x, y, obj_building)) {
+//    // Reverse the direction upon collision with buildings
+//    direction += 180;
+//}
 
 // Check for collisions with room boundaries
 if (x <= 0 || x >= room_width) {
@@ -44,6 +46,22 @@ if (y <= 0 || y >= room_height) {
     // Reverse the direction upon collision with the top or bottom boundary
     direction = -direction;
 }
+
+
+//Check for being stuck
+time_until_stuck_check --;
+if (time_until_stuck_check < 0){
+	//reset timer
+	time_until_stuck_check = 100;
+	//preform stuckness check
+	if (point_distance(x, y, ox, oy) < stuck_threshold){
+		x = random(room_width);
+		y = random(room_height);
+	}
+	ox = x;
+	oy = y;
+}
+
 
 //Hold to skip logic
 if (button_down_count >= room_speed * 1.5){

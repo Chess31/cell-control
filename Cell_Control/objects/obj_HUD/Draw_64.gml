@@ -34,3 +34,34 @@ if (obj_player.shiftSlot != -1) {
 if (obj_player.altSlot != -1) {
     draw_text(display_x, display_y + 40, "Alt Attack: " + string(obj_player.altSlot));
 }
+
+//Draw the number of currently placed buildings for each type
+var margin = 25; // Margin from the screen edge
+var text_offset = 5; // Offset for text positioning
+var text_size = 16; // Font size for the text
+var line_height = text_size + 2; // Height of each line
+
+var _x = display_get_gui_width() - margin - 170; // X-coordinate for the text
+var _y = display_get_gui_height() - margin; // Initial Y-coordinate for the text
+
+// Calculate the width and height of the rectangle based on the text size
+var rect_width = 200; // Adjust as needed
+var rect_height = ds_list_size(global.buildingTypes) * line_height + 2 * text_offset;
+
+// Draw the outline
+var _rec_y = _y - line_height*(ds_list_size(global.buildingTypes)-2) - 2
+draw_rectangle(_x - 2, _rec_y, display_get_gui_width() - 2, display_get_gui_height() - 2, true);
+
+// Loop through each building type
+for (var i = 1; i < ds_list_size(global.buildingTypes); i++) {
+	var buildingType = ds_list_find_value(global.buildingTypes, i);
+	var currentCount = ds_list_find_value(global.buildingCount, i);
+	var maxCount = ds_list_find_value(global.buildingMaxNumber, i);
+    
+	// Draw the building type and its current count
+	draw_text(_x, _y, string(buildingType) + ": " + string(currentCount) + "/" + string(maxCount));
+    
+	// Update Y-coordinate for the next line
+	_y -= line_height;
+	
+}

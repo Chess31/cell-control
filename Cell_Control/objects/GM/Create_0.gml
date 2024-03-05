@@ -32,11 +32,18 @@ global.buildingCount = ds_list_create();
 global.buildingMaxNumber = ds_list_create();
 
 // Add building types, healths, sprites, and costs
+ds_list_add(global.buildingTypes, "Destroy Nearest");
+ds_list_add(global.buildingHealths, 10);
+ds_list_add(global.buildingSprites, s_DestroyNearest);
+ds_list_add(global.buildingCosts, 0);
+ds_list_add(global.buildingCount, 0);
+ds_list_add(global.buildingMaxNumber, 1);
+
 ds_list_add(global.buildingTypes, "Wall");
 ds_list_add(global.buildingHealths, 75);
 ds_list_add(global.buildingSprites, s_Wall);
 ds_list_add(global.buildingCosts, 5);
-ds_list_add(global.buildingCount, 4);
+ds_list_add(global.buildingCount, 0);
 ds_list_add(global.buildingMaxNumber, 30);
 
 ds_list_add(global.buildingTypes, "Turret");

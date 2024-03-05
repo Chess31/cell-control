@@ -6,6 +6,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"obj_item","order":27,"path":"objects/obj_item/obj_item.yy",},
+    {"name":"s_DestroyNearest","order":32,"path":"sprites/s_DestroyNearest/s_DestroyNearest.yy",},
     {"name":"s_ProxMine","order":17,"path":"sprites/s_ProxMine/s_ProxMine.yy",},
     {"name":"obj_HUD","order":2,"path":"objects/obj_HUD/obj_HUD.yy",},
     {"name":"obj_message","order":5,"path":"objects/obj_message/obj_message.yy",},

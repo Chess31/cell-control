@@ -12,6 +12,10 @@ global.currentWave = 0;
 //Movement
 speed = 3; // Adjust as needed
 direction = random(360); // Start with a random direction
+time_until_stuck_check = 100;
+stuck_threshold = 10;
+ox = x; //old x and y
+oy = y;
 
 //skip counter
 button_down_count = 0;

@@ -37,6 +37,7 @@
   },
   "resources": [
     {"id":{"name":"obj_item","path":"objects/obj_item/obj_item.yy",},},
+    {"id":{"name":"s_DestroyNearest","path":"sprites/s_DestroyNearest/s_DestroyNearest.yy",},},
     {"id":{"name":"s_ProxMine","path":"sprites/s_ProxMine/s_ProxMine.yy",},},
     {"id":{"name":"obj_HUD","path":"objects/obj_HUD/obj_HUD.yy",},},
     {"id":{"name":"obj_message","path":"objects/obj_message/obj_message.yy",},},

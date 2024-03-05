@@ -22,8 +22,24 @@ if (buildingHealth <= 0)
 }
 
 // Add custom behavior based on building type
-//mask_index = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex); ???
 switch (type) {
+	case "Destroy Nearest":
+		//remove nearest building and drop some ammo
+		var _destroy_me = instance_place(x,y, obj_building);
+		if (_destroy_me != noone){
+			with(_destroy_me){buildingHealth -= 1000000;}//ds_list_find_value(global.buildingHealths, _destroy_me.index)};
+			buildingHealth -= 10;
+			
+			// Drop a random number of items from the loot pool
+			var numberOfItems = irandom_range(1, 5);
+			for (var i = 0; i < numberOfItems; i++) {
+			    instance_create_layer(x + random_range(-10, 10), y + random_range(-10, 10), "Instances", obj_collectible);
+			}
+		} else {
+			buildingHealth -= 10;
+		}
+	break;
+	
     case "Wall":
 		//add special abilities here
         break;
@@ -68,7 +84,7 @@ switch (type) {
         // Check for opening the menu
         if (playerInRange && keyboard_check_pressed(ord("F"))) {
             //spawn menu with shop options
-			MenuCreate(x, y - 200,
+			MenuCreate(display_get_gui_width()- 230, 100,
 				[
 					["20 Health",tenHealth],
 					["Increase Max Buildings",increaseMaxBuild]
@@ -161,10 +177,6 @@ switch (type) {
 			instance_create_layer(x + irandom_range(-100, 100), y + irandom_range(-100, 100), "Instances", obj_shiftUnlock);
 		}
         break;
-	
-	case "Crafter":
-		
-		break;
 		
     // Add more cases for other building types if needed
 
