@@ -6,7 +6,11 @@ if (x < 0 || y < 0 || x > room_width || y > room_height) {
 // Check for collision with enemies and damage them
 if (place_meeting(x, y, obj_enemy)) {
     var _enemy = instance_place(x, y, obj_enemy);
-    if (piercing = false) {instance_destroy()};
+    if (piercing < 0){
+		instance_destroy()
+	} else {
+		piercing -= 1; //this probably somehow needs to not hit the same enemy again or something
+	}
     _enemy.TakeDamage(damage);
 }
 //else if (place_meeting(x, y, obj_boss_parent)){

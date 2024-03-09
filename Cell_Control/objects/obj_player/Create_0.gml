@@ -1,6 +1,6 @@
 //starting position
-x = obj_camera.view_w_half;
-y = obj_camera.view_h_half;
+x = room_width/2; //obj_camera.view_w_half;
+y = room_width/2; //obj_camera.view_h_half;
 
 //movement variables
 hSpeed = 0;
@@ -8,8 +8,9 @@ vSpeed = 0;
 walkSpeed = 6.0;
 
 //Define starting variables
-ammo = 0; // Initialize ammo
+ammo = 10; // Initialize ammo
 playerHealth = 15; //Initialize player health
+initialHealth = 15;
 global.playerAlive = true; // Player starts alive
 restartTimer = 5 * room_speed; //Initialize the restart timer
 isDeployingWall = false; //If the player is building a wall currently
@@ -20,6 +21,13 @@ global.current_upgrader = noone;
 primarySlot = "primary1"; // default weapon initially
 shiftSlot = -1; // No weapon initially
 altSlot = -1; // No weapon initially
+comboSlot = "combo1"; //test combo
+
+////Arm Variables
+//arm_end_x = x;
+//arm_end_y = y;
+//arm_active = false;
+//hook_1 = instance_create_layer(x,y,"Instances",obj_hook);
 
 // AddAmmo Function
 function AddAmmo(_amount) {

@@ -7,7 +7,7 @@ if (spawnTimer <= 0) {
     instance_create_layer(random(room_width), random(room_height), "Collectibles",obj_collectible);
     
     // Reset the spawn timer
-    spawnTimer = 50;
+    spawnTimer = 30;//50;
 }
 
 //restart game hotkey

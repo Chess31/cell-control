@@ -76,12 +76,12 @@ function altWeapon(_type){
 				bullet.direction = point_direction(x, y, mouse_x, mouse_y);
 				bullet.speed = 3;
 				bullet.damage = 1;
-				bullet.piercing = true;
+				bullet.piercing = 100;
 				//bullet.sprite_index = s_GravityBall;
 
 				// Subtract ammo
 				ammo -= 10;
-			};
+			}
 	        break;
 			
 		case "alt2":
@@ -97,7 +97,32 @@ function altWeapon(_type){
 function comboWeapon(_type){
 	switch (_type) {
 	    case "combo1":
-	        // code here
+	        if ((ammo - 5) >= 0){
+				// Calculate the direction to the player
+				var directionToCursor = point_direction(x, y, mouse_x, mouse_y);
+
+				// Set up the bullet spread parameters
+				var spreadAngle = 10;
+				var numBullets = 3;
+
+				// Loop through the number of bullets to create
+				for (var i = 0; i < numBullets; i++) {
+				    // Calculate the adjusted direction for each bullet in the spread
+				    var adjustedDirection = directionToCursor + (i - (numBullets - 1) / 2) * spreadAngle;
+
+				    // Create a bullet
+				    var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
+
+				    // Set the bullet's stats
+				    bullet.direction = adjustedDirection;
+				    bullet.speed = 8;
+					bullet.damage = 1;
+					bullet.piercing = true;
+				}
+					
+				// Subtract ammo
+				ammo -= 5;
+			}
 	        break;
 			
 		case "combo2":

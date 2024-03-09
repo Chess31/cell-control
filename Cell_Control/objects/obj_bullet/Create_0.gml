@@ -1,4 +1,4 @@
 damage = 1; //placeholder/default value
 
 //special tags
-piercing = false;
+piercing = 0;

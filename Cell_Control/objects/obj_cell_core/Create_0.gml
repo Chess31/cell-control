@@ -2,8 +2,8 @@
 cellHealth = 10;
 
 //starting position
-x = obj_camera.view_w_half;
-y = obj_camera.view_h_half;
+x = room_width/2; //obj_camera.view_w_half;
+y = room_width/2; //obj_camera.view_h_half;
 
 //starting buildings
 var wallDistance = 64; // Adjust the distance of walls from the cell core

@@ -10,4 +10,4 @@ if (instance_exists(target)){
 	instance_destroy();
 }
 
-show_debug_message(target);
+//show_debug_message(target);

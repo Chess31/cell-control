@@ -49,7 +49,7 @@ if (big_attack_cooldown <= 0) {
 	//bullet.image_xscale = 5;
 	//bullet.image_yscale = 5;
 	bullet.big = true;
-	bullet.piercing = true;
+	bullet.piercing = 100;
 	bullet.bcolor = c_blue;
 	
     big_attack_cooldown = room_speed * 5;

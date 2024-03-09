@@ -14,6 +14,23 @@ if (obj_player.restartTimer > 0) and (global.playerAlive = 0) {
 	draw_text_transformed(room_width / 2, room_height / 2, string(secondsLeft), 10, 10, 0);
 }
 
+
+
+//Health Bar
+// Set the coordinates for the health bar
+var _bar_x = display_get_gui_width()/2;
+var _bar_y = display_get_gui_height() - 20; // Adjust the y-coordinate as needed
+// Calculate the width of the bar based on player's health
+var health_percentage = clamp(obj_player.playerHealth / obj_player.initialHealth, 0, 2); // Calculate health percentage
+var bar_width = 40 * health_percentage; //constant should be the default bar length
+//draw the bar
+draw_sprite_ext(s_HealthBar, 0, _bar_x, _bar_y, bar_width, 1.2, 0, c_white, 1);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text(_bar_x, _bar_y, string(obj_player.playerHealth));
+
+
+
 // Draw HUD in the top right corner
 draw_set_color(c_white);
 draw_set_halign(fa_left);
@@ -65,3 +82,17 @@ for (var i = 1; i < ds_list_size(global.buildingTypes); i++) {
 	_y -= line_height;
 	
 }
+
+//Currently Selected Building Type
+var _spritetodraw = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex);
+var _halfspritewidth = sprite_get_width(_spritetodraw) / 2;
+var _edgespacing = 10;
+
+var scaleX = sprite_get_width(_spritetodraw) / sprite_get_width(s_Menu);
+var scaleY = sprite_get_height(_spritetodraw) / sprite_get_height(s_Menu);
+
+draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_sprite(_spritetodraw, 1, _halfspritewidth + _edgespacing, display_get_gui_height() - _halfspritewidth - _edgespacing);
+draw_rectangle((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) - _halfspritewidth, (_halfspritewidth + _edgespacing) + _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) + _halfspritewidth, true);
+draw_text((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth*2 - _edgespacing*3), string(ds_list_find_value(global.buildingTypes, global.currentBuildingIndex)) + "(" + string(ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) + ")");

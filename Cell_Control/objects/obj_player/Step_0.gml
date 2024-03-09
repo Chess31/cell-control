@@ -22,7 +22,7 @@ move_and_collide(hSpeed, vSpeed, obj_cellWall);
 // Shooting logic
 if (mouse_check_button_pressed(mb_left) && ammo > 0 && isDeployingWall = false) {
 	if (keyboard_check(vk_shift) && keyboard_check(vk_alt)){
-		comboWeapon(-1);
+		comboWeapon(comboSlot);
 	} else if (keyboard_check(vk_shift)){
 		shiftWeapon(shiftSlot);
 	} else if (keyboard_check(vk_alt)){
@@ -108,6 +108,10 @@ if (isDeployingWall) {
 		}
 	}
 }
+
+
+
+
 
 //Hot Keys for Buildings:
 if (keyboard_check_pressed(ord("1"))){global.currentBuildingIndex = 0 mod ds_list_size(global.buildingTypes)};
