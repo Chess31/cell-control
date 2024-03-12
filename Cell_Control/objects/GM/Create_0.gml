@@ -17,8 +17,6 @@ while (i < 10)
 //set up cell core
 instance_create_layer(room_width/2, room_height/2, "Instances", obj_cell_core);
 
-
-
 //Lists for buildings and enemies
 
 global.currentBuildingIndex = 0; //this number will determine which spot in each list to reference when placing a building
@@ -52,6 +50,13 @@ ds_list_add(global.buildingSprites, s_Turret);
 ds_list_add(global.buildingCosts, 15);
 ds_list_add(global.buildingCount, 0);
 ds_list_add(global.buildingMaxNumber, 15);
+
+ds_list_add(global.buildingTypes, "Hive");
+ds_list_add(global.buildingHealths, 100);
+ds_list_add(global.buildingSprites, s_Hive);
+ds_list_add(global.buildingCosts, 1);
+ds_list_add(global.buildingCount, 0);
+ds_list_add(global.buildingMaxNumber, 3);
 
 //ds_list_add(global.buildingTypes, "Crafter");
 //ds_list_add(global.buildingHealths, 20);

@@ -3,6 +3,9 @@ enemySpeed = 2; // Adjust the enemy movement speed
 shootCooldown = 150 + random(200); // Adjust the time between shots
 enemyHealth = 3; // Adjust the initial health as needed
 enemyType = "";
+canBeHit = true;
+iframes = 0;
+iframeMax = 10;
 
 //Movement things
 moveTimer = room_speed/2; // time between movements
@@ -23,4 +26,5 @@ splitEnemyType = "Red"; // Type of enemy to split into
 function TakeDamage(_damage)
 {
 	enemyHealth -= _damage;
+	canBeHit = false;
 }

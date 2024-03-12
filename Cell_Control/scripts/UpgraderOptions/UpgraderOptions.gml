@@ -28,3 +28,54 @@ function addToMaxBuildings()
 	//kill the upgrader
 	with(global.current_upgrader){buildingHealth -= 10000};
 }
+
+function developWeapon()
+{
+	MenuCreate(x, y,
+			[
+				["Disk Whisk (10)", equipDiskWhisk],
+				["Gravity Globber (20)",equipGravityGlobber],
+				["Tripler Crippler (15)",equipTriplerCrippler]
+			],
+			"Select Weapon to Build"
+		);
+}
+
+function equipDiskWhisk()
+{
+	if (obj_player.weaponTokens >= 10){
+		obj_player.shiftSlot = "shift1";
+		obj_player.weaponTokens -= 10;
+		with(global.current_upgrader){buildingHealth -= 10000};
+	} else {
+		developWeapon();
+		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
+		_warning_text.message_text = "Insufficient Materials";
+	}
+}
+
+function equipGravityGlobber()
+{
+	if (obj_player.weaponTokens >= 20){
+		obj_player.altSlot = "alt1";
+		obj_player.weaponTokens -= 20;
+		with(global.current_upgrader){buildingHealth -= 10000};
+	} else {
+		developWeapon();
+		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
+		_warning_text.message_text = "Insufficient Materials";
+	}
+}
+
+function equipTriplerCrippler()
+{
+	if (obj_player.weaponTokens >= 15){
+		obj_player.comboSlot = "combo1";
+		obj_player.weaponTokens -= 15;
+		with(global.current_upgrader){buildingHealth -= 10000};
+	} else {
+		developWeapon();
+		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
+		_warning_text.message_text = "Insufficient Materials";
+	}
+}

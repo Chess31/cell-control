@@ -29,6 +29,13 @@ if (!place_meeting(x + moveX, y + moveY, obj_building)) {
 	direction += 180 + random_range(-30,30);
 }
 
+//this (above) might just be the red enemy movement, if so then just call that instead
+
+if (iframes = 0){
+	canBeHit = true;
+	iframes = iframeMax;
+}
+
 if (enemyHealth <= 0)
 {
 	instance_destroy();

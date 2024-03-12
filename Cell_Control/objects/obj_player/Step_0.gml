@@ -20,16 +20,20 @@ vSpeed = lengthdir_y(_input_magnitude * walkSpeed, _input_direction);
 move_and_collide(hSpeed, vSpeed, obj_cellWall);
 
 // Shooting logic
-if (mouse_check_button_pressed(mb_left) && ammo > 0 && isDeployingWall = false) {
-	if (keyboard_check(vk_shift) && keyboard_check(vk_alt)){
-		comboWeapon(comboSlot);
-	} else if (keyboard_check(vk_shift)){
-		shiftWeapon(shiftSlot);
-	} else if (keyboard_check(vk_alt)){
-		altWeapon(altSlot);
-	} else {
-		primaryWeapon(primarySlot);
+if (can_shoot_cooldown <= 0){
+	if (mouse_check_button(mb_left) && ammo > 0 && isDeployingWall = false) {
+		if (keyboard_check(vk_shift) && keyboard_check(vk_alt)){
+			comboWeapon(comboSlot);
+		} else if (keyboard_check(vk_shift)){
+			shiftWeapon(shiftSlot);
+		} else if (keyboard_check(vk_alt)){
+			altWeapon(altSlot);
+		} else {
+			primaryWeapon(primarySlot);
+		}
 	}
+} else {
+	can_shoot_cooldown--;
 }
 
 // Health check

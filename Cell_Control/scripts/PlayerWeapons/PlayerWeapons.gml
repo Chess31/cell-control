@@ -11,6 +11,7 @@ function primaryWeapon(_type){
 
 			// Subtract ammo
 			ammo -= 1;
+			can_shoot_cooldown = 20;
 	        break;
 			
 		case "primary2":
@@ -51,6 +52,7 @@ function shiftWeapon(_type){
 
 				// Subtract ammo
 				ammo -= 5;
+				can_shoot_cooldown = 20;
 			};
 	        break;
 			
@@ -81,6 +83,7 @@ function altWeapon(_type){
 
 				// Subtract ammo
 				ammo -= 10;
+				can_shoot_cooldown = 60;
 			}
 	        break;
 			
@@ -97,6 +100,7 @@ function altWeapon(_type){
 function comboWeapon(_type){
 	switch (_type) {
 	    case "combo1":
+			//Shotbow type gun
 	        if ((ammo - 5) >= 0){
 				// Calculate the direction to the player
 				var directionToCursor = point_direction(x, y, mouse_x, mouse_y);
@@ -108,7 +112,7 @@ function comboWeapon(_type){
 				// Loop through the number of bullets to create
 				for (var i = 0; i < numBullets; i++) {
 				    // Calculate the adjusted direction for each bullet in the spread
-				    var adjustedDirection = directionToCursor + (i - (numBullets - 1) / 2) * spreadAngle;
+				    var adjustedDirection = (directionToCursor + (i - (numBullets - 1) / 2) * spreadAngle) + irandom_range(-5,5);
 
 				    // Create a bullet
 				    var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
@@ -117,11 +121,12 @@ function comboWeapon(_type){
 				    bullet.direction = adjustedDirection;
 				    bullet.speed = 8;
 					bullet.damage = 1;
-					bullet.piercing = true;
+					bullet.piercing = 2;
 				}
 					
 				// Subtract ammo
 				ammo -= 5;
+				can_shoot_cooldown = 25;
 			}
 	        break;
 			

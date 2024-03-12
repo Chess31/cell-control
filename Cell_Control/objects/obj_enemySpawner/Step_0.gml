@@ -4,21 +4,32 @@
 if (EspawnTimer <= 0) {
     // Check if the maximum number of enemies in a wave has been reached
 	//make this a for loop if you want them all to spawn at once
-    if (enemiesSpawned < maxEnemiesInWave + global.currentWave) {
-        // Spawn an enemy
-		var randomEnemy = random(ds_list_size(global.enemyTypes));
-        var enemy = instance_create_layer(x, y, "Instances", obj_enemy);
-        enemiesSpawned++;
-		enemy.enemyType = ds_list_find_value(global.enemyTypes, randomEnemy);
-		enemy.enemyHealth = ds_list_find_value(global.enemyHealths, randomEnemy);
-		enemy.sprite_index = ds_list_find_value(global.enemySprites, randomEnemy);
-		enemy.enemySpeed = ds_list_find_value(global.enemySpeeds, randomEnemy);
-    } else {
-        // Reset the enemy count and restart the spawn timer
-        enemiesSpawned = 0;
-        EspawnTimer = max(timeBetweenSpawns - (global.currentWave * 20), 100);
+    if ((global.currentWave + 1) mod 10 != 0){
+		if (enemiesSpawned < maxEnemiesInWave + global.currentWave) {
+	        // Spawn an enemy
+			var randomEnemy = random(ds_list_size(global.enemyTypes));
+	        var enemy = instance_create_layer(x, y, "Instances", obj_enemy);
+	        enemiesSpawned++;
+			enemy.enemyType = ds_list_find_value(global.enemyTypes, randomEnemy);
+			enemy.enemyHealth = ds_list_find_value(global.enemyHealths, randomEnemy);
+			enemy.sprite_index = ds_list_find_value(global.enemySprites, randomEnemy);
+			enemy.enemySpeed = ds_list_find_value(global.enemySpeeds, randomEnemy);
+	    } else {
+	        // Reset the enemy count and restart the spawn timer
+	        enemiesSpawned = 0;
+	        EspawnTimer = max(timeBetweenSpawns - (global.currentWave * 20), 100);
+			global.currentWave++;
+	    }
+	} else {
+		//spawn the next boss and increment the wave
+		EspawnTimer = max(timeBetweenSpawns - (global.currentWave * 20), 100);
 		global.currentWave++;
-    }
+		var _message_text = "A Virus Has Entered The Cell";
+	    obj_message_log.add_message(_message_text);
+		var _message_text_2 = "Wave " + string(global.currentWave) + " Reached:";
+	    obj_message_log.add_message(_message_text_2);
+		instance_create_layer(x, y, "Instances", obj_boss_blue);
+	}
 } else {
     // Decrement the spawn timer
     EspawnTimer--;
@@ -30,12 +41,6 @@ motion_set(direction, speed);
 //bouce off all solid objects
 move_bounce_solid(true);
 
-//// Check for collisions with buildings
-//if (place_meeting(x, y, obj_building)) {
-//    // Reverse the direction upon collision with buildings
-//    direction += 180;
-//}
-
 // Check for collisions with room boundaries
 if (x <= 0 || x >= room_width) {
     // Reverse the direction upon collision with the left or right boundary
@@ -46,7 +51,6 @@ if (y <= 0 || y >= room_height) {
     // Reverse the direction upon collision with the top or bottom boundary
     direction = -direction;
 }
-
 
 //Check for being stuck
 time_until_stuck_check --;
@@ -61,7 +65,6 @@ if (time_until_stuck_check < 0){
 	ox = x;
 	oy = y;
 }
-
 
 //Hold to skip logic
 if (button_down_count >= room_speed * 1.5){

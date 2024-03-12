@@ -4,7 +4,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 // Draw the HUD
-draw_text(10, 10, "Ammo: " + string(obj_player.ammo) + " Health: " + string(obj_player.playerHealth) + " Wave: " + string(max(global.currentWave,1)));
+draw_text(10, 10, "Ammo: " + string(obj_player.ammo) + " Weapon Components: " + string(obj_player.weaponTokens) + " Wave: " + string(max(global.currentWave,1)));
 
 // Draw the countdown timer in the HUD
 if (obj_player.restartTimer > 0) and (global.playerAlive = 0) {

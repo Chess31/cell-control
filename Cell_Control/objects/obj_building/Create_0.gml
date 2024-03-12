@@ -23,3 +23,9 @@ primed = false;
 
 //Feeder specific variables
 enemies_defeated = 0;
+
+//Hive specific variables
+ammo = 0;
+//interactionRange is used from the upgrader
+my_drones = 0;
+max_drones = 1;

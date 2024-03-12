@@ -19,5 +19,3 @@ bullet_spacing = 3; //time between each bullet
 
 // Inherit the parent event
 event_inherited();
-
-//make this also a child of the enmy object somehow

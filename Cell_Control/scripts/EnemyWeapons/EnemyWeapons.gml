@@ -81,7 +81,7 @@ function EnemyWeapons(){
 						for (var i = 0; i < instance_number(obj_enemy); i++)
 						{
 							var enemyInstance = instance_find(obj_enemy, i);
-							if (point_distance(enemyInstance.x, enemyInstance.y, x, y) <= heal_range) && (enemyInstance.enemyType != "Purple")
+							if (point_distance(enemyInstance.x, enemyInstance.y, x, y) <= heal_range) && (enemyInstance.enemyType != "Purple") && (enemyInstance.enemyType != "boss")
 							{
 								enemyInstance.enemyHealth += heal_per_hit;
 							}

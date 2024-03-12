@@ -10,7 +10,7 @@ if (playerInRange) {
     
     // Draw the text centered above the building
     draw_set_color(c_white);
-	draw_text(centerX, y - 80, textToShow);
+	draw_text(x, y - 80, textToShow);
 	}
 }
 
@@ -25,4 +25,11 @@ if (type = "Feeder"){
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	draw_text(x, y, string(global.enemy_kill_goal - enemies_defeated));
+}
+
+if (type = "Hive"){
+	draw_set_color(c_black);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text(x, y, string(ammo));
 }

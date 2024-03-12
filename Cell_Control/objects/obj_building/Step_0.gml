@@ -87,8 +87,8 @@ switch (type) {
 			MenuCreate(display_get_gui_width()- 230, 100,
 				[
 					["20 Health",tenHealth],
-					["Increase Max Buildings",increaseMaxBuild]
-					//["Increase Max Buildings",increaseMaxBuild]
+					["Increase Max Buildings",increaseMaxBuild],
+					["Develop Weapon",developWeapon]
 				],
 				"Select Upgrade"
 			);
@@ -152,33 +152,63 @@ switch (type) {
 			instance_destroy();
 			//remove it from the total building count
 			ds_list_replace(global.buildingCount, index, ds_list_find_value(global.buildingCount, index) - 1);
+			
+			//increment feeder variables
 			global.enemy_kill_goal += 10;
 			global.feeders_complete ++;
 			
-			if (!instance_exists(obj_coreGate)){
-			//spawn a portal math
-			var spawnX, spawnY;
-			// Determine whether to spawn on the horizontal or vertical edge
-			if (irandom(1) == 1) {
-			    // Spawn on the left or right edge
-			    spawnX = choose(0, room_width);
-			    spawnY = random(room_height);
-			} else {
-			    // Spawn on the top or bottom edge
-			    spawnX = random(room_width);
-			    spawnY = choose(0, room_height);
+			//drop weapon tokens
+			for (var i = 0; i < irandom_range(5,15); i++){
+				instance_create_layer(x + irandom_range(-200, 200), y + irandom_range(-200, 200), "Instances", obj_weapon_token);
 			}
+			
+			
+			//if (!instance_exists(obj_coreGate)){
+			////spawn a portal math
+			//var spawnX, spawnY;
+			//// Determine whether to spawn on the horizontal or vertical edge
+			//if (irandom(1) == 1) {
+			//    // Spawn on the left or right edge
+			//    spawnX = choose(0, room_width);
+			//    spawnY = random(room_height);
+			//} else {
+			//    // Spawn on the top or bottom edge
+			//    spawnX = random(room_width);
+			//    spawnY = choose(0, room_height);
+			//}
 
-		    // Create the gate and weapon drop
-		    var _target = instance_create_layer(spawnX, spawnY, "Instances", obj_coreGate);
-			var _particle = instance_create_layer(x, y, "Instances", obj_particle);
-			_particle.target = _target;
-			}
-			instance_create_layer(x + irandom_range(-100, 100), y + irandom_range(-100, 100), "Instances", obj_shiftUnlock);
+		    //// Create the gate and weapon drop
+		    //var _target = instance_create_layer(spawnX, spawnY, "Instances", obj_coreGate);
+			//var _particle = instance_create_layer(x, y, "Instances", obj_particle);
+			//_particle.target = _target;
+			//}
+			//instance_create_layer(x + irandom_range(-100, 100), y + irandom_range(-100, 100), "Instances", obj_shiftUnlock);
 		}
         break;
 		
     // Add more cases for other building types if needed
+	case "Hive":
+		if (my_drones < max_drones){
+			var _new_drone = instance_create_layer(x,y,"Instances",obj_drone)
+			_new_drone.home = id;
+			my_drones++;
+		}
+		
+		var distanceToPlayer = point_distance(x, y, obj_player.x, obj_player.y);
+
+		if (distanceToPlayer <= interactionRange) {
+			playerInRange = true;
+		    image_index = 1;
+		} else {
+			playerInRange = false;
+			image_index = 0;
+		}
+
+		if (playerInRange = true) and (keyboard_check_pressed(ord("F"))){
+			obj_player.ammo += ammo;
+			ammo -= ammo;
+		}
+		break;
 
     default:
         // Default behavior (if type is not recognized)
