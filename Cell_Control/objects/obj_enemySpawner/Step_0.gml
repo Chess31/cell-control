@@ -81,8 +81,9 @@ switch (state) {
 	case "CanDie":
 		//Final Boss fight
 		with (obj_enemy) {
-			if (id != other.id)
-			instance_destroy();
+			if (id != other.id){
+				instance_destroy();
+			}
 		}
 		
 		//Attacks
