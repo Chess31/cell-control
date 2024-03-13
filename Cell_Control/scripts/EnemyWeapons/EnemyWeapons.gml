@@ -83,7 +83,13 @@ function EnemyWeapons(){
 							var enemyInstance = instance_find(obj_enemy, i);
 							if (point_distance(enemyInstance.x, enemyInstance.y, x, y) <= heal_range) && (enemyInstance.enemyType != "Purple") && (enemyInstance.enemyType != "boss")
 							{
-								enemyInstance.enemyHealth += heal_per_hit;
+								//heal them up to three times their base health
+								if (enemyInstance.enemyHealth + heal_per_hit < (ds_list_find_value(global.enemyHealths, ds_list_find_index(global.enemyTypes, enemyInstance.enemyType)) * 3))
+								{
+									enemyInstance.enemyHealth += heal_per_hit;
+								} else {
+									enemyInstance.enemyHealth = ds_list_find_value(global.enemyHealths, ds_list_find_index(global.enemyTypes, enemyInstance.enemyType)) * 3;
+								}
 							}
 						}
 					}
@@ -100,8 +106,8 @@ function EnemyWeapons(){
 				    var directionToPlayer = point_direction(x, y, obj_player.x, obj_player.y);
 
 				    // Set up the bullet spread parameters
-				    var spreadAngle = 45;
-				    var numBullets = 8;
+				    var spreadAngle = 60;
+				    var numBullets = 6;
 
 				    // Loop through the number of bullets to create
 				    for (var i = 0; i < numBullets; i++) {
@@ -117,7 +123,7 @@ function EnemyWeapons(){
 						bullet.bcolor = c_yellow;
 				    }
 					// Reset the shoot cooldown
-					shootCooldown = 150 + random(300); // Adjust the time between shots
+					shootCooldown = 200 + random(300); // Adjust the time between shots
 				}
 			break;
 		

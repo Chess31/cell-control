@@ -38,7 +38,7 @@ switch (type) {
 		} else {
 			buildingHealth -= 10;
 		}
-	break;
+		break;
 	
     case "Wall":
 		//add special abilities here
@@ -84,14 +84,7 @@ switch (type) {
         // Check for opening the menu
         if (playerInRange && keyboard_check_pressed(ord("F"))) {
             //spawn menu with shop options
-			MenuCreate(display_get_gui_width()- 230, 100,
-				[
-					["20 Health",tenHealth],
-					["Increase Max Buildings",increaseMaxBuild],
-					["Develop Weapon",developWeapon]
-				],
-				"Select Upgrade"
-			);
+			mainUpgraderOptions();
         }
 		//instance find is the way to delete this building from the menu probably
         break;
@@ -159,7 +152,7 @@ switch (type) {
 			
 			//drop weapon tokens
 			for (var i = 0; i < irandom_range(5,15); i++){
-				instance_create_layer(x + irandom_range(-200, 200), y + irandom_range(-200, 200), "Instances", obj_weapon_token);
+				instance_create_layer(x + irandom_range(-120, 120), y + irandom_range(-120, 120), "Instances", obj_weapon_token);
 			}
 			
 			

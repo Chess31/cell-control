@@ -1,3 +1,15 @@
+function mainUpgraderOptions()
+{
+	MenuCreate(display_get_gui_width()- 230, 100,
+				[
+					["20 Health",tenHealth],
+					["Increase Max Buildings",increaseMaxBuild],
+					["Develop Weapon",developWeapon]
+				],
+				"Select Upgrade"
+			);
+}
+
 function tenHealth()
 {
 	obj_player.playerHealth += 20;
@@ -9,14 +21,15 @@ function increaseMaxBuild()
 {
 	//select available upgrades (not upgrader)
 	var _random_number = irandom(ds_list_size(global.buildingTypes) - 1);
-	while ((_random_number = ds_list_find_index(global.buildingTypes, "Upgrader")) || (_random_number = ds_list_find_index(global.buildingTypes, "Feeder"))){
+	while ((_random_number = ds_list_find_index(global.buildingTypes, "Upgrader")) || (_random_number = ds_list_find_index(global.buildingTypes, "Feeder")) || (_random_number = ds_list_find_index(global.buildingTypes, "Destroy Nearest"))){
 		_random_number = irandom(ds_list_size(global.buildingTypes) - 1);
 	}
 	var _random_building_1 = ds_list_find_value(global.buildingTypes, _random_number);
 	global.random_building = _random_number;
 	MenuCreate(x, y,
 			[
-				["Type: " + string(_random_building_1),addToMaxBuildings]
+				["Type: " + string(_random_building_1),addToMaxBuildings],
+				["Back",mainUpgraderOptions]
 			],
 			"Increase Max Buildings"
 		);
@@ -35,7 +48,8 @@ function developWeapon()
 			[
 				["Disk Whisk (10)", equipDiskWhisk],
 				["Gravity Globber (20)",equipGravityGlobber],
-				["Tripler Crippler (15)",equipTriplerCrippler]
+				["Tripler Crippler (15)",equipTriplerCrippler],
+				["Back",mainUpgraderOptions]
 			],
 			"Select Weapon to Build"
 		);

@@ -31,9 +31,11 @@ if (!place_meeting(x + moveX, y + moveY, obj_building)) {
 
 //this (above) might just be the red enemy movement, if so then just call that instead
 
-if (iframes = 0){
+if (iframes > 0){
+	canBeHit = false;
+	iframes--;
+} else {
 	canBeHit = true;
-	iframes = iframeMax;
 }
 
 if (enemyHealth <= 0)

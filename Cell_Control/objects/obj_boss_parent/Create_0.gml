@@ -18,5 +18,5 @@ iframeMax = 10;
 function TakeDamage(_damage)
 {
 	enemyHealth -= _damage;
-	canBeHit = false;
+	iframes = iframeMax;
 }

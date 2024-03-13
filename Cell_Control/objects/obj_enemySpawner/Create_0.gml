@@ -4,7 +4,7 @@ y = random(room_height);
 
 // Enemy Waves
 EspawnTimer = 100;
-timeBetweenSpawns = 2000; // Adjust as needed, represents the time between enemy spawns in steps
+timeBetweenSpawns = 2000; // represents the time between enemy spawns in steps
 maxEnemiesInWave = 3;   // count for starting wave
 enemiesSpawned = 0;
 global.currentWave = 0;
@@ -19,3 +19,19 @@ oy = y;
 
 //skip counter
 button_down_count = 0;
+
+//set up invinsibility and end game mechanics
+enemySpeed = 4;
+moveTimer = 0;
+shootCooldown = 300;
+enemyType = "boss"
+gravity_affected = false;
+enemyHealth = 300;
+state = "Invinceable";
+canBeHit = true; //keep this false just so the takedamage function does not break
+
+function TakeDamage(_damage)
+{
+	enemyHealth -= _damage;
+	//canBeHit = false;
+}

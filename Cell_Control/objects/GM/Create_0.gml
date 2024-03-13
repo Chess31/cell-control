@@ -51,13 +51,6 @@ ds_list_add(global.buildingCosts, 15);
 ds_list_add(global.buildingCount, 0);
 ds_list_add(global.buildingMaxNumber, 15);
 
-ds_list_add(global.buildingTypes, "Hive");
-ds_list_add(global.buildingHealths, 100);
-ds_list_add(global.buildingSprites, s_Hive);
-ds_list_add(global.buildingCosts, 1);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 3);
-
 //ds_list_add(global.buildingTypes, "Crafter");
 //ds_list_add(global.buildingHealths, 20);
 //ds_list_add(global.buildingSprites, s_Crafter);
@@ -69,6 +62,7 @@ forge_unlocked = false;
 upgrader_unlocked = false;
 proximity_mine_unlocked = false;
 feeder_unlocked = false;
+hive_unlocked = false;
 
 //Enemy Stats
 global.enemyTypes = ds_list_create();

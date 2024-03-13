@@ -4,7 +4,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 // Draw the HUD
-draw_text(10, 10, "Ammo: " + string(obj_player.ammo) + " Weapon Components: " + string(obj_player.weaponTokens) + " Wave: " + string(max(global.currentWave,1)));
+draw_text(10, 10, "Ammo: " + string(obj_player.ammo) + " Weapon Components: " + string(obj_player.weaponTokens) + " Wave: " + string(max(global.currentWave,1)) + " / 50");
 
 // Draw the countdown timer in the HUD
 if (obj_player.restartTimer > 0) and (global.playerAlive = 0) {
@@ -29,8 +29,6 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_text(_bar_x, _bar_y, string(obj_player.playerHealth));
 
-
-
 // Draw HUD in the top right corner
 draw_set_color(c_white);
 draw_set_halign(fa_left);
@@ -50,6 +48,11 @@ if (obj_player.shiftSlot != -1) {
 // Draw alt weapon
 if (obj_player.altSlot != -1) {
     draw_text(display_x, display_y + 40, "Alt Attack: " + string(obj_player.altSlot));
+}
+
+// Draw combo weapon
+if (obj_player.comboSlot != -1) {
+    draw_text(display_x, display_y + 60, "Combo Attack: " + string(obj_player.comboSlot));
 }
 
 //Draw the number of currently placed buildings for each type
@@ -96,3 +99,10 @@ draw_set_halign(fa_left);
 draw_sprite(_spritetodraw, 1, _halfspritewidth + _edgespacing, display_get_gui_height() - _halfspritewidth - _edgespacing);
 draw_rectangle((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) - _halfspritewidth, (_halfspritewidth + _edgespacing) + _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) + _halfspritewidth, true);
 draw_text((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth*2 - _edgespacing*3), string(ds_list_find_value(global.buildingTypes, global.currentBuildingIndex)) + "(" + string(ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) + ")");
+
+//Victory Replaces Countdown
+if (!instance_exists(obj_enemySpawner)){
+	draw_set_halign(fa_center);
+	draw_set_color(c_aqua);
+	draw_text(obj_camera.view_w_half, 10, "Victory");
+}

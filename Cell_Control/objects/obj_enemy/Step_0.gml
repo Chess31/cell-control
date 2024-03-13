@@ -7,7 +7,9 @@ if (enemyHealth <= 0) {
     instance_destroy();
 }
 
-if (iframes = 0){
+if (iframes > 0){
+	canBeHit = false;
+	iframes--;
+} else {
 	canBeHit = true;
-	iframes = iframeMax;
 }

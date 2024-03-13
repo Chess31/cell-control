@@ -41,6 +41,7 @@ switch (status) {
 			instance_destroy();
 		}
         break;
+
     default:
         // code here
         break;

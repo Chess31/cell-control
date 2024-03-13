@@ -26,5 +26,5 @@ splitEnemyType = "Red"; // Type of enemy to split into
 function TakeDamage(_damage)
 {
 	enemyHealth -= _damage;
-	canBeHit = false;
+	iframes = iframeMax;
 }
