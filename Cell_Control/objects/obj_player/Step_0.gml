@@ -18,6 +18,11 @@ vSpeed = lengthdir_y(_input_magnitude * walkSpeed, _input_direction);
 
 //move the player based on movement calculation
 move_and_collide(hSpeed, vSpeed, obj_cellWall);
+//Make sure the player is in the room bounds
+x = min(x, room_width);
+y = min(y, room_height);
+x = max(x, 0);
+y = max(y, 0);
 
 // Shooting logic
 if (can_shoot_cooldown <= 0){
