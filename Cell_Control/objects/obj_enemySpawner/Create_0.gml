@@ -32,6 +32,8 @@ canBeHit = true; //keep this false just so the takedamage function does not brea
 
 function TakeDamage(_damage)
 {
-	enemyHealth -= _damage;
-	//canBeHit = false;
+	if (state != "Invinceable")
+	{
+		enemyHealth -= _damage;
+	}
 }
