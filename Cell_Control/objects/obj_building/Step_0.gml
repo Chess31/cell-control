@@ -184,9 +184,16 @@ switch (type) {
 		if (my_drones < max_drones){
 			var _new_drone = instance_create_layer(x,y,"Instances",obj_drone)
 			_new_drone.home = id;
+			_new_drone.state = drone_mode;
+			_new_drone.capacity = my_drone_capacity;
+			//fill drone from reserves if not collecting
+			if (drone_mode != "collecting") && (ammo >= my_drone_capacity){
+				ammo -= my_drone_capacity;
+				_new_drone.current_collection = my_drone_capacity;
+			}
 			my_drones++;
 		}
-		
+
 		var distanceToPlayer = point_distance(x, y, obj_player.x, obj_player.y);
 
 		if (distanceToPlayer <= interactionRange) {
@@ -198,8 +205,8 @@ switch (type) {
 		}
 
 		if (playerInRange = true) and (keyboard_check_pressed(ord("F"))){
-			obj_player.ammo += ammo;
-			ammo -= ammo;
+			global.hiveInActiveMenu = id;
+			hive_options_menu();
 		}
 		break;
 

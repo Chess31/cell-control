@@ -83,6 +83,7 @@
     {"id":{"name":"obj_cell_core","path":"objects/obj_cell_core/obj_cell_core.yy",},},
     {"id":{"name":"obj_drone","path":"objects/obj_drone/obj_drone.yy",},},
     {"id":{"name":"s_enemyB","path":"sprites/s_enemyB/s_enemyB.yy",},},
+    {"id":{"name":"HiveOptions","path":"scripts/HiveOptions/HiveOptions.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"obj_StartController","path":"objects/obj_StartController/obj_StartController.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},

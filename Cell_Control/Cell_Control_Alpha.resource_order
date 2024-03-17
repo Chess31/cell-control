@@ -44,6 +44,7 @@
     {"name":"obj_cell_core","order":17,"path":"objects/obj_cell_core/obj_cell_core.yy",},
     {"name":"obj_drone","order":31,"path":"objects/obj_drone/obj_drone.yy",},
     {"name":"s_enemyB","order":3,"path":"sprites/s_enemyB/s_enemyB.yy",},
+    {"name":"HiveOptions","order":11,"path":"scripts/HiveOptions/HiveOptions.yy",},
     {"name":"obj_enemy","order":5,"path":"objects/obj_enemy/obj_enemy.yy",},
     {"name":"obj_StartController","order":7,"path":"objects/obj_StartController/obj_StartController.yy",},
     {"name":"obj_camera","order":1,"path":"objects/obj_camera/obj_camera.yy",},

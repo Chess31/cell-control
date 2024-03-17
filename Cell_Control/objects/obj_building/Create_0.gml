@@ -6,10 +6,10 @@ constructionCost = 5;
 maxBuildingCount = 1;
 
 //Turret specific variables
-maxDetectionRange = 300
-turretBulletSpeed = 6
-fireTimer = 0
-firingRate = room_speed / 3
+maxDetectionRange = 300;
+turretBulletSpeed = 6;
+fireTimer = 0;
+firingRate = room_speed / 3;
 
 //Upgrader specific variables
 interactionRange = 100;
@@ -27,5 +27,7 @@ enemies_defeated = 0;
 //Hive specific variables
 ammo = 0;
 //interactionRange is used from the upgrader
+drone_mode = "collecting";
 my_drones = 0;
+my_drone_capacity = 25;
 max_drones = 1;

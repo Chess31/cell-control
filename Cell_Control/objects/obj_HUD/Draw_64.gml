@@ -14,8 +14,6 @@ if (obj_player.restartTimer > 0) and (global.playerAlive = 0) {
 	draw_text_transformed(room_width / 2, room_height / 2, string(secondsLeft), 10, 10, 0);
 }
 
-
-
 //Health Bar
 // Set the coordinates for the health bar
 var _bar_x = display_get_gui_width()/2;
