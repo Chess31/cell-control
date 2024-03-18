@@ -4,7 +4,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 // Draw the HUD
-draw_text(10, 10, "Ammo: " + string(obj_player.ammo) + " Weapon Components: " + string(obj_player.weaponTokens) + " Wave: " + string(max(global.currentWave,1)) + " / 50");
+draw_text(10, 10, "Ammo: " + string(obj_player.ammo) + " Weapon Components: " + string(obj_player.weaponTokens) + " Wave: " + string(global.currentWave) + " / 50");
 
 // Draw the countdown timer in the HUD
 if (obj_player.restartTimer > 0) and (global.playerAlive = 0) {
@@ -53,35 +53,37 @@ if (obj_player.comboSlot != -1) {
     draw_text(display_x, display_y + 60, "Combo Attack: " + string(obj_player.comboSlot));
 }
 
-//Draw the number of currently placed buildings for each type
-var margin = 25; // Margin from the screen edge
-var text_offset = 5; // Offset for text positioning
-var text_size = 16; // Font size for the text
-var line_height = text_size + 2; // Height of each line
+if (global.extra_info = true){
+	//Draw the number of currently placed buildings for each type
+	var margin = 25; // Margin from the screen edge
+	var text_offset = 5; // Offset for text positioning
+	var text_size = 16; // Font size for the text
+	var line_height = text_size + 2; // Height of each line
 
-var _x = display_get_gui_width() - margin - 170; // X-coordinate for the text
-var _y = display_get_gui_height() - margin; // Initial Y-coordinate for the text
+	var _x = display_get_gui_width() - margin - 170; // X-coordinate for the text
+	var _y = display_get_gui_height() - margin; // Initial Y-coordinate for the text
 
-// Calculate the width and height of the rectangle based on the text size
-var rect_width = 200; // Adjust as needed
-var rect_height = ds_list_size(global.buildingTypes) * line_height + 2 * text_offset;
+	// Calculate the width and height of the rectangle based on the text size
+	var rect_width = 200; // Adjust as needed
+	var rect_height = ds_list_size(global.buildingTypes) * line_height + 2 * text_offset;
 
-// Draw the outline
-var _rec_y = _y - line_height*(ds_list_size(global.buildingTypes)-2) - 2
-draw_rectangle(_x - 2, _rec_y, display_get_gui_width() - 2, display_get_gui_height() - 2, true);
+	// Draw the outline
+	var _rec_y = _y - line_height*(ds_list_size(global.buildingTypes)-2) - 2
+	draw_rectangle(_x - 2, _rec_y, display_get_gui_width() - 2, display_get_gui_height() - 2, true);
 
-// Loop through each building type
-for (var i = 1; i < ds_list_size(global.buildingTypes); i++) {
-	var buildingType = ds_list_find_value(global.buildingTypes, i);
-	var currentCount = ds_list_find_value(global.buildingCount, i);
-	var maxCount = ds_list_find_value(global.buildingMaxNumber, i);
+	// Loop through each building type
+	for (var i = 1; i < ds_list_size(global.buildingTypes); i++) {
+		var buildingType = ds_list_find_value(global.buildingTypes, i);
+		var currentCount = ds_list_find_value(global.buildingCount, i);
+		var maxCount = ds_list_find_value(global.buildingMaxNumber, i);
     
-	// Draw the building type and its current count
-	draw_text(_x, _y, string(buildingType) + ": " + string(currentCount) + "/" + string(maxCount));
+		// Draw the building type and its current count
+		draw_text(_x, _y, string(buildingType) + ": " + string(currentCount) + "/" + string(maxCount));
     
-	// Update Y-coordinate for the next line
-	_y -= line_height;
+		// Update Y-coordinate for the next line
+		_y -= line_height;
 	
+	}
 }
 
 //Currently Selected Building Type

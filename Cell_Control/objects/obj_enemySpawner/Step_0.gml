@@ -11,7 +11,6 @@ switch (state) {
 		// Check if it's time to spawn a new wave
 		if (EspawnTimer <= 0) {
 		    // Check if the maximum number of enemies in a wave has been reached
-			//make this a for loop if you want them all to spawn at once
 		    if ((global.currentWave + 1) mod 10 != 0){
 				if (enemiesSpawned < min(maxEnemiesInWave + global.currentWave, 30)) { //max per wave is 30 enemies
 			        // Spawn an enemy
@@ -32,10 +31,12 @@ switch (state) {
 				//spawn the next boss and increment the wave
 				EspawnTimer = max(timeBetweenSpawns - (global.currentWave * 20), 100);
 				global.currentWave++;
+				//send the log message
 				var _message_text = "A Virus Has Entered The Cell";
 			    obj_message_log.add_message(_message_text);
 				var _message_text_2 = "Wave " + string(global.currentWave) + " Reached:";
 			    obj_message_log.add_message(_message_text_2);
+				//spawn the actual boss instance
 				instance_create_layer(x, y, "Instances", obj_boss_blue);
 			}
 		} else {

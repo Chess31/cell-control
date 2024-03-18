@@ -7,7 +7,7 @@ if (spawnTimer <= 0) {
     instance_create_layer(random(room_width), random(room_height), "Collectibles",obj_collectible);
     
     // Reset the spawn timer
-    spawnTimer = 30;//50;
+    spawnTimer = 25;//50;
 }
 
 //restart game hotkey
@@ -17,6 +17,11 @@ if (keyboard_check_pressed(vk_backspace))
 }
 
 //Unlock enemies and buildings on specific waves (enemy types should be added the wave before they need to show up)
+if (global.currentWave = 1 && wave_1_message_sent = false){
+	alarm[0] = 1;
+	wave_1_message_sent = true;
+}
+
 if (global.currentWave >= 2 && blue_unlocked = false){
 	ds_list_add(global.enemyTypes, "Blue");
 	ds_list_add(global.enemyHealths, 5);

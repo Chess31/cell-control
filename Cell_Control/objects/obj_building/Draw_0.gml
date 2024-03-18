@@ -1,7 +1,7 @@
 draw_self();
 
 //Draw Advanced HUD when tab is pressed
-if (keyboard_check(vk_tab)){
+if (global.extra_info = true){
 	draw_set_color(c_white);
 	draw_text(x, y + 35, string(buildingHealth) + "/" + string(ds_list_find_value(global.buildingHealths, index)));
 }

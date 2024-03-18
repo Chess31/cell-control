@@ -76,8 +76,9 @@ ds_list_add(global.enemyHealths, 3);
 ds_list_add(global.enemySprites, s_enemyR);
 ds_list_add(global.enemySpeeds, 2);
 
-//display wave one message after the message log object is created (it doesn't exist yet)
-alarm[0] = 1;
+////display wave one message after the message log object is created (it doesn't exist yet)
+wave_1_message_sent = false;
+//alarm[0] = 1;
 
 blue_unlocked = false;
 green_unlocked = false;

@@ -8,7 +8,7 @@ vSpeed = 0;
 walkSpeed = 6.0;
 
 //Define starting variables
-ammo = 10; // Initialize ammo
+ammo = 100000; // Initialize ammo
 playerHealth = 15; //Initialize player health
 initialHealth = 15;
 weaponTokens = 0;

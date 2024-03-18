@@ -5,13 +5,13 @@ if (playerBullet != noone) and (type != "Turret"){
     instance_destroy(playerBullet);
 }
 
-// Check for collisions with enemy bullets
-var enemyBullet = instance_place(x, y, obj_enemy_bullet); //if an enemy bullet is on our x and y
-if (enemyBullet != noone) {
-    // Destroy the enemy bullet
-	buildingHealth -= enemyBullet.damage;
-	if (enemyBullet.piercing = false) {instance_destroy(enemyBullet)};
-}
+//// Check for collisions with enemy bullets
+//var enemyBullet = instance_place(x, y, obj_enemy_bullet); //if an enemy bullet is on our x and y
+//if (enemyBullet != noone) {
+//    // Destroy the enemy bullet
+//	buildingHealth -= enemyBullet.damage;
+//	if (enemyBullet.piercing = false) {instance_destroy(enemyBullet)};
+//}
 
 //Building Health Check
 if (buildingHealth <= 0)
