@@ -1,12 +1,17 @@
+//test math for sprite
+image_xscale = 2;
+image_yscale = 2;
+image_speed = 0;
+
 //starting health
-cellHealth = 10;
+cellHealth = 25;
 
 //starting position
 x = room_width/2; //obj_camera.view_w_half;
 y = room_width/2; //obj_camera.view_h_half;
 
 //starting buildings
-var wallDistance = 64; // Adjust the distance of walls from the cell core
+var wallDistance = 128; // Adjust the distance of walls from the cell core
 
 // Place walls in the four cardinal directions
 var wallEast = instance_create_layer(x + wallDistance, y, "Instances", obj_building);

@@ -136,13 +136,18 @@ if (global.currentWave >= 8 && yellow_unlocked = false){
 	yellow_unlocked = true;
 }
 
-if (global.currentWave >= 1 && hive_unlocked = false){
+if (global.currentWave >= 0 && hive_unlocked = false){
 	ds_list_add(global.buildingTypes, "Hive");
 	ds_list_add(global.buildingHealths, 100);
 	ds_list_add(global.buildingSprites, s_Hive);
 	ds_list_add(global.buildingCosts, 1);
 	ds_list_add(global.buildingCount, 0);
 	ds_list_add(global.buildingMaxNumber, 3);
+
+	var _message_text = "Hive Unlocked";
+    obj_message_log.add_message(_message_text);
+	var _message_text_2 = "Wave 12 Reached";
+    obj_message_log.add_message(_message_text_2);
 
 	hive_unlocked = true;
 }

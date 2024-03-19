@@ -7,6 +7,7 @@
     {"name":"Buildings","order":11,"path":"folders/Sprites/Buildings.yy",},
     {"name":"Character","order":10,"path":"folders/Sprites/Character.yy",},
     {"name":"Enemies","order":12,"path":"folders/Sprites/Enemies.yy",},
+    {"name":"New_Style","order":17,"path":"folders/Sprites/New_Style.yy",},
     {"name":"Weapons","order":13,"path":"folders/Sprites/Weapons.yy",},
   ],
   "ResourceOrderSettings": [
@@ -23,6 +24,7 @@
     {"name":"s_Spark","order":7,"path":"sprites/s_Spark/s_Spark.yy",},
     {"name":"obj_log_sender_example","order":1,"path":"objects/obj_log_sender_example/obj_log_sender_example.yy",},
     {"name":"UpgraderOptions","order":1,"path":"scripts/UpgraderOptions/UpgraderOptions.yy",},
+    {"name":"s_Cell_Core41","order":1,"path":"sprites/s_Cell_Core41/s_Cell_Core41.yy",},
     {"name":"obj_enemySpawner","order":11,"path":"objects/obj_enemySpawner/obj_enemySpawner.yy",},
     {"name":"s_Pickup_Temp","order":3,"path":"sprites/s_Pickup_Temp/s_Pickup_Temp.yy",},
     {"name":"s_enemyWhite","order":9,"path":"sprites/s_enemyWhite/s_enemyWhite.yy",},
