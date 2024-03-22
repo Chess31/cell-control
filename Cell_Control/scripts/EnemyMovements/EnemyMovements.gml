@@ -18,19 +18,9 @@ function EnemyMovements(){
 				    }
 				}
 
-				// Calculate movement based on the current direction
-				var moveX = lengthdir_x(enemySpeed, direction);
-				var moveY = lengthdir_y(enemySpeed, direction);
-
-				// Check for collisions with walls
-				if (!place_meeting(x + moveX, y + moveY, obj_building)) {
-				    // Move the enemy
-				    x += moveX;
-				    y += moveY;
-				} else {
-				    // If there's a collision with a wall, choose a new direction
-				    direction += 180 + random_range(-30,30);
-				}
+				// Move the enemy
+				motion_set(direction, enemySpeed);
+				move_bounce_solid(true);
 			break;
 	
 		case "Blue":
@@ -51,19 +41,9 @@ function EnemyMovements(){
 				    }
 				}
 
-				// Calculate movement based on the current direction
-				var moveX = lengthdir_x(enemySpeed, direction);
-				var moveY = lengthdir_y(enemySpeed, direction);
-
-				// Check for collisions with walls
-				if (!place_meeting(x + moveX, y + moveY, obj_building)) {
-				    // Move the enemy
-				    x += moveX;
-				    y += moveY;
-				} else {
-				    // If there's a collision with a wall, choose a new direction
-				    direction += 180 + random_range(-30,30);
-				}
+				// Move the enemy
+				motion_set(direction, enemySpeed);
+				move_bounce_solid(true);
 			break;
 		
 		case "Green":
@@ -118,19 +98,9 @@ function EnemyMovements(){
 				    }
 				}
 
-				// Calculate movement based on the current direction
-				var moveX = lengthdir_x(enemySpeed, direction);
-				var moveY = lengthdir_y(enemySpeed, direction);
-
-				// Check for collisions with walls
-				if (!place_meeting(x + moveX, y + moveY, obj_building)) {
-				    // Move the enemy
-				    x += moveX;
-				    y += moveY;
-				} else {
-				    // If there's a collision with a wall, choose a new direction
-				    direction += 180 + random_range(-30,30);
-				}
+				// Move the enemy
+				motion_set(direction, enemySpeed);
+				move_bounce_solid(true);
 			break;
 		
 		default:
@@ -152,19 +122,9 @@ function EnemyMovements(){
 				    }
 				}
 
-				// Calculate movement based on the current direction
-				var moveX = lengthdir_x(enemySpeed, direction);
-				var moveY = lengthdir_y(enemySpeed, direction);
-
-				// Check for collisions with walls
-				if (!place_meeting(x + moveX, y + moveY, obj_building)) {
-				    // Move the enemy
-				    x += moveX;
-				    y += moveY;
-				} else {
-				    // If there's a collision with a wall, choose a new direction
-				    direction += 180 + random_range(-30,30);
-				}
+				// Move the enemy
+				motion_set(direction, enemySpeed);
+				move_bounce_solid(true);
 			break;
 	}
 }

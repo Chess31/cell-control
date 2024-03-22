@@ -22,11 +22,8 @@ if (place_meeting(x, y, obj_enemy)) {
 //}
 
 // Check for collision with cell walls
-//if (room = Room_Outside){
-//	if (place_meeting(x, y, obj_cellWall)) {
-//	    var _wall = instance_place(x, y, obj_cellWall);
-//	    instance_destroy();
-//	    _wall.buildingHealth -= damage;
-//	}
-//}
-
+if (place_meeting(x, y, obj_cellWall)) {
+	var _wall = instance_place(x, y, obj_cellWall);
+	instance_destroy();
+	_wall.buildingHealth -= damage;
+}

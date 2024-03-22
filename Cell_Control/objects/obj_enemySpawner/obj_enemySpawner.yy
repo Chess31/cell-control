@@ -34,7 +34,7 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [],
-  "solid": true,
+  "solid": false,
   "spriteId": {
     "name": "s_Spawner",
     "path": "sprites/s_Spawner/s_Spawner.yy",

@@ -27,7 +27,7 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [],
-  "solid": false,
+  "solid": true,
   "spriteId": {
     "name": "s_CellWall",
     "path": "sprites/s_CellWall/s_CellWall.yy",

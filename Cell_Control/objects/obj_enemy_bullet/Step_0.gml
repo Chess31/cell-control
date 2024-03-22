@@ -23,6 +23,29 @@ if (_hit_building != noone) {
 	_hit_building.buildingHealth -= damage;
 }
 
+// Check for collisions with buildings
+var _hit_wall = instance_place(x, y, obj_cellWall);
+if (_hit_wall != noone) {
+	if (piercing < 1){
+		instance_destroy()
+	} else {
+		piercing -= 1;
+	}
+	_hit_wall.buildingHealth -= damage;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//Old.... dont use
 
 //// Check for collision with cell walls
 //if (room = Room_Outside) && (piercing = false) {

@@ -1,4 +1,4 @@
-//destroy if too close to the portal
-if (point_distance(x, y, obj_coreGate.x, obj_coreGate.y) < 450){instance_destroy()};
+//destroy if too close to the core
+if (point_distance(x, y, obj_cell_core.x, obj_cell_core.y) < 600){instance_destroy()};
 
 buildingHealth = 5;

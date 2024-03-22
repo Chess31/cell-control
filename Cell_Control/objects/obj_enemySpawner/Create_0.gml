@@ -3,8 +3,8 @@ x = random(room_width);
 y = random(room_height);
 
 // Enemy Waves
-EspawnTimer = 2000;
-timeBetweenSpawns = 2000; // represents the time between enemy spawns in steps
+EspawnTimer = 3000;
+timeBetweenSpawns = 3000; // represents the time between enemy spawns in steps
 maxEnemiesInWave = 3;   // count for starting wave
 enemiesSpawned = 0;
 global.currentWave = 0;

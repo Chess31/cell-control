@@ -14,7 +14,7 @@ if (!instance_exists(obj_cellWall)){
 	}
 	spawn_pickups = function() {
 	
-		instance_destroy(obj_shiftUnlock);
+		//instance_destroy(obj_shiftUnlock);
 	
 		var _spacing = sprite_get_width(s_CellWall);
 		for (var col = 0; col < my_map.width; col +=1) {
@@ -31,4 +31,4 @@ if (!instance_exists(obj_cellWall)){
 	spawn_walls();
 }
 
-instance_create_layer(random(room_width), random(room_height), "Instances", obj_boss_blue);
+//instance_create_layer(random(room_width), random(room_height), "Instances", obj_boss_blue);
