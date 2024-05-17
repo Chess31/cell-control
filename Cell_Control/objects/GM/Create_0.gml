@@ -11,6 +11,10 @@ var i = 0;
 while (i < 10)
 {
 	instance_create_layer(random(room_width), random(room_height), "Collectibles",obj_collectible);
+	//var starter_ammo = instance_create_layer(random(room_width), random(room_height), "Collectibles",obj_collectible);
+	//with (starter_ammo){
+	//	if (place_meeting(x, y, obj_cellWall)){instance_destroy();}
+	//}
 	i += 1;
 }
 

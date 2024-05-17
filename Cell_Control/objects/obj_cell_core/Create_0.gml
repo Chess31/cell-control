@@ -3,6 +3,9 @@ image_xscale = 2;
 image_yscale = 2;
 image_speed = 0;
 
+//spawn initial enemy well
+instance_create_layer(x,y,"Instances",obj_well);
+
 //starting health
 cellHealth = 25;
 
@@ -30,7 +33,6 @@ wallWest.buildingHealth = 75;
 wallWest.sprite_index = s_Wall;
 wallWest.image_angle = 180;
 wallWest.index = 0;
-
 
 wallNorth.type = "Wall";
 wallNorth.buildingHealth = 75;

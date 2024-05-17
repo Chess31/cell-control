@@ -7,7 +7,7 @@ if (spawnTimer <= 0) {
     instance_create_layer(random(room_width), random(room_height), "Collectibles",obj_collectible);
     
     // Reset the spawn timer
-    spawnTimer = 25;//50;
+    spawnTimer = 20;//50;
 }
 
 //restart game hotkey
@@ -136,7 +136,7 @@ if (global.currentWave >= 8 && yellow_unlocked = false){
 	yellow_unlocked = true;
 }
 
-if (global.currentWave >= 0 && hive_unlocked = false){
+if (global.currentWave >= 12 && hive_unlocked = false){
 	ds_list_add(global.buildingTypes, "Hive");
 	ds_list_add(global.buildingHealths, 100);
 	ds_list_add(global.buildingSprites, s_Hive);

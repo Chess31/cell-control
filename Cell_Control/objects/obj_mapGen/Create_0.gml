@@ -14,8 +14,6 @@ if (!instance_exists(obj_cellWall)){
 	}
 	spawn_pickups = function() {
 	
-		//instance_destroy(obj_shiftUnlock);
-	
 		var _spacing = sprite_get_width(s_CellWall);
 		for (var col = 0; col < my_map.width; col +=1) {
 			for (var row = 0; row < my_map.height; row +=1) {

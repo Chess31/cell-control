@@ -2,6 +2,7 @@ function firstMenu(){
 	MenuCreate(room_width/2, room_height/2,
 		[
 			["Start Game",startGame],
+			["Testing Lab",startLab],
 			["Options",launchOptions],
 			["Quit",quitGame]
 		],
@@ -15,6 +16,10 @@ function startGame(){
 	randomize(); //sets a completely random seed
 	show_debug_message(random_get_seed()); //prints the seed
 	room_goto(Room_Core);
+}
+
+function startLab(){
+	room_goto(Room_Lab);
 }
 
 function launchOptions(){
