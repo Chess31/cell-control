@@ -8,10 +8,10 @@ vSpeed = 0;
 walkSpeed = 6.0;
 
 //Define starting variables
-ammo = 25; // Initialize ammo
-playerHealth = 15; //Initialize player health
+ammo = 2500; // Initialize ammo
+playerHealth = 1500; //Initialize player health
 initialHealth = 15;
-weaponTokens = 0;
+weaponTokens = 110;
 global.playerAlive = true; // Player starts alive
 restartTimer = 5 * room_speed; //Initialize the restart timer
 isDeployingWall = false; //If the player is building a wall currently
