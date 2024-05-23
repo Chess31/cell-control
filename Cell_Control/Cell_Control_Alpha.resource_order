@@ -66,6 +66,7 @@
     {"name":"obj_weapon_token","order":32,"path":"objects/obj_weapon_token/obj_weapon_token.yy",},
     {"name":"obj_mapGen","order":3,"path":"objects/obj_mapGen/obj_mapGen.yy",},
     {"name":"TeleportToRandomEnemyFunction","order":9,"path":"scripts/TeleportToRandomEnemyFunction/TeleportToRandomEnemyFunction.yy",},
+    {"name":"s_arrow","order":18,"path":"sprites/s_arrow/s_arrow.yy",},
     {"name":"obj_coreGate","order":13,"path":"objects/obj_coreGate/obj_coreGate.yy",},
     {"name":"s_enemyG","order":4,"path":"sprites/s_enemyG/s_enemyG.yy",},
     {"name":"EnemyMovements","order":2,"path":"scripts/EnemyMovements/EnemyMovements.yy",},

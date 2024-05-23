@@ -67,7 +67,7 @@ if (global.extra_info = true){
 	var rect_width = 200; // Adjust as needed
 	var rect_height = ds_list_size(global.buildingTypes) * line_height + 2 * text_offset;
 
-	// Draw the outline
+	// Draw the outline of the building count box
 	var _rec_y = _y - line_height*(ds_list_size(global.buildingTypes)-2) - 2
 	draw_rectangle(_x - 2, _rec_y, display_get_gui_width() - 2, display_get_gui_height() - 2, true);
 
@@ -86,7 +86,7 @@ if (global.extra_info = true){
 	}
 }
 
-//Currently Selected Building Type
+//Currently Selected Building Type (Bottom Left)
 var _spritetodraw = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex);
 var _halfspritewidth = sprite_get_width(_spritetodraw) / 2;
 var _edgespacing = 10;
@@ -105,4 +105,37 @@ if (!instance_exists(obj_enemySpawner)){
 	draw_set_halign(fa_center);
 	draw_set_color(c_aqua);
 	draw_text(obj_camera.view_w_half, 10, "Victory");
+}
+
+//Pointers for wells (reference for converting Room Coords to GUI Coords) (subtract _cx and _cy to get screen coords)
+if (instance_exists(obj_well)) {
+	
+	var _vx = display_get_gui_width();
+	var _vy = display_get_gui_height();
+
+	var _cx = obj_camera.x - obj_camera.view_w_half;
+	var _cy = obj_camera.y - obj_camera.view_h_half;
+	
+	for (var i = 0; i < instance_number(obj_well); i++) {
+		
+		var _well = instance_find(obj_well, i);
+		draw_rectangle(1,1,_vx-2,_vy-1,1); //screen boarder test rectangle
+		
+		if (!point_in_rectangle(_well.x - _cx, _well.y - _cy, 0, 0, _vx, _vy)) {
+			////well offscreen so draw the arrows
+			
+			var _arrow_angle = point_direction(obj_player.x - _cx, obj_player.y - _cy, _well.x - _cx, _well.y - _cy);
+			var _goal_x = _well.x - _cx; //still needs to be clamped to screen bounds
+			var _goal_y = _well.y - _cy; //still needst to be clamled to screen bounds
+			
+			var _arrow_x = clamp(_goal_x, 0 + 50, _vx - 50);
+			var _arrow_y = clamp(_goal_y, 0 + 50, _vy - 50);
+
+			draw_sprite_ext(s_arrow, image_index/10, _arrow_x, _arrow_y, 1, 1, _arrow_angle, c_white,1);
+			
+			//Test Lines and Arrows
+			//draw_line(_well.x - _cx, _well.y - _cy, obj_player.x - _cx, obj_player.y - _cy);
+			//draw_arrow(obj_player.x - _cx, obj_player.y - _cy, _well.x - _cx, _well.y - _cy, 100);
+		}
+	}
 }

@@ -1,3 +1,6 @@
+//define SECONDS as game speed for timers?? Maybe
+//global.SECONDS = game_get_speed(gamespeed_fps)
+
 //set cursor sprite
 window_set_cursor(cr_none);
 cursor_sprite = s_cursor;
@@ -20,6 +23,8 @@ while (i < 10)
 
 //set up cell core
 instance_create_layer(room_width/2, room_height/2, "Instances", obj_cell_core);
+
+global.BossKills = 0;
 
 //Lists for buildings and enemies
 
