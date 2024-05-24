@@ -15,11 +15,8 @@ if (waves_left > 0) {
 		if ((enemies_spawned + waves_left) < enemies_per_wave) {
 			// Spawn an enemy
 			var randomEnemy = random(ds_list_size(my_enemy_types));
-			var enemy = instance_create_layer(x, y, "Instances", obj_enemy);
-			enemy.enemyType = ds_list_find_value(global.enemyTypes, randomEnemy);
-			enemy.enemyHealth = ds_list_find_value(global.enemyHealths, randomEnemy);
-			enemy.sprite_index = ds_list_find_value(global.enemySprites, randomEnemy);
-			enemy.enemySpeed = ds_list_find_value(global.enemySpeeds, randomEnemy);
+			var _enemy_to_spawn = ds_list_find_value(my_enemy_types,randomEnemy);
+			instance_create_layer(x, y, "Instances", _enemy_to_spawn);
 			enemies_spawned++;
 		} else {
 			waves_left--;

@@ -4,7 +4,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 // Draw the HUD
-draw_text(10, 10, "Ammo: " + string(obj_player.ammo) + " Weapon Components: " + string(obj_player.weaponTokens) + " Wave: " + string(global.currentWave) + " / 50");
+draw_text(10, 10, "Ammo: " + string(obj_player.ammo) + " Weapon Components: " + string(obj_player.weaponTokens) + " Wave: " /*+ string(global.currentWave) +*/+ " / 50");
 
 // Draw the countdown timer in the HUD
 if (obj_player.restartTimer > 0) and (global.playerAlive = 0) {
@@ -20,7 +20,7 @@ var _bar_x = display_get_gui_width()/2;
 var _bar_y = display_get_gui_height() - 20; // Adjust the y-coordinate as needed
 // Calculate the width of the bar based on player's health
 var health_percentage = clamp(obj_player.playerHealth / obj_player.initialHealth, 0, 2); // Calculate health percentage
-var bar_width = 40 * health_percentage; //constant should be the default bar length
+var bar_width = 36 * health_percentage; //constant should be the default bar length
 //draw the bar
 draw_sprite_ext(s_HealthBar, 0, _bar_x, _bar_y, bar_width, 1.2, 0, c_white, 1);
 draw_set_halign(fa_center);
@@ -100,12 +100,12 @@ draw_sprite(_spritetodraw, 1, _halfspritewidth + _edgespacing, display_get_gui_h
 draw_rectangle((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) - _halfspritewidth, (_halfspritewidth + _edgespacing) + _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) + _halfspritewidth, true);
 draw_text((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth*2 - _edgespacing*3), string(ds_list_find_value(global.buildingTypes, global.currentBuildingIndex)) + "(" + string(ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) + ")");
 
-//Victory Replaces Countdown
-if (!instance_exists(obj_enemySpawner)){
-	draw_set_halign(fa_center);
-	draw_set_color(c_aqua);
-	draw_text(obj_camera.view_w_half, 10, "Victory");
-}
+////Victory Replaces Countdown
+//if (!instance_exists(obj_enemySpawner)){
+//	draw_set_halign(fa_center);
+//	draw_set_color(c_aqua);
+//	draw_text(obj_camera.view_w_half, 10, "Victory");
+//}
 
 //Pointers for wells (reference for converting Room Coords to GUI Coords) (subtract _cx and _cy to get screen coords)
 if (instance_exists(obj_well)) {
@@ -119,7 +119,7 @@ if (instance_exists(obj_well)) {
 	for (var i = 0; i < instance_number(obj_well); i++) {
 		
 		var _well = instance_find(obj_well, i);
-		draw_rectangle(1,1,_vx-2,_vy-1,1); //screen boarder test rectangle
+		//draw_rectangle(1,1,_vx-2,_vy-1,1); //screen boarder test rectangle
 		
 		if (!point_in_rectangle(_well.x - _cx, _well.y - _cy, 0, 0, _vx, _vy)) {
 			////well offscreen so draw the arrows
@@ -127,6 +127,9 @@ if (instance_exists(obj_well)) {
 			var _arrow_angle = point_direction(obj_player.x - _cx, obj_player.y - _cy, _well.x - _cx, _well.y - _cy);
 			var _goal_x = _well.x - _cx; //still needs to be clamped to screen bounds
 			var _goal_y = _well.y - _cy; //still needst to be clamled to screen bounds
+			
+			//var _goal_x = ((_well.x - _cx) + (obj_player.x - _cx)) * (0.5); //still needs to be clamped to screen bounds
+			//var _goal_y = ((_well.y - _cy) + (obj_player.y - _cy)) * (0.5);; //still needst to be clamled to screen bounds
 			
 			var _arrow_x = clamp(_goal_x, 0 + 50, _vx - 50);
 			var _arrow_y = clamp(_goal_y, 0 + 50, _vy - 50);

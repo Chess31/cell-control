@@ -8,11 +8,10 @@ y = _center_y + lengthdir_y(700,random(360));
 wall_delete_range = 200;
 
 //enemy spawning setup (might have to be moved to the spawning object)
-my_enemy_types = ds_list_create();
-ds_list_add(my_enemy_types, "Red");
+my_enemy_types = global.enemy_array_rbgpy;
 
 waves_left = 5; //number of waves before a boss
-time_between_waves = 10 * game_get_speed(gamespeed_fps); //seconds
+time_between_waves = 3 * game_get_speed(gamespeed_fps); //seconds
 wave_timer = time_between_waves;
 enemies_per_wave = waves_left + 3; //total should be the final wave's enemy count
 enemies_spawned = 0;
