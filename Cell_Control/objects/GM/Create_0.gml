@@ -91,17 +91,14 @@ ds_list_add(global.buildingMaxNumber, 3);
 //ds_list_add(global.buildingCount, 0);
 //ds_list_add(global.buildingMaxNumber, 5);
 
-//forge_unlocked = false;
-//upgrader_unlocked = false;
-//proximity_mine_unlocked = false;
-//feeder_unlocked = false;
-//hive_unlocked = false;
-
 global.feeder_active = false;
 global.enemy_kill_goal = 10;
 global.feeders_complete = 0;
 
-//global.currentWave = 15;
+global.infections_destroyed = 0;
+
+global.difficulty = 0;
+global.difficulty_scalar = 0.05;
 
 DefineEnemyPacks();
 //Spawn Initial Enemy Well

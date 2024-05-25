@@ -7,12 +7,24 @@ y = _center_y + lengthdir_y(700,random(360));
 
 wall_delete_range = 200;
 
-//enemy spawning setup (might have to be moved to the spawning object)
-my_enemy_types = global.enemy_array_rbgpy;
-
 waves_left = 5; //number of waves before a boss
-time_between_waves = 3 * game_get_speed(gamespeed_fps); //seconds
+time_between_waves = 5 * game_get_speed(gamespeed_fps); //seconds
 wave_timer = time_between_waves;
-enemies_per_wave = waves_left + 3; //total should be the final wave's enemy count
+enemies_per_wave = waves_left + 3 + round(global.difficulty * 20); //total should be the final wave's enemy count (integer is first wave e count, multiplier is total extra enemies)
 enemies_spawned = 0;
 boss_countdown = 60 * game_get_speed(gamespeed_fps);
+
+//enemy selector
+if (global.infections_destroyed < 3) {
+	my_enemy_types = global.enemy_array_r;
+} else if (global.infections_destroyed < 5) {
+	my_enemy_types = global.enemy_array_rb;
+} else if (global.infections_destroyed < 8) {
+	my_enemy_types = global.enemy_array_bg;
+} else if (global.infections_destroyed < 10) {
+	my_enemy_types = global.enemy_array_rp;
+} else if (global.infections_destroyed < 12) {
+	my_enemy_types = global.enemy_array_y;
+} else if (global.infections_destroyed < 15) {
+	my_enemy_types = global.enemy_array_rbgpy;
+}
