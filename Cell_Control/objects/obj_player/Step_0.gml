@@ -118,6 +118,7 @@ if (isDeployingWall) {
 	}
 }
 
+
 var chunk_size = global.chunk_size;
 var new_chunk_x = floor(x / chunk_size);
 var new_chunk_y = floor(y / chunk_size);
@@ -125,26 +126,27 @@ var new_chunk_y = floor(y / chunk_size);
 // Check if the player has moved to a new chunk
 if (new_chunk_x != global.current_chunk_x || new_chunk_y != global.current_chunk_y) {
     // Player has moved to a new chunk
-	var range = 2; // Number of chunks to keep loaded around the player
+    var range_in_chunks = 1; // Number of chunks to keep loaded around the player
 
-	with (obj_cellWall) {
-	    if (point_distance(x, y, obj_player.x, obj_player.y) > chunk_size*range) {
-	        // Save and destroy the wall if it's far from the player
-	        save_wall_data(id);
-	    }
-	}
+    // Unload chunks that are now out of range
+    for (var dx = -range_in_chunks - 1; dx <= range_in_chunks + 1; dx++) {
+        for (var dy = -range_in_chunks - 1; dy <= range_in_chunks + 1; dy++) {
+            var chunk_x = global.current_chunk_x + dx;
+            var chunk_y = global.current_chunk_y + dy;
+            if (abs(chunk_x - new_chunk_x) > range_in_chunks || abs(chunk_y - new_chunk_y) > range_in_chunks) {
+                unload_chunk_walls(chunk_x, chunk_y);
+            }
+        }
+    }
 
-	var player_chunk_x = floor(obj_player.x / chunk_size);
-	var player_chunk_y = floor(obj_player.y / chunk_size);
-
-	// Iterate over a range of chunks around the player
-	for (var dx = -range; dx <= range; dx++) {
-	    for (var dy = -range; dy <= range; dy++) {
-	        var chunk_x = player_chunk_x + dx;
-	        var chunk_y = player_chunk_y + dy;
-	        load_chunk_walls(chunk_x, chunk_y);
-	    }
-	}
+    // Load chunks that are now in range
+    for (var dx = -range_in_chunks; dx <= range_in_chunks; dx++) {
+        for (var dy = -range_in_chunks; dy <= range_in_chunks; dy++) {
+            var chunk_x = new_chunk_x + dx;
+            var chunk_y = new_chunk_y + dy;
+            load_chunk_walls(chunk_x, chunk_y);
+        }
+    }
 
     // Update the current chunk
     global.current_chunk_x = new_chunk_x;
