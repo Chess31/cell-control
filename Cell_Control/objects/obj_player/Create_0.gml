@@ -31,6 +31,8 @@ comboSlot = -1; //test combo
 //arm_active = false;
 //hook_1 = instance_create_layer(x,y,"Instances",obj_hook);
 
+
+
 // AddAmmo Function
 function AddAmmo(_amount) {
     ammo += _amount;

@@ -1,59 +1,72 @@
+function get_chunk_coords() {
+	// Arguments: x, y
+	var _x = argument0;
+	var _y = argument1;
+
+	var chunk_x = floor(_x / global.chunk_size);
+	var chunk_y = floor(_y / global.chunk_size);
+
+	return string(chunk_x) + "," + string(chunk_y);
+}
+
 function save_wall_data(wall) {
-    // Script: save_wall_data
+	// Arguments: wall_instance_id
+	//var wall = argument0;
+	var chunk_key = get_chunk_coords(wall.x, wall.y);
 
-	var wall_key = string(wall.x) + "," + string(wall.y);
+	if (!ds_map_exists(global.wall_chunks, chunk_key)) {
+	    var new_chunk = ds_map_create();
+	    ds_map_add(global.wall_chunks, chunk_key, new_chunk);
+	} else {
+	    var new_chunk = global.wall_chunks[? chunk_key];
+	}
+
 	var wall_info = ds_map_create();
-
 	ds_map_add(wall_info, "x", wall.x);
 	ds_map_add(wall_info, "y", wall.y);
 	ds_map_add(wall_info, "buildingHealth", wall.buildingHealth);
 
-	ds_map_add(global.wall_data, wall_key, wall_info);
+	var wall_key = string(wall.x) + "," + string(wall.y);
+	ds_map_add(new_chunk, wall_key, wall_info);
 
 	instance_destroy(wall);
 }
 
-function load_wall_data(){
-	// Arguments: x, y
-	var _x = argument0;
-	var _y = argument1;
-	var wall_key = string(_x) + "," + string(_y); //this might be redundant...
+function load_chunk_walls() {
+	// Arguments: chunk_x, chunk_y
+	var chunk_x = argument0;
+	var chunk_y = argument1;
+	var chunk_key = string(chunk_x) + "," + string(chunk_y);
 
-	if (ds_map_exists(global.wall_data, wall_key)) {
-	    // Retrieve the data directly from the global wall_data map
-	    var wall_info = global.wall_data[? wall_key];
+	if (ds_map_exists(global.wall_chunks, chunk_key)) {
+	    var chunk = global.wall_chunks[? chunk_key];
 
-	    // Extract individual properties
-	    var wall_x = wall_info[? "x"];
-	    var wall_y = wall_info[? "y"];
-	    var buildingHealth = wall_info[? "buildingHealth"];
+	    // Create a list of keys
+	    var keys = ds_map_keys(chunk);
+	    for (var i = 0; i < ds_list_size(keys); i++) {
+	        var wall_key = ds_list_find_value(keys, i);
+	        var wall_info = chunk[? wall_key];
 
-	    // Create the wall instance
-	    var wall = instance_create_layer(wall_x, wall_y, layer, obj_cellWall);
-	    wall.buildingHealth = buildingHealth;
+	        var wall = instance_create_layer(wall_info[? "x"], wall_info[? "y"], layer, obj_cellWall);
+	        wall.buildingHealth = wall_info[? "buildingHealth"];
+	    }
 
-	    // Remove the wall data from the map
-	    ds_map_delete(global.wall_data, wall_key);
-	    ds_map_destroy(wall_info); // Clean up the temporary map
+	    // Clean up
+	    ds_list_destroy(keys);
+	    ds_map_delete(global.wall_chunks, chunk_key);
+	    ds_map_destroy(chunk);
 	}
 }
 
+// Helper function to get keys of a ds_map
+function ds_map_keys(map) {
+    var keys = ds_list_create();
+    var key = ds_map_find_first(map);
 
+    while (key != undefined) {
+        ds_list_add(keys, key);
+        key = ds_map_find_next(map, key);
+    }
 
-
-
-//function Init_chunks() {
-//	// Assign existing walls to chunks
-//	var _all_walls = [];
-
-//	for (var i = 0; i < instance_number(obj_cellWall); ++i;)
-//	{
-//	   _all_walls[i] = instance_find(obj_cellWall,i);
-//	}
-//	//var all_walls = instance_find _all(obj_wall);
-//	for (var i = 0; i < array_length(_all_walls); i++) {
-//	    var _wall = _all_walls[i];
-//		show_debug_message("initial wall data stored")
-//	    store_wall_data(_wall);
-//	}	
-//}
+    return keys;
+}

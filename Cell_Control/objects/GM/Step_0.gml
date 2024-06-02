@@ -17,28 +17,24 @@ if (keyboard_check_pressed(vk_backspace))
 }
 
 //Wall management
-var range = 512;
+//var chunk_size = global.chunk_size;
+//var range = 6; // Number of chunks to keep loaded around the player
 
-// Iterate through all wall instances
-with (obj_cellWall) {
-    if (point_distance(x, y, obj_player.x, obj_player.y) > range) {
-        // Save and destroy the wall if it's far from the player
-        save_wall_data(id);
-    }
-}
+//with (obj_cellWall) {
+//    if (point_distance(x, y, obj_player.x, obj_player.y) > chunk_size*range) {
+//        // Save and destroy the wall if it's far from the player
+//        save_wall_data(id);
+//    }
+//}
 
-// Check for saved walls near the player and load them
-var cell_size = 8;
-var cells_to_check = range div cell_size;
+//var player_chunk_x = floor(obj_player.x / chunk_size);
+//var player_chunk_y = floor(obj_player.y / chunk_size);
 
-for (var dx = -cells_to_check; dx <= cells_to_check; dx++) {
-    for (var dy = -cells_to_check; dy <= cells_to_check; dy++) {
-        var check_x = (floor(obj_player.x/cell_size)*cell_size) + dx * cell_size;
-        var check_y = (floor(obj_player.y/cell_size)*cell_size) + dy * cell_size;
-
-        if (ds_map_exists(global.wall_data, string(check_x) + "," + string(check_y))) {
-            load_wall_data(check_x, check_y);
-			//instance_create_layer(check_x, check_y, layer, obj_cellWall);
-        }
-    }
-}
+////// Iterate over a range of chunks around the player
+////for (var dx = -range; dx <= range; dx++) {
+////    for (var dy = -range; dy <= range; dy++) {
+////        var chunk_x = player_chunk_x + dx;
+////        var chunk_y = player_chunk_y + dy;
+////        load_chunk_walls(chunk_x, chunk_y);
+////    }
+////}

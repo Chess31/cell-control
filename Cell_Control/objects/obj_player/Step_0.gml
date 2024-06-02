@@ -118,7 +118,38 @@ if (isDeployingWall) {
 	}
 }
 
+var chunk_size = global.chunk_size;
+var new_chunk_x = floor(x / chunk_size);
+var new_chunk_y = floor(y / chunk_size);
 
+// Check if the player has moved to a new chunk
+if (new_chunk_x != global.current_chunk_x || new_chunk_y != global.current_chunk_y) {
+    // Player has moved to a new chunk
+	var range = 2; // Number of chunks to keep loaded around the player
+
+	with (obj_cellWall) {
+	    if (point_distance(x, y, obj_player.x, obj_player.y) > chunk_size*range) {
+	        // Save and destroy the wall if it's far from the player
+	        save_wall_data(id);
+	    }
+	}
+
+	var player_chunk_x = floor(obj_player.x / chunk_size);
+	var player_chunk_y = floor(obj_player.y / chunk_size);
+
+	// Iterate over a range of chunks around the player
+	for (var dx = -range; dx <= range; dx++) {
+	    for (var dy = -range; dy <= range; dy++) {
+	        var chunk_x = player_chunk_x + dx;
+	        var chunk_y = player_chunk_y + dy;
+	        load_chunk_walls(chunk_x, chunk_y);
+	    }
+	}
+
+    // Update the current chunk
+    global.current_chunk_x = new_chunk_x;
+    global.current_chunk_y = new_chunk_y;
+}
 
 //Hot Keys for Buildings:
 if (keyboard_check_pressed(ord("1"))){global.currentBuildingIndex = 0 mod ds_list_size(global.buildingTypes)};
