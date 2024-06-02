@@ -120,8 +120,6 @@ if (isDeployingWall) {
 
 
 
-
-
 //Hot Keys for Buildings:
 if (keyboard_check_pressed(ord("1"))){global.currentBuildingIndex = 0 mod ds_list_size(global.buildingTypes)};
 if (keyboard_check_pressed(ord("2"))){global.currentBuildingIndex = 1 mod ds_list_size(global.buildingTypes)};

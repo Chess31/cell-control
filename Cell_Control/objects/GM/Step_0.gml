@@ -16,25 +16,29 @@ if (keyboard_check_pressed(vk_backspace))
 	game_restart();
 }
 
-//CullObject(obj_cellWall);
-//ProcessCulls();
-
 //Wall management
-if (current_time - last_wall_check_time >= wall_check_interval) {
-    var all_walls = [];
-	for (var i = 0; i < instance_number(obj_cellWall); ++i;) {
-	    all_walls[i] = instance_find(obj_cellWall,i);
-	}
-	for (var i = 0; i < array_length(all_walls); i++) {
-        var wall = all_walls[i];
-        if (is_outside_view(wall.x, wall.y, wall.sprite_width, wall.sprite_height)) || (point_distance(obj_player.x, obj_player.y, wall.x, wall.y) > 350){
-            store_wall_data(wall);
-        }
+var range = 512;
+
+// Iterate through all wall instances
+with (obj_cellWall) {
+    if (point_distance(x, y, obj_player.x, obj_player.y) > range) {
+        // Save and destroy the wall if it's far from the player
+        save_wall_data(id);
     }
-    last_wall_check_time = current_time;
 }
 
-if (current_time - last_wall_recreate_time >= wall_recreate_interval) {
-    recreate_walls_in_view();
-    last_wall_recreate_time = current_time;
+// Check for saved walls near the player and load them
+var cell_size = 8;
+var cells_to_check = range div cell_size;
+
+for (var dx = -cells_to_check; dx <= cells_to_check; dx++) {
+    for (var dy = -cells_to_check; dy <= cells_to_check; dy++) {
+        var check_x = (floor(obj_player.x/cell_size)*cell_size) + dx * cell_size;
+        var check_y = (floor(obj_player.y/cell_size)*cell_size) + dy * cell_size;
+
+        if (ds_map_exists(global.wall_data, string(check_x) + "," + string(check_y))) {
+            load_wall_data(check_x, check_y);
+			//instance_create_layer(check_x, check_y, layer, obj_cellWall);
+        }
+    }
 }

@@ -104,20 +104,6 @@ DefineEnemyPacks();
 //Spawn Initial Enemy Well
 alarm[0] = 1;
 
-//global.deactivatedInstances = ds_list_create();
 // Global variables for wall system
-global.chunk_size = 512; // Size of each chunk
-global.wall_chunks = ds_grid_create(room_width div global.chunk_size + 1, room_height div global.chunk_size + 1);
-
-last_wall_check_time = current_time;
-last_wall_recreate_time = current_time;
-wall_check_interval = 180; // Check every 60 frames (1 second at 60 FPS)
-wall_recreate_interval = 180; // Recreate walls every 60 frames (1 second at 60 FPS)
-
-// Initialize all grid cells with undefined
-for (var i = 0; i < ds_grid_width(global.wall_chunks); i++) {
-    for (var j = 0; j < ds_grid_height(global.wall_chunks); j++) {
-        ds_grid_set(global.wall_chunks, i, j, undefined);
-    }
-}
-
+global.wall_data = ds_map_create();
+global.wall_storage_file = "wall_storage.json";

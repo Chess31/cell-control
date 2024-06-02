@@ -1,65 +1,59 @@
-function is_outside_view(_x, _y, width, height) {
-    var cam_x = camera_get_view_x(view_camera[0]);
-    var cam_y = camera_get_view_y(view_camera[0]);
-    var cam_w = camera_get_view_width(view_camera[0]);
-    var cam_h = camera_get_view_height(view_camera[0]);
+function save_wall_data(wall) {
+    // Script: save_wall_data
 
-    return (_x + width < cam_x || _x > cam_x + cam_w || _y + height < cam_y || _y > cam_y + cam_h);
+	var wall_key = string(wall.x) + "," + string(wall.y);
+	var wall_info = ds_map_create();
+
+	ds_map_add(wall_info, "x", wall.x);
+	ds_map_add(wall_info, "y", wall.y);
+	ds_map_add(wall_info, "buildingHealth", wall.buildingHealth);
+
+	ds_map_add(global.wall_data, wall_key, wall_info);
+
+	instance_destroy(wall);
 }
 
-function get_chunk_coords(_x, _y) {
-    return [floor(_x / global.chunk_size), floor(_y / global.chunk_size)];
+function load_wall_data(){
+	// Arguments: x, y
+	var _x = argument0;
+	var _y = argument1;
+	var wall_key = string(_x) + "," + string(_y); //this might be redundant...
+
+	if (ds_map_exists(global.wall_data, wall_key)) {
+	    // Retrieve the data directly from the global wall_data map
+	    var wall_info = global.wall_data[? wall_key];
+
+	    // Extract individual properties
+	    var wall_x = wall_info[? "x"];
+	    var wall_y = wall_info[? "y"];
+	    var buildingHealth = wall_info[? "buildingHealth"];
+
+	    // Create the wall instance
+	    var wall = instance_create_layer(wall_x, wall_y, layer, obj_cellWall);
+	    wall.buildingHealth = buildingHealth;
+
+	    // Remove the wall data from the map
+	    ds_map_delete(global.wall_data, wall_key);
+	    ds_map_destroy(wall_info); // Clean up the temporary map
+	}
 }
 
-function store_wall_data(wall) {
-    var chunk_coords = get_chunk_coords(wall.x, wall.y);
-    var wall_data = ds_map_create();
-    ds_map_add(wall_data, "x", wall.x);
-    ds_map_add(wall_data, "y", wall.y);
-    ds_map_add(wall_data, "buildingHealth", wall.buildingHealth);
 
-    var chunk_data = ds_grid_get(global.wall_chunks, chunk_coords[0], chunk_coords[1]);
-    if (chunk_data == undefined) {
-        chunk_data = ds_list_create();
-        ds_grid_set(global.wall_chunks, chunk_coords[0], chunk_coords[1], chunk_data);
-    }
-    ds_list_add(chunk_data, wall_data);
-    instance_destroy(wall);
-}
 
-function recreate_walls_in_view() {
-    var cam_x = camera_get_view_x(view_camera[0]);
-    var cam_y = camera_get_view_y(view_camera[0]);
-    var cam_w = camera_get_view_width(view_camera[0]);
-    var cam_h = camera_get_view_height(view_camera[0]);
 
-    var start_x = max(0, floor(cam_x / global.chunk_size));
-    var start_y = max(0, floor(cam_y / global.chunk_size));
-    var end_x = min(ds_grid_width(global.wall_chunks) - 1, floor((cam_x + cam_w) / global.chunk_size));
-    var end_y = min(ds_grid_height(global.wall_chunks) - 1, floor((cam_y + cam_h) / global.chunk_size));
 
-    for (var gx = start_x; gx <= end_x; gx++) {
-        for (var gy = start_y; gy <= end_y; gy++) {
-            var chunk_data = ds_grid_get(global.wall_chunks, gx, gy);
-            if (chunk_data != undefined) {
-                for (var i = ds_list_size(chunk_data) - 1; i >= 0; i--) {
-                    var wall_data = ds_list_find_value(chunk_data, i);
-                    var wall_x = ds_map_find_value(wall_data, "x");
-                    var wall_y = ds_map_find_value(wall_data, "y");
+//function Init_chunks() {
+//	// Assign existing walls to chunks
+//	var _all_walls = [];
 
-                    if (!is_outside_view(wall_x, wall_y, sprite_width, sprite_height)) {
-                        var new_wall = instance_create_layer(wall_x, wall_y, layer, obj_cellWall);
-                        new_wall.buildingHealth = ds_map_find_value(wall_data, "buildingHealth");
-
-                        ds_list_delete(chunk_data, i);
-                        ds_map_destroy(wall_data);
-                    }
-                }
-                if (ds_list_size(chunk_data) == 0) {
-                    ds_list_destroy(chunk_data);
-                    ds_grid_set(global.wall_chunks, gx, gy, undefined);
-                }
-            }
-        }
-    }
-}
+//	for (var i = 0; i < instance_number(obj_cellWall); ++i;)
+//	{
+//	   _all_walls[i] = instance_find(obj_cellWall,i);
+//	}
+//	//var all_walls = instance_find _all(obj_wall);
+//	for (var i = 0; i < array_length(_all_walls); i++) {
+//	    var _wall = _all_walls[i];
+//		show_debug_message("initial wall data stored")
+//	    store_wall_data(_wall);
+//	}	
+//}
