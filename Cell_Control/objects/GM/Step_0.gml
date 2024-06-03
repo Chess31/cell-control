@@ -15,26 +15,3 @@ if (keyboard_check_pressed(vk_backspace))
 {
 	game_restart();
 }
-
-//Wall management
-//var chunk_size = global.chunk_size;
-//var range = 6; // Number of chunks to keep loaded around the player
-
-//with (obj_cellWall) {
-//    if (point_distance(x, y, obj_player.x, obj_player.y) > chunk_size*range) {
-//        // Save and destroy the wall if it's far from the player
-//        save_wall_data(id);
-//    }
-//}
-
-//var player_chunk_x = floor(obj_player.x / chunk_size);
-//var player_chunk_y = floor(obj_player.y / chunk_size);
-
-////// Iterate over a range of chunks around the player
-////for (var dx = -range; dx <= range; dx++) {
-////    for (var dy = -range; dy <= range; dy++) {
-////        var chunk_x = player_chunk_x + dx;
-////        var chunk_y = player_chunk_y + dy;
-////        load_chunk_walls(chunk_x, chunk_y);
-////    }
-////}

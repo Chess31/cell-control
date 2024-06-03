@@ -25,14 +25,6 @@ shiftSlot = -1; // No weapon initially
 altSlot = -1; // No weapon initially
 comboSlot = -1; //test combo
 
-////Arm Variables
-//arm_end_x = x;
-//arm_end_y = y;
-//arm_active = false;
-//hook_1 = instance_create_layer(x,y,"Instances",obj_hook);
-
-
-
 // AddAmmo Function
 function AddAmmo(_amount) {
     ammo += _amount;

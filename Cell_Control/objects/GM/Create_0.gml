@@ -103,10 +103,3 @@ global.difficulty_scalar = 0.05;
 DefineEnemyPacks();
 //Spawn Initial Enemy Well
 alarm[0] = 1;
-
-// Global variables for wall system
-global.current_chunk_x = -1;
-global.current_chunk_y = -1;
-global.chunk_size = 256;//div 8 to get chunk side length in blocks
-global.wall_chunks = ds_map_create();
-global.wall_storage_file = "wall_chunks.json";
