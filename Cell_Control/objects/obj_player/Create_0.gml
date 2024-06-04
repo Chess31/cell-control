@@ -7,6 +7,11 @@ hSpeed = 0;
 vSpeed = 0;
 walkSpeed = 6.0;
 
+grid_x = -1;
+grid_y = -1;
+chunk_x = -1;
+chunk_y = -1;
+
 //Define starting variables
 ammo = 25; // Initialize ammo
 playerHealth = 15; //Initialize player health

@@ -24,6 +24,14 @@ y = min(y, room_height);
 x = max(x, 0);
 y = max(y, 0);
 
+grid_x = floor(x div 8);
+grid_y = floor(y div 8);
+
+chunk_x = floor(grid_x div global.chunk_size);
+chunk_y = floor(grid_y div global.chunk_size);
+
+//toggle_chunk(chunk_x, chunk_y, true);
+
 // Shooting logic
 if (can_shoot_cooldown <= 0){
 	if (mouse_check_button(mb_left) && ammo > 0 && isDeployingWall = false) {

@@ -9,7 +9,7 @@ y = _center_y + lengthdir_y(800,_angle);
 wall_delete_range = 200;
 
 waves_left = 5; //number of waves before a boss
-time_between_waves = (30-(global.infections_destroyed/2)) * game_get_speed(gamespeed_fps); //seconds
+time_between_waves = (30-(global.infections_destroyed)) * game_get_speed(gamespeed_fps); //seconds
 wave_timer = time_between_waves;
 enemies_per_wave = waves_left + 3 + clamp(floor(global.difficulty * 20),0,20); //total should be the final wave's enemy count (integer is first wave e count, multiplier is total extra enemies)
 enemies_spawned = 0;

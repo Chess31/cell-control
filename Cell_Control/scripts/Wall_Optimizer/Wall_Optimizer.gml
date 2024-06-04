@@ -1,214 +1,92 @@
-//function initialize_chunks() {
-//	// Initialize the chunk system and store walls by chunk
-//	global.chunk_size = 512; //256 with a range of 1 works (committing this setup)
-//	global.wall_chunks = ds_map_create();
+/// @description Activate all wall objects in a specific chunk
+/// @param chunkX The X index of the chunk
+/// @param chunkY The Y index of the chunk
 
-//	with (obj_cellWall) {
-//	    var chunk_key = get_chunk_coords(x, y);
+function activate_chunk(chunkX, chunkY) {
+    if (chunkX >= 0 && chunkX < array_length(global.chunk_data) &&
+        chunkY >= 0 && chunkY < array_length(global.chunk_data[0])) {
+        
+        var chunkList = global.chunk_data[chunkX][chunkY];
+        var listSize = ds_list_size(chunkList);
+        for (var i = 0; i < listSize; i++) {
+            var wall_id = ds_list_find_value(chunkList, i);
+            if (instance_exists(wall_id)) {
+                with (wall_id) {
+                    instance_activate_object(wall_id);
+                }
+            }
+        }
+    }
+}
 
-//	    if (!ds_map_exists(global.wall_chunks, chunk_key)) {
-//	        var new_chunk = ds_map_create();
-//	        ds_map_add(global.wall_chunks, chunk_key, new_chunk);
-//	    } else {
-//	        var new_chunk = global.wall_chunks[? chunk_key];
-//	    }
+/// @description Deactivate all wall objects in a specific chunk
+/// @param chunkX The X index of the chunk
+/// @param chunkY The Y index of the chunk
 
-//	    var wall_info = ds_map_create();
-//	    ds_map_add(wall_info, "x", x);
-//	    ds_map_add(wall_info, "y", y);
-//	    ds_map_add(wall_info, "buildingHealth", buildingHealth);
+function deactivate_chunk(chunkX, chunkY) {
+    if (chunkX >= 0 && chunkX < array_length(global.chunk_data) &&
+        chunkY >= 0 && chunkY < array_length(global.chunk_data[0])) {
+        
+        var chunkList = global.chunk_data[chunkX][chunkY];
+        var listSize = ds_list_size(chunkList);
+        for (var i = 0; i < listSize; i++) {
+            var wall_id = ds_list_find_value(chunkList, i);
+            if (instance_exists(wall_id)) {
+                with (wall_id) {
+                    instance_deactivate_object(wall_id);
+                }
+            }
+        }
+    }
+}
 
-//	    var wall_key = string(x) + "," + string(y);
-//	    ds_map_add(new_chunk, wall_key, wall_info);
+//Toggle activation of a chunk based on its position
+/// @param x The chunk X position
+/// @param y The chunk Y position
+/// @param activate Whether to activate (true) or deactivate (false) the chunk
+function toggle_chunk(_x, _y, activate) {
+    var chunkX = _x; //div global.chunk_size;
+    var chunkY = _y; //div global.chunk_size;
+    if (activate) {
+        activate_chunk(chunkX, chunkY);
+    } else {
+        deactivate_chunk(chunkX, chunkY);
+    }
+}
 
-//	    instance_destroy(id); // Remove the wall instance from the game
-//	}
-//}
+function deactivate_all_chunks() {
+	for (var _x = 0; _x < array_length(global.chunk_data); _x++) {
+		for (var _y = 0; _y < array_length(global.chunk_data[0]); _y++) {
+			toggle_chunk(_x,_y,false);
+		}
+	}
+}
 
-//function get_chunk_coords() {
-//	// Arguments: x, y
-//	var _x = argument0;
-//	var _y = argument1;
+function activate_visible_chunks() {
+	var chunkSize = global.chunk_size;
 
-//	var chunk_x = floor(_x / global.chunk_size);
-//	var chunk_y = floor(_y / global.chunk_size);
+	// Get the view position and size
+	var viewX = camera_get_view_x(view_camera[0]);
+	var viewY = camera_get_view_y(view_camera[0]);
+	var viewWidth = camera_get_view_width(view_camera[0]);
+	var viewHeight = camera_get_view_height(view_camera[0]);
 
-//	return string(chunk_x) + "," + string(chunk_y);
-//}
+	// Calculate the range of chunks that are currently visible
+	var startChunkX = max(0, (viewX div (chunkSize * 8)));
+	var endChunkX = min(array_length(global.chunk_data) - 1, ((viewX + viewWidth) div (chunkSize * 8)));
+	var startChunkY = max(0, (viewY div (chunkSize * 8)));
+	var endChunkY = min(array_length(global.chunk_data[0]) - 1, ((viewY + viewHeight) div (chunkSize * 8)));
 
-////function load_chunk_walls() {
-////	// Arguments: chunk_x, chunk_y
-////	var chunk_x = argument0;
-////	var chunk_y = argument1;
-////	var chunk_key = string(chunk_x) + "," + string(chunk_y);
-
-////	if (ds_map_exists(global.wall_chunks, chunk_key)) {
-////	    var chunk = global.wall_chunks[? chunk_key];
-
-////	    // Create a list of keys
-////	    var keys = ds_map_keys(chunk);
-////	    for (var i = 0; i < ds_list_size(keys); i++) {
-////	        var wall_key = ds_list_find_value(keys, i);
-////	        var wall_info = chunk[? wall_key];
-
-////	        var wall = instance_create_layer(wall_info[? "x"], wall_info[? "y"], layer, obj_cellWall);
-////	        wall.buildingHealth = wall_info[? "buildingHealth"];
-////	    }
-
-////	    // Clean up
-////	    ds_list_destroy(keys);
-////	    ds_map_delete(global.wall_chunks, chunk_key);
-////	    ds_map_destroy(chunk);
-////	}
-////}
-
-//// Helper function to get keys of a ds_map
-//function ds_map_keys(map) {
-//    var keys = ds_list_create();
-//    var key = ds_map_find_first(map);
-
-//    while (key != undefined) {
-//        ds_list_add(keys, key);
-//        key = ds_map_find_next(map, key);
-//    }
-
-//    return keys;
-//}
-
-////function unload_chunk_walls() {
-////	// Arguments: chunk_x, chunk_y
-////	var chunk_x = argument0;
-////	var chunk_y = argument1;
-////	var chunk_key = string(chunk_x) + "," + string(chunk_y);
-
-////	var chunk = ds_map_create();
-
-////	with (obj_cellWall) {
-////	    var wall_chunk_x = floor(x / global.chunk_size);
-////	    var wall_chunk_y = floor(y / global.chunk_size);
-
-////	    if (wall_chunk_x == chunk_x && wall_chunk_y == chunk_y) {
-////	        var wall_info = ds_map_create();
-////	        ds_map_add(wall_info, "x", x);
-////	        ds_map_add(wall_info, "y", y);
-////	        ds_map_add(wall_info, "buildingHealth", buildingHealth);
-
-////	        var wall_key = string(x) + "," + string(y);
-////	        ds_map_add(chunk, wall_key, wall_info);
-
-////	        instance_destroy(id);
-////	    }
-////	}
-
-////	ds_map_add(global.wall_chunks, chunk_key, chunk);
-////}
-
-//function determine_walls_to_load() {
-//	// Arguments: chunk_x, chunk_y
-//	var chunk_x = argument0;
-//	var chunk_y = argument1;
-//	var chunk_key = string(chunk_x) + "," + string(chunk_y);
-
-//	if (ds_map_exists(global.wall_chunks, chunk_key)) {
-//	    var chunk = global.wall_chunks[? chunk_key];
-
-//	    if (!is_undefined(global.walls_to_load)) {
-//	        ds_list_destroy(global.walls_to_load);
-//	    }
-
-//	    global.walls_to_load = ds_list_create();
-//	    global.walls_to_load_chunk = chunk;
-
-//	    // Create a list of wall keys to process in batches
-//	    var keys = ds_map_keys(chunk);
-//	    for (var i = 0; i < ds_list_size(keys); i++) {
-//	        var wall_key = ds_list_find_value(keys, i);
-//	        ds_list_add(global.walls_to_load, wall_key);
-//	    }
-
-//	    ds_list_destroy(keys);
-//	    ds_map_delete(global.wall_chunks, chunk_key);
-//	}
-//}
-//function determine_walls_to_unload() {
-//	// Arguments: chunk_x, chunk_y
-//	var chunk_x = argument0;
-//	var chunk_y = argument1;
-//	var chunk_key = string(chunk_x) + "," + string(chunk_y);
-
-//	var chunk = ds_map_create();
-
-//	if (!is_undefined(global.walls_to_unload)) {
-//	    ds_list_destroy(global.walls_to_unload);
-//	}
-
-//	global.walls_to_unload = ds_list_create();
-//	global.walls_to_unload_chunk = chunk;
-
-//	with (obj_cellWall) {
-//	    var wall_chunk_x = floor(x / global.chunk_size);
-//	    var wall_chunk_y = floor(y / global.chunk_size);
-
-//	    if (wall_chunk_x == chunk_x && wall_chunk_y == chunk_y) {
-//	        var wall_info = ds_map_create();
-//	        ds_map_add(wall_info, "x", x);
-//	        ds_map_add(wall_info, "y", y);
-//	        ds_map_add(wall_info, "buildingHealth", buildingHealth);
-
-//	        var wall_key = string(x) + "," + string(y);
-//	        ds_map_add(chunk, wall_key, wall_info);
-//	        ds_list_add(global.walls_to_unload, wall_key);
-//	    }
-//	}
-
-//	ds_map_add(global.wall_chunks, chunk_key, chunk);
-//}
-
-//function process_walls_to_load() {
-//	if (!is_undefined(global.walls_to_load)) {
-//	    var walls_processed = 0;
-//		//change the line below to process more or less walls per frame
-//	    while (walls_processed < 60 && ds_list_size(global.walls_to_load) > 0) {
-//	        var wall_key = ds_list_find_value(global.walls_to_load, 0);
-//	        ds_list_delete(global.walls_to_load, 0);
-
-//	        var wall_info = global.walls_to_load_chunk[? wall_key];
-//	        var wall = instance_create_layer(wall_info[? "x"], wall_info[? "y"], layer, obj_cellWall);
-//	        wall.buildingHealth = wall_info[? "buildingHealth"];
-
-//	        walls_processed++;
-//	    }
-
-//	    // Clean up the list if it's empty
-//	    if (ds_list_size(global.walls_to_load) == 0) {
-//	        ds_list_destroy(global.walls_to_load);
-//	        global.walls_to_load = undefined;
-//	        global.walls_to_load_chunk = undefined;
-//	    }
-//	}
-//}
-
-//function process_walls_to_unload() {
-//	if (!is_undefined(global.walls_to_unload)) {
-//	    var walls_processed = 0;
-//		//change the line below to process more or less walls per frame
-//	    while (walls_processed < 60 && ds_list_size(global.walls_to_unload) > 0) {
-//	        var wall_key = ds_list_find_value(global.walls_to_unload, 0);
-//	        ds_list_delete(global.walls_to_unload, 0);
-
-//	        var wall = instance_find(obj_cellWall, wall_key);
-//	        if (instance_exists(wall)) {
-//	            instance_destroy(wall);
-//	        }
-
-//	        walls_processed++;
-//	    }
-
-//	    // Clean up the list if it's empty
-//	    if (ds_list_size(global.walls_to_unload) == 0) {
-//	        ds_list_destroy(global.walls_to_unload);
-//	        global.walls_to_unload = undefined;
-//	        global.walls_to_unload_chunk = undefined;
-//	    }
-//	}
-//}
+	// Activate on-screen chunks and deactivate off-screen chunks
+	for (var cx = 0; cx < array_length(global.chunk_data); cx++) {
+	    for (var cy = 0; cy < array_length(global.chunk_data[0]); cy++) {
+	        if (cx >= startChunkX && cx <= endChunkX && cy >= startChunkY && cy <= endChunkY) {
+	            // The chunk is within the view range, activate it
+	            activate_chunk(cx, cy);
+	        } else {
+	            // The chunk is outside the view range, deactivate it
+	            deactivate_chunk(cx, cy);
+	        }
+	    }
+	}
+}
