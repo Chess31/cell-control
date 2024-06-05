@@ -20,6 +20,10 @@ camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
 //global.cam_bottom = y + view_h_half;
 //global.cam_top = y - view_h_half;
 
-//currently broken (just write this yourself...)
+step_counter++;
+if (step_counter = chunk_update_interval) {
+	activate_visible_chunks();
+	step_counter = 0;
+}
 
-activate_visible_chunks();//instance_activate_region(global.cam_left, global.cam_top, camera_get_view_width(cam), camera_get_view_height(cam), inside);
+process_chunk_queues();

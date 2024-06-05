@@ -1,1 +1,0 @@
-draw_rectangle(camera_get_view_x(cam) + 10, camera_get_view_y(cam) + 10, camera_get_view_width(cam) - 10 + (x-view_w_half), camera_get_view_height(cam) - 10 + (y-view_h_half), true);

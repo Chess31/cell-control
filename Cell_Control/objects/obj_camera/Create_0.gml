@@ -13,3 +13,9 @@ yTo = ystart;
 //global.cam_left = x - view_w_half;
 //global.cam_bottom = y + view_h_half;
 //global.cam_top = y - view_h_half;
+
+// Initialize queues for chunks to be activated and deactivated
+global.chunks_to_activate = ds_queue_create();
+global.chunks_to_deactivate = ds_queue_create();
+chunk_update_interval = 1;
+step_counter = 0;
