@@ -113,3 +113,12 @@ global.chunk_size = 16; //size in wall blocks
 global.chunk_data = ds_list_create();
 create_wall_instances(); //do this once and assign walls to chunks here
 deactivate_all_chunks(); //start with chunks off
+
+// Initialize arrays to track the state of each chunk
+global.chunk_active = array_create(array_length(global.chunk_data));
+for (var cx = 0; cx < array_length(global.chunk_data); cx++) {
+    global.chunk_active[cx] = array_create(array_length(global.chunk_data[0]));
+    for (var cy = 0; cy < array_length(global.chunk_data[0]); cy++) {
+        global.chunk_active[cx][cy] = false; // Initially, all chunks are inactive
+    }
+}

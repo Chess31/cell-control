@@ -28,6 +28,8 @@ if (global.infections_destroyed < 3) {
 	my_enemy_types = global.enemy_array_y;
 } else if (global.infections_destroyed < 16) {
 	my_enemy_types = global.enemy_array_rbgpy;
+} else {
+	my_enemy_types = global.enemy_array_rbgpy;
 }
 
 //reset difficulty for specific waves

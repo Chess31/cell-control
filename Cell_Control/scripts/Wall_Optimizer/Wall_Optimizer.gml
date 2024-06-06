@@ -63,7 +63,7 @@ function deactivate_all_chunks() {
 
 function activate_visible_chunks() {
 	// Define the chunk size
-    var chunkSize = 16;
+    var chunkSize = global.chunk_size;
 
     // Get the view position and size
     var viewX = camera_get_view_x(view_camera[0]);
@@ -77,34 +77,43 @@ function activate_visible_chunks() {
     var startChunkY = max(0, (viewY div (chunkSize * 8)));
     var endChunkY = min(array_length(global.chunk_data[0]) - 1, ((viewY + viewHeight) div (chunkSize * 8)));
 
-    // Loop through all chunks and determine which need to be activated or deactivated
+   // Loop through all chunks and determine which need to be activated or deactivated
     for (var cx = 0; cx < array_length(global.chunk_data); cx++) {
         for (var cy = 0; cy < array_length(global.chunk_data[0]); cy++) {
             if (cx >= startChunkX && cx <= endChunkX && cy >= startChunkY && cy <= endChunkY) {
-                // The chunk is within the view range, add to activate queue
-                ds_queue_enqueue(global.chunks_to_activate, [cx, cy]);
+                // The chunk is within the view range, add to activate queue if not already active
+                if (!global.chunk_active[cx][cy]) {
+                    ds_queue_enqueue(global.chunks_to_activate, [cx, cy]);
+                    global.chunk_active[cx][cy] = true;
+                }
             } else {
-                // The chunk is outside the view range, add to deactivate queue
-                ds_queue_enqueue(global.chunks_to_deactivate, [cx, cy]);
+                // The chunk is outside the view range, add to deactivate queue if currently active
+                if (global.chunk_active[cx][cy]) {
+                    ds_queue_enqueue(global.chunks_to_deactivate, [cx, cy]);
+                    global.chunk_active[cx][cy] = false;
+                }
             }
         }
     }
 }
 
-//process one chunk from each list
+//process chunks from each list
 function process_chunk_queues() {
-    //if (!ds_queue_empty(global.chunks_to_activate)) {
-        var chunk = ds_queue_dequeue(global.chunks_to_activate);
-        var cx = chunk[0];
-        var cy = chunk[1];
-        activate_chunk(cx, cy);
-		show_debug_message("activated chunk " + string(cx) + string(cy))
-    //}
+    var chunks_per_step = 1; // Number of chunks to process per step
 
-    //if (!ds_queue_empty(global.chunks_to_deactivate)) {
-        var chunk = ds_queue_dequeue(global.chunks_to_deactivate);
-        var cx = chunk[0];
-        var cy = chunk[1];
-        deactivate_chunk(cx, cy);
-    //}
+    for (var i = 0; i < chunks_per_step; i++) {
+        if (!ds_queue_empty(global.chunks_to_activate)) {
+            var chunk = ds_queue_dequeue(global.chunks_to_activate);
+            var cx = chunk[0];
+            var cy = chunk[1];
+            activate_chunk(cx, cy);
+        }
+
+        if (!ds_queue_empty(global.chunks_to_deactivate)) {
+            var chunk = ds_queue_dequeue(global.chunks_to_deactivate);
+            var cx = chunk[0];
+            var cy = chunk[1];
+            deactivate_chunk(cx, cy);
+        }
+    }
 }

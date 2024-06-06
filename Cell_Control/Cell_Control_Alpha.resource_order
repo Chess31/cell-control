@@ -44,7 +44,7 @@
     {"name":"GameMenuOptions","order":5,"path":"scripts/GameMenuOptions/GameMenuOptions.yy",},
     {"name":"s_HealthBar","order":13,"path":"sprites/s_HealthBar/s_HealthBar.yy",},
     {"name":"SparkParticles","order":4,"path":"scripts/SparkParticles/SparkParticles.yy",},
-    {"name":"obj_enemy_bullet","order":6,"path":"objects/obj_enemy_bullet/obj_enemy_bullet.yy",},
+    {"name":"obj_enemy_bullet","order":2,"path":"objects/obj_enemy_bullet/obj_enemy_bullet.yy",},
     {"name":"s_WeaponToken","order":15,"path":"sprites/s_WeaponToken/s_WeaponToken.yy",},
     {"name":"s_Spawner","order":3,"path":"sprites/s_Spawner/s_Spawner.yy",},
     {"name":"obj_boss_blue","order":25,"path":"objects/obj_boss_blue/obj_boss_blue.yy",},

@@ -26,4 +26,9 @@ if (place_meeting(x, y, obj_cellWall)) {
 	var _wall = instance_place(x, y, obj_cellWall);
 	instance_destroy();
 	_wall.buildingHealth -= damage;
+	with(_wall) {
+		if (buildingHealth <= 0) {
+			instance_destroy();
+		}
+	}
 }

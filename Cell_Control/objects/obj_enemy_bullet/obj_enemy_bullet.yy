@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Bullet Types",
+    "path": "folders/Objects/Bullet Types.yy",
   },
   "parentObjectId": null,
   "persistent": false,
