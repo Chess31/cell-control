@@ -16,17 +16,17 @@ enemies_spawned = 0;
 boss_countdown = 60 * game_get_speed(gamespeed_fps);
 
 //enemy selector
-if (global.infections_destroyed < 3) {
+if (global.infections_destroyed < 2) {
 	my_enemy_types = global.enemy_array_r;
-} else if (global.infections_destroyed < 6) {
+} else if (global.infections_destroyed < 4) {
 	my_enemy_types = global.enemy_array_rb;
-} else if (global.infections_destroyed < 9) {
+} else if (global.infections_destroyed < 6) {
 	my_enemy_types = global.enemy_array_bg;
-} else if (global.infections_destroyed < 11) {
+} else if (global.infections_destroyed < 8) {
 	my_enemy_types = global.enemy_array_rp;
-} else if (global.infections_destroyed < 13) {
+} else if (global.infections_destroyed < 10) {
 	my_enemy_types = global.enemy_array_y;
-} else if (global.infections_destroyed < 16) {
+} else if (global.infections_destroyed < 12) {
 	my_enemy_types = global.enemy_array_rbgpy;
 } else {
 	my_enemy_types = global.enemy_array_rbgpy;

@@ -40,21 +40,21 @@ ds_list_add(global.buildingHealths, 75);
 ds_list_add(global.buildingSprites, s_Wall);
 ds_list_add(global.buildingCosts, 5);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 30);
+ds_list_add(global.buildingMaxNumber, 5);
 
 ds_list_add(global.buildingTypes, "Turret");
 ds_list_add(global.buildingHealths, 15);
 ds_list_add(global.buildingSprites, s_Turret);
 ds_list_add(global.buildingCosts, 15);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 15);
+ds_list_add(global.buildingMaxNumber, 3);
 
 ds_list_add(global.buildingTypes, "Forge");
 ds_list_add(global.buildingHealths, 20);
 ds_list_add(global.buildingSprites, s_Forge);
 ds_list_add(global.buildingCosts, 30);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 8);
+ds_list_add(global.buildingMaxNumber, 5);
 	
 ds_list_add(global.buildingTypes, "Upgrader");
 ds_list_add(global.buildingHealths, 50);
@@ -68,7 +68,7 @@ ds_list_add(global.buildingHealths, 5);
 ds_list_add(global.buildingSprites, s_ProxMine);
 ds_list_add(global.buildingCosts, 5);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 4);
+ds_list_add(global.buildingMaxNumber, 2);
 	
 ds_list_add(global.buildingTypes, "Feeder");
 ds_list_add(global.buildingHealths, 300);
@@ -82,7 +82,7 @@ ds_list_add(global.buildingHealths, 100);
 ds_list_add(global.buildingSprites, s_Hive);
 ds_list_add(global.buildingCosts, 1);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 3);
+ds_list_add(global.buildingMaxNumber, 1);
 	
 //ds_list_add(global.buildingTypes, "Crafter");
 //ds_list_add(global.buildingHealths, 20);

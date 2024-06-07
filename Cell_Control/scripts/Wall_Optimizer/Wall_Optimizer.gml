@@ -64,6 +64,7 @@ function deactivate_all_chunks() {
 function activate_visible_chunks() {
 	// Define the chunk size
     var chunkSize = global.chunk_size;
+	var chunkBoarder = -1;
 
     // Get the view position and size
     var viewX = camera_get_view_x(view_camera[0]);
@@ -72,10 +73,10 @@ function activate_visible_chunks() {
     var viewHeight =  camera_get_view_height(view_camera[0]);
 
     // Calculate the range of chunks that are currently visible
-    var startChunkX = max(0, (viewX div (chunkSize * 8)));
-    var endChunkX = min(array_length(global.chunk_data) - 1, ((viewX + viewWidth) div (chunkSize * 8)));
-    var startChunkY = max(0, (viewY div (chunkSize * 8)));
-    var endChunkY = min(array_length(global.chunk_data[0]) - 1, ((viewY + viewHeight) div (chunkSize * 8)));
+    var startChunkX = max(0, (viewX div (chunkSize * 8)) + chunkBoarder);
+    var endChunkX = min(array_length(global.chunk_data) - 1, ((viewX + viewWidth) div (chunkSize * 8)) - chunkBoarder);
+    var startChunkY = max(0, (viewY div (chunkSize * 8)) + chunkBoarder);
+    var endChunkY = min(array_length(global.chunk_data[0]) - 1, ((viewY + viewHeight) div (chunkSize * 8)) - chunkBoarder);
 
    // Loop through all chunks and determine which need to be activated or deactivated
     for (var cx = 0; cx < array_length(global.chunk_data); cx++) {
