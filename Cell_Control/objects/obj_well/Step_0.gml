@@ -40,12 +40,19 @@ if (waves_left > 0) {
 	}
 }
 
+if (distance_to_object(obj_player) < wall_delete_range) {
+	shot_cooldown--;
+	
+	if (shot_cooldown <= 0) {
+	// Create a bullet object
+	var bullet = instance_create_layer(x, y, "Instances", obj_enemy_bullet);
 
+	// Set the bullet's direction and speed towards the player
+	bullet.direction = point_direction(x, y, obj_player.x, obj_player.y);
+	bullet.speed = 9; // Adjust the bullet speed as needed
+	bullet.bcolor = c_green;
 
-
-
-////test movement	
-//if (keyboard_check_pressed(vk_space)) {
-//	x += irandom_range(-50,50);
-//	y += irandom_range(-50,50);
-//}
+	// Reset the shoot cooldown
+	shot_cooldown = shot_interval;
+}
+}

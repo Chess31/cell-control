@@ -40,7 +40,7 @@ ds_list_add(global.buildingHealths, 75);
 ds_list_add(global.buildingSprites, s_Wall);
 ds_list_add(global.buildingCosts, 5);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 5);
+ds_list_add(global.buildingMaxNumber, 15);
 
 ds_list_add(global.buildingTypes, "Turret");
 ds_list_add(global.buildingHealths, 15);
@@ -82,7 +82,7 @@ ds_list_add(global.buildingHealths, 100);
 ds_list_add(global.buildingSprites, s_Hive);
 ds_list_add(global.buildingCosts, 1);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 1);
+ds_list_add(global.buildingMaxNumber, 200);
 	
 //ds_list_add(global.buildingTypes, "Crafter");
 //ds_list_add(global.buildingHealths, 20);

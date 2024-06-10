@@ -71,6 +71,12 @@ if (keyboard_check_pressed(vk_space)) {
 	isDeployingWall = !isDeployingWall;
 }
 
+distance_to_core = point_distance(x, y, obj_cell_core.x, obj_cell_core.y);
+
+if (distance_to_core > 550) {
+	isDeployingWall = false;
+}
+
 // Placement Mode logic
 if (isDeployingWall) {
     

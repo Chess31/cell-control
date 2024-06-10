@@ -23,6 +23,7 @@ isDeployingWall = false; //If the player is building a wall currently
 canTeleport = true;
 global.current_upgrader = noone;
 can_shoot_cooldown = 15;
+distance_to_core = 0;
 
 //Set Up weapon slots
 primarySlot = "primary1"; // default weapon initially

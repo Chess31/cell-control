@@ -6,6 +6,9 @@ var _angle = random(360);
 x = _center_x + lengthdir_x(800,_angle);
 y = _center_y + lengthdir_y(800,_angle);
 
+shot_cooldown = 30;
+shot_interval = 15;
+
 wall_delete_range = 200;
 
 waves_left = 5; //number of waves before a boss

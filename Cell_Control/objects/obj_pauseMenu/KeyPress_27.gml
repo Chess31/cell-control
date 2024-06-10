@@ -3,14 +3,16 @@ global.isPaused = !global.isPaused;
 
 if (global.isPaused) {
     // Stop the game
-    instance_deactivate_all(true);
-	instance_activate_object(obj_menu);
+	room_goto(Room_Pause);
+    //instance_deactivate_all(true);
+	//instance_activate_object(obj_menu);
     //call the pause menu
-		pauseMenu();
+	//pauseMenu();
 	
 } else {
     // Resume the game
-    instance_activate_all();
+	room_goto(Room_Core);
+    //instance_activate_all();
 }
 
 

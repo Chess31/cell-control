@@ -65,7 +65,8 @@ function pauseMenu(){
 
 function unPause(){
 	global.isPaused = false;
-	instance_activate_all();
+	room_goto(Room_Core);
+	//instance_activate_all();
 }
 
 function quitToTitle(){
