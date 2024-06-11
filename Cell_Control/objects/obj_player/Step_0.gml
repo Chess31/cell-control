@@ -1,5 +1,5 @@
 // Set the player's image angle to the calculated direction
-//image_angle = point_direction(x, y, mouse_x, mouse_y);
+var _player_angle = point_direction(x, y, mouse_x, mouse_y);
 
 //WASD Movement
 var _key_left = keyboard_check(ord("A"));
@@ -13,11 +13,8 @@ var _input_magnitude = (_key_right - _key_left != 0) || (_key_down - _key_up != 
 hSpeed = lengthdir_x(_input_magnitude * walkSpeed, _input_direction);
 vSpeed = lengthdir_y(_input_magnitude * walkSpeed, _input_direction);
 
-//x += hSpeed;
-//y += vSpeed;
-
 //move the player based on movement calculation
-move_and_collide(hSpeed, vSpeed, obj_cellWall);//, 4, 8, 8, walkSpeed);
+move_and_collide(hSpeed, vSpeed, obj_cellWall);
 
 //Make sure the player is in the room bounds
 x = min(x, room_width);
@@ -30,8 +27,6 @@ y = max(y, 0);
 
 //chunk_x = floor(grid_x div global.chunk_size);
 //chunk_y = floor(grid_y div global.chunk_size);
-
-////toggle_chunk(chunk_x, chunk_y, true);
 
 // Shooting logic
 if (can_shoot_cooldown <= 0){
@@ -95,8 +90,8 @@ if (isDeployingWall) {
 	}
 
 	// Set the Building's position to be in front of the player
-    var BuildingX = x + lengthdir_x(32, image_angle);
-    var BuildingY = y + lengthdir_y(32, image_angle);
+    var BuildingX = x + lengthdir_x(32, _player_angle);
+    var BuildingY = y + lengthdir_y(32, _player_angle);
 
     // Check for building placement
 	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) {
@@ -108,7 +103,7 @@ if (isDeployingWall) {
 	    _building.buildingHealth = ds_list_find_value(global.buildingHealths, global.currentBuildingIndex);
 	    _building.sprite_index = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex);
 	    _building.constructionCost = ds_list_find_value(global.buildingCosts, global.currentBuildingIndex);
-		_building.image_angle = image_angle;
+		_building.image_angle = _player_angle;
 
 		if (ds_list_find_value(global.buildingCount, global.currentBuildingIndex) < ds_list_find_value(global.buildingMaxNumber, global.currentBuildingIndex)) {
 		    ds_list_replace(global.buildingCount, global.currentBuildingIndex, ds_list_find_value(global.buildingCount, global.currentBuildingIndex) + 1);

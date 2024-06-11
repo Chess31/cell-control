@@ -1,5 +1,3 @@
-//draw_self();
-
 // Get the direction towards the mouse
 var playerDirection = point_direction(x, y, mouse_x, mouse_y);
 

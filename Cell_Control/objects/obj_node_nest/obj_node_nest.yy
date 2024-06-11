@@ -9,7 +9,10 @@
     "name": "NodeTypes",
     "path": "folders/Objects/NodeTypes.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_node_parent",
+    "path": "objects/obj_node_parent/obj_node_parent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
