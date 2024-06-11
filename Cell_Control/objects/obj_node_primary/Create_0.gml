@@ -1,6 +1,6 @@
 event_inherited();
 node_health = 500;
-growth_rate = 120;
+growth_rate = 300;
 growth_timer = growth_rate;
 node_type = "primary";
 

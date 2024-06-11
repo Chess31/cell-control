@@ -1,6 +1,6 @@
 event_inherited();
 node_health = 250;
-growth_rate = 180;
+growth_rate = 240;
 node_type = "secondary";
 
 // Spread Infection Override
