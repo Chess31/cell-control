@@ -1,5 +1,5 @@
 // Set the player's image angle to the calculated direction
-image_angle = point_direction(x, y, mouse_x, mouse_y);
+//image_angle = point_direction(x, y, mouse_x, mouse_y);
 
 //WASD Movement
 var _key_left = keyboard_check(ord("A"));
@@ -17,7 +17,8 @@ vSpeed = lengthdir_y(_input_magnitude * walkSpeed, _input_direction);
 //y += vSpeed;
 
 //move the player based on movement calculation
-move_and_collide(hSpeed, vSpeed, obj_cellWall);
+move_and_collide(hSpeed, vSpeed, obj_cellWall);//, 4, 8, 8, walkSpeed);
+
 //Make sure the player is in the room bounds
 x = min(x, room_width);
 y = min(y, room_height);

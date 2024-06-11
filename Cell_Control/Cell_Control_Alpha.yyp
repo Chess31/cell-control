@@ -110,6 +110,7 @@
     {"id":{"name":"obj_node_parent","path":"objects/obj_node_parent/obj_node_parent.yy",},},
     {"id":{"name":"s_Feeder","path":"sprites/s_Feeder/s_Feeder.yy",},},
     {"id":{"name":"s_Drone","path":"sprites/s_Drone/s_Drone.yy",},},
+    {"id":{"name":"s_player_test","path":"sprites/s_player_test/s_player_test.yy",},},
     {"id":{"name":"obj_altUnlock","path":"objects/obj_altUnlock/obj_altUnlock.yy",},},
     {"id":{"name":"obj_collectible","path":"objects/obj_collectible/obj_collectible.yy",},},
     {"id":{"name":"obj_node_tertiary","path":"objects/obj_node_tertiary/obj_node_tertiary.yy",},},

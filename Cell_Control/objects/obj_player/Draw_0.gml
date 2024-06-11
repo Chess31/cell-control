@@ -1,7 +1,9 @@
-draw_self();
+//draw_self();
 
 // Get the direction towards the mouse
 var playerDirection = point_direction(x, y, mouse_x, mouse_y);
+
+draw_sprite_ext(s_Player,image_index,x,y,1,1,playerDirection,c_white,1);
 
 // Placement Mode logic
 if (isDeployingWall) {

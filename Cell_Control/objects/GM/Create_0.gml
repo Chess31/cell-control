@@ -80,9 +80,9 @@ ds_list_add(global.buildingMaxNumber, 1);
 ds_list_add(global.buildingTypes, "Hive");
 ds_list_add(global.buildingHealths, 100);
 ds_list_add(global.buildingSprites, s_Hive);
-ds_list_add(global.buildingCosts, 1);
+ds_list_add(global.buildingCosts, 200);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 200);
+ds_list_add(global.buildingMaxNumber, 1);
 	
 //ds_list_add(global.buildingTypes, "Crafter");
 //ds_list_add(global.buildingHealths, 20);
