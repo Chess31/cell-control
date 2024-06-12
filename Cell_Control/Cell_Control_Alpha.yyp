@@ -99,6 +99,7 @@
     {"id":{"name":"GameMenuOptions","path":"scripts/GameMenuOptions/GameMenuOptions.yy",},},
     {"id":{"name":"HiveOptions","path":"scripts/HiveOptions/HiveOptions.yy",},},
     {"id":{"name":"init_game","path":"scripts/init_game/init_game.yy",},},
+    {"id":{"name":"instance_nearest_exclude_self","path":"scripts/instance_nearest_exclude_self/instance_nearest_exclude_self.yy",},},
     {"id":{"name":"MenuFunction","path":"scripts/MenuFunction/MenuFunction.yy",},},
     {"id":{"name":"PlayerWeapons","path":"scripts/PlayerWeapons/PlayerWeapons.yy",},},
     {"id":{"name":"ProcessCulls","path":"scripts/ProcessCulls/ProcessCulls.yy",},},

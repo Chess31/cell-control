@@ -24,7 +24,7 @@
   ],
   "name":"s_node_tertiary",
   "nineSlice":null,
-  "origin":5,
+  "origin":4,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -76,7 +76,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":64,
+    "xorigin":32,
     "yorigin":32,
   },
   "swatchColours":null,

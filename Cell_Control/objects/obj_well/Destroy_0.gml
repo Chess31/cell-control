@@ -1,6 +1,8 @@
-/// @description Insert description here
+/// @description Create a boss and an infection core/primary node
 
-//at well 9, there is chance to spawn a second well
+instance_create_layer(x,y,"NodesLayer",obj_node_primary);
+
+//at well 10, there is chance to spawn a second well
 if (global.infections_destroyed >= 10) {
 	if (irandom(1) == 1) {
 		instance_create_layer(x,y,"Instances", obj_well);
