@@ -41,7 +41,7 @@ ds_list_add(global.buildingHealths, 75);
 ds_list_add(global.buildingSprites, s_Wall);
 ds_list_add(global.buildingCosts, 5);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 15);
+ds_list_add(global.buildingMaxNumber, 20);
 
 ds_list_add(global.buildingTypes, "Turret");
 ds_list_add(global.buildingHealths, 15);
@@ -84,7 +84,22 @@ ds_list_add(global.buildingSprites, s_Hive);
 ds_list_add(global.buildingCosts, 200);
 ds_list_add(global.buildingCount, 0);
 ds_list_add(global.buildingMaxNumber, 1);
-	
+
+global.next_wall_cost = 1;
+global.wall_cost_multiplier = 1.2;
+
+global.next_turret_cost = 3;
+global.turret_cost_multiplier = 1.3;
+
+global.next_forge_cost = 5;
+global.forge_cost_multiplier = 1.3;
+
+global.next_proxmine_cost = 8;
+global.proxmine_cost_multiplier = 1.4;
+
+global.next_hive_cost = 24;
+global.hive_cost_multiplier = 1.5;
+
 //ds_list_add(global.buildingTypes, "Crafter");
 //ds_list_add(global.buildingHealths, 20);
 //ds_list_add(global.buildingSprites, s_Crafter);

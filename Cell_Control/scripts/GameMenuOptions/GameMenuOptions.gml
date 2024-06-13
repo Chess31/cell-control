@@ -55,7 +55,7 @@ function controlsOptions(){
 
 //Pause Menu Stuff
 function pauseMenu(){
-	MenuCreate(display_get_gui_width() / 2, display_get_gui_height() / 2,
+	MenuCreate(display_get_gui_width()/2 - string_width("Game Paused")/2, display_get_gui_height() / 2,
 				[
 					["Continue",unPause],
 					["Quit",quitToTitle]

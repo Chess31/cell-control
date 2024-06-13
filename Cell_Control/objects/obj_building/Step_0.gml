@@ -5,14 +5,6 @@ if (playerBullet != noone) and (type != "Turret"){
     instance_destroy(playerBullet);
 }
 
-//// Check for collisions with enemy bullets
-//var enemyBullet = instance_place(x, y, obj_enemy_bullet); //if an enemy bullet is on our x and y
-//if (enemyBullet != noone) {
-//    // Destroy the enemy bullet
-//	buildingHealth -= enemyBullet.damage;
-//	if (enemyBullet.piercing = false) {instance_destroy(enemyBullet)};
-//}
-
 //Building Health Check
 if (buildingHealth <= 0)
 {
@@ -46,7 +38,7 @@ switch (type) {
 
     case "Forge":
         // periodically spawn a collectible
-        if (random(105) < 1) { // % chance every step
+        if (random(110) < 1) { // % chance every step
             // Spawn Collectible
             instance_create_layer(x + lengthdir_x(50, random(360)), y + lengthdir_y(50, random(360)), "Collectibles", obj_collectible);
         }
