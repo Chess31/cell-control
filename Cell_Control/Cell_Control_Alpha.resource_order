@@ -14,6 +14,7 @@
     {"name":"TESTING","order":1,"path":"folders/TESTING.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fnt_main","order":1,"path":"fonts/fnt_main/fnt_main.yy",},
     {"name":"obj_altUnlock","order":28,"path":"objects/obj_altUnlock/obj_altUnlock.yy",},
     {"name":"obj_boss_blue","order":25,"path":"objects/obj_boss_blue/obj_boss_blue.yy",},
     {"name":"obj_boss_parent","order":26,"path":"objects/obj_boss_parent/obj_boss_parent.yy",},

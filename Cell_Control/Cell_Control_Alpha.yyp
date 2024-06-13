@@ -45,6 +45,8 @@
   },
   "name":"Cell_Control_Alpha",
   "resources":[
+    {"id":{"name":"fnt_main","path":"fonts/fnt_main/fnt_main.yy",},},
+    {"id":{"name":"fnt_title","path":"fonts/fnt_title/fnt_title.yy",},},
     {"id":{"name":"GM","path":"objects/GM/GM.yy",},},
     {"id":{"name":"obj_altUnlock","path":"objects/obj_altUnlock/obj_altUnlock.yy",},},
     {"id":{"name":"obj_boss_blue","path":"objects/obj_boss_blue/obj_boss_blue.yy",},},

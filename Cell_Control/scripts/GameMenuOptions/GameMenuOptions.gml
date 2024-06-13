@@ -1,12 +1,12 @@
 function firstMenu(){
-	MenuCreate(room_width/2, room_height/2,
+	MenuCreate(room_width/2 - (string_width("Start Game ")/2), room_height/2,
 		[
 			["Start Game",startGame],
 			["Testing Lab",startLab],
 			["Options",launchOptions],
 			["Quit",quitGame]
 		],
-		"Cell Control"
+		//"Cell Control"
 	);
 }
 
