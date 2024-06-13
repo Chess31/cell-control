@@ -1,5 +1,5 @@
 event_inherited();
-node_health = 5;
+node_health = 50;
 growth_rate = 40;
 node_type = "tertiary";
 merge_radius = 10;

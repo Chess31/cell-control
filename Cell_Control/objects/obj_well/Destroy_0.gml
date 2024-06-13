@@ -1,6 +1,6 @@
 /// @description Create a boss and an infection core/primary node
 
-instance_create_layer(x,y,"NodesLayer",obj_node_primary);
+//instance_create_layer(x,y,"NodesLayer",obj_node_primary);
 
 //at well 10, there is chance to spawn a second well
 if (global.infections_destroyed >= 10) {

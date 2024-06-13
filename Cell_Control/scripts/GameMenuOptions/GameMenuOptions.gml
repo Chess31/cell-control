@@ -23,11 +23,11 @@ function startLab(){
 }
 
 function launchOptions(){
-	MenuCreate(room_width/2, room_height/2,
+	MenuCreate(room_width/2 - string_width("Controls")/2, room_height/2,
 		[
 			["Controls",controlsOptions],
-			["Video",firstMenu],
-			["Sound",firstMenu],
+			//["Video",firstMenu],
+			//["Sound",firstMenu],
 			["Back", firstMenu]
 		],
 		"Options"
@@ -40,12 +40,13 @@ function quitGame(){
 
 //Second level of menu options
 function controlsOptions(){
-	MenuCreate(room_width/2, room_height/2,
+	MenuCreate(room_width/2 - string_width("Toggle Building Mode  -  Space")/2, room_height/2,
 		[
-			["Movement - WASD",controlsOptions],
-			["Shoot - Left Mouse",controlsOptions],
-			["Toggle Building Mode - Space",controlsOptions],
-			["Switch Building - Scroll",controlsOptions],
+			["Movement  -  WASD",controlsOptions],
+			["Shoot  -  Left Mouse",controlsOptions],
+			["Toggle Building Mode  -  Space",controlsOptions],
+			["Switch Building  -  Scroll",controlsOptions],
+			["Heal Core  -  R",controlsOptions],
 			["Back", launchOptions]
 		],
 		"Controls"

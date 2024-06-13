@@ -5,6 +5,9 @@ image_speed = 0;
 
 //starting health
 cellHealth = 25;
+maxHealth = 25;
+min_to_heal = 15;
+button_down_count = 0;
 
 //starting position
 x = room_width/2; //obj_camera.view_w_half;

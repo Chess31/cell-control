@@ -4,15 +4,15 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 // Draw the HUD
-draw_text(10, 10, "Ammo: " + string(obj_player.ammo) + " Weapon Components: " + string(obj_player.weaponTokens) + " Wave: " + string(global.infections_destroyed) + " / 15");
+draw_text(10, 10, "Energy: " + string(obj_player.ammo) + " Special Energy: " + string(obj_player.weaponTokens) + " Level: " + string(global.infections_destroyed) + " / 20");
 
-// Draw the countdown timer in the HUD
-if (obj_player.restartTimer > 0) and (global.playerAlive = 0) {
-    var secondsLeft = ceil(obj_player.restartTimer / room_speed);
-    draw_set_halign(fa_center);
-	draw_set_valign(fa_middle);
-	draw_text_transformed(room_width / 2, room_height / 2, string(secondsLeft), 10, 10, 0);
-}
+//// Draw the countdown timer in the HUD
+//if (obj_player.restartTimer > 0) and (global.playerAlive = 0) {
+//    var secondsLeft = ceil(obj_player.restartTimer / room_speed);
+//    draw_set_halign(fa_center);
+//	draw_set_valign(fa_middle);
+//	draw_text_transformed(room_width / 2, room_height / 2, string(secondsLeft), 10, 10, 0);
+//}
 
 //Health Bar
 // Set the coordinates for the health bar
@@ -100,18 +100,23 @@ draw_sprite(_spritetodraw, 1, _halfspritewidth + _edgespacing, display_get_gui_h
 draw_rectangle((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) - _halfspritewidth, (_halfspritewidth + _edgespacing) + _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) + _halfspritewidth, true);
 draw_text((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth*2 - _edgespacing*3), string(ds_list_find_value(global.buildingTypes, global.currentBuildingIndex)) + "(" + string(ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) + ")");
 
-////Victory Replaces Countdown
-//if (!instance_exists(obj_enemySpawner)){
-//	draw_set_halign(fa_center);
-//	draw_set_color(c_aqua);
-//	draw_text(obj_camera.view_w_half, 10, "Victory");
-//}
+//Victory UI
+if (global.infections_destroyed > 20){
+	draw_set_halign(fa_center);
+	draw_set_color(c_aqua);
+	draw_text(display_get_gui_width()/2, 10, "Victory");
+	
+	var _vx = display_get_gui_width();
+	var _vy = display_get_gui_height();
+	
+	draw_rectangle(1,1,_vx-2,_vy-1,1); //screen boarder test rectangle
+}
 
 //Pointers for wells (reference for converting Room Coords to GUI Coords) (subtract _cx and _cy to get screen coords)
 if (instance_exists(obj_well)) {
 	
-	var _vx = display_get_gui_width();
-	var _vy = display_get_gui_height();
+	//var _vx = display_get_gui_width();
+	//var _vy = display_get_gui_height();
 
 	var _cx = obj_camera.x - obj_camera.view_w_half;
 	var _cy = obj_camera.y - obj_camera.view_h_half;

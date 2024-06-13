@@ -1,1 +1,0 @@
-collectDistance = 50;

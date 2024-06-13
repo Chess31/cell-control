@@ -46,7 +46,7 @@ switch (type) {
 
     case "Forge":
         // periodically spawn a collectible
-        if (random(120) < 1) { // % chance every step
+        if (random(105) < 1) { // % chance every step
             // Spawn Collectible
             instance_create_layer(x + lengthdir_x(50, random(360)), y + lengthdir_y(50, random(360)), "Collectibles", obj_collectible);
         }

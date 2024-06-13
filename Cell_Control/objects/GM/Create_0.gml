@@ -3,10 +3,11 @@ window_set_cursor(cr_none);
 cursor_sprite = s_cursor;
 
 // Set the timer for spawning collectibles
-spawnTimer = 10; // Adjust this value to control spawn frequency
+spawnTimer = 16; // Adjust this value to control spawn frequency
+spawn_frequency = 16; //frames between energy spawns
 
 var i = 0;
-while (i < 10)
+while (i < 30)
 {
 	instance_create_layer(random(room_width), random(room_height), "Collectibles",obj_collectible);
 	i += 1;

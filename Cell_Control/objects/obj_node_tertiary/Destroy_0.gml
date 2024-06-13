@@ -1,3 +1,3 @@
-//with (creator) {
-//	number_of_children--;
-//}
+with (creator) {
+	number_of_children--;
+}

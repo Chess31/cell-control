@@ -15,7 +15,6 @@
   ],
   "ResourceOrderSettings":[
     {"name":"fnt_main","order":1,"path":"fonts/fnt_main/fnt_main.yy",},
-    {"name":"obj_altUnlock","order":28,"path":"objects/obj_altUnlock/obj_altUnlock.yy",},
     {"name":"obj_boss_blue","order":25,"path":"objects/obj_boss_blue/obj_boss_blue.yy",},
     {"name":"obj_boss_parent","order":26,"path":"objects/obj_boss_parent/obj_boss_parent.yy",},
     {"name":"obj_building","order":9,"path":"objects/obj_building/obj_building.yy",},
@@ -23,7 +22,6 @@
     {"name":"obj_cell_core","order":17,"path":"objects/obj_cell_core/obj_cell_core.yy",},
     {"name":"obj_cellWall","order":16,"path":"objects/obj_cellWall/obj_cellWall.yy",},
     {"name":"obj_collectible","order":1,"path":"objects/obj_collectible/obj_collectible.yy",},
-    {"name":"obj_coreGate","order":13,"path":"objects/obj_coreGate/obj_coreGate.yy",},
     {"name":"obj_drone","order":31,"path":"objects/obj_drone/obj_drone.yy",},
     {"name":"obj_enemy_blue","order":2,"path":"objects/obj_enemy_blue/obj_enemy_blue.yy",},
     {"name":"obj_enemy_bullet","order":2,"path":"objects/obj_enemy_bullet/obj_enemy_bullet.yy",},
@@ -44,7 +42,6 @@
     {"name":"obj_node_tertiary","order":3,"path":"objects/obj_node_tertiary/obj_node_tertiary.yy",},
     {"name":"obj_particle","order":24,"path":"objects/obj_particle/obj_particle.yy",},
     {"name":"obj_pauseMenu","order":6,"path":"objects/obj_pauseMenu/obj_pauseMenu.yy",},
-    {"name":"obj_shiftUnlock","order":18,"path":"objects/obj_shiftUnlock/obj_shiftUnlock.yy",},
     {"name":"obj_SmoothLife","order":2,"path":"objects/obj_SmoothLife/obj_SmoothLife.yy",},
     {"name":"obj_StartController","order":7,"path":"objects/obj_StartController/obj_StartController.yy",},
     {"name":"obj_weapon_token","order":32,"path":"objects/obj_weapon_token/obj_weapon_token.yy",},
