@@ -49,6 +49,11 @@ if (can_shoot_cooldown <= 0){
 if (playerHealth <= 0) {
     // Start the countdown timer
 	global.playerAlive = false;
+	if (current_time mod 5 = 0) {
+		SparkParticles();
+	}
+	x += irandom_range(-3,3);
+	y += irandom_range(-3,3);
 }
 
 // Countdown logic
@@ -82,11 +87,11 @@ if (isDeployingWall) {
 	
     // Check for cycling through building options
 	if (keyboard_check_pressed(ord("Q"))) || (_scroll_up){
-    global.currentBuildingIndex = (global.currentBuildingIndex - 1 + ds_list_size(global.buildingTypes)) mod ds_list_size(global.buildingTypes);
+		global.currentBuildingIndex = (global.currentBuildingIndex - 1 + ds_list_size(global.buildingTypes)) mod ds_list_size(global.buildingTypes);
 	}
 
 	if (keyboard_check_pressed(ord("E"))) || (_scroll_down){
-    global.currentBuildingIndex = (global.currentBuildingIndex + 1) mod ds_list_size(global.buildingTypes);
+		global.currentBuildingIndex = (global.currentBuildingIndex + 1) mod ds_list_size(global.buildingTypes);
 	}
 
 	// Set the Building's position to be in front of the player

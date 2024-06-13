@@ -1,6 +1,6 @@
 //starting position
-x = room_width/2; //obj_camera.view_w_half;
-y = room_width/2; //obj_camera.view_h_half;
+x = room_width/2;
+y = room_width/2;
 
 //movement variables
 hSpeed = 0;
@@ -18,9 +18,9 @@ playerHealth = 15; //Initialize player health
 initialHealth = 15;
 weaponTokens = 0;
 global.playerAlive = true; // Player starts alive
-restartTimer = 5 * room_speed; //Initialize the restart timer
+restartTimer = 2 * room_speed; //Initialize the restart timer
 isDeployingWall = false; //If the player is building a wall currently
-canTeleport = true;
+//canTeleport = true;
 global.current_upgrader = noone;
 can_shoot_cooldown = 15;
 distance_to_core = 0;
