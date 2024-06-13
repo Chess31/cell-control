@@ -1,7 +1,9 @@
 //Check for enemy bullet collisions
 var bulletCollided = instance_place(x, y, obj_enemy_bullet);
 if (bulletCollided != noone) {
-    cellHealth -= 1;
+	if (bulletCollided.damage > 0){
+		cellHealth -= 1;
+	}
 	image_index++;
     instance_destroy(bulletCollided); // Destroy the enemy bullet
 }
