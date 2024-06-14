@@ -50,9 +50,9 @@ function inc_wall()
 {
 	var _index = ds_list_find_index(global.buildingTypes, "Wall");
 	if (obj_player.weaponTokens >= global.next_wall_cost){
-		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 2);
+		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
 		obj_player.weaponTokens -= global.next_wall_cost;
-		global.next_wall_cost = ceil(global.next_wall_cost * global.wall_cost_multiplier);
+		global.next_wall_cost = 1;//ceil(global.next_wall_cost * global.wall_cost_multiplier);
 		with(global.current_upgrader){buildingHealth -= 10000};
 	} else {
 		increaseMaxBuild();
@@ -66,7 +66,7 @@ function inc_turret()
 	if (obj_player.weaponTokens >= global.next_turret_cost){
 		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
 		obj_player.weaponTokens -= global.next_turret_cost;
-		global.next_turret_cost = floor(global.next_turret_cost * global.turret_cost_multiplier);
+		global.next_turret_cost = min(global.next_turret_cost + 1, floor(global.next_turret_cost * global.turret_cost_multiplier));
 		with(global.current_upgrader){buildingHealth -= 10000};
 	} else {
 		increaseMaxBuild();

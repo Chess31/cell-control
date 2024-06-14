@@ -12,10 +12,41 @@ function firstMenu(){
 
 //First level of menu options
 function startGame(){
-	//random_set_seed(1);
+	
+	MenuCreate(room_width/2 - (string_width("Select Difficulty")/2), room_height/2,
+		[
+			["Tutorial",start_tutorial],
+			["Normal",start_normal],
+			["Challenge",start_challenge],
+			["Back",firstMenu]
+		],
+		"Select Difficulty"
+	);
+	
+	//randomize(); //sets a completely random seed
+	//show_debug_message(random_get_seed()); //prints the seed
+	//room_goto(Room_Core);
+}
+
+function start_tutorial(){
 	randomize(); //sets a completely random seed
 	show_debug_message(random_get_seed()); //prints the seed
-	room_goto(Room_Core);
+	global.win_level = 5;
+	room_goto(Room_Tutorial);
+}
+
+function start_normal(){
+	randomize(); //sets a completely random seed
+	show_debug_message(random_get_seed()); //prints the seed
+	global.win_level = 10;
+	room_goto(Room_Loading);
+}
+
+function start_challenge(){
+	randomize(); //sets a completely random seed
+	show_debug_message(random_get_seed()); //prints the seed
+	global.win_level = 15;
+	room_goto(Room_Loading);
 }
 
 function startLab(){

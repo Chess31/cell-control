@@ -6,7 +6,7 @@ image_speed = 0;
 //starting health
 cellHealth = 25;
 maxHealth = 25;
-min_to_heal = 15;
+min_to_heal = 75;
 button_down_count = 0;
 
 //starting position

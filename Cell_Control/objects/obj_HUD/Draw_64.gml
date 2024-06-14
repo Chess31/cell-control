@@ -6,7 +6,7 @@ draw_set_valign(fa_top);
 // Draw the HUD
 draw_text(10, 10, "Energy: " + string(obj_player.ammo));
 draw_text(10, 30, "Special Energy: " + string(obj_player.weaponTokens));
-draw_text(10, 50, "Level: " + string(global.infections_destroyed) + " / 15");
+draw_text(10, 50, "Level: " + string(global.infections_destroyed) + " / " + string(global.win_level));
 
 //Health Bar
 // Set the coordinates for the health bar
@@ -95,7 +95,7 @@ draw_rectangle((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_ge
 draw_text((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth*2 - _edgespacing*3), string(ds_list_find_value(global.buildingTypes, global.currentBuildingIndex)) + "(" + string(ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) + ")");
 
 //Victory UI
-if (global.infections_destroyed > 15){
+if (global.infections_destroyed > global.win_level){
 	draw_set_halign(fa_center);
 	draw_set_color(c_aqua);
 	draw_text(display_get_gui_width()/2, 10, "Victory");

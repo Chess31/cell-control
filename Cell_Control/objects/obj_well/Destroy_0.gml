@@ -6,6 +6,7 @@
 if (global.infections_destroyed >= 10) {
 	if (irandom(1) == 1) {
 		instance_create_layer(x,y,"Instances", obj_well);
+		global.difficulty -= global.difficulty_scalar*5;
 	}
 }
 
