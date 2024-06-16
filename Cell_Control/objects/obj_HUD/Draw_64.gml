@@ -11,7 +11,7 @@ draw_text(10, 50, "Level: " + string(global.infections_destroyed) + " / " + stri
 //Health Bar
 // Set the coordinates for the health bar
 var _bar_x = display_get_gui_width()/2;
-var _bar_y = display_get_gui_height() - 20; // Adjust the y-coordinate as needed
+var _bar_y = display_get_gui_height() - 35;
 // Calculate the width of the bar based on player's health
 var health_percentage = clamp(obj_player.playerHealth / obj_player.initialHealth, 0, 2); // Calculate health percentage
 var bar_width = 36 * health_percentage; //constant should be the default bar length
@@ -20,6 +20,20 @@ draw_sprite_ext(s_HealthBar, 0, _bar_x, _bar_y, bar_width, 1.2, 0, c_white, 1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_text(_bar_x, _bar_y, string(obj_player.playerHealth));
+
+//Energy Bar
+// Set the coordinates for the health bar
+var _ebar_x = _bar_x;//display_get_gui_width()/2;
+var _ebar_y = display_get_gui_height() - 15;
+// Calculate the width of the bar based on player's health
+var energy_percentage = clamp(obj_player.ammo / 200, 0, 2); // Calculate health percentage
+var ebar_width = 36 * energy_percentage; //constant should be the default bar length
+//draw the bar
+draw_sprite_ext(s_energy_bar, 0, _ebar_x, _ebar_y, ebar_width, 1.2, 0, c_white, 1);
+draw_set_color(c_black);
+//draw_set_halign(fa_center);
+//draw_set_valign(fa_middle);
+draw_text(_ebar_x, _ebar_y, string(obj_player.ammo));
 
 // Draw HUD in the top right corner
 draw_set_color(c_white);
@@ -92,7 +106,7 @@ draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_sprite(_spritetodraw, 1, _halfspritewidth + _edgespacing, display_get_gui_height() - _halfspritewidth - _edgespacing);
 draw_rectangle((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) - _halfspritewidth, (_halfspritewidth + _edgespacing) + _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) + _halfspritewidth, true);
-draw_text((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth*2 - _edgespacing*3), string(ds_list_find_value(global.buildingTypes, global.currentBuildingIndex)) + "(" + string(ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) + ")");
+draw_text((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth*2 - _edgespacing*3), string(ds_list_find_value(global.buildingTypes, global.currentBuildingIndex)) + " (" + string(ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) + ")");
 
 //Victory UI
 if (global.infections_destroyed > global.win_level){

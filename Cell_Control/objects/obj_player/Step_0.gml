@@ -17,10 +17,10 @@ vSpeed = lengthdir_y(_input_magnitude * walkSpeed, _input_direction);
 move_and_collide(hSpeed, vSpeed, obj_cellWall);
 
 //Make sure the player is in the room bounds
-x = min(x, room_width);
-y = min(y, room_height);
-x = max(x, 0);
-y = max(y, 0);
+x = min(x, room_width - sprite_width/2);
+y = min(y, room_height - sprite_width/2);
+x = max(x, sprite_width/2);	//if statements each checking if x/y is greater/less than threshhold, then add or subtracts 1 so it doesn't get stuck
+y = max(y, sprite_width/2);
 
 //grid_x = floor(x div 8);
 //grid_y = floor(y div 8);
@@ -113,6 +113,8 @@ if (isDeployingWall) {
 		if (ds_list_find_value(global.buildingCount, global.currentBuildingIndex) < ds_list_find_value(global.buildingMaxNumber, global.currentBuildingIndex)) {
 		    ds_list_replace(global.buildingCount, global.currentBuildingIndex, ds_list_find_value(global.buildingCount, global.currentBuildingIndex) + 1);
 			AddAmmo(-_building.constructionCost);
+			var _warning_text = instance_create_layer(x, y - 50, "Instances", obj_message)
+			_warning_text.message_text = "-" + string(_building.constructionCost);
 			
 			//if it is a special building store its id
 			if (_building.type = "Upgrader"){
@@ -130,6 +132,9 @@ if (isDeployingWall) {
 			//there are too many buildings so remove the one that was just created
 			instance_destroy(_building);
 		}
+	} else if (mouse_check_button_pressed(mb_left)){
+		var _warning_text = instance_create_layer(x, y - 30, "Instances", obj_message)
+		_warning_text.message_text = "Energy Needed"
 	}
 }
 

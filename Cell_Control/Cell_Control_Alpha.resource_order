@@ -91,6 +91,7 @@
     {"name":"s_enemyR","order":6,"path":"sprites/s_enemyR/s_enemyR.yy",},
     {"name":"s_enemyWhite","order":9,"path":"sprites/s_enemyWhite/s_enemyWhite.yy",},
     {"name":"s_enemyY","order":7,"path":"sprites/s_enemyY/s_enemyY.yy",},
+    {"name":"s_energy_bar","order":21,"path":"sprites/s_energy_bar/s_energy_bar.yy",},
     {"name":"s_Feeder","order":5,"path":"sprites/s_Feeder/s_Feeder.yy",},
     {"name":"s_GravityBall","order":2,"path":"sprites/s_GravityBall/s_GravityBall.yy",},
     {"name":"s_HealthBar","order":13,"path":"sprites/s_HealthBar/s_HealthBar.yy",},
