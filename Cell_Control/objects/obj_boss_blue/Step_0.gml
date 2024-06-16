@@ -43,13 +43,13 @@ if (big_attack_cooldown <= 0) {
 	var bullet = instance_create_layer(x, y, "Instances", obj_enemy_bullet);
 	// Set bullet properties such as speed, damage, direction, etc.
 	bullet.speed = 3;
-	bullet.damage = 20;
+	bullet.damage = 8;
 	bullet.direction = attackDirection;
 	bullet.image_angle = attackDirection;
 	//bullet.image_xscale = 5;
 	//bullet.image_yscale = 5;
 	bullet.big = true;
-	bullet.piercing = 10;
+	bullet.piercing = 3;
 	bullet.bcolor = c_blue;
 	
     big_attack_cooldown = room_speed * 5;

@@ -3,8 +3,8 @@ window_set_cursor(cr_none);
 cursor_sprite = s_cursor;
 
 // Set the timer for spawning collectibles
-spawnTimer = 16; // Adjust this value to control spawn frequency
-spawn_frequency = 16; //frames between energy spawns
+spawnTimer = 16; // Initial energy timer
+//spawn_frequency = global.energy_rate; //frames between energy spawns
 
 var i = 0;
 while (i < 30)
@@ -41,21 +41,21 @@ ds_list_add(global.buildingHealths, 75);
 ds_list_add(global.buildingSprites, s_Wall);
 ds_list_add(global.buildingCosts, 5);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 20);
+ds_list_add(global.buildingMaxNumber, 20 + (6 - global.gamemode*3));
 
 ds_list_add(global.buildingTypes, "Turret");
 ds_list_add(global.buildingHealths, 15);
 ds_list_add(global.buildingSprites, s_Turret);
 ds_list_add(global.buildingCosts, 15);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 3);
+ds_list_add(global.buildingMaxNumber, 3 + (2 - global.gamemode));
 
 ds_list_add(global.buildingTypes, "Forge");
 ds_list_add(global.buildingHealths, 20);
 ds_list_add(global.buildingSprites, s_Forge);
 ds_list_add(global.buildingCosts, 30);
 ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 5);
+ds_list_add(global.buildingMaxNumber, 5 + (2 - global.gamemode));
 	
 ds_list_add(global.buildingTypes, "Upgrader");
 ds_list_add(global.buildingHealths, 50);
