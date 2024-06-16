@@ -3,6 +3,7 @@ var bulletCollided = instance_place(x, y, obj_enemy_bullet);
 if (bulletCollided != noone) {
 	if (bulletCollided.damage > 0){
 		cellHealth -= 1;
+		cellHealth = max(cellHealth,0)
 	}
 	image_index++;
     instance_destroy(bulletCollided); // Destroy the enemy bullet
@@ -11,7 +12,7 @@ if (bulletCollided != noone) {
 // Defeat logic
 if (cellHealth <= 0) {
 	image_speed = 3;
-    global.playerAlive = false; // Restart the game
+    obj_player.playerHealth -= 1; // Restart the game
 }
 
 //Hold to heal logic

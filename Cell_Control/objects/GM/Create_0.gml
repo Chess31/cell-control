@@ -56,7 +56,7 @@ ds_list_add(global.buildingSprites, s_Forge);
 ds_list_add(global.buildingCosts, 30);
 ds_list_add(global.buildingCount, 0);
 ds_list_add(global.buildingMaxNumber, 5 + (2 - global.gamemode));
-	
+
 ds_list_add(global.buildingTypes, "Upgrader");
 ds_list_add(global.buildingHealths, 50);
 ds_list_add(global.buildingSprites, s_Upgrader);

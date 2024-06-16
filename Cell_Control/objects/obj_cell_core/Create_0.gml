@@ -8,6 +8,7 @@ cellHealth = 25;
 maxHealth = 25;
 min_to_heal = 75;
 button_down_count = 0;
+draw_time = 0;
 
 //starting position
 x = room_width/2; //obj_camera.view_w_half;
