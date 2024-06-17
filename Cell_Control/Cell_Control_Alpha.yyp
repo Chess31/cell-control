@@ -151,6 +151,7 @@
     {"id":{"name":"s_ProxMine","path":"sprites/s_ProxMine/s_ProxMine.yy",},},
     {"id":{"name":"s_Spark","path":"sprites/s_Spark/s_Spark.yy",},},
     {"id":{"name":"s_Spawner","path":"sprites/s_Spawner/s_Spawner.yy",},},
+    {"id":{"name":"s_special_bar","path":"sprites/s_special_bar/s_special_bar.yy",},},
     {"id":{"name":"s_Temp_Alt","path":"sprites/s_Temp_Alt/s_Temp_Alt.yy",},},
     {"id":{"name":"s_Turret","path":"sprites/s_Turret/s_Turret.yy",},},
     {"id":{"name":"s_Upgrader","path":"sprites/s_Upgrader/s_Upgrader.yy",},},

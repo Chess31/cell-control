@@ -29,7 +29,7 @@ y = max(y, sprite_width/2);
 //chunk_y = floor(grid_y div global.chunk_size);
 
 // Shooting logic
-if (can_shoot_cooldown <= 0){
+if (can_shoot_cooldown <= 0 && can_shoot = true){
 	if (mouse_check_button(mb_left) && ammo > 0 && isDeployingWall = false) {
 		if (keyboard_check(vk_shift) && keyboard_check(vk_alt)){
 			comboWeapon(comboSlot);

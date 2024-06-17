@@ -103,6 +103,7 @@
     {"name":"s_ProxMine","order":1,"path":"sprites/s_ProxMine/s_ProxMine.yy",},
     {"name":"s_Spark","order":7,"path":"sprites/s_Spark/s_Spark.yy",},
     {"name":"s_Spawner","order":3,"path":"sprites/s_Spawner/s_Spawner.yy",},
+    {"name":"s_special_bar","order":22,"path":"sprites/s_special_bar/s_special_bar.yy",},
     {"name":"s_Temp_Alt","order":4,"path":"sprites/s_Temp_Alt/s_Temp_Alt.yy",},
     {"name":"s_Turret","order":2,"path":"sprites/s_Turret/s_Turret.yy",},
     {"name":"s_Upgrader","order":3,"path":"sprites/s_Upgrader/s_Upgrader.yy",},

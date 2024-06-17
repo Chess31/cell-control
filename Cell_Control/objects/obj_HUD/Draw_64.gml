@@ -4,9 +4,10 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 // Draw the HUD
-draw_text(10, 10, "Energy: " + string(obj_player.ammo));
-draw_text(10, 30, "Special Energy: " + string(obj_player.weaponTokens));
-draw_text(10, 50, "Level: " + string(global.infections_destroyed) + " / " + string(global.win_level));
+//draw_text(10, 10, "Energy: " + string(obj_player.ammo));
+//draw_text(10, 30, "Special Energy: " + string(obj_player.weaponTokens));
+//draw_text(10, 50, "Level: " + string(global.infections_destroyed) + " / " + string(global.win_level));
+draw_text_transformed(10, 10, "Level: " + string(global.infections_destroyed) + " / " + string(global.win_level),1.5,1.5,0);
 
 //Health Bar
 // Set the coordinates for the health bar
@@ -34,6 +35,22 @@ draw_set_color(c_black);
 //draw_set_halign(fa_center);
 //draw_set_valign(fa_middle);
 draw_text(_ebar_x, _ebar_y, string(obj_player.ammo));
+
+//Special Bar
+// Set the coordinates for the health bar
+if (instance_exists(obj_player) && obj_player.weaponTokens > 0){
+	var _sbar_x = 10 + sprite_get_width(s_special_bar)/2;//display_get_gui_width()/2;
+	var _sbar_y = display_get_gui_height()/2;
+	// Calculate the width of the bar based on player's health
+	var senergy_percentage = clamp(obj_player.weaponTokens / 100, 0, 2); // Calculate health percentage
+	var sbar_width = 33 * senergy_percentage; //constant should be the default bar length
+	//draw the bar
+	draw_sprite_ext(s_special_bar, 0, _sbar_x, _sbar_y, 1.2, sbar_width, 0, c_white, 1);
+	draw_set_color(c_white);
+	//draw_set_halign(fa_center);
+	//draw_set_valign(fa_middle);
+	draw_text(_sbar_x, _sbar_y, string(obj_player.weaponTokens));
+}
 
 // Draw HUD in the top right corner
 draw_set_color(c_white);

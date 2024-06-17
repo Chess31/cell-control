@@ -3,6 +3,9 @@ var gui_x = x;
 var gui_y = y;
 
 mouseOver = false;
+if (instance_exists(obj_player)){
+	obj_player.can_shoot = true;
+}
 
 var _mx = device_mouse_x_to_gui(0);
 var _my = device_mouse_y_to_gui(0);
@@ -10,6 +13,10 @@ var _my = device_mouse_y_to_gui(0);
 if (point_in_rectangle(_mx, _my, gui_x, gui_y, gui_x + width, gui_y + height)) 
 {
 	mouseOver = true;
+	if (instance_exists(obj_player)){
+		obj_player.can_shoot = false;
+		obj_player.isDeployingWall = false;
+	}
 	if (mxPrev != _mx) || (myPrev != _my)
 	{
 		var _mouseHoverLine = (_my - gui_y) div heightLine;
@@ -33,6 +40,10 @@ if ((mouse_check_button_pressed(mb_left) && mouseOver))
 		if (_func != -1) _func();
 	}
 	instance_destroy();
+	if (instance_exists(obj_player)){
+		obj_player.can_shoot_cooldown = 50;
+		obj_player.can_shoot = true;
+	}
 }
 
 mxPrev = _mx;
