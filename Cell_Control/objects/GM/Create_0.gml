@@ -86,10 +86,10 @@ ds_list_add(global.buildingCount, 0);
 ds_list_add(global.buildingMaxNumber, 1);
 
 global.next_wall_cost = 1;
-global.wall_cost_multiplier = 1.2;
+global.wall_cost_multiplier = 1.0;
 
 global.next_turret_cost = 3;
-global.turret_cost_multiplier = 1.3;
+global.turret_cost_multiplier = 1.2;
 
 global.next_forge_cost = 5;
 global.forge_cost_multiplier = 1.3;

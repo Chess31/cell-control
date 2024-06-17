@@ -53,11 +53,11 @@ function inc_wall()
 		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
 		obj_player.weaponTokens -= global.next_wall_cost;
 		global.next_wall_cost = 1;//ceil(global.next_wall_cost * global.wall_cost_multiplier);
-		with(global.current_upgrader){buildingHealth -= 10000};
+		increaseMaxBuild();//with(global.current_upgrader){buildingHealth -= 10000};
 	} else {
 		increaseMaxBuild();
 		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
-		_warning_text.message_text = "Insufficient Special Energy";
+		_warning_text.message_text = "Special Energy Needed";
 	}
 }
 function inc_turret()
@@ -66,12 +66,12 @@ function inc_turret()
 	if (obj_player.weaponTokens >= global.next_turret_cost){
 		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
 		obj_player.weaponTokens -= global.next_turret_cost;
-		global.next_turret_cost = min(global.next_turret_cost + 1, floor(global.next_turret_cost * global.turret_cost_multiplier));
-		with(global.current_upgrader){buildingHealth -= 10000};
+		global.next_turret_cost = max(global.next_turret_cost + 1, floor(global.next_turret_cost * global.turret_cost_multiplier));
+		increaseMaxBuild();//with(global.current_upgrader){buildingHealth -= 10000};
 	} else {
 		increaseMaxBuild();
 		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
-		_warning_text.message_text = "Insufficient Special Energy";
+		_warning_text.message_text = "Special Energy Needed";
 	}
 }
 function inc_forge()
@@ -81,11 +81,11 @@ function inc_forge()
 		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
 		obj_player.weaponTokens -= global.next_forge_cost;
 		global.next_forge_cost = floor(global.next_forge_cost * global.forge_cost_multiplier);
-		with(global.current_upgrader){buildingHealth -= 10000};
+		increaseMaxBuild();//with(global.current_upgrader){buildingHealth -= 10000};
 	} else {
 		increaseMaxBuild();
 		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
-		_warning_text.message_text = "Insufficient Special Energy";
+		_warning_text.message_text = "Special Energy Needed";
 	}
 }
 function inc_proxmine()
@@ -95,11 +95,11 @@ function inc_proxmine()
 		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
 		obj_player.weaponTokens -= global.next_proxmine_cost;
 		global.next_proxmine_cost = floor(global.next_proxmine_cost * global.proxmine_cost_multiplier);
-		with(global.current_upgrader){buildingHealth -= 10000};
+		increaseMaxBuild();//with(global.current_upgrader){buildingHealth -= 10000};
 	} else {
 		increaseMaxBuild();
 		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
-		_warning_text.message_text = "Insufficient Special Energy";
+		_warning_text.message_text = "Special Energy Needed";
 	}
 }
 function inc_hive()
@@ -109,11 +109,11 @@ function inc_hive()
 		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
 		obj_player.weaponTokens -= global.next_hive_cost;
 		global.next_hive_cost = floor(global.next_hive_cost * global.hive_cost_multiplier);
-		with(global.current_upgrader){buildingHealth -= 10000};
+		increaseMaxBuild();//with(global.current_upgrader){buildingHealth -= 10000};
 	} else {
 		increaseMaxBuild();
 		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
-		_warning_text.message_text = "Insufficient Special Energy";
+		_warning_text.message_text = "Special Energy Needed";
 	}
 }
 
@@ -139,7 +139,7 @@ function equipDiskWhisk()
 	} else {
 		developWeapon();
 		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
-		_warning_text.message_text = "Insufficient Energy";
+		_warning_text.message_text = "Special Energy Needed";
 	}
 }
 
@@ -152,7 +152,7 @@ function equipGravityGlobber()
 	} else {
 		developWeapon();
 		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
-		_warning_text.message_text = "Insufficient Energy";
+		_warning_text.message_text = "Special Energy Needed";
 	}
 }
 
@@ -165,6 +165,6 @@ function equipTriplerCrippler()
 	} else {
 		developWeapon();
 		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
-		_warning_text.message_text = "Insufficient Energy";
+		_warning_text.message_text = "Special Energy Needed";
 	}
 }
