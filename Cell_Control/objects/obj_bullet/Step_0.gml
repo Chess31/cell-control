@@ -14,6 +14,7 @@ if (place_meeting(x, y, obj_enemy)) {
 		}
 		_enemy.TakeDamage(damage);
 	}
+	_enemy.time_to_draw += 120;
 }
 //else if (place_meeting(x, y, obj_boss_parent)){
 //	var _boss = instance_place(x, y, obj_boss_parent);

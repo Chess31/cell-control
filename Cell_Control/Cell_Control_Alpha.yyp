@@ -127,6 +127,7 @@
     {"id":{"name":"s_DestroyNearest","path":"sprites/s_DestroyNearest/s_DestroyNearest.yy",},},
     {"id":{"name":"s_Drone","path":"sprites/s_Drone/s_Drone.yy",},},
     {"id":{"name":"s_eBullet","path":"sprites/s_eBullet/s_eBullet.yy",},},
+    {"id":{"name":"s_enemy_health_bar","path":"sprites/s_enemy_health_bar/s_enemy_health_bar.yy",},},
     {"id":{"name":"s_enemy","path":"sprites/s_enemy/s_enemy.yy",},},
     {"id":{"name":"s_enemy2","path":"sprites/s_enemy2/s_enemy2.yy",},},
     {"id":{"name":"s_enemy3","path":"sprites/s_enemy3/s_enemy3.yy",},},

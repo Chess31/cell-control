@@ -14,6 +14,8 @@ canBeHit = true;
 iframes = 0;
 iframeMax = 10;
 
+time_to_draw = -1; //used to draw health bar (not added yet)
+
 //Call when hit
 function TakeDamage(_damage)
 {

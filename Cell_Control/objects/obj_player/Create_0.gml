@@ -13,12 +13,12 @@ walkSpeed = 6.0;
 //chunk_y = -1;
 
 //Define starting variables
-ammo = 1110; // Initialize ammo
+ammo = 10; // Initialize ammo
 playerHealth = 15; //Initialize player health
 initialHealth = 15;
-weaponTokens = 110;
+weaponTokens = 0;
 global.playerAlive = true; // Player starts alive
-restartTimer = 2 * room_speed; //Initialize the restart timer
+restartTimer = 5 * room_speed; //Initialize the restart timer
 isDeployingWall = false; //If the player is building a wall currently
 //canTeleport = true;
 global.current_upgrader = noone;

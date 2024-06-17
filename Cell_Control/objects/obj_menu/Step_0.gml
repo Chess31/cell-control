@@ -40,6 +40,9 @@ if ((mouse_check_button_pressed(mb_left) && mouseOver))
 		if (_func != -1) _func();
 	}
 	instance_destroy();
+	
+	global.last_menu_pos = hover;
+	
 	if (instance_exists(obj_player)){
 		obj_player.can_shoot_cooldown = 50;
 		obj_player.can_shoot = true;

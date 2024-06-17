@@ -83,6 +83,7 @@
     {"name":"s_DestroyNearest","order":6,"path":"sprites/s_DestroyNearest/s_DestroyNearest.yy",},
     {"name":"s_Drone","order":14,"path":"sprites/s_Drone/s_Drone.yy",},
     {"name":"s_eBullet","order":1,"path":"sprites/s_eBullet/s_eBullet.yy",},
+    {"name":"s_enemy_health_bar","order":23,"path":"sprites/s_enemy_health_bar/s_enemy_health_bar.yy",},
     {"name":"s_enemy2","order":1,"path":"sprites/s_enemy2/s_enemy2.yy",},
     {"name":"s_enemy3","order":2,"path":"sprites/s_enemy3/s_enemy3.yy",},
     {"name":"s_enemyB","order":3,"path":"sprites/s_enemyB/s_enemyB.yy",},

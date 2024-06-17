@@ -28,8 +28,10 @@ if (shootCooldown <= 0)
 				if (enemyInstance.enemyHealth + heal_per_hit < 30)//(ds_list_find_value(global.enemyHealths, ds_list_find_index(global.enemyTypes, enemyInstance.enemyType)) * 3))
 				{
 					enemyInstance.enemyHealth += heal_per_hit;
+					enemyInstance.time_to_draw += 120;
 				} else {
-					enemyInstance.enemyHealth = 30; //ds_list_find_value(global.enemyHealths, ds_list_find_index(global.enemyTypes, enemyInstance.enemyType)) * 3;
+					enemyInstance.enemyHealth = 30; //max health		ds_list_find_value(global.enemyHealths, ds_list_find_index(global.enemyTypes, enemyInstance.enemyType)) * 3;
+					enemyInstance.time_to_draw += 120;
 				}
 			}
 		}

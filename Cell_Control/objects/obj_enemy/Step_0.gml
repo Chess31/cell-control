@@ -39,3 +39,10 @@ if (pos_check_timer <= 0)
 	last_y = y;
 	
 }
+
+//health bar things
+if (time_to_draw < 30) {
+	bar_alpha = lerp(bar_alpha, 0, 0.02);
+} else {
+	bar_alpha = 1;
+}
