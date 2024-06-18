@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 //Attacks:
 
 // Wave Attack

@@ -65,6 +65,7 @@
     {"id":{"name":"obj_enemy_yellow","path":"objects/obj_enemy_yellow/obj_enemy_yellow.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"obj_enemySpawner","path":"objects/obj_enemySpawner/obj_enemySpawner.yy",},},
+    {"id":{"name":"obj_freeze_controller","path":"objects/obj_freeze_controller/obj_freeze_controller.yy",},},
     {"id":{"name":"obj_gravity_ball","path":"objects/obj_gravity_ball/obj_gravity_ball.yy",},},
     {"id":{"name":"obj_hook","path":"objects/obj_hook/obj_hook.yy",},},
     {"id":{"name":"obj_HUD","path":"objects/obj_HUD/obj_HUD.yy",},},

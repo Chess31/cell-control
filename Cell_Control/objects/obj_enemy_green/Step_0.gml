@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 //Movement
 // Check if there are buildings in the room
 if (instance_number(obj_building) > 0) {

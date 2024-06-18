@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 // Decrease the collectible spawn timer
 spawnTimer -= 1;
 
@@ -10,8 +14,8 @@ if (spawnTimer <= 0) {
     spawnTimer = global.energy_rate;
 }
 
-//restart game hotkey
-if (keyboard_check_pressed(vk_backspace))
-{
-	game_restart();
-}
+////restart game hotkey
+//if (keyboard_check_pressed(vk_backspace))
+//{
+//	game_restart();
+//}

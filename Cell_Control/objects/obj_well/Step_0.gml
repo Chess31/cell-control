@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 //clear the area of walls when summoned
 var _nearest_wall = instance_nearest(x,y,obj_cellWall);
 

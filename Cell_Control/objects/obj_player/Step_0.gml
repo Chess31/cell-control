@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 // Set the player's image angle to the calculated direction
 var _player_angle = point_direction(x, y, mouse_x, mouse_y);
 

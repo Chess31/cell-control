@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 // Random movement timer
 moveTimer -= 1;
 

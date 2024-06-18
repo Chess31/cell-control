@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 y--;
 
 image_alpha = lerp(image_alpha, 0, 0.02);

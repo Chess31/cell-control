@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 // Check for collisions with player bullets
 var playerBullet = instance_place(x, y, obj_bullet);
 if (playerBullet != noone) and (type != "Turret"){

@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 switch (state) {
     case "collecting":
         // Move towards nearby collectibles

@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 //Movement
 if (moveTimer <= 0) {
 	TeleportToRandomEnemy()

@@ -1,3 +1,8 @@
+if (global.frozen = true) {
+	speed = 0;
+	exit;
+}
+
 //check if the player is close enough to collect
 if (point_distance(x, y, obj_player.x, obj_player.y) < collectDistance) {
     direction = point_direction(x,y,obj_player.x,obj_player.y);

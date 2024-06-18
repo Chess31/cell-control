@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 //Age the instance
 life -= 1;
 

@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 //Check for enemy bullet collisions
 var bulletCollided = instance_place(x, y, obj_enemy_bullet);
 if (bulletCollided != noone) {

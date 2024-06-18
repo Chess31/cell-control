@@ -24,6 +24,7 @@ if (point_in_rectangle(_mx, _my, gui_x, gui_y, gui_x + width, gui_y + height))
 		if (_mouseHoverLine < 0) _mouseHoverLine = 0;
 		if (_mouseHoverLine > optionsCount - 1) _mouseHoverLine = optionsCount - 1;
 		hover = _mouseHoverLine;
+		global.last_menu_pos = hover;
 	}
 }
 
@@ -39,14 +40,13 @@ if ((mouse_check_button_pressed(mb_left) && mouseOver))
 		var _func = options[hover][1];
 		if (_func != -1) _func();
 	}
-	instance_destroy();
-	
-	global.last_menu_pos = hover;
 	
 	if (instance_exists(obj_player)){
 		obj_player.can_shoot_cooldown = 50;
 		obj_player.can_shoot = true;
 	}
+	
+	instance_destroy();
 }
 
 mxPrev = _mx;

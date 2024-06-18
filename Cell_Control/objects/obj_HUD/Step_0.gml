@@ -1,3 +1,5 @@
+//don't add freeze capability here
+
 //fullscreen game hotkey
 if (keyboard_check_pressed(vk_f11)) {
 	if (window_get_fullscreen()) {
