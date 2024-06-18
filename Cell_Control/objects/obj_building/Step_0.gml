@@ -60,6 +60,7 @@ switch (type) {
 				// Set the bullet's direction and speed
 				bullet.direction = directionToEnemy;
 				bullet.speed = turretBulletSpeed;
+				bullet.my_speed = bullet.speed;
 				//point sprite towards enemy
 				image_angle = point_direction(x, y, nearestEnemy.x, nearestEnemy.y) + 90;
 	        }

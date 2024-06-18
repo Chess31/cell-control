@@ -43,3 +43,9 @@ if (keyboard_check_pressed(ord("R")) and obj_player.ammo >= min_to_heal){
 	var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message)
 	_warning_text.message_text = "minimum energy (" + string(min_to_heal) + ") not met"
 }
+
+if (draw_time < 30) {
+	draw_alpha = lerp(draw_alpha, 0, 0.02);
+} else {
+	draw_alpha = 1;
+}

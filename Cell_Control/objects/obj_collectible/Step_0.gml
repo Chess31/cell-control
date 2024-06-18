@@ -1,4 +1,5 @@
 if (global.frozen = true) {
+	speed = 0;
 	exit;
 }
 

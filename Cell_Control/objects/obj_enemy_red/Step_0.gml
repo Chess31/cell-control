@@ -1,5 +1,8 @@
 if (global.frozen = true) {
+	speed = 0;
 	exit;
+} else {
+	speed = enemySpeed;
 }
 
 //Movement
@@ -33,6 +36,7 @@ if (shootCooldown <= 0 && instance_exists(obj_player)) {
 	// Set the bullet's direction and speed towards the player
 	bullet.direction = point_direction(x, y, obj_player.x, obj_player.y);
 	bullet.speed = 6; // Adjust the bullet speed as needed
+	bullet.my_speed = bullet.speed;
 	bullet.bcolor = c_red;
 
 	// Reset the shoot cooldown

@@ -54,6 +54,7 @@ if (distance_to_object(obj_player) < wall_delete_range) {
 		// Set the bullet's direction and speed towards the player
 		bullet.direction = point_direction(x, y, obj_player.x, obj_player.y);
 		bullet.speed = 9; // Adjust the bullet speed as needed
+		bullet.my_speed = bullet.speed;
 		bullet.bcolor = c_green;
 
 		// Reset the shoot cooldown

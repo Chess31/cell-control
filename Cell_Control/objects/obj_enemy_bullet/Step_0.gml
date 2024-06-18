@@ -1,6 +1,9 @@
 if (global.frozen = true) {
+	speed = 0;
 	exit;
 }
+
+speed = my_speed;
 
 // Destroy the bullet when it goes off-screen
 if (x < 0 || y < 0 || x > room_width || y > room_height) {

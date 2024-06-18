@@ -59,6 +59,7 @@ switch (state) {
 					// Set the bullet's direction and speed
 					bullet.direction = directionToEnemy;
 					bullet.speed = 6;
+					bullet.my_speed = bullet.speed;
 					bullet.damage = -1; //negative so it heals buildings and also players if you use it right I guess
 					//point sprite towards target
 					image_angle = point_direction(x, y, nearestEnemy.x, nearestEnemy.y) + 90;
@@ -111,6 +112,7 @@ switch (state) {
 					// Set the bullet's direction and speed
 					bullet.direction = directionToEnemy;
 					bullet.speed = 6;
+					bullet.my_speed = bullet.speed;
 					//point sprite towards enemy
 					image_angle = point_direction(x, y, nearestEnemy.x, nearestEnemy.y) + 90;
 					//subtract the bullet from the ammo reserve

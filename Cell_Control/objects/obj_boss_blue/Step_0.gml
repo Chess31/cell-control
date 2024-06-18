@@ -19,6 +19,7 @@ if (wave_attack_cooldown <= 0) {
 			var bullet = instance_create_layer(x, y, "Instances", obj_enemy_bullet);
 			// Set bullet properties such as speed, damage, direction, etc.
 			bullet.speed = bulletSpeed + random_range(-0.5,0.5);
+			bullet.my_speed = bullet.speed;
 			bullet.damage = bulletDamage;
 			var _wave_adjustment = ((_wave_spread + random_range(-10,10)) - (global.current_bullet * (_wave_spread/totalBullets)));
 			bullet.direction = attackDirection + _wave_adjustment;
@@ -47,6 +48,7 @@ if (big_attack_cooldown <= 0) {
 	var bullet = instance_create_layer(x, y, "Instances", obj_enemy_bullet);
 	// Set bullet properties such as speed, damage, direction, etc.
 	bullet.speed = 3;
+	bullet.my_speed = bullet.speed;
 	bullet.damage = 8;
 	bullet.direction = attackDirection;
 	bullet.image_angle = attackDirection;
