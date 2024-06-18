@@ -1,5 +1,5 @@
 function hive_options_menu(){
-	MenuCreate(display_get_gui_width()- 230, 100,
+	MenuCreate(display_get_gui_width()- 230, 300,
 				[
 					["Transfer Reserves",transfer_reserves],
 					["Collect",switch_to_collecting_drones],
