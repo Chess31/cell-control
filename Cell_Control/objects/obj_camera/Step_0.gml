@@ -1,5 +1,5 @@
-if (global.frozen = true) {
-	exit;
+if (follow != obj_player && global.frozen = false) {
+	follow = obj_player;
 }
 
 //update destination

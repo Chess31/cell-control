@@ -4,7 +4,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 // Draw the HUD
-draw_text(300, 10, instance_number(obj_collectible));
+//draw_text(300, 10, instance_number(obj_collectible));
 //draw_text(10, 30, "Special Energy: " + string(obj_player.weaponTokens));
 //draw_text(10, 50, "Level: " + string(global.infections_destroyed) + " / " + string(global.win_level));
 draw_text_transformed(10, 10, "Level: " + string(global.infections_destroyed) + " / " + string(global.win_level),1.5,1.5,0);

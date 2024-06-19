@@ -47,6 +47,7 @@
     {"name":"obj_SmoothLife","order":2,"path":"objects/obj_SmoothLife/obj_SmoothLife.yy",},
     {"name":"obj_StartController","order":7,"path":"objects/obj_StartController/obj_StartController.yy",},
     {"name":"obj_tutorial_display","order":13,"path":"objects/obj_tutorial_display/obj_tutorial_display.yy",},
+    {"name":"obj_tutorial","order":16,"path":"objects/obj_tutorial/obj_tutorial.yy",},
     {"name":"obj_weapon_token","order":32,"path":"objects/obj_weapon_token/obj_weapon_token.yy",},
     {"name":"obj_well","order":33,"path":"objects/obj_well/obj_well.yy",},
     {"name":"Room_Lab","order":4,"path":"rooms/Room_Lab/Room_Lab.yy",},

@@ -26,3 +26,32 @@ function MenuCreate(_x, _y, _options, _description = -1)
 		heightFull = height + margin * 2;
 	}
 }
+
+function display_tutorial(_x, _y, _tutorial, _description = -1)
+{
+	with (instance_create_depth(_x, _y, -999, obj_tutorial))
+	{
+		description = _description;
+		text = _tutorial;
+		
+		//set up size
+		margin = 8;
+		wrap_width = 400;
+		//draw_set_font()
+		
+		width = 1;
+		
+		if (_description != -1) {width = max(width, string_width(_description))};
+		
+		//width = max(width, string_width(_tutorial))
+		
+		width = string_width_ext(_tutorial,string_height(_tutorial),wrap_width);
+		
+		line_height = string_height(_tutorial);//17;
+		
+		height = string_height_ext(_tutorial,line_height,wrap_width);
+		
+		width_full = width + (margin * 2);
+		height_full = height + (margin * 2);
+	}
+}

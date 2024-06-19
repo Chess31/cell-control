@@ -1,6 +1,24 @@
 if (global.frozen = true) {
 	exit;
 }
+if (global.gamemode = 0){
+	if (!obj_freeze_controller.bars_explained && ammo != initial_ammo){global.frozen = true; global.tutorial_to_show = 1}
+	if (instance_exists(obj_enemy)){
+		var	_enemy = instance_nearest(x,y,obj_enemy);
+		if (!obj_freeze_controller.enemies_explained && point_distance(x,y,_enemy.x,_enemy.y) < 430){global.frozen = true; global.tutorial_to_show = 2}
+	}
+	if (instance_exists(obj_well)){
+		var	_well = instance_nearest(x,y,obj_well);
+		if (!obj_freeze_controller.wells_explained && point_distance(x,y,_well.x,_well.y) < 330){
+				global.frozen = true; 
+				global.tutorial_to_show = 4; 
+				obj_camera.follow = _well;
+			}
+	}
+	if (!obj_freeze_controller.buildmode_explained && isDeployingWall) {global.frozen = true; global.tutorial_to_show = 5}
+	if (!obj_freeze_controller.special_explained && weaponTokens != 0) {global.frozen = true; global.tutorial_to_show = 6}
+	if (!obj_freeze_controller.upgrader_explained && instance_exists(global.current_upgrader)) {global.frozen = true; global.tutorial_to_show = 7}
+}
 
 // Set the player's image angle to the calculated direction
 var _player_angle = point_direction(x, y, mouse_x, mouse_y);
@@ -51,7 +69,13 @@ if (can_shoot_cooldown <= 0 && can_shoot = true){
 
 // Health check
 if (playerHealth <= 0) {
-    // Start the countdown timer
+	if (global.gamemode = 0) {
+		if (!obj_freeze_controller.death_explained){
+			global.tutorial_to_show = 3;
+			global.frozen = true;
+		}
+	}
+    // Start the restart countdown timer
 	global.playerAlive = false;
 	if (current_time mod 5 = 0) {
 		SparkParticles();

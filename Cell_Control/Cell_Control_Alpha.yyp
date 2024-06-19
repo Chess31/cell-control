@@ -86,6 +86,7 @@
     {"id":{"name":"obj_SmoothLife","path":"objects/obj_SmoothLife/obj_SmoothLife.yy",},},
     {"id":{"name":"obj_StartController","path":"objects/obj_StartController/obj_StartController.yy",},},
     {"id":{"name":"obj_tutorial_display","path":"objects/obj_tutorial_display/obj_tutorial_display.yy",},},
+    {"id":{"name":"obj_tutorial","path":"objects/obj_tutorial/obj_tutorial.yy",},},
     {"id":{"name":"obj_weapon_token","path":"objects/obj_weapon_token/obj_weapon_token.yy",},},
     {"id":{"name":"obj_well","path":"objects/obj_well/obj_well.yy",},},
     {"id":{"name":"Room_Core","path":"rooms/Room_Core/Room_Core.yy",},},

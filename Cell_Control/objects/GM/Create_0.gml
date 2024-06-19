@@ -119,3 +119,4 @@ global.difficulty_scalar = 0.05;
 DefineEnemyPacks();
 //Spawn Initial Enemy Well
 alarm[0] = 1;
+alarm[1] = 1 * game_get_speed(gamespeed_fps);
