@@ -12,3 +12,8 @@ if (_desc) {
 } else {
 	draw_text_ext(x, y + line_height,text,line_height,wrap_width);
 }
+
+if (current_time - creation_time > 3000) {
+	draw_set_halign(fa_center);
+	draw_text(display_get_gui_width()/2, 20, "Press 'Enter' to Continue");
+}
