@@ -1,1 +1,1 @@
-room_goto(Room_Core);
+//room_goto(Room_Core);

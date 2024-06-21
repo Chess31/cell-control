@@ -43,7 +43,7 @@ function start_normal(){
 	global.gamemode = 1;
 	global.win_level = 10;
 	global.energy_rate = 10;
-	room_goto(Room_Loading);
+	room_goto(rm_hub);
 }
 
 function start_challenge(){
@@ -52,7 +52,7 @@ function start_challenge(){
 	global.gamemode = 2;
 	global.win_level = 15;
 	global.energy_rate = 16;
-	room_goto(Room_Loading);
+	room_goto(rm_hub);
 }
 
 function startLab(){
@@ -109,7 +109,7 @@ function unPause(){
 
 function quitToTitle(){
 	global.isPaused = false;
-	game_restart(); //this is unlikely to be problem free in the future
+	//game_restart(); //this is unlikely to be problem free in the future
 	//room_restart();
-	//room_goto(Room_StartScreen);
+	room_goto(rm_hub);
 }
