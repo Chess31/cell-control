@@ -156,6 +156,7 @@
     {"id":{"name":"s_node_secondary","path":"sprites/s_node_secondary/s_node_secondary.yy",},},
     {"id":{"name":"s_node_tertiary","path":"sprites/s_node_tertiary/s_node_tertiary.yy",},},
     {"id":{"name":"s_Pickup_Temp","path":"sprites/s_Pickup_Temp/s_Pickup_Temp.yy",},},
+    {"id":{"name":"s_player_flashing","path":"sprites/s_player_flashing/s_player_flashing.yy",},},
     {"id":{"name":"s_Player","path":"sprites/s_Player/s_Player.yy",},},
     {"id":{"name":"s_ProxMine","path":"sprites/s_ProxMine/s_ProxMine.yy",},},
     {"id":{"name":"s_Spark","path":"sprites/s_Spark/s_Spark.yy",},},

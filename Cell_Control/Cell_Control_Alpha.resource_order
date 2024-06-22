@@ -109,6 +109,7 @@
     {"name":"s_node_secondary","order":19,"path":"sprites/s_node_secondary/s_node_secondary.yy",},
     {"name":"s_node_tertiary","order":20,"path":"sprites/s_node_tertiary/s_node_tertiary.yy",},
     {"name":"s_Pickup_Temp","order":3,"path":"sprites/s_Pickup_Temp/s_Pickup_Temp.yy",},
+    {"name":"s_player_flashing","order":3,"path":"sprites/s_player_flashing/s_player_flashing.yy",},
     {"name":"s_ProxMine","order":1,"path":"sprites/s_ProxMine/s_ProxMine.yy",},
     {"name":"s_Spark","order":7,"path":"sprites/s_Spark/s_Spark.yy",},
     {"name":"s_Spawner","order":3,"path":"sprites/s_Spawner/s_Spawner.yy",},

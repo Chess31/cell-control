@@ -1,5 +1,3 @@
-//combine these into a struct ? (maybe in a script so this room doesn't need to be persistent)
-
 // Create a 5x5 array to hold the room data
 global.cell = array_create(5);
 
@@ -19,29 +17,14 @@ for (var i = 0; i < 5; i++) {
     }
 }
 
-//// Example reference
-//global.cell[0][0].locked = false;
+global.player_cell_x = -1;
+global.player_cell_y = -1;
 
+global.cell_path_coords = array_create(1,[50, display_get_gui_height()/2]);
 
+global.core_power = 0;
 
-
-
-//global.cell_locked = [
-//    [false, true, true, true, true],
-//    [false, true, true, true, true],
-//    [false, true, true, true, true],
-//    [false, true, true, true, true],
-//    [false, true, true, true, true]
-//];
-
-//global.cell_cleared = [
-//    [false, false, false, false, false],
-//    [false, false, false, false, false],
-//	[false, false, false, false, false],
-//    [false, false, false, false, false],
-//    [false, false, false, false, false]
-//];
-
+//create buttons
 var _button_width = 128;
 var _button_height = 128;
 var _start_x = 128;
