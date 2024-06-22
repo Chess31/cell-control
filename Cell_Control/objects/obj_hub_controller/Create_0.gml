@@ -1,22 +1,46 @@
 //combine these into a struct ? (maybe in a script so this room doesn't need to be persistent)
 
-global.cell_locked = [
-    [false, true, true, true, true],
-    [false, true, true, true, true],
-    [false, true, true, true, true],
-    [false, true, true, true, true],
-    [false, true, true, true, true]
-];
+// Create a 5x5 array to hold the room data
+global.cell = array_create(5);
 
-global.cell_cleared = [
-    [false, false, false, false, false],
-    [false, false, false, false, false],
-	[false, false, false, false, false],
-    [false, false, false, false, false],
-    [false, false, false, false, false]
-];
+// Initialize each row in the array
+for (var i = 0; i < 5; i++) {
+    global.cell[i] = array_create(5);
+    
+    for (var j = 0; j < 5; j++) {
+        // Define the initial state of each room
+        global.cell[i][j] = {
+            locked: (j > 0), // Only the first column is unlocked initially
+            cleared: false,
+            player_is_here: (i == 0 && j == 0), // Player starts in the first room
+			infection_cores: 1,
+			energy_level: 100
+        };
+    }
+}
 
-//global.player_cell = [0][0];
+//// Example reference
+//global.cell[0][0].locked = false;
+
+
+
+
+
+//global.cell_locked = [
+//    [false, true, true, true, true],
+//    [false, true, true, true, true],
+//    [false, true, true, true, true],
+//    [false, true, true, true, true],
+//    [false, true, true, true, true]
+//];
+
+//global.cell_cleared = [
+//    [false, false, false, false, false],
+//    [false, false, false, false, false],
+//	[false, false, false, false, false],
+//    [false, false, false, false, false],
+//    [false, false, false, false, false]
+//];
 
 var _button_width = 128;
 var _button_height = 128;
