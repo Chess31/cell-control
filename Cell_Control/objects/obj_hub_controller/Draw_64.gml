@@ -4,9 +4,12 @@ draw_set_color(c_white);
 
 draw_text(10,10,"Select Cell");
 
-draw_set_halign(fa_left);
+draw_set_halign(fa_center);
 
-draw_text(display_get_gui_width()*(3/4) - 50, display_get_gui_height()/2, "Core Power:");
+draw_text(display_get_gui_width()*(3/4), display_get_gui_height()/2 - 50, "Core Power: " + string(global.core_power));
+draw_text(display_get_gui_width()*(3/4) - 128, display_get_gui_height()/2 - 30, "Buildings:");
+draw_text(display_get_gui_width()*(3/4), display_get_gui_height()/2 - 30, "Core Health:");
+draw_text(display_get_gui_width()*(3/4) + 128, display_get_gui_height()/2 - 30, "Rifts:");
 
 //Draw player path
 if (array_length(global.cell_path_coords) > 1) {

@@ -5,8 +5,8 @@ cell_col = -1;
 
 activate_button = function()
 {
-	if (!global.cell[cell_row][cell_col].locked) {
-		
+	//must be unlocked and in the next column from the player in order to move here
+	if (!global.cell[cell_row][cell_col].locked && (cell_col > global.player_cell_x)) {
 		if (cell_col < 4){
 			// Unlock cell in the same row
 	        if (global.cell[cell_row][cell_col + 1].locked) {

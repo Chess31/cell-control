@@ -8,12 +8,12 @@ if (global.player_cell_x = cell_col && global.player_cell_y = cell_row && array_
 if (hovering) {
 	draw_set_color(c_white);
 	
-	if (!global.cell[cell_row][cell_col].locked) {
+	if (!global.cell[cell_row][cell_col].locked && cell_col > global.player_cell_x) {
         draw_sprite_ext(s_player_flashing, current_time*0.005 mod 2,x,y,.5,.5,90,c_white,1);
     }
     
     // Draw lines to the adjacent buttons in the next column
-    if (cell_col < 4) { // Ensure we are not in the last column
+    if (cell_col < 4 && cell_col > global.player_cell_x) {
 
         // Draw line to the button in the same row
         if (!global.cell[cell_row][cell_col].locked) {
