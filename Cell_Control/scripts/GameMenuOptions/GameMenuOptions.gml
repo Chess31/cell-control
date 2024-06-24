@@ -42,7 +42,7 @@ function start_normal(){
 	show_debug_message(random_get_seed()); //prints the seed
 	global.gamemode = 1;
 	global.win_level = 10;
-	global.energy_rate = 10;
+	//global.energy_rate = 10;
 	room_goto(rm_hub);
 }
 
@@ -51,7 +51,7 @@ function start_challenge(){
 	show_debug_message(random_get_seed()); //prints the seed
 	global.gamemode = 2;
 	global.win_level = 15;
-	global.energy_rate = 16;
+	//global.energy_rate = 16;
 	room_goto(rm_hub);
 }
 
@@ -103,7 +103,8 @@ function pauseMenu(){
 
 function unPause(){
 	global.isPaused = false;
-	room_goto(Room_Core);
+	global.frozen = false;
+	//room_goto(Room_Core);
 	//instance_activate_all();
 }
 

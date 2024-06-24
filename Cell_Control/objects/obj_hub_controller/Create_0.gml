@@ -13,7 +13,7 @@ for (var i = 0; i < 5; i++) { //height
             cleared: false,
             player_is_here: (i == 0 && j == 0), // Player starts in the first room
 			infection_cores: j + 1,
-			energy_level: irandom_range(90 - irandom_range(0,2*j),100 + irandom_range(0,2*j))
+			energy_level: irandom_range(6 + j, 16 + j)
         };
     }
 }
@@ -50,6 +50,8 @@ global.core_power_skill_tree = [
     { name: "Health", tier: 0, max_tier: 5 },
     { name: "Rifts", tier: 0, max_tier: 3 }
 ];
+
+global.available_buildings = global.core_power_skill_tree[0].tier;
 
 //create power tree buttons
 var _pbutton_width = 128;

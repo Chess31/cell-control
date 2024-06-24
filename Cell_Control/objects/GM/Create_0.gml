@@ -1,3 +1,5 @@
+
+
 //set cursor sprite
 window_set_cursor(cr_none);
 cursor_sprite = s_cursor;
@@ -29,61 +31,77 @@ global.buildingCount = ds_list_create();
 global.buildingMaxNumber = ds_list_create();
 
 // Add building types, healths, sprites, and costs
-ds_list_add(global.buildingTypes, "Destroy Nearest");
-ds_list_add(global.buildingHealths, 10);
-ds_list_add(global.buildingSprites, s_DestroyNearest);
-ds_list_add(global.buildingCosts, 0);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 1);
+if (global.available_buildings > -1) {
+	ds_list_add(global.buildingTypes, "Destroy Nearest");
+	ds_list_add(global.buildingHealths, 10);
+	ds_list_add(global.buildingSprites, s_DestroyNearest);
+	ds_list_add(global.buildingCosts, 0);
+	ds_list_add(global.buildingCount, 0);
+	ds_list_add(global.buildingMaxNumber, 1);
+}
 
-ds_list_add(global.buildingTypes, "Wall");
-ds_list_add(global.buildingHealths, 75);
-ds_list_add(global.buildingSprites, s_Wall);
-ds_list_add(global.buildingCosts, 5);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 20 + (6 - global.gamemode*3));
+if (global.available_buildings > 0) {
+	ds_list_add(global.buildingTypes, "Wall");
+	ds_list_add(global.buildingHealths, 75);
+	ds_list_add(global.buildingSprites, s_Wall);
+	ds_list_add(global.buildingCosts, 5);
+	ds_list_add(global.buildingCount, 0);
+	ds_list_add(global.buildingMaxNumber, 20 + (6 - global.gamemode*3));
+}
 
-ds_list_add(global.buildingTypes, "Turret");
-ds_list_add(global.buildingHealths, 15);
-ds_list_add(global.buildingSprites, s_Turret);
-ds_list_add(global.buildingCosts, 15);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 3 + (2 - global.gamemode));
+if (global.available_buildings > 1) {
+	ds_list_add(global.buildingTypes, "Turret");
+	ds_list_add(global.buildingHealths, 15);
+	ds_list_add(global.buildingSprites, s_Turret);
+	ds_list_add(global.buildingCosts, 15);
+	ds_list_add(global.buildingCount, 0);
+	ds_list_add(global.buildingMaxNumber, 3 + (2 - global.gamemode));
+}
 
-ds_list_add(global.buildingTypes, "Forge");
-ds_list_add(global.buildingHealths, 20);
-ds_list_add(global.buildingSprites, s_Forge);
-ds_list_add(global.buildingCosts, 30);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 5 + (2 - global.gamemode));
+if (global.available_buildings > 2) {
+	ds_list_add(global.buildingTypes, "Forge");
+	ds_list_add(global.buildingHealths, 20);
+	ds_list_add(global.buildingSprites, s_Forge);
+	ds_list_add(global.buildingCosts, 30);
+	ds_list_add(global.buildingCount, 0);
+	ds_list_add(global.buildingMaxNumber, 5 + (2 - global.gamemode));
+}
 
-ds_list_add(global.buildingTypes, "Upgrader");
-ds_list_add(global.buildingHealths, 50);
-ds_list_add(global.buildingSprites, s_Upgrader);
-ds_list_add(global.buildingCosts, 50);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 1);
+if (global.available_buildings > 3) {
+	ds_list_add(global.buildingTypes, "Upgrader");
+	ds_list_add(global.buildingHealths, 50);
+	ds_list_add(global.buildingSprites, s_Upgrader);
+	ds_list_add(global.buildingCosts, 50);
+	ds_list_add(global.buildingCount, 0);
+	ds_list_add(global.buildingMaxNumber, 1);
+}
 
-ds_list_add(global.buildingTypes, "Proximity Mine");
-ds_list_add(global.buildingHealths, 5);
-ds_list_add(global.buildingSprites, s_ProxMine);
-ds_list_add(global.buildingCosts, 5);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 2);
-	
-ds_list_add(global.buildingTypes, "Feeder");
-ds_list_add(global.buildingHealths, 300);
-ds_list_add(global.buildingSprites, s_Feeder);
-ds_list_add(global.buildingCosts, 150);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 1);
-	
-ds_list_add(global.buildingTypes, "Hive");
-ds_list_add(global.buildingHealths, 100);
-ds_list_add(global.buildingSprites, s_Hive);
-ds_list_add(global.buildingCosts, 200);
-ds_list_add(global.buildingCount, 0);
-ds_list_add(global.buildingMaxNumber, 1);
+if (global.available_buildings > 4) {
+	ds_list_add(global.buildingTypes, "Proximity Mine");
+	ds_list_add(global.buildingHealths, 5);
+	ds_list_add(global.buildingSprites, s_ProxMine);
+	ds_list_add(global.buildingCosts, 5);
+	ds_list_add(global.buildingCount, 0);
+	ds_list_add(global.buildingMaxNumber, 2);
+}
+
+if (global.available_buildings > 5) {
+	ds_list_add(global.buildingTypes, "Feeder");
+	ds_list_add(global.buildingHealths, 300);
+	ds_list_add(global.buildingSprites, s_Feeder);
+	ds_list_add(global.buildingCosts, 150);
+	ds_list_add(global.buildingCount, 0);
+	ds_list_add(global.buildingMaxNumber, 1);
+}
+
+if (global.available_buildings > 6) {
+	ds_list_add(global.buildingTypes, "Hive");
+	ds_list_add(global.buildingHealths, 100);
+	ds_list_add(global.buildingSprites, s_Hive);
+	ds_list_add(global.buildingCosts, 200);
+	ds_list_add(global.buildingCount, 0);
+	ds_list_add(global.buildingMaxNumber, 1);
+}
 
 global.next_wall_cost = 1;
 global.wall_cost_multiplier = 1.0;
