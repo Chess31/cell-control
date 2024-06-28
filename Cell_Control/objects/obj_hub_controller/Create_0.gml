@@ -52,6 +52,7 @@ global.core_power_skill_tree = [
 ];
 
 global.available_buildings = global.core_power_skill_tree[0].tier;
+global.available_rifts = global.core_power_skill_tree[2].tier;
 
 //create power tree buttons
 var _pbutton_width = 128;

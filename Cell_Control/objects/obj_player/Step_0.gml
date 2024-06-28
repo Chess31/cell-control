@@ -1,6 +1,7 @@
 if (global.frozen = true) {
 	exit;
 }
+
 if (global.gamemode = 0){
 	if (!obj_freeze_controller.bars_explained && ammo != initial_ammo){global.frozen = true; global.tutorial_to_show = 1}
 	if (instance_exists(obj_enemy)){

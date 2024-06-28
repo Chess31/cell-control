@@ -8,7 +8,7 @@ function primaryWeapon(_type){
 			bullet.direction = point_direction(x, y, mouse_x, mouse_y);
 			bullet.speed = 8;
 			bullet.my_speed = bullet.speed;
-			bullet.damage = 1;
+			bullet.damage = 1 + global.damage_mod;
 
 			// Subtract ammo
 			ammo -= 1;
@@ -49,7 +49,7 @@ function shiftWeapon(_type){
 				bullet.direction = point_direction(x, y, mouse_x, mouse_y);
 				bullet.speed = 16;
 				bullet.my_speed = bullet.speed;
-				bullet.damage = 5;
+				bullet.damage = 5 + global.damage_mod;
 				bullet.sprite_index = s_cursor;
 
 				// Subtract ammo
@@ -80,7 +80,7 @@ function altWeapon(_type){
 				bullet.direction = point_direction(x, y, mouse_x, mouse_y);
 				bullet.speed = 3;
 				bullet.my_speed = bullet.speed;
-				bullet.damage = 1;
+				bullet.damage = 1 + global.damage_mod;
 				bullet.piercing = 100;
 				//bullet.sprite_index = s_GravityBall;
 
@@ -124,7 +124,7 @@ function comboWeapon(_type){
 				    bullet.direction = adjustedDirection;
 				    bullet.speed = 8;
 					bullet.my_speed = 8;
-					bullet.damage = 1;
+					bullet.damage = 1 + global.damage_mod;
 					bullet.piercing = 2;
 				}
 					

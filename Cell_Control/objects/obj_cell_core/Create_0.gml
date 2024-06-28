@@ -4,12 +4,16 @@ image_yscale = 2;
 image_speed = 0;
 
 //starting health
-cellHealth = 25;
-maxHealth = 25;
+cellHealth = global.cell_health;
+maxHealth = global.cell_health;
 min_to_heal = 75;
 button_down_count = 0;
 draw_time = 0;
 draw_alpha = 1;
+
+//Rift properties
+create_rift_radius = 500;
+rift_cooldown = 500; // Cooldown period for creating rifts
 
 //starting position
 x = room_width/2; //obj_camera.view_w_half;

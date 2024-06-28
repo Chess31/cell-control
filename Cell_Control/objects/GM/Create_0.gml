@@ -1,4 +1,4 @@
-
+//global.available_buildings = 10;
 
 //set cursor sprite
 window_set_cursor(cr_none);
@@ -124,6 +124,18 @@ global.hive_cost_multiplier = 1.5;
 //ds_list_add(global.buildingCosts, 1);
 //ds_list_add(global.buildingCount, 0);
 //ds_list_add(global.buildingMaxNumber, 5);
+
+global.rift_types = ds_list_create();
+
+if (global.available_rifts > 0) {
+	ds_list_add(global.rift_types, obj_rift_energy);
+}
+if (global.available_rifts > 1) {
+	ds_list_add(global.rift_types, obj_rift_heal);
+}
+if (global.available_rifts > 2) {
+	ds_list_add(global.rift_types, obj_rift_damage);
+}
 
 global.feeder_active = false;
 global.enemy_kill_goal = 10;
