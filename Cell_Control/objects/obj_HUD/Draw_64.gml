@@ -78,6 +78,11 @@ if (obj_player.comboSlot != -1) {
     draw_text(display_x, display_y + 60, "Combo Attack: " + string(obj_player.comboSlot));
 }
 
+//Ability cooldowns
+draw_text(10, 100, obj_player.first_ability_cooldown);
+draw_text(10, 120, obj_player.second_ability_cooldown);
+draw_text(10, 140, obj_player.third_ability_cooldown);
+
 if (global.extra_info = true){
 	//Draw the number of currently placed buildings for each type
 	var margin = 25; // Margin from the screen edge

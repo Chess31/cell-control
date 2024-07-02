@@ -1,0 +1,12 @@
+{
+  "$GMTimeline":"",
+  "%Name":"tl_ability_remover",
+  "momentList":[],
+  "name":"tl_ability_remover",
+  "parent":{
+    "name":"Timelines",
+    "path":"folders/Timelines.yy",
+  },
+  "resourceType":"GMTimeline",
+  "resourceVersion":"2.0",
+}

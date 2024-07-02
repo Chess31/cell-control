@@ -68,6 +68,62 @@ if (can_shoot_cooldown <= 0 && can_shoot = true){
 	can_shoot_cooldown--;
 }
 
+//Ability Usage
+first_ability_cooldown = max (0, first_ability_cooldown-1);
+second_ability_cooldown = max (0, second_ability_cooldown-1);
+third_ability_cooldown = max (0, third_ability_cooldown-1);
+
+if (keyboard_check(ord("Q")) and first_ability_cooldown = 0) {
+	var _ability = array_get(global.upgrades,0);
+	with (_ability) {
+		effect_function(true);
+		other.first_ability_cooldown = cooldown;
+		other.first_ability_duration = duration;
+		if (duration != infinity) { // remove effect after duration
+			var tl = timeline_add();
+			other.timeline_index = tl;
+			other.timeline_running = true;
+			other.timeline_loop = false;
+			timeline_moment_add_script(tl, duration, effect_function);
+			other.alarm[0] = duration + 1;
+		}
+	}
+}
+
+if (keyboard_check(ord("E")) and second_ability_cooldown = 0) {
+	var _ability = array_get(global.upgrades,1);
+	with (_ability) {
+		effect_function(true);
+		other.second_ability_cooldown = cooldown;
+		other.second_ability_duration = duration;
+		if (duration != infinity) { // remove effect after duration
+			var tl = timeline_add();
+			other.timeline_index = tl;
+			other.timeline_running = true;
+			other.timeline_loop = false;
+			timeline_moment_add_script(tl, duration, effect_function);
+			other.alarm[0] = duration + 1;
+		}
+	}
+}
+
+if (keyboard_check(ord("F")) and third_ability_cooldown = 0) {
+	var _ability = array_get(global.upgrades,2);
+	with (_ability) {
+		effect_function(true);
+		other.third_ability_cooldown = cooldown;
+		other.third_ability_duration = duration;
+		if (duration != infinity) { // remove effect after duration
+			var tl = timeline_add();
+			other.timeline_index = tl;
+			other.timeline_running = true;
+			other.timeline_loop = false;
+			timeline_moment_add_script(tl, duration, effect_function);
+			other.alarm[0] = duration + 1;
+		}
+	}
+}
+
 // Health check
 if (playerHealth <= 0) {
 	if (global.gamemode = 0) {

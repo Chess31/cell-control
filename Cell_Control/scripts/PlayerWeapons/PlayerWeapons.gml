@@ -6,7 +6,7 @@ function primaryWeapon(_type){
 
 			// Set the bullet's direction and speed
 			bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-			bullet.speed = 8;
+			bullet.speed = 8 + global.bullet_speed_mod;
 			bullet.my_speed = bullet.speed;
 			bullet.damage = 1 + global.damage_mod;
 
@@ -47,7 +47,7 @@ function shiftWeapon(_type){
 
 				// Set the bullet's direction and speed
 				bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-				bullet.speed = 16;
+				bullet.speed = 16 + global.bullet_speed_mod;
 				bullet.my_speed = bullet.speed;
 				bullet.damage = 5 + global.damage_mod;
 				bullet.sprite_index = s_cursor;
@@ -78,7 +78,7 @@ function altWeapon(_type){
 
 				// Set the bullet's direction and speed
 				bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-				bullet.speed = 3;
+				bullet.speed = 3 + global.bullet_speed_mod;
 				bullet.my_speed = bullet.speed;
 				bullet.damage = 1 + global.damage_mod;
 				bullet.piercing = 100;
@@ -122,8 +122,8 @@ function comboWeapon(_type){
 
 				    // Set the bullet's stats
 				    bullet.direction = adjustedDirection;
-				    bullet.speed = 8;
-					bullet.my_speed = 8;
+				    bullet.speed = 8 + global.bullet_speed_mod;
+					bullet.my_speed = bullet.speed;
 					bullet.damage = 1 + global.damage_mod;
 					bullet.piercing = 2;
 				}

@@ -5,7 +5,7 @@ y = room_width/2;
 //movement variables
 hSpeed = 0;
 vSpeed = 0;
-walkSpeed = 6.0;
+walkSpeed = 7.0;
 
 //grid_x = -1;
 //grid_y = -1;
@@ -23,6 +23,7 @@ restartTimer = 3 * room_speed;
 isDeployingWall = false; //If the player is building a wall currently
 player_color = c_white;
 global.damage_mod = 0;
+global.bullet_speed_mod = 0;
 
 global.current_upgrader = noone;
 can_shoot_cooldown = 15;
@@ -45,3 +46,14 @@ function TakeDamage(_amount)
 {
 	playerHealth -= _amount;
 }
+
+//Upgrades
+global.upgrades = [];
+
+first_ability_cooldown = 0;
+second_ability_cooldown = 0;
+third_ability_cooldown = 0;
+
+first_ability_duration = 0;
+second_ability_duration = 0;
+third_ability_duration = 0;

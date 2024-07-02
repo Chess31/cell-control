@@ -12,3 +12,6 @@ if (isDeployingWall) {
     // Draw a preview of the wall
     draw_sprite_ext(ds_list_find_value(global.buildingSprites, global.currentBuildingIndex), 0, wallX, wallY, 1, 1, playerDirection, c_white, .3);
 }
+
+draw_set_color(c_white);
+draw_text(x, y-30, string(walkSpeed));
