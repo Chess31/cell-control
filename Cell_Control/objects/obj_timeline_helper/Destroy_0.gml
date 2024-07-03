@@ -1,0 +1,1 @@
+//timeline_delete(timeline_index);

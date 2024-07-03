@@ -54,6 +54,6 @@ first_ability_cooldown = 0;
 second_ability_cooldown = 0;
 third_ability_cooldown = 0;
 
-first_ability_duration = 0;
-second_ability_duration = 0;
-third_ability_duration = 0;
+array_push(global.upgrades, new Upgrade (UpgradeID.speedboost, 1, "Increases move speed by 3", effect_sprint_boost, 120, 15));
+array_push(global.upgrades, new Upgrade (UpgradeID.sniper, 2, "Increases damage by 5", effect_precision_rounds, 120, 120));
+array_push(global.upgrades, new Upgrade (UpgradeID.bulletspeedboost, 3, "Increases bullet speed", effect_fast_rounds, 120, 120));

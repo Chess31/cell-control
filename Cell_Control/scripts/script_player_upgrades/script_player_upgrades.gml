@@ -12,7 +12,8 @@ enum UpgradeID
 	sniper, //extra damage, slower reload
 	buildingCost, //drops building placement price
 	criticalStrike, //enables critical strikes
-	ricochetRounds //choas bolt mechanics from dnd
+	ricochetRounds, //choas bolt mechanics from dnd
+	magnet
 }
 
 function Upgrade(_type, _image_index, _description, _effect_function, _cooldown, _duration) constructor
@@ -55,3 +56,13 @@ function effect_fast_rounds(_apply) {
 
 // Define other effect functions similarly...
 
+//Lists for Upgrades
+
+global.upgrade_index = 0; //this number will determine which spot in each list to reference when using an upgrade
+
+//Upgrade Lists
+global.upgrade_index = ds_list_create();
+global.upgrade_description = ds_list_create();
+global.upgrade_function = ds_list_create();
+global.upgrade_cooldown = ds_list_create();
+global.upgrade_duration = ds_list_create();

@@ -14,4 +14,6 @@ if (isDeployingWall) {
 }
 
 draw_set_color(c_white);
-draw_text(x, y-30, string(walkSpeed));
+draw_text(x, y-30, string(instance_number(obj_timeline_helper)));
+draw_text(x + 30, y-30, string(global.damage_mod));
+draw_text(x - 30, y-30, string(walkSpeed));
