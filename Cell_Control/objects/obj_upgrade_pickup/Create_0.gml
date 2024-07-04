@@ -1,9 +1,16 @@
-index = 0;
+index = irandom(ds_list_size(global.upgrade_name) - 1);
 
-//define 4 global lists, description, function, cooldown, duration. Then create a new instance of this object with a random index
+image_speed = 0;
+image_index = index;
 
-//array_push(global.upgrades, new Upgrade (UpgradeID.speedboost, 1, "Increases move speed by 3", effect_sprint_boost, 120, 15));
-//array_push(global.upgrades, new Upgrade (UpgradeID.sniper, 2, "Increases damage by 5", effect_precision_rounds, 120, 120));
-//array_push(global.upgrades, new Upgrade (UpgradeID.bulletspeedboost, 3, "Increases bullet speed", effect_fast_rounds, 120, 120));
+collect_distance = 55;
 
-//then just push the single index value into the array
+var _name = ds_list_find_value(global.upgrade_name,index);
+var _description = ds_list_find_value(global.upgrade_description,index);
+var _function = ds_list_find_value(global.upgrade_function,index);
+var _cooldown = ds_list_find_value(global.upgrade_cooldown,index);
+var _duration = ds_list_find_value(global.upgrade_duration,index);
+
+my_upgrade = new Upgrade(_name, index, _description, _function, _cooldown, _duration);
+
+//to swap: either add buttons in the menu that shake like apple app icons, or summon a menu to drop them

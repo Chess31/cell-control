@@ -16,9 +16,9 @@ enum UpgradeID
 	magnet
 }
 
-function Upgrade(_type, _image_index, _description, _effect_function, _cooldown, _duration) constructor
+function Upgrade(_name, _image_index, _description, _effect_function, _cooldown, _duration) constructor
 {
-	upgrade_id = _type;
+	upgrade_name = _name;
 	texture = _image_index;
 	description = _description
 	effect_function = _effect_function
@@ -36,7 +36,7 @@ function effect_sprint_boost(_apply) {
 	}
 }
 
-function effect_precision_rounds(_apply) {
+function effect_damage_boost(_apply) {
 	if (_apply) {
 		// Increase bullet damage by 5
 		global.damage_mod = 5;
@@ -61,8 +61,26 @@ function effect_fast_rounds(_apply) {
 global.upgrade_index = 0; //this number will determine which spot in each list to reference when using an upgrade
 
 //Upgrade Lists
-global.upgrade_index = ds_list_create();
+global.upgrade_name = ds_list_create();
 global.upgrade_description = ds_list_create();
 global.upgrade_function = ds_list_create();
 global.upgrade_cooldown = ds_list_create();
 global.upgrade_duration = ds_list_create();
+
+ds_list_add(global.upgrade_name, "Dash");
+ds_list_add(global.upgrade_description, "Quickly move for a short moment");
+ds_list_add(global.upgrade_function, effect_sprint_boost);
+ds_list_add(global.upgrade_cooldown, 120); // 2 seconds (60 * 2)
+ds_list_add(global.upgrade_duration, 15);
+
+ds_list_add(global.upgrade_name, "Power Shot");
+ds_list_add(global.upgrade_description, "Temporarily shoot hight damage bullets");
+ds_list_add(global.upgrade_function, effect_damage_boost);
+ds_list_add(global.upgrade_cooldown, 120); // 2 seconds (60 * 2)
+ds_list_add(global.upgrade_duration, 120);
+
+ds_list_add(global.upgrade_name, "Quick Shot");
+ds_list_add(global.upgrade_description, "Temporarily shoot fast bullets");
+ds_list_add(global.upgrade_function, effect_fast_rounds);
+ds_list_add(global.upgrade_cooldown, 120); // 2 seconds (60 * 2)
+ds_list_add(global.upgrade_duration, 120);

@@ -7,5 +7,5 @@ draw_text(10, hotbar_y + 10, "Hotbar Content");
 	
 for (var i = 0; i < array_length(global.upgrades); i++) {
 	var upgrade = global.upgrades[i];
-	draw_text(10, hotbar_y + 30 + (i * 20), string(upgrade.upgrade_id) + ": " + string(upgrade.description));
+	draw_text(10, hotbar_y + 30 + (i * 20), string(upgrade.upgrade_name) + ": " + string(upgrade.description));
 }

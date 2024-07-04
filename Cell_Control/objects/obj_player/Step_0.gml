@@ -73,72 +73,7 @@ first_ability_cooldown = max (0, first_ability_cooldown-1);
 second_ability_cooldown = max (0, second_ability_cooldown-1);
 third_ability_cooldown = max (0, third_ability_cooldown-1);
 
-//if (keyboard_check(ord("Q")) and first_ability_cooldown = 0) {
-//	var _ability = array_get(global.upgrades,0);
-//	with (_ability) {
-//		effect_function(true);
-//		other.first_ability_cooldown = cooldown;
-//		if (duration != infinity) { // remove effect after duration
-//			var _helper_q = instance_create_layer(0,0,"Instances",obj_timeline_helper);
-//			show_debug_message("helper summoned");
-	
-//			_helper_q.timeline_index = timeline_add();
-//			_helper_q.timeline_running = true;
-//			_helper_q.timeline_loop = false;
-//			_helper_q.alarm[0] = duration + 1;
-//			with (_helper_q) {
-//				timeline_moment_add_script(timeline_index, other.duration, other.effect_function);
-//				//timeline_moment_add_script(timeline_index, other.duration + 2, timeline_delete(timeline_index));
-//			}
-//		}
-//	}
-//}
-
-//if (keyboard_check(ord("E")) and second_ability_cooldown = 0) {
-//	var _ability = array_get(global.upgrades,1);
-//	with (_ability) {
-//		effect_function(true);
-//		other.second_ability_cooldown = cooldown;
-//		//other.second_ability_duration = duration;
-//		if (duration != infinity) { // remove effect after duration
-//			var _helper_e = instance_create_layer(0,0,"Instances",obj_timeline_helper);
-//			show_debug_message("helper summoned");
-	
-//			_helper_e.timeline_index = timeline_add();
-//			_helper_e.timeline_running = true;
-//			_helper_e.timeline_loop = false;
-//			_helper_e.alarm[0] = duration + 1;
-//			with (_helper_e) {
-//				timeline_moment_add_script(timeline_index, other.duration, other.effect_function);
-//				//timeline_moment_add_script(timeline_index, other.duration + 2, timeline_delete(timeline_index));
-//			}
-//		}
-//	}
-//}
-
-//if (keyboard_check(ord("F")) and third_ability_cooldown = 0) {
-//	var _ability = array_get(global.upgrades,2);
-//	with (_ability) {
-//		effect_function(true);
-//		other.third_ability_cooldown = cooldown;
-//		//other.third_ability_duration = duration;
-//		if (duration != infinity) { // remove effect after duration
-//			var _helper_f = instance_create_layer(0,0,"Instances",obj_timeline_helper);
-//			show_debug_message("helper summoned");
-	
-//			_helper_f.timeline_index = timeline_add();
-//			_helper_f.timeline_running = true;
-//			_helper_f.timeline_loop = false;
-//			_helper_f.alarm[0] = duration + 1;
-//			with (_helper_f) {
-//				timeline_moment_add_script(timeline_index, other.duration, other.effect_function);
-//				//timeline_moment_add_script(timeline_index, other.duration + 2, timeline_delete(timeline_index));
-//			}
-//		}
-//	}
-//}
-
-if (keyboard_check(ord("Q")) and first_ability_cooldown = 0) {
+if (keyboard_check(ord("Q")) and first_ability_cooldown = 0 and array_length(global.upgrades) > 0) {
 	var _ability = array_get(global.upgrades,0);
 	with (_ability) {
 		effect_function(true);
@@ -160,7 +95,7 @@ if (keyboard_check(ord("Q")) and first_ability_cooldown = 0) {
 	}
 }
 
-if (keyboard_check(ord("E")) and second_ability_cooldown = 0) {
+if (keyboard_check(ord("E")) and second_ability_cooldown = 0 and array_length(global.upgrades) > 1) {
 	var _ability = array_get(global.upgrades,1);
 	with (_ability) {
 		effect_function(true);
@@ -182,7 +117,7 @@ if (keyboard_check(ord("E")) and second_ability_cooldown = 0) {
 	}
 }
 
-if (keyboard_check(ord("F")) and third_ability_cooldown = 0) {
+if (keyboard_check(ord("C")) and third_ability_cooldown = 0 and array_length(global.upgrades) > 2) {
 	var _ability = array_get(global.upgrades,2);
 	with (_ability) {
 		effect_function(true);
@@ -203,91 +138,6 @@ if (keyboard_check(ord("F")) and third_ability_cooldown = 0) {
 		}
 	}
 }
-
-//if (keyboard_check(ord("Q")) and first_ability_cooldown == 0) {
-//    var _ability = array_get(global.upgrades, 0);
-//    with (_ability) {
-//        effect_function(true);
-//        other.first_ability_cooldown = cooldown;
-//        if (duration != infinity) { // remove effect after duration
-//            var _helper_q = instance_create_layer(0, 0, "Instances", obj_timeline_helper);
-//            show_debug_message("helper summoned");
-            
-//            with (_helper_q) {
-//                timeline_index = timeline_add();
-//                //timeline_running = true;
-//                //timeline_loop = false;
-//                //alarm[0] = other.duration + 2;
-//                timeline_moment_add_script(timeline_index, other.duration, other.effect_function);
-//                //// Schedule the timeline deletion after it has run
-//                //timeline_moment_add_script(timeline_index, other.duration + 1, function() {
-//                //    timeline_delete(timeline_index);
-//                //});
-//            }
-//        }
-//    }
-//}
-
-//if (keyboard_check(ord("E")) and second_ability_cooldown == 0) {
-//    var _ability = array_get(global.upgrades, 1);
-//    with (_ability) {
-//        effect_function(true);
-//        other.second_ability_cooldown = cooldown;
-//        if (duration != infinity) { // remove effect after duration
-//            var _helper_e = instance_create_layer(0, 0, "Instances", obj_timeline_helper);
-//            show_debug_message("helper summoned");
-            
-//            with (_helper_e) {
-//                timeline_index = timeline_add();
-//                //timeline_running = true;
-//                //timeline_loop = false;
-//                //alarm[0] = other.duration + 2;
-//                timeline_moment_add_script(timeline_index, other.duration, other.effect_function);
-//                //// Schedule the timeline deletion after it has run
-//                //timeline_moment_add_script(timeline_index, other.duration + 1, function() {
-//                //    timeline_delete(timeline_index);
-//                //});
-//            }
-//        }
-//    }
-//}
-
-//if (keyboard_check(ord("F")) and third_ability_cooldown == 0) {
-//    var _ability = array_get(global.upgrades, 2);
-//    with (_ability) {
-//        effect_function(true);
-//        other.third_ability_cooldown = cooldown;
-//        if (duration != infinity) { // remove effect after duration
-//            var _helper_f = instance_create_layer(0, 0, "Instances", obj_timeline_helper);
-//            show_debug_message("helper summoned");
-            
-//            with (_helper_f) {
-//                timeline_index = timeline_add();
-//                //timeline_running = true;
-//                //timeline_loop = false;
-//                //alarm[0] = other.duration + 2;
-//                timeline_moment_add_script(timeline_index, other.duration, other.effect_function);
-//                //// Schedule the timeline deletion after it has run
-//                //timeline_moment_add_script(timeline_index, other.duration + 1, function() {
-//                //    timeline_delete(timeline_index);
-//                //});
-//            }
-//        }
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Health check
 if (playerHealth <= 0) {

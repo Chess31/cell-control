@@ -13,7 +13,7 @@ if (isDeployingWall) {
     draw_sprite_ext(ds_list_find_value(global.buildingSprites, global.currentBuildingIndex), 0, wallX, wallY, 1, 1, playerDirection, c_white, .3);
 }
 
-draw_set_color(c_white);
-draw_text(x, y-30, string(instance_number(obj_timeline_helper)));
-draw_text(x + 30, y-30, string(global.damage_mod));
-draw_text(x - 30, y-30, string(walkSpeed));
+//draw_set_color(c_white);
+//draw_text(x, y-30, string(instance_number(obj_timeline_helper)));
+//draw_text(x + 30, y-30, string(global.damage_mod));
+//draw_text(x - 30, y-30, string(walkSpeed));
