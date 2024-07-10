@@ -9,6 +9,13 @@ draw_set_valign(fa_top);
 //draw_text(10, 50, "Level: " + string(global.infections_destroyed) + " / " + string(global.win_level));
 draw_text_transformed(10, 10, "Level: " + string(global.infections_destroyed) + " / " + string(global.win_level),1.5,1.5,0);
 
+if (obj_player.upgrade_parts > 0) {
+	var _display_width = display_get_gui_width();
+	draw_set_valign(fa_middle);
+	draw_text_transformed(_display_width - 100, 50, string(obj_player.upgrade_parts), 1.5, 1.5, 0);
+	draw_sprite(s_upgrade_part, 0, _display_width - 125, 50);
+}
+
 //Health Bar
 // Set the coordinates for the health bar
 var _bar_x = display_get_gui_width()/2;

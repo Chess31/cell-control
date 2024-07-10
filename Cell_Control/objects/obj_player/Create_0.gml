@@ -18,6 +18,7 @@ initial_ammo = 10;
 playerHealth = 15;
 initialHealth = 15;
 weaponTokens = 0;
+upgrade_parts = 0;
 global.playerAlive = true; // Player starts alive
 restartTimer = 3 * room_speed;
 isDeployingWall = false; //If the player is building a wall currently

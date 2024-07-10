@@ -4,7 +4,8 @@ function mainUpgraderOptions()
 				[
 					["20 Health",gainHealth],
 					["Develop Buildings",increaseMaxBuild],
-					["Develop Weapon",developWeapon]
+					["Develop Weapon",developWeapon],
+					["Develop Ability",developAbility]
 				],
 				"Select Upgrade"
 			);
@@ -166,5 +167,17 @@ function equipTriplerCrippler()
 		developWeapon();
 		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
 		_warning_text.message_text = "Special Energy Needed";
+	}
+}
+
+function developAbility()
+{
+	if (obj_player.upgrade_parts >= 8){
+		//instance_create_layer(obj_player.x + irandom_range(-100,100), obj_player.y + irandom_range(-100,100),layer,obj_upgrade_pickup);
+		instance_create_layer(obj_player.x + irandom_range(-100,100), obj_player.y + irandom_range(-100,100),"Instances",obj_upgrade_pickup);
+		obj_player.upgrade_parts -= 8;
+	} else {
+		var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message);
+		_warning_text.message_text = "Upgrade Parts Needed";
 	}
 }

@@ -23,8 +23,8 @@ global.player_cell_y = -1;
 
 global.cell_path_coords = array_create(1,[50, display_get_gui_height()/2]);
 
-global.core_power = 0;
-global.true_core_power = 0;
+global.core_power = 1000;
+global.true_core_power = 1000;
 
 //create cell buttons
 var _button_width = 128;
