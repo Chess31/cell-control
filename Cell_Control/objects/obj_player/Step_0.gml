@@ -69,17 +69,17 @@ if (can_shoot_cooldown <= 0 && can_shoot = true){
 }
 
 //Ability Usage
-first_ability_cooldown = max (0, first_ability_cooldown-1);
-second_ability_cooldown = max (0, second_ability_cooldown-1);
-third_ability_cooldown = max (0, third_ability_cooldown-1);
 
-if (keyboard_check(ord("Q")) and first_ability_cooldown = 0 and array_length(global.upgrades) > 0) {
+ability_cooldown[0] = max (0, ability_cooldown[0] - 1);
+ability_cooldown[1] = max (0, ability_cooldown[1] - 1);
+ability_cooldown[2] = max (0, ability_cooldown[2] - 1);
+
+if (keyboard_check(ord("Q")) and ability_cooldown[0] = 0 and array_length(global.upgrades) > 0) {
 	var _ability = array_get(global.upgrades,0);
 	with (_ability) {
 		effect_function(true);
-		other.first_ability_cooldown = cooldown;
+		other.ability_cooldown[0] = cooldown;
 		if (duration != infinity) { // remove effect after duration
-			
 			if (!instance_exists(obj_timeline_helper)) { //create the helper and add the ability to a new timeline
 				global.tl_ability_durations = timeline_add();
 				var _helper = instance_create_layer(0,0,"Instances",obj_timeline_helper);
@@ -95,13 +95,12 @@ if (keyboard_check(ord("Q")) and first_ability_cooldown = 0 and array_length(glo
 	}
 }
 
-if (keyboard_check(ord("E")) and second_ability_cooldown = 0 and array_length(global.upgrades) > 1) {
+if (keyboard_check(ord("E")) and ability_cooldown[1] = 0 and array_length(global.upgrades) > 1) {
 	var _ability = array_get(global.upgrades,1);
 	with (_ability) {
 		effect_function(true);
-		other.second_ability_cooldown = cooldown;
+		other.ability_cooldown[1] = cooldown;
 		if (duration != infinity) { // remove effect after duration
-			
 			if (!instance_exists(obj_timeline_helper)) { //create the helper and add the ability to a new timeline
 				global.tl_ability_durations = timeline_add();
 				var _helper = instance_create_layer(0,0,"Instances",obj_timeline_helper);
@@ -117,13 +116,12 @@ if (keyboard_check(ord("E")) and second_ability_cooldown = 0 and array_length(gl
 	}
 }
 
-if (keyboard_check(ord("C")) and third_ability_cooldown = 0 and array_length(global.upgrades) > 2) {
+if (keyboard_check(ord("C")) and ability_cooldown[2] = 0 and array_length(global.upgrades) > 2) {
 	var _ability = array_get(global.upgrades,2);
 	with (_ability) {
 		effect_function(true);
-		other.third_ability_cooldown = cooldown;
+		other.ability_cooldown[2] = cooldown;
 		if (duration != infinity) { // remove effect after duration
-			
 			if (!instance_exists(obj_timeline_helper)) { //create the helper and add the ability to a new timeline
 				global.tl_ability_durations = timeline_add();
 				var _helper = instance_create_layer(0,0,"Instances",obj_timeline_helper);

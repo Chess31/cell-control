@@ -78,11 +78,6 @@ if (obj_player.comboSlot != -1) {
     draw_text(display_x, display_y + 60, "Combo Attack: " + string(obj_player.comboSlot));
 }
 
-//Ability cooldowns
-draw_text(10, 100, obj_player.first_ability_cooldown);
-draw_text(10, 120, obj_player.second_ability_cooldown);
-draw_text(10, 140, obj_player.third_ability_cooldown);
-
 if (global.extra_info = true){
 	//Draw the number of currently placed buildings for each type
 	var margin = 25; // Margin from the screen edge
@@ -176,4 +171,44 @@ if (instance_exists(obj_well)) {
 			//draw_arrow(obj_player.x - _cx, obj_player.y - _cy, _well.x - _cx, _well.y - _cy, 100);
 		}
 	}
+}
+
+//Ability Cooldown Boxes
+
+var box_width = 64;
+var box_height = 64;
+var margin = 10;
+var top_left_x = 10;
+var top_left_y = 40;
+
+for (var i = 0; i < array_length(global.upgrades); i++) {
+    var ability = array_get(global.upgrades,i);
+
+    // Calculate the position for the ability box
+    var _x = top_left_x;
+    var _y = top_left_y + i * (box_height + margin);
+	
+    // Draw the ability box
+	draw_set_color(c_dkgrey);
+    draw_rectangle(_x, _y, _x + box_width, _y + box_height, false); //fill
+    draw_set_color(c_white);
+    draw_rectangle(_x, _y, _x + box_width, _y + box_height, true); //boarder
+	//draw the ability sprite in the box
+	draw_sprite(s_upgrade_list, ability.texture, _x + sprite_get_width(s_upgrade_list)/2, _y + sprite_get_height(s_upgrade_list)/2);
+	//draw the hotkey for the ability
+	var _hotkeys = ["Q","E","C"];
+	draw_set_valign(fa_middle);
+	draw_text(_x + 70, _y + box_height/2, _hotkeys[i]);
+	
+    // Calculate the height of the cooldown overlay
+    if (obj_player.ability_cooldown[i] > 0) {
+        var cooldown_ratio = obj_player.ability_cooldown[i] / ability.cooldown;
+        var overlay_height = box_height * cooldown_ratio;
+        
+        // Draw the cooldown overlay
+        draw_set_color(c_black);
+		draw_set_alpha(0.7);
+        draw_rectangle(_x, _y + (box_height - overlay_height), _x + box_width, _y + box_height, false);
+		draw_set_alpha(1);
+    }
 }
