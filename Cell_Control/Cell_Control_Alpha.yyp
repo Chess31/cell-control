@@ -128,6 +128,7 @@
     {"id":{"name":"SparkParticles","path":"scripts/SparkParticles/SparkParticles.yy",},},
     {"id":{"name":"TeleportToRandomEnemyFunction","path":"scripts/TeleportToRandomEnemyFunction/TeleportToRandomEnemyFunction.yy",},},
     {"id":{"name":"UpgraderOptions","path":"scripts/UpgraderOptions/UpgraderOptions.yy",},},
+    {"id":{"name":"UpgradeSlotSwitchMenu","path":"scripts/UpgradeSlotSwitchMenu/UpgradeSlotSwitchMenu.yy",},},
     {"id":{"name":"Wall_Optimizer","path":"scripts/Wall_Optimizer/Wall_Optimizer.yy",},},
     {"id":{"name":"s_Alive","path":"sprites/s_Alive/s_Alive.yy",},},
     {"id":{"name":"s_ArmSegment","path":"sprites/s_ArmSegment/s_ArmSegment.yy",},},

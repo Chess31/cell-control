@@ -1,20 +1,20 @@
-enum UpgradeID
-{
-	speedboost,
-	bulletspeedboost,
-	reloadboost,
-	explosiveammo,
-	placeShield, //gain a shield after placing a building
-	killShield, //gain a shield after killing an enemy
-	shockwave,
-	buildingAmplifier, //gain damage boost based on how many buildings are placed
-	//This kind of thing where an attribute is activated by doing some small action like placing a building or something seems like the right way to go
-	sniper, //extra damage, slower reload
-	buildingCost, //drops building placement price
-	criticalStrike, //enables critical strikes
-	ricochetRounds, //choas bolt mechanics from dnd
-	magnet
-}
+//enum UpgradeID
+//{
+//	speedboost,
+//	bulletspeedboost,
+//	reloadboost,
+//	explosiveammo,
+//	placeShield, //gain a shield after placing a building
+//	killShield, //gain a shield after killing an enemy
+//	shockwave,
+//	buildingAmplifier, //gain damage boost based on how many buildings are placed
+//	//This kind of thing where an attribute is activated by doing some small action like placing a building or something seems like the right way to go
+//	sniper, //extra damage, slower reload
+//	buildingCost, //drops building placement price
+//	criticalStrike, //enables critical strikes
+//	ricochetRounds, //choas bolt mechanics from dnd
+//	magnet
+//}
 
 function Upgrade(_name, _image_index, _description, _effect_function, _cooldown, _duration) constructor
 {
@@ -58,7 +58,7 @@ function effect_fast_rounds(_apply) {
 
 //Lists for Upgrades
 
-global.upgrade_index = 0; //this number will determine which spot in each list to reference when using an upgrade
+//global.upgrade_index = 0; //this number will determine which spot in each list to reference when using an upgrade
 
 //Upgrade Lists
 global.upgrade_name = ds_list_create();

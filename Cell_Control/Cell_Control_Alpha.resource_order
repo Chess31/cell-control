@@ -86,6 +86,7 @@
     {"name":"SparkParticles","order":4,"path":"scripts/SparkParticles/SparkParticles.yy",},
     {"name":"TeleportToRandomEnemyFunction","order":9,"path":"scripts/TeleportToRandomEnemyFunction/TeleportToRandomEnemyFunction.yy",},
     {"name":"UpgraderOptions","order":1,"path":"scripts/UpgraderOptions/UpgraderOptions.yy",},
+    {"name":"UpgradeSlotSwitchMenu","order":18,"path":"scripts/UpgradeSlotSwitchMenu/UpgradeSlotSwitchMenu.yy",},
     {"name":"Wall_Optimizer","order":15,"path":"scripts/Wall_Optimizer/Wall_Optimizer.yy",},
     {"name":"s_ArmSegment","order":1,"path":"sprites/s_ArmSegment/s_ArmSegment.yy",},
     {"name":"s_BlueBoss","order":8,"path":"sprites/s_BlueBoss/s_BlueBoss.yy",},
