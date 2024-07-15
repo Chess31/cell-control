@@ -39,18 +39,18 @@ function effect_sprint_boost(_apply) {
 function effect_damage_boost(_apply) {
 	if (_apply) {
 		// Increase bullet damage by 5
-		global.damage_mod = 5;
+		global.damage_mod += 5;
 	} else {
-		global.damage_mod = 0;
+		global.damage_mod -= 5;
 	}
 }
 
 function effect_fast_rounds(_apply) {
 	if (_apply) {
 		// Increase bullet damage by 5
-		global.bullet_speed_mod = 8;
+		global.bullet_speed_mod += 8;
 	} else {
-		global.bullet_speed_mod = 0;
+		global.bullet_speed_mod -= 8;
 	}
 }
 
