@@ -54,6 +54,21 @@ function effect_fast_rounds(_apply) {
 	}
 }
 
+function effect_wall_blast(_apply) {
+	if (_apply) {
+		//clear the area of walls
+		var _nearest_wall = instance_nearest(obj_player.x, obj_player.y,obj_cellWall);
+		if (instance_exists(_nearest_wall)) && (point_distance(obj_player.x, obj_player.y, _nearest_wall.x, _nearest_wall.y) < 70) {
+			with (obj_cellWall) {
+				//check all walls for being to close to the well
+				if (point_distance(x, y, obj_player.x, obj_player.y) < 70){instance_destroy()};
+			}
+		}
+	} else {
+		//No effect to remove
+	}
+}
+
 // Define other effect functions similarly...
 
 //Lists for Upgrades
@@ -84,3 +99,9 @@ ds_list_add(global.upgrade_description, "Temporarily shoot fast bullets");
 ds_list_add(global.upgrade_function, effect_fast_rounds);
 ds_list_add(global.upgrade_cooldown, 120); // 2 seconds (60 * 2)
 ds_list_add(global.upgrade_duration, 120);
+
+ds_list_add(global.upgrade_name, "Wall Blast");
+ds_list_add(global.upgrade_description, "Destroy nearby walls");
+ds_list_add(global.upgrade_function, effect_wall_blast);
+ds_list_add(global.upgrade_cooldown, 180); // 3 seconds (60 * 3)
+ds_list_add(global.upgrade_duration, 0); //one time ability

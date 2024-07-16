@@ -11,8 +11,8 @@
   "name":"obj_node_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"NodeTypes",
-    "path":"folders/Objects/NodeTypes.yy",
+    "name":"Infection AI",
+    "path":"folders/Objects/Infection AI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

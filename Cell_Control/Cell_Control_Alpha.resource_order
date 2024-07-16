@@ -5,7 +5,7 @@
     {"name":"Message Log","order":8,"path":"folders/Objects/Controllers and Systems/Message Log.yy",},
     {"name":"PlayerController","order":9,"path":"folders/Objects/Controllers and Systems/PlayerController.yy",},
     {"name":"EnemyTypes","order":14,"path":"folders/Objects/EnemyTypes.yy",},
-    {"name":"NodeTypes","order":15,"path":"folders/Objects/NodeTypes.yy",},
+    {"name":"Infection AI","order":15,"path":"folders/Objects/Infection AI.yy",},
     {"name":"Rift Types","order":16,"path":"folders/Objects/Rift Types.yy",},
     {"name":"Buildings","order":10,"path":"folders/Sprites/Buildings.yy",},
     {"name":"Character","order":9,"path":"folders/Sprites/Character.yy",},

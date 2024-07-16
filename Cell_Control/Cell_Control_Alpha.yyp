@@ -20,7 +20,7 @@
     {"$GMFolder":"","%Name":"Message Log","folderPath":"folders/Objects/Controllers and Systems/Message Log.yy","name":"Message Log","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"PlayerController","folderPath":"folders/Objects/Controllers and Systems/PlayerController.yy","name":"PlayerController","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"EnemyTypes","folderPath":"folders/Objects/EnemyTypes.yy","name":"EnemyTypes","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"NodeTypes","folderPath":"folders/Objects/NodeTypes.yy","name":"NodeTypes","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Infection AI","folderPath":"folders/Objects/Infection AI.yy","name":"Infection AI","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rift Types","folderPath":"folders/Objects/Rift Types.yy","name":"Rift Types","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Paths","folderPath":"folders/Paths.yy","name":"Paths","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},

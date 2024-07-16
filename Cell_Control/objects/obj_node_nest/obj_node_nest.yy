@@ -6,8 +6,8 @@
   "name":"obj_node_nest",
   "overriddenProperties":[],
   "parent":{
-    "name":"NodeTypes",
-    "path":"folders/Objects/NodeTypes.yy",
+    "name":"Infection AI",
+    "path":"folders/Objects/Infection AI.yy",
   },
   "parentObjectId":{
     "name":"obj_node_parent",
