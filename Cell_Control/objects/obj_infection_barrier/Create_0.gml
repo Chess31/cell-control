@@ -1,0 +1,1 @@
+/// @description Strong wall

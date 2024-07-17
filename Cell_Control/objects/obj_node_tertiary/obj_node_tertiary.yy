@@ -9,8 +9,8 @@
   "name":"obj_node_tertiary",
   "overriddenProperties":[],
   "parent":{
-    "name":"Infection AI",
-    "path":"folders/Objects/Infection AI.yy",
+    "name":"Old node system",
+    "path":"folders/Objects/Infection AI/Old node system.yy",
   },
   "parentObjectId":{
     "name":"obj_node_parent",

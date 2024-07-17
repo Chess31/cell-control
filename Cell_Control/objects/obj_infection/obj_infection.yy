@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_node_nest",
+  "%Name":"obj_infection",
   "eventList":[],
   "managed":true,
-  "name":"obj_node_nest",
+  "name":"obj_infection",
   "overriddenProperties":[],
   "parent":{
-    "name":"Old node system",
-    "path":"folders/Objects/Infection AI/Old node system.yy",
+    "name":"Infection AI",
+    "path":"folders/Objects/Infection AI.yy",
   },
-  "parentObjectId":{
-    "name":"obj_node_parent",
-    "path":"objects/obj_node_parent/obj_node_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

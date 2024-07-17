@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_node_secondary",
+  "%Name":"obj_infection_healer",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_node_secondary",
+  "name":"obj_infection_healer",
   "overriddenProperties":[],
   "parent":{
-    "name":"Old node system",
-    "path":"folders/Objects/Infection AI/Old node system.yy",
+    "name":"Infection AI",
+    "path":"folders/Objects/Infection AI.yy",
   },
   "parentObjectId":{
-    "name":"obj_node_parent",
-    "path":"objects/obj_node_parent/obj_node_parent.yy",
+    "name":"obj_infection",
+    "path":"objects/obj_infection/obj_infection.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"s_node_secondary",
-    "path":"sprites/s_node_secondary/s_node_secondary.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

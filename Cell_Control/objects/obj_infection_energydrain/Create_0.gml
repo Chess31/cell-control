@@ -1,0 +1,1 @@
+/// @description Steals player energy
