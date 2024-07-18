@@ -18,6 +18,9 @@ enemies_per_wave = waves_left + 3 + clamp(floor(global.difficulty * 20),0,20); /
 enemies_spawned = 0;
 boss_countdown = 60 * game_get_speed(gamespeed_fps);
 
+branches = 0;
+available_branches = [[72,true],[144,true],[216,true],[288,true],[360,true]];
+
 //enemy selector
 if (global.infections_destroyed = 0) {
 	my_enemy_types = global.enemy_array_r;

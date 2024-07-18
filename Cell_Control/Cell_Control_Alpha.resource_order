@@ -11,6 +11,7 @@
     {"name":"Buildings","order":10,"path":"folders/Sprites/Buildings.yy",},
     {"name":"Character","order":9,"path":"folders/Sprites/Character.yy",},
     {"name":"Enemies","order":11,"path":"folders/Sprites/Enemies.yy",},
+    {"name":"Infection_Pieces","order":31,"path":"folders/Sprites/Infection_Pieces.yy",},
     {"name":"New_Style","order":16,"path":"folders/Sprites/New_Style.yy",},
     {"name":"UI Elements","order":27,"path":"folders/Sprites/UI Elements.yy",},
     {"name":"Weapons","order":12,"path":"folders/Sprites/Weapons.yy",},
