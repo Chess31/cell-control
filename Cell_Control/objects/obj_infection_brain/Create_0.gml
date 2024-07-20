@@ -1,10 +1,8 @@
 //type = "Brain"
 action_points = 0;
 action_point_rate = 0.10;
-//action_timer = 0;
-//action_cooldown = 5 * game_get_speed(gamespeed_fps);
 state = 0; //growth mode (1 for attack mode)
-actions_per_step = 4;
+actions_per_step = 1;
 
 //Create the appropriate number of cores to start
 
@@ -32,13 +30,29 @@ function add_infection_piece(_piece_type, _cost) {
 	if (instance_exists(_random_core) && _random_core.branches < 5) {
 		//Select where the piece will go
 		var _length = irandom_range(50, 150);
-		var _direction = choose(72, 144, 216, 288, 360);
+		//var _direction = choose(72, 144, 216, 288, 360);
 		
-		//var _core_branch_array = _random_core.available_branches;
-		//var _direction = 0;
+		var _core_branch_array = _random_core.available_branches;
 		
-		var _x = _random_core.x + lengthdir_x(_length, _direction);
-		var _y = _random_core.y + lengthdir_y(_length, _direction);
+		var _direction_list = ds_list_create();
+			
+		for (var i = 0; i < array_length(_core_branch_array); i++) {
+			// Loop through the array and add possible angles
+			if (_core_branch_array[i][1] == true) {
+			    ds_list_add(_direction_list,i)
+			}
+		}
+		
+		var _random_available_index = irandom(ds_list_size(_direction_list) - 1);
+		var _random_index = ds_list_find_value(_direction_list,_random_available_index);
+		var _selected_angle = _core_branch_array[_random_index][0];
+		//set the branch to not available
+		_core_branch_array[_random_index][1] = false;
+		
+		ds_list_destroy(_direction_list);
+		
+		var _x = _random_core.x + lengthdir_x(_length, _selected_angle);
+		var _y = _random_core.y + lengthdir_y(_length, _selected_angle);
 	
 		var _new_piece = instance_create_layer(_x, _y, "InfectionLayer", _piece_type);
 		_new_piece.sprite_index = s_infection_pieces;

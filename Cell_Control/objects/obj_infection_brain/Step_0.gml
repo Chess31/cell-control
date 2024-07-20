@@ -6,10 +6,7 @@ switch (state) {
     case 0:
         // Growth Mode
 		
-		//action_timer--;
-		
         if (action_points > 100) {
-			//action_timer = action_cooldown;
 			//try to place up to four pieces using action points
 			for (var _actions_left = actions_per_step; _actions_left > 0; _actions_left--) {
 				var _choosen_action = irandom(11); //Number of actions available
