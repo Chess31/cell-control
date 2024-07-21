@@ -15,5 +15,5 @@ global.infections_destroyed++;
 //global.difficulty_scalar += 0.1; //make difficulty scale faster
 global.difficulty += global.difficulty_scalar;
 
-var _warning_text = instance_create_layer(x, y - 30, "Instances", obj_message)
+var _warning_text = instance_create_layer(obj_player.x, obj_player.y - 30, "Instances", obj_message)
 _warning_text.message_text = "Level " + string(global.infections_destroyed);

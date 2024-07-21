@@ -1,6 +1,6 @@
 //type = "Brain"
 action_points = 0;
-action_point_rate = 0.10;
+action_point_rate = 10.10;
 state = 0; //growth mode (1 for attack mode)
 actions_per_step = 1;
 
@@ -10,7 +10,7 @@ enum ACTION_COSTS
 {
     BASIC = 25,
     BARRIER = 30,
-    SPAWNER = 50,
+    SPAWNER = 20,
     HEALER = 35,
     HARVESTER = 40,
     ALARM = 30,
@@ -23,7 +23,7 @@ enum ACTION_COSTS
 	FORTIFICATION = 100
 }
 
-function add_infection_piece(_piece_type, _cost) {
+function add_infection_piece(_piece_type, _cost, _image_index) {
 	//Choose a infection core to grow
 	var _random_core = instance_find(obj_well, irandom(instance_number(obj_well) - 1))
 	
@@ -56,6 +56,10 @@ function add_infection_piece(_piece_type, _cost) {
 	
 		var _new_piece = instance_create_layer(_x, _y, "InfectionLayer", _piece_type);
 		_new_piece.sprite_index = s_infection_pieces;
+		_new_piece.image_index = _image_index;
+		//_new_piece.branch_angle = _selected_angle;
+		_new_piece.parent_id = _random_core;
+		_new_piece.branch_index = _random_index;
 		
 		_random_core.branches++;
 		action_points -= _cost;

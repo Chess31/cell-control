@@ -3,7 +3,7 @@
   "%Name":"s_upgrade_list",
   "bboxMode":0,
   "bbox_bottom":62,
-  "bbox_left":4,
+  "bbox_left":2,
   "bbox_right":60,
   "bbox_top":9,
   "collisionKind":1,

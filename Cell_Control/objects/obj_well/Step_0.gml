@@ -20,7 +20,11 @@ if (waves_left > 0) {
 			// Spawn an enemy
 			var randomEnemy = random(ds_list_size(my_enemy_types));
 			var _enemy_to_spawn = ds_list_find_value(my_enemy_types,randomEnemy);
-			instance_create_layer(x, y, "Instances", _enemy_to_spawn);
+			var _spawners = instance_number(obj_infection_spawner);
+			if (_spawners > 0) {
+				var _spawner_id = instance_find(obj_infection_spawner, irandom(_spawners-1));
+				instance_create_layer(_spawner_id.x, _spawner_id.y, "Instances", _enemy_to_spawn);
+			}
 			enemies_spawned++;
 		} else {
 			waves_left--;
@@ -40,6 +44,7 @@ if (waves_left > 0) {
 	//spawn the boss
 	if (boss_countdown <= 0) {
 		instance_create_layer(x, y, "Instances", obj_boss_blue);
+		instance_create_layer(x, y, "InfectionLayer", obj_infection_fortification);
 		instance_destroy();
 	}
 }

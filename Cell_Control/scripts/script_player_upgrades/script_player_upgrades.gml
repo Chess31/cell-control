@@ -40,8 +40,12 @@ function effect_damage_boost(_apply) {
 	if (_apply) {
 		// Increase bullet damage by 5
 		global.damage_mod += 5;
+		obj_player.walkSpeed -= 3;
+		obj_player.player_color = c_red;
 	} else {
 		global.damage_mod -= 5;
+		obj_player.walkSpeed += 3;
+		obj_player.player_color = c_white;
 	}
 }
 
@@ -66,6 +70,16 @@ function effect_wall_blast(_apply) {
 		}
 	} else {
 		//No effect to remove
+	}
+}
+
+function effect_infinite_bullets(_apply) {
+	if (_apply) {
+		global.primary_bullet_discount = 1;
+		obj_player.player_color = c_aqua;
+	} else {
+		global.primary_bullet_discount = 0;
+		obj_player.player_color = c_white;
 	}
 }
 
@@ -105,3 +119,9 @@ ds_list_add(global.upgrade_description, "Destroy nearby walls");
 ds_list_add(global.upgrade_function, effect_wall_blast);
 ds_list_add(global.upgrade_cooldown, 180); // 3 seconds (60 * 3)
 ds_list_add(global.upgrade_duration, 0); //one time ability
+
+ds_list_add(global.upgrade_name, "Infinite Ammo");
+ds_list_add(global.upgrade_description, "Normal gun does not cost energy");
+ds_list_add(global.upgrade_function, effect_infinite_bullets);
+ds_list_add(global.upgrade_cooldown, 600); // 10 seconds (60 * 10)
+ds_list_add(global.upgrade_duration, 360);

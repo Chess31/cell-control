@@ -11,7 +11,7 @@ function primaryWeapon(_type){
 			bullet.damage = 1 + global.damage_mod;
 
 			// Subtract ammo
-			ammo -= 1;
+			ammo -= (1 - global.primary_bullet_discount);
 			can_shoot_cooldown = 20;
 	        break;
 			
