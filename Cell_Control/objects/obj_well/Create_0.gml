@@ -20,6 +20,7 @@ boss_countdown = 60 * game_get_speed(gamespeed_fps);
 
 branches = 0;
 available_branches = [[72,true],[144,true],[216,true],[288,true],[360,true]];
+//available_branches = [[10,true],[20,true],[30,true],[40,true],[50,true]];
 
 //enemy selector
 if (global.infections_destroyed = 0) {

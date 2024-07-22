@@ -11,7 +11,8 @@ switch (state) {
 			for (var _actions_left = actions_per_step; _actions_left > 0; _actions_left--) {
 				var _choosen_action = irandom(11); //Number of actions available
 				//If a spawner does not exist, place one instead of a random piece
-				if (instance_number(obj_infection_spawner) < 1) {_choosen_action = 2};
+				if (instance_number(obj_infection_spawner) < instance_number(obj_well)) {_choosen_action = 2};
+				if (instance_number(obj_infection_barrier) < 2) {_choosen_action = 1};
 				
 				if (_choosen_action = 0 && action_points >= ACTION_COSTS.BASIC) {
 					//spawn a BASIC infection piece

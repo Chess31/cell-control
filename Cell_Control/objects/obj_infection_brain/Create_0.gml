@@ -1,8 +1,11 @@
 //type = "Brain"
 action_points = 0;
-action_point_rate = 10.10;
+action_point_rate = 0.10;
 state = 0; //growth mode (1 for attack mode)
 actions_per_step = 1;
+
+//Global tracking variables
+global.barrier_count = 0;
 
 //Create the appropriate number of cores to start
 

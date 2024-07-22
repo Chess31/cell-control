@@ -25,6 +25,7 @@ isDeployingWall = false; //If the player is building a wall currently
 player_color = c_white;
 global.damage_mod = 0;
 global.bullet_speed_mod = 0;
+global.primary_bullet_discount = 0;
 
 global.current_upgrader = noone;
 can_shoot_cooldown = 15;
