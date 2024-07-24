@@ -7,8 +7,6 @@ actions_per_step = 1;
 //Global tracking variables
 global.barrier_count = 0;
 
-//Create the appropriate number of cores to start
-
 enum ACTION_COSTS
 {
     BASIC = 25,

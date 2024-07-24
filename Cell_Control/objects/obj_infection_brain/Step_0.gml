@@ -4,7 +4,23 @@ if (global.frozen = true) {
 
 switch (state) {
     case 0:
-        // Growth Mode
+        // Growth Mode (swtich between attack mode (just spawn enemies) and grow ("Stunned time" so the player can break through to the core))
+		
+		//if (action_points > 150) {
+		//	var _random_basic_index = irandom(instance_number(obj_infection_basic) - 1);
+		//	var _basic_node = instance_find(obj_infection_basic, _random_basic_index);
+		//	with (_basic_node) {
+		//		if (branches < 2) {
+		//			branches++;
+		//			// Spawn a new piece off of the basic node
+		//			var _dir = parent_id.available_branches[branch_index][0];
+		//			var _len = irandom(150);
+		//			var _x = lengthdir_x(_len,_dir);
+		//			var _y = lengthdir_y(_len,_dir);
+		//			instance_create_layer(_x,_y,"InfectionLayer",obj_infection_healer);
+		//		}
+		//	}
+		//}
 		
         if (action_points > 100) {
 			//try to place up to four pieces using action points
@@ -12,7 +28,7 @@ switch (state) {
 				var _choosen_action = irandom(11); //Number of actions available
 				//If a spawner does not exist, place one instead of a random piece
 				if (instance_number(obj_infection_spawner) < instance_number(obj_well)) {_choosen_action = 2};
-				if (instance_number(obj_infection_barrier) < 2) {_choosen_action = 1};
+				if (instance_number(obj_infection_basic) < 1) {_choosen_action = 0};
 				
 				if (_choosen_action = 0 && action_points >= ACTION_COSTS.BASIC) {
 					//spawn a BASIC infection piece

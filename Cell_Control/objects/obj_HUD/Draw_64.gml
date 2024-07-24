@@ -133,7 +133,7 @@ draw_rectangle((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_ge
 draw_text((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth*2 - _edgespacing*3), string(ds_list_find_value(global.buildingTypes, global.currentBuildingIndex)) + " (" + string(ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) + ")");
 
 //Victory UI
-if (global.infections_destroyed > global.win_level){
+if (!instance_exists(obj_target)) {//(global.infections_destroyed > global.win_level){
 	draw_set_halign(fa_center);
 	draw_set_color(c_aqua);
 	draw_text(display_get_gui_width()/2, 10, "Victory");

@@ -3,8 +3,18 @@ var _center_x = obj_cell_core.x;
 var _center_y = obj_cell_core.y;
 
 var _angle = random(360);
-x = _center_x + lengthdir_x(800,_angle);
-y = _center_y + lengthdir_y(800,_angle);
+var _x = _center_x + lengthdir_x(800,_angle);
+var _y = _center_y + lengthdir_y(800,_angle);
+
+x = _x;
+y = _y;
+
+if (!instance_exists(obj_target)) {
+	var _len = irandom_range(350, 500);
+	var _target_x = _x + lengthdir_x(_len,_angle);
+	var _target_y = _y + lengthdir_y(_len,_angle);
+	instance_create_layer(_target_x, _target_y, "InfectionLayer",obj_target);
+}
 
 shot_cooldown = 30;
 shot_interval = 20;
