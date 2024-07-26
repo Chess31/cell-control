@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ProcessCulls",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SparkParticles",
   "isCompatibility":false,
   "isDnD":false,

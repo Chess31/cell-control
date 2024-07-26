@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Wall_Optimizer",
   "isCompatibility":false,
   "isDnD":false,

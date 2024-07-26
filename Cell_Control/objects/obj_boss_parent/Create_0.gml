@@ -1,5 +1,5 @@
 enemyType = "boss";
-enemyHealth = 25 + global.infections_destroyed*25;
+enemyHealth = 25 + (global.attacks_survived/5)*25;
 moveTimer = 50;
 enemySpeed = 3;
 

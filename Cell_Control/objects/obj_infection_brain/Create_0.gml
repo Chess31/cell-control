@@ -1,10 +1,14 @@
 //type = "Brain"
 action_points = 0;
-action_point_rate = 0.10;
+action_point_rate = 10.10;
 state = 0; //growth mode (1 for attack mode)
 actions_per_step = 1;
-
-//Global tracking variables
+enemy_types = noone;
+global.attacks_survived = 0;
+enemies_per_attack = 3 + global.attacks_survived;
+attack_timer = (30 * game_get_speed(gamespeed_fps)) - global.attacks_survived;
+time_between_attacks = attack_timer;
+spawn_indicator = noone;
 global.barrier_count = 0;
 
 enum ACTION_COSTS

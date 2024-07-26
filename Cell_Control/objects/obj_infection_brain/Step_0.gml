@@ -2,9 +2,16 @@ if (global.frozen = true) {
 	exit;
 }
 
+if (attack_timer <= 0) {
+	state = 1; //attack mode
+	attack_timer = time_between_attacks;
+}
+
 switch (state) {
     case 0:
         // Growth Mode (swtich between attack mode (just spawn enemies) and grow ("Stunned time" so the player can break through to the core))
+		
+		attack_timer--; //timer for switching to attack mode
 		
 		//if (action_points > 150) {
 		//	var _random_basic_index = irandom(instance_number(obj_infection_basic) - 1);
@@ -17,7 +24,11 @@ switch (state) {
 		//			var _len = irandom(150);
 		//			var _x = lengthdir_x(_len,_dir);
 		//			var _y = lengthdir_y(_len,_dir);
-		//			instance_create_layer(_x,_y,"InfectionLayer",obj_infection_healer);
+		//			var _new_piece = instance_create_layer(_x,_y,"InfectionLayer",obj_infection_healer);
+		//			_new_piece.sprite_index = s_infection_pieces;
+		//			_new_piece.image_index = 3;
+		//			//_new_piece.branch_angle = _selected_angle;
+		//			_new_piece.parent_id = id;
 		//		}
 		//	}
 		//}
@@ -98,6 +109,54 @@ switch (state) {
 		
 	case 1:
         // Attack Mode
+		
+		//select enemy types for the wave based on attacks survived
+		if (enemy_types == noone) {
+			if (global.attacks_survived = 0) {
+				enemy_types = global.enemy_array_r;
+			} else if (global.attacks_survived = 1) {
+				enemy_types = global.enemy_array_rb;
+			} else if (global.attacks_survived  = 2) {
+				enemy_types = global.enemy_array_bg;
+			} else if (global.attacks_survived = 3) {
+				enemy_types = global.enemy_array_rp;
+			} else if (global.attacks_survived = 4) {
+				enemy_types = global.enemy_array_y;
+			} else if (global.attacks_survived = 5) {
+				enemy_types = global.enemy_array_rbgpy;
+			} else {
+				enemy_types = global.enemy_array_rbgpy;
+			}
+		}
+		
+		//Select enemy spawn locations
+		var _spawn = [0,1];
+		var _dir = irandom(360);
+		var _len = irandom_range(400,600);
+		_spawn[0] = obj_cell_core.x + lengthdir_x(_len,_dir);
+		_spawn[1] = obj_cell_core.y + lengthdir_y(_len,_dir);
+		spawn_indicator = _spawn;
+		
+		//spawn the enemies
+		for (var i = 0; i < enemies_per_attack; ++i) {
+		    // Spawn an enemy
+			var _random_enemy = random(ds_list_size(enemy_types));
+			var _enemy_to_spawn = ds_list_find_value(enemy_types, _random_enemy);
+			var _offset = irandom_range(-75,75);
+			instance_create_layer(_spawn[0] + _offset, _spawn[1] + _offset, "Instances", _enemy_to_spawn);
+		}
+		
+		//spawn boss every 5 waves
+		if (global.attacks_survived mod 5 = 0 and global.attacks_survived > 1) {
+			instance_create_layer(_spawn[0], _spawn[1], "Instances", obj_boss_blue);
+		}
+		
+		//increase global wave counter and reset variables
+		global.attacks_survived++;
+		enemies_per_attack = 3 + global.attacks_survived;
+		enemy_types = noone;
+		//go back to grow state
+		state = 0;
 		
         break;
 		

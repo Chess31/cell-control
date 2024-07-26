@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"CullObject",
   "isCompatibility":false,
   "isDnD":false,

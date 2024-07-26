@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"DefineEnemyPacks",
   "isCompatibility":false,
   "isDnD":false,

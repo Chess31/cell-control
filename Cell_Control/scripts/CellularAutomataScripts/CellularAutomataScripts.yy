@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"CellularAutomataScripts",
   "isCompatibility":false,
   "isDnD":false,

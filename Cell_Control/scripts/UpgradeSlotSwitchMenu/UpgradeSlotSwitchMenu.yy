@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"UpgradeSlotSwitchMenu",
   "isCompatibility":false,
   "isDnD":false,
