@@ -14,11 +14,14 @@ if (bulletCollided != noone) {
 }
 
 // Defeat logic
-if (cellHealth = 0) {
+if (cellHealth = 0){ //reset game
+	alarm[0] = 3 * game_get_speed(gamespeed_fps);
+}
+
+if (cellHealth <= 0) {
 	image_speed = 3;
 	cellHealth = -1;
-	alarm[0] = 3 * game_get_speed(gamespeed_fps);
-    obj_player.playerHealth -= 1; // Restart the game
+    obj_player.playerHealth -= 1;
 }
 
 // Check if the core can create a new rift
