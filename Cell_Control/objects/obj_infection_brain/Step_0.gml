@@ -2,16 +2,16 @@ if (global.frozen = true) {
 	exit;
 }
 
-if (attack_timer <= 0) {
+var _enemy_count = instance_number(obj_enemy);
+if (attack_timer <= 0 and _enemy_count = 0) {
 	state = 1; //attack mode
-	attack_timer = time_between_attacks;
+} else if (attack_timer > 0 and _enemy_count = 0){
+	attack_timer--; //timer for switching to attack mode
 }
 
 switch (state) {
     case 0:
         // Growth Mode (swtich between attack mode (just spawn enemies) and grow ("Stunned time" so the player can break through to the core))
-		
-		attack_timer--; //timer for switching to attack mode
 		
 		//if (action_points > 150) {
 		//	var _random_basic_index = irandom(instance_number(obj_infection_basic) - 1);
@@ -137,24 +137,27 @@ switch (state) {
 		_spawn[1] = obj_cell_core.y + lengthdir_y(_len,_dir);
 		spawn_indicator = _spawn;
 		
-		//spawn the enemies
-		for (var i = 0; i < enemies_per_attack; ++i) {
-		    // Spawn an enemy
-			var _random_enemy = random(ds_list_size(enemy_types));
-			var _enemy_to_spawn = ds_list_find_value(enemy_types, _random_enemy);
-			var _offset = irandom_range(-75,75);
-			instance_create_layer(_spawn[0] + _offset, _spawn[1] + _offset, "Instances", _enemy_to_spawn);
-		}
-		
 		//spawn boss every 5 waves
-		if (global.attacks_survived mod 5 = 0 and global.attacks_survived > 1) {
+		if (global.attacks_survived mod 5 = 0 and global.attacks_survived > 0) {
 			instance_create_layer(_spawn[0], _spawn[1], "Instances", obj_boss_blue);
+		} else {
+		
+			//spawn the enemies
+			for (var i = 0; i < enemies_per_attack; ++i) {
+			    // Spawn an enemy
+				var _random_enemy = random(ds_list_size(enemy_types));
+				var _enemy_to_spawn = ds_list_find_value(enemy_types, _random_enemy);
+				var _offset = irandom_range(-75,75);
+				instance_create_layer(_spawn[0] + _offset, _spawn[1] + _offset, "Instances", _enemy_to_spawn);
+			}
+		
 		}
 		
 		//increase global wave counter and reset variables
 		global.attacks_survived++;
 		enemies_per_attack = 3 + global.attacks_survived;
 		enemy_types = noone;
+		attack_timer = time_between_attacks;
 		//go back to grow state
 		state = 0;
 		
