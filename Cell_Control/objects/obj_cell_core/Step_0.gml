@@ -14,11 +14,12 @@ if (bulletCollided != noone) {
 }
 
 // Defeat logic
-if (cellHealth <= 0) {
+if (cellHealth = 0) {
 	image_speed = 3;
+	cellHealth = -1;
+	alarm[0] = 3 * game_get_speed(gamespeed_fps);
     obj_player.playerHealth -= 1; // Restart the game
 }
-
 
 // Check if the core can create a new rift
 if (ds_list_size(global.rift_types) > 0) {
@@ -35,7 +36,6 @@ if (ds_list_size(global.rift_types) > 0) {
 	    rift_cooldown = 500; // Reset cooldown
 	}
 }
-
 
 //Hold to heal logic
 if (button_down_count >= room_speed * 2){

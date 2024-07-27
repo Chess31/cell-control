@@ -4,7 +4,7 @@ image_yscale = 2;
 image_speed = 0;
 
 //starting health
-cellHealth = global.cell_health;
+cellHealth = 1;//global.cell_health;
 maxHealth = global.cell_health;
 min_to_heal = 75;
 button_down_count = 0;

@@ -159,11 +159,17 @@ if (restartTimer > 0) and (global.playerAlive = false) {
     restartTimer -= 1;
 }
 
-// Restart the game when the countdown reaches 0
+// Restart the player when the countdown reaches 0
 if (restartTimer == 0) {
-    game_restart(); // Restart the game
+    x = obj_cell_core.x;
+	y = obj_cell_core.y;
+	global.playerAlive = true;
+	playerHealth = initialHealth;
+	ammo = initial_ammo;
+	restartTimer = 3 * game_get_speed(gamespeed_fps);
+	obj_cell_core.cellHealth--;
 }
-	
+
 // Check for Building Placement
 if (keyboard_check_pressed(vk_space)) {
     //Toggle Placement Mode
