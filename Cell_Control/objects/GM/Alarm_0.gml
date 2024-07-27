@@ -1,4 +1,4 @@
-///@description Spawn Initial Enemy Well
+///@description Spawn Initial Objects
 repeat (3) {
 	instance_create_layer(x,y,"Instances",obj_well);
 }

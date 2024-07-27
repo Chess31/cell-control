@@ -9,6 +9,7 @@ enemies_per_attack = 3 + global.attacks_survived;
 attack_timer = (30 * game_get_speed(gamespeed_fps)) - global.attacks_survived;
 time_between_attacks = attack_timer;
 spawn_indicator = noone;
+attacks_between_bosses = 5;
 global.barrier_count = 0;
 
 enum ACTION_COSTS

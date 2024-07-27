@@ -138,7 +138,7 @@ switch (state) {
 		spawn_indicator = _spawn;
 		
 		//spawn boss every 5 waves
-		if (global.attacks_survived mod 5 = 0 and global.attacks_survived > 0) {
+		if (global.attacks_survived mod attacks_between_bosses = 0 and global.attacks_survived > 0) {
 			instance_create_layer(_spawn[0], _spawn[1], "Instances", obj_boss_blue);
 		} else {
 		

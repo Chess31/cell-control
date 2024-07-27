@@ -3,8 +3,8 @@ var _center_x = obj_cell_core.x;
 var _center_y = obj_cell_core.y;
 
 var _angle = random(360);
-var _x = _center_x + lengthdir_x(800,_angle);
-var _y = _center_y + lengthdir_y(800,_angle);
+var _x = _center_x + lengthdir_x(1000,_angle);
+var _y = _center_y + lengthdir_y(1000,_angle);
 
 x = _x;
 y = _y;
