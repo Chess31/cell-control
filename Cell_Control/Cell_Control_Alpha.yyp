@@ -144,6 +144,7 @@
     {"id":{"name":"PlayerWeapons","path":"scripts/PlayerWeapons/PlayerWeapons.yy",},},
     {"id":{"name":"ProcessCulls","path":"scripts/ProcessCulls/ProcessCulls.yy",},},
     {"id":{"name":"script_player_upgrades","path":"scripts/script_player_upgrades/script_player_upgrades.yy",},},
+    {"id":{"name":"script_spawn_wells","path":"scripts/script_spawn_wells/script_spawn_wells.yy",},},
     {"id":{"name":"SparkParticles","path":"scripts/SparkParticles/SparkParticles.yy",},},
     {"id":{"name":"TeleportToRandomEnemyFunction","path":"scripts/TeleportToRandomEnemyFunction/TeleportToRandomEnemyFunction.yy",},},
     {"id":{"name":"UpgraderOptions","path":"scripts/UpgraderOptions/UpgraderOptions.yy",},},

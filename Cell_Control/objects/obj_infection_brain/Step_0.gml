@@ -141,7 +141,6 @@ switch (state) {
 		if (global.attacks_survived mod attacks_between_bosses = 0 and global.attacks_survived > 0) {
 			instance_create_layer(_spawn[0], _spawn[1], "Instances", obj_boss_blue);
 		} else {
-		
 			//spawn the enemies
 			for (var i = 0; i < enemies_per_attack; ++i) {
 			    // Spawn an enemy
@@ -150,7 +149,6 @@ switch (state) {
 				var _offset = irandom_range(-75,75);
 				instance_create_layer(_spawn[0] + _offset, _spawn[1] + _offset, "Instances", _enemy_to_spawn);
 			}
-		
 		}
 		
 		//increase global wave counter and reset variables

@@ -6,8 +6,8 @@ var _angle = random(360);
 var _x = _center_x + lengthdir_x(1000,_angle);
 var _y = _center_y + lengthdir_y(1000,_angle);
 
-x = _x;
-y = _y;
+//x = _x;
+//y = _y;
 
 //spawn the target behind the first well
 if (!instance_exists(obj_target)) {

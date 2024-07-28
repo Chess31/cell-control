@@ -1,6 +1,6 @@
 //type = "Brain"
-action_points = 0;
-action_point_rate = 10.10;
+action_points = 1000; //allow the infection to set ip starting defences
+action_point_rate = 0.10;
 state = 0; //growth mode (1 for attack mode)
 actions_per_step = 1;
 enemy_types = noone;
