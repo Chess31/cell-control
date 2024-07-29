@@ -9,6 +9,16 @@ if (attack_timer <= 0 and _enemy_count = 0) {
 	attack_timer--; //timer for switching to attack mode
 }
 
+if (attack_timer = 7 * game_get_speed(gamespeed_fps)) {
+	//Select enemy spawn locations
+	var _spawn = [0,1];
+	var _dir = irandom(360);
+	var _len = irandom_range(400,600);
+	_spawn[0] = obj_cell_core.x + lengthdir_x(_len,_dir);
+	_spawn[1] = obj_cell_core.y + lengthdir_y(_len,_dir);
+	spawn_indicator = _spawn;
+}
+
 switch (state) {
     case 0:
         // Growth Mode (swtich between attack mode (just spawn enemies) and grow ("Stunned time" so the player can break through to the core))
@@ -129,17 +139,17 @@ switch (state) {
 			}
 		}
 		
-		//Select enemy spawn locations
-		var _spawn = [0,1];
-		var _dir = irandom(360);
-		var _len = irandom_range(400,600);
-		_spawn[0] = obj_cell_core.x + lengthdir_x(_len,_dir);
-		_spawn[1] = obj_cell_core.y + lengthdir_y(_len,_dir);
-		spawn_indicator = _spawn;
+		////Select enemy spawn locations
+		//var _spawn = [0,1];
+		//var _dir = irandom(360);
+		//var _len = irandom_range(400,600);
+		//_spawn[0] = obj_cell_core.x + lengthdir_x(_len,_dir);
+		//_spawn[1] = obj_cell_core.y + lengthdir_y(_len,_dir);
+		//spawn_indicator = _spawn;
 		
 		//spawn boss every 5 waves
 		if (global.attacks_survived mod attacks_between_bosses = 0 and global.attacks_survived > 0) {
-			instance_create_layer(_spawn[0], _spawn[1], "Instances", obj_boss_blue);
+			instance_create_layer(spawn_indicator[0], spawn_indicator[1], "Instances", obj_boss_blue);
 		} else {
 			//spawn the enemies
 			for (var i = 0; i < enemies_per_attack; ++i) {
@@ -147,7 +157,7 @@ switch (state) {
 				var _random_enemy = random(ds_list_size(enemy_types));
 				var _enemy_to_spawn = ds_list_find_value(enemy_types, _random_enemy);
 				var _offset = irandom_range(-75,75);
-				instance_create_layer(_spawn[0] + _offset, _spawn[1] + _offset, "Instances", _enemy_to_spawn);
+				instance_create_layer(spawn_indicator[0] + _offset, spawn_indicator[1] + _offset, "Instances", _enemy_to_spawn);
 			}
 		}
 		

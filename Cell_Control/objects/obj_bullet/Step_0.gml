@@ -20,6 +20,7 @@ if (place_meeting(x, y, obj_enemy)) {
 			piercing -= 1;
 		}
 		_enemy.TakeDamage(damage);
+		if (_enemy.enemyType = "Red" or _enemy.enemyType = "Blue") {_enemy.target = obj_player}
 	}
 	_enemy.time_to_draw += 120;
 }

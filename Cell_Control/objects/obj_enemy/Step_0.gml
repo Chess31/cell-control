@@ -15,7 +15,7 @@ if (iframes > 0){
 	canBeHit = true;
 }
 
-image_angle = point_direction(x, y, obj_player.x, obj_player.y) - 90;
+//image_angle = point_direction(x, y, obj_player.x, obj_player.y) - 90;
 
 //get unstuck from walls
 pos_check_timer--;

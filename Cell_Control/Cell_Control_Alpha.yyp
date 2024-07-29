@@ -210,6 +210,7 @@
     {"id":{"name":"s_upgrade_part","path":"sprites/s_upgrade_part/s_upgrade_part.yy",},},
     {"id":{"name":"s_Upgrader","path":"sprites/s_Upgrader/s_Upgrader.yy",},},
     {"id":{"name":"s_Wall","path":"sprites/s_Wall/s_Wall.yy",},},
+    {"id":{"name":"s_warning","path":"sprites/s_warning/s_warning.yy",},},
     {"id":{"name":"s_WeaponToken","path":"sprites/s_WeaponToken/s_WeaponToken.yy",},},
     {"id":{"name":"s_Well","path":"sprites/s_Well/s_Well.yy",},},
     {"id":{"name":"tl_ability_remover","path":"timelines/tl_ability_remover/tl_ability_remover.yy",},},

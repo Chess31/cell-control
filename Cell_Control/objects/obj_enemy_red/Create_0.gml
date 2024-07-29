@@ -4,6 +4,9 @@ shootCooldown = 150 + random(200); // Adjust the time between shots
 enemyHealth = 3; // Adjust the initial health as needed
 enemyType = "Red";
 
+target = obj_cell_core;
+ideal_range = 140;
+
 canBeHit = true;
 iframes = 0;
 iframeMax = 10;

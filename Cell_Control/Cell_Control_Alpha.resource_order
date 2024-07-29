@@ -160,6 +160,7 @@
     {"name":"s_upgrade_part","order":19,"path":"sprites/s_upgrade_part/s_upgrade_part.yy",},
     {"name":"s_Upgrader","order":3,"path":"sprites/s_Upgrader/s_Upgrader.yy",},
     {"name":"s_Wall","order":4,"path":"sprites/s_Wall/s_Wall.yy",},
+    {"name":"s_warning","order":14,"path":"sprites/s_warning/s_warning.yy",},
     {"name":"s_WeaponToken","order":11,"path":"sprites/s_WeaponToken/s_WeaponToken.yy",},
     {"name":"s_Well","order":13,"path":"sprites/s_Well/s_Well.yy",},
   ],
