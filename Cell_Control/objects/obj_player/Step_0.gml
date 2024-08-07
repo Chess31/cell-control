@@ -191,11 +191,11 @@ if (isDeployingWall) {
 	
     // Check for cycling through building options
 	if (keyboard_check_pressed(ord("Q"))) || (_scroll_up){
-		global.currentBuildingIndex = (global.currentBuildingIndex - 1 + ds_list_size(global.buildingTypes)) mod ds_list_size(global.buildingTypes);
+		current_building_index = (current_building_index - 1 + array_length(available_buildings)) mod array_length(available_buildings);
 	}
 
 	if (keyboard_check_pressed(ord("E"))) || (_scroll_down){
-		global.currentBuildingIndex = (global.currentBuildingIndex + 1) mod ds_list_size(global.buildingTypes);
+		current_building_index = (current_building_index + 1) mod array_length(available_buildings);
 	}
 
 	// Set the Building's position to be in front of the player
@@ -203,19 +203,21 @@ if (isDeployingWall) {
     var BuildingY = y + lengthdir_y(32, _player_angle);
 
     // Check for building placement
-	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) {
+	var _global_list_index = available_buildings[current_building_index];
+	global_index = _global_list_index;
+	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.building_costs, _global_list_index)) {
 	    // Create a building instance
 	    var _building = instance_create_layer(BuildingX, BuildingY, "Instances", obj_building);
 		//set its properties based on the current building type
-		_building.index = global.currentBuildingIndex; //store the index for later use in the building itself
-		_building.type = ds_list_find_value(global.buildingTypes, global.currentBuildingIndex);
-	    _building.buildingHealth = ds_list_find_value(global.buildingHealths, global.currentBuildingIndex);
-	    _building.sprite_index = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex);
-	    _building.constructionCost = ds_list_find_value(global.buildingCosts, global.currentBuildingIndex);
+		_building.index = _global_list_index; //store the index for later use in the building itself
+		_building.type = ds_list_find_value(global.building_types, _global_list_index);
+	    _building.buildingHealth = ds_list_find_value(global.building_healths, _global_list_index);
+	    _building.sprite_index = ds_list_find_value(global.building_sprites, _global_list_index);
+	    _building.constructionCost = ds_list_find_value(global.building_costs, _global_list_index);
 		_building.image_angle = _player_angle;
 
-		if (ds_list_find_value(global.buildingCount, global.currentBuildingIndex) < ds_list_find_value(global.buildingMaxNumber, global.currentBuildingIndex)) {
-		    ds_list_replace(global.buildingCount, global.currentBuildingIndex, ds_list_find_value(global.buildingCount, global.currentBuildingIndex) + 1);
+		if (ds_list_find_value(global.building_count, _global_list_index) < ds_list_find_value(global.building_max_number, _global_list_index)) {
+		    ds_list_replace(global.building_count, _global_list_index, ds_list_find_value(global.building_count, _global_list_index) + 1);
 			AddAmmo(-_building.constructionCost);
 			var _warning_text = instance_create_layer(x, y - 50, "Instances", obj_message)
 			_warning_text.message_text = "-" + string(_building.constructionCost);
@@ -242,10 +244,10 @@ if (isDeployingWall) {
 	}
 }
 
-//Hot Keys for Buildings:
-if (keyboard_check_pressed(ord("1"))){global.currentBuildingIndex = 0 mod ds_list_size(global.buildingTypes)};
-if (keyboard_check_pressed(ord("2"))){global.currentBuildingIndex = 1 mod ds_list_size(global.buildingTypes)};
-if (keyboard_check_pressed(ord("3"))){global.currentBuildingIndex = 2 mod ds_list_size(global.buildingTypes)};
-if (keyboard_check_pressed(ord("4"))){global.currentBuildingIndex = 3 mod ds_list_size(global.buildingTypes)};
-if (keyboard_check_pressed(ord("5"))){global.currentBuildingIndex = 4 mod ds_list_size(global.buildingTypes)};
-if (keyboard_check_pressed(ord("6"))){global.currentBuildingIndex = 5 mod ds_list_size(global.buildingTypes)};
+////Hot Keys for Buildings:
+//if (keyboard_check_pressed(ord("1"))){global.currentBuildingIndex = 0 mod ds_list_size(global.buildingTypes)};
+//if (keyboard_check_pressed(ord("2"))){global.currentBuildingIndex = 1 mod ds_list_size(global.buildingTypes)};
+//if (keyboard_check_pressed(ord("3"))){global.currentBuildingIndex = 2 mod ds_list_size(global.buildingTypes)};
+//if (keyboard_check_pressed(ord("4"))){global.currentBuildingIndex = 3 mod ds_list_size(global.buildingTypes)};
+//if (keyboard_check_pressed(ord("5"))){global.currentBuildingIndex = 4 mod ds_list_size(global.buildingTypes)};
+//if (keyboard_check_pressed(ord("6"))){global.currentBuildingIndex = 5 mod ds_list_size(global.buildingTypes)};

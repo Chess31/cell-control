@@ -4,84 +4,96 @@ button_text = noone;
 
 my_building_index = 0;
 
+draw_highlight = function()
+{
+	//draw a box around the unlocked row
+	draw_rectangle(x - 50, y - 20, x + 400, y + 18, true);
+}
+draw_max = function()
+{
+	//draw max placed building in the second column
+	var _current_max = ds_list_find_value(global.building_max_number, my_building_index + 1);
+	draw_text(x + 174, y, string(_current_max));
+}
+
 activate_button = function()
 {
-	// Add building types, healths, sprites, and costs
+	array_push(obj_player.available_buildings, my_building_index + 1);
 	
-	if (my_building_index = 0 and global.wall_unlocked = false) {
-		ds_list_add(global.buildingTypes, "Wall");
-		ds_list_add(global.buildingHealths, 75);
-		ds_list_add(global.buildingSprites, s_Wall);
-		ds_list_add(global.buildingCosts, 5);
-		ds_list_add(global.buildingCount, 0);
-		ds_list_add(global.buildingMaxNumber, 20 + (6 - global.gamemode*3));
+	//if (my_building_index = 0 and global.wall_unlocked = false) {
+	//	ds_list_add(global.buildingTypes, ds_list_find_value(global.all_building_types, my_building_index+1));
+	//	ds_list_add(global.buildingHealths, ds_list_find_value(global.all_building_healths, my_building_index+1));
+	//	ds_list_add(global.buildingSprites, ds_list_find_value(global.all_building_sprites, my_building_index+1));
+	//	ds_list_add(global.buildingCosts, ds_list_find_value(global.all_building_costs, my_building_index+1));
+	//	ds_list_add(global.buildingCount, 0);
+	//	ds_list_add(global.buildingMaxNumber, ds_list_find_value(global.all_building_max_number, my_building_index+1)); //+ (6 - global.gamemode*3));
 		
-		global.wall_unlocked = true;
-	}
+	//	global.wall_unlocked = true;
+	//}
 
-	if (my_building_index = 1 and global.turret_unlocked = false) {
-		ds_list_add(global.buildingTypes, "Turret");
-		ds_list_add(global.buildingHealths, 15);
-		ds_list_add(global.buildingSprites, s_Turret);
-		ds_list_add(global.buildingCosts, 15);
-		ds_list_add(global.buildingCount, 0);
-		ds_list_add(global.buildingMaxNumber, 3 + (2 - global.gamemode));
+	//if (my_building_index = 1 and global.turret_unlocked = false) {
+	//	ds_list_add(global.buildingTypes, ds_list_find_value(global.all_building_types, my_building_index+1));
+	//	ds_list_add(global.buildingHealths, ds_list_find_value(global.all_building_healths, my_building_index+1));
+	//	ds_list_add(global.buildingSprites, ds_list_find_value(global.all_building_sprites, my_building_index+1));
+	//	ds_list_add(global.buildingCosts, ds_list_find_value(global.all_building_costs, my_building_index+1));
+	//	ds_list_add(global.buildingCount, 0);
+	//	ds_list_add(global.buildingMaxNumber, ds_list_find_value(global.all_building_max_number, my_building_index+1)); // + (2 - global.gamemode));
 		
-		global.turret_unlocked = true;
-	}
+	//	global.turret_unlocked = true;
+	//}
 
-	if (my_building_index = 2 and global.forge_unlocked = false) {
-		ds_list_add(global.buildingTypes, "Forge");
-		ds_list_add(global.buildingHealths, 20);
-		ds_list_add(global.buildingSprites, s_Forge);
-		ds_list_add(global.buildingCosts, 30);
-		ds_list_add(global.buildingCount, 0);
-		ds_list_add(global.buildingMaxNumber, 5 + (2 - global.gamemode));
+	//if (my_building_index = 2 and global.forge_unlocked = false) {
+	//	ds_list_add(global.buildingTypes, ds_list_find_value(global.all_building_types, my_building_index+1));
+	//	ds_list_add(global.buildingHealths, ds_list_find_value(global.all_building_healths, my_building_index+1));
+	//	ds_list_add(global.buildingSprites, ds_list_find_value(global.all_building_sprites, my_building_index+1));
+	//	ds_list_add(global.buildingCosts, ds_list_find_value(global.all_building_costs, my_building_index+1));
+	//	ds_list_add(global.buildingCount, 0);
+	//	ds_list_add(global.buildingMaxNumber, ds_list_find_value(global.all_building_max_number, my_building_index+1)); // + (2 - global.gamemode));
 		
-		global.forge_unlocked = true;
-	}
+	//	global.forge_unlocked = true;
+	//}
 
-	if (my_building_index = 3 and global.upgrader_unlocked = false) {
-		ds_list_add(global.buildingTypes, "Upgrader");
-		ds_list_add(global.buildingHealths, 50);
-		ds_list_add(global.buildingSprites, s_Upgrader);
-		ds_list_add(global.buildingCosts, 50);
-		ds_list_add(global.buildingCount, 0);
-		ds_list_add(global.buildingMaxNumber, 1);
+	//if (my_building_index = 3 and global.upgrader_unlocked = false) {
+	//	ds_list_add(global.buildingTypes, ds_list_find_value(global.all_building_types, my_building_index+1));
+	//	ds_list_add(global.buildingHealths, ds_list_find_value(global.all_building_healths, my_building_index+1));
+	//	ds_list_add(global.buildingSprites, ds_list_find_value(global.all_building_sprites, my_building_index+1));
+	//	ds_list_add(global.buildingCosts, ds_list_find_value(global.all_building_costs, my_building_index+1));
+	//	ds_list_add(global.buildingCount, 0);
+	//	ds_list_add(global.buildingMaxNumber, ds_list_find_value(global.all_building_max_number, my_building_index+1));
 		
-		global.upgrader_unlocked = true;
-	}
+	//	global.upgrader_unlocked = true;
+	//}
 
-	if (my_building_index = 4 and global.proxmine_unlocked = false) {
-		ds_list_add(global.buildingTypes, "Proximity Mine");
-		ds_list_add(global.buildingHealths, 5);
-		ds_list_add(global.buildingSprites, s_ProxMine);
-		ds_list_add(global.buildingCosts, 5);
-		ds_list_add(global.buildingCount, 0);
-		ds_list_add(global.buildingMaxNumber, 2);
+	//if (my_building_index = 4 and global.proxmine_unlocked = false) {
+	//	ds_list_add(global.buildingTypes, ds_list_find_value(global.all_building_types, my_building_index+1));
+	//	ds_list_add(global.buildingHealths, ds_list_find_value(global.all_building_healths, my_building_index+1));
+	//	ds_list_add(global.buildingSprites, ds_list_find_value(global.all_building_sprites, my_building_index+1));
+	//	ds_list_add(global.buildingCosts, ds_list_find_value(global.all_building_costs, my_building_index+1));
+	//	ds_list_add(global.buildingCount, 0);
+	//	ds_list_add(global.buildingMaxNumber, ds_list_find_value(global.all_building_max_number, my_building_index+1));
 		
-		global.proxmine_unlocked = true;
-	}
+	//	global.proxmine_unlocked = true;
+	//}
 
-	if (my_building_index = 5 and global.feeder_unlocked = false) {
-		ds_list_add(global.buildingTypes, "Feeder");
-		ds_list_add(global.buildingHealths, 300);
-		ds_list_add(global.buildingSprites, s_Feeder);
-		ds_list_add(global.buildingCosts, 150);
-		ds_list_add(global.buildingCount, 0);
-		ds_list_add(global.buildingMaxNumber, 1);
+	//if (my_building_index = 5 and global.feeder_unlocked = false) {
+	//	ds_list_add(global.buildingTypes, ds_list_find_value(global.all_building_types, my_building_index+1));
+	//	ds_list_add(global.buildingHealths, ds_list_find_value(global.all_building_healths, my_building_index+1));
+	//	ds_list_add(global.buildingSprites, ds_list_find_value(global.all_building_sprites, my_building_index+1));
+	//	ds_list_add(global.buildingCosts, ds_list_find_value(global.all_building_costs, my_building_index+1));
+	//	ds_list_add(global.buildingCount, 0);
+	//	ds_list_add(global.buildingMaxNumber, ds_list_find_value(global.all_building_max_number, my_building_index+1));
 		
-		global.feeder_unlocked = true;
-	}
+	//	global.feeder_unlocked = true;
+	//}
 
-	if (my_building_index = 6 and global.hive_unlocked = false) {
-		ds_list_add(global.buildingTypes, "Hive");
-		ds_list_add(global.buildingHealths, 100);
-		ds_list_add(global.buildingSprites, s_Hive);
-		ds_list_add(global.buildingCosts, 200);
-		ds_list_add(global.buildingCount, 0);
-		ds_list_add(global.buildingMaxNumber, 1);
+	//if (my_building_index = 6 and global.hive_unlocked = false) {
+	//	ds_list_add(global.buildingTypes, ds_list_find_value(global.all_building_types, my_building_index+1));
+	//	ds_list_add(global.buildingHealths, ds_list_find_value(global.all_building_healths, my_building_index+1));
+	//	ds_list_add(global.buildingSprites, ds_list_find_value(global.all_building_sprites, my_building_index+1));
+	//	ds_list_add(global.buildingCosts, ds_list_find_value(global.all_building_costs, my_building_index+1));
+	//	ds_list_add(global.buildingCount, 0);
+	//	ds_list_add(global.buildingMaxNumber, ds_list_find_value(global.all_building_max_number, my_building_index+1));
 		
-		global.hive_unlocked = true;
-	}
+	//	global.hive_unlocked = true;
+	//}
 }

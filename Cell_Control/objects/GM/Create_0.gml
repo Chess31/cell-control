@@ -1,5 +1,3 @@
-//global.available_buildings = 10;
-
 //set cursor sprite
 window_set_cursor(cr_none);
 cursor_sprite = s_cursor;
@@ -18,107 +16,20 @@ while (i < 30)
 //set up cell core
 instance_create_layer(room_width/2, room_height/2, "Instances", obj_cell_core);
 
-//Lists for buildings
+//Create global building lists
+global.building_types = ds_list_create();
+global.building_healths = ds_list_create();
+global.building_sprites = ds_list_create();
+global.building_costs = ds_list_create();
+global.building_count = ds_list_create();
+global.building_max_number = ds_list_create();
 
-global.currentBuildingIndex = 0; //this number will determine which spot in each list to reference when placing a building
-
-//Building Stats
-global.buildingTypes = ds_list_create();
-global.buildingHealths = ds_list_create();
-global.buildingSprites = ds_list_create();
-global.buildingCosts = ds_list_create();
-global.buildingCount = ds_list_create();
-global.buildingMaxNumber = ds_list_create();
-//clear lists of initial 0 values
-ds_list_clear(global.buildingTypes);
-ds_list_clear(global.buildingHealths);
-ds_list_clear(global.buildingSprites);
-ds_list_clear(global.buildingCosts);
-ds_list_clear(global.buildingCount);
-ds_list_clear(global.buildingMaxNumber);
-
-// Add building types, healths, sprites, and costs
-if (global.available_buildings > -1) {
-	ds_list_add(global.buildingTypes, "Destroy Nearest");
-	ds_list_add(global.buildingHealths, 10);
-	ds_list_add(global.buildingSprites, s_DestroyNearest);
-	ds_list_add(global.buildingCosts, 0);
-	ds_list_add(global.buildingCount, 0);
-	ds_list_add(global.buildingMaxNumber, 1);
-}
-
-if (global.available_buildings > 0) {
-	ds_list_add(global.buildingTypes, "Wall");
-	ds_list_add(global.buildingHealths, 75);
-	ds_list_add(global.buildingSprites, s_Wall);
-	ds_list_add(global.buildingCosts, 5);
-	ds_list_add(global.buildingCount, 0);
-	ds_list_add(global.buildingMaxNumber, 20 + (6 - global.gamemode*3));
-}
-
-if (global.available_buildings > 1) {
-	ds_list_add(global.buildingTypes, "Turret");
-	ds_list_add(global.buildingHealths, 15);
-	ds_list_add(global.buildingSprites, s_Turret);
-	ds_list_add(global.buildingCosts, 15);
-	ds_list_add(global.buildingCount, 0);
-	ds_list_add(global.buildingMaxNumber, 3 + (2 - global.gamemode));
-}
-
-if (global.available_buildings > 2) {
-	ds_list_add(global.buildingTypes, "Forge");
-	ds_list_add(global.buildingHealths, 20);
-	ds_list_add(global.buildingSprites, s_Forge);
-	ds_list_add(global.buildingCosts, 30);
-	ds_list_add(global.buildingCount, 0);
-	ds_list_add(global.buildingMaxNumber, 5 + (2 - global.gamemode));
-}
-
-if (global.available_buildings > 3) {
-	ds_list_add(global.buildingTypes, "Upgrader");
-	ds_list_add(global.buildingHealths, 50);
-	ds_list_add(global.buildingSprites, s_Upgrader);
-	ds_list_add(global.buildingCosts, 50);
-	ds_list_add(global.buildingCount, 0);
-	ds_list_add(global.buildingMaxNumber, 1);
-}
-
-if (global.available_buildings > 4) {
-	ds_list_add(global.buildingTypes, "Proximity Mine");
-	ds_list_add(global.buildingHealths, 5);
-	ds_list_add(global.buildingSprites, s_ProxMine);
-	ds_list_add(global.buildingCosts, 5);
-	ds_list_add(global.buildingCount, 0);
-	ds_list_add(global.buildingMaxNumber, 2);
-}
-
-if (global.available_buildings > 5) {
-	ds_list_add(global.buildingTypes, "Feeder");
-	ds_list_add(global.buildingHealths, 300);
-	ds_list_add(global.buildingSprites, s_Feeder);
-	ds_list_add(global.buildingCosts, 150);
-	ds_list_add(global.buildingCount, 0);
-	ds_list_add(global.buildingMaxNumber, 1);
-}
-
-if (global.available_buildings > 6) {
-	ds_list_add(global.buildingTypes, "Hive");
-	ds_list_add(global.buildingHealths, 100);
-	ds_list_add(global.buildingSprites, s_Hive);
-	ds_list_add(global.buildingCosts, 200);
-	ds_list_add(global.buildingCount, 0);
-	ds_list_add(global.buildingMaxNumber, 1);
-}
-
-//building unlock trackers
-global.wall_unlocked = true;
-global.turret_unlocked = true;
-global.forge_unlocked = false;
-global.upgrader_unlocked = false;
-global.proxmine_unlocked = false;
-global.feeder_unlocked = false;
-global.hive_unlocked = false;
-
+ds_list_add(global.building_types,"Destroy Nearest", "Wall", "Turret", "Forge", "Upgrader", "Proximity Mine", "Feeder", "Hive"); //type
+ds_list_add(global.building_healths,		     10,	 75,	   15,		20,			50,				   5,      150,    100); //health
+ds_list_add(global.building_sprites,s_DestroyNearest,s_Wall, s_Turret, s_Forge, s_Upgrader,       s_ProxMine, s_Feeder, s_Hive); //sprite
+ds_list_add(global.building_costs,			      0,	  5,	   15,		30,			50,				   5,      300,    150); //cost
+ds_list_add(global.building_count,			      0,	  0,	   0,		 0,			 0,				   0,        0,      0); //number placed
+ds_list_add(global.building_max_number,			  1,	 20,		6,		 5,			 1,				   4,        1,      3); //max
 
 global.next_wall_cost = 1;
 global.wall_cost_multiplier = 1.0;
@@ -135,13 +46,7 @@ global.proxmine_cost_multiplier = 1.4;
 global.next_hive_cost = 24;
 global.hive_cost_multiplier = 1.5;
 
-//ds_list_add(global.buildingTypes, "Crafter");
-//ds_list_add(global.buildingHealths, 20);
-//ds_list_add(global.buildingSprites, s_Crafter);
-//ds_list_add(global.buildingCosts, 1);
-//ds_list_add(global.buildingCount, 0);
-//ds_list_add(global.buildingMaxNumber, 5);
-
+//Rifts
 global.rift_types = ds_list_create();
 
 if (global.available_rifts > 0) {

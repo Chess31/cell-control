@@ -49,9 +49,9 @@ function increaseMaxBuild()
 
 function inc_wall()
 {
-	var _index = ds_list_find_index(global.buildingTypes, "Wall");
+	var _index = ds_list_find_index(global.building_types, "Wall");
 	if (obj_player.weaponTokens >= global.next_wall_cost){
-		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
+		ds_list_replace(global.building_max_number, _index, ds_list_find_value(global.building_max_number, _index) + 1);
 		obj_player.weaponTokens -= global.next_wall_cost;
 		global.next_wall_cost = 1;//ceil(global.next_wall_cost * global.wall_cost_multiplier);
 		increaseMaxBuild();//with(global.current_upgrader){buildingHealth -= 10000};
@@ -63,9 +63,9 @@ function inc_wall()
 }
 function inc_turret()
 {
-	var _index = ds_list_find_index(global.buildingTypes, "Turret");
+	var _index = ds_list_find_index(global.building_types, "Turret");
 	if (obj_player.weaponTokens >= global.next_turret_cost){
-		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
+		ds_list_replace(global.building_max_number, _index, ds_list_find_value(global.building_max_number, _index) + 1);
 		obj_player.weaponTokens -= global.next_turret_cost;
 		global.next_turret_cost = max(global.next_turret_cost + 1, floor(global.next_turret_cost * global.turret_cost_multiplier));
 		increaseMaxBuild();//with(global.current_upgrader){buildingHealth -= 10000};
@@ -77,9 +77,9 @@ function inc_turret()
 }
 function inc_forge()
 {
-	var _index = ds_list_find_index(global.buildingTypes, "Forge");
+	var _index = ds_list_find_index(global.building_types, "Forge");
 	if (obj_player.weaponTokens >= global.next_forge_cost){
-		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
+		ds_list_replace(global.building_max_number, _index, ds_list_find_value(global.building_max_number, _index) + 1);
 		obj_player.weaponTokens -= global.next_forge_cost;
 		global.next_forge_cost = floor(global.next_forge_cost * global.forge_cost_multiplier);
 		increaseMaxBuild();//with(global.current_upgrader){buildingHealth -= 10000};
@@ -91,9 +91,9 @@ function inc_forge()
 }
 function inc_proxmine()
 {
-	var _index = ds_list_find_index(global.buildingTypes, "Proximity Mine");
+	var _index = ds_list_find_index(global.building_types, "Proximity Mine");
 	if (obj_player.weaponTokens >= global.next_proxmine_cost){
-		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
+		ds_list_replace(global.building_max_number, _index, ds_list_find_value(global.building_max_number, _index) + 1);
 		obj_player.weaponTokens -= global.next_proxmine_cost;
 		global.next_proxmine_cost = floor(global.next_proxmine_cost * global.proxmine_cost_multiplier);
 		increaseMaxBuild();//with(global.current_upgrader){buildingHealth -= 10000};
@@ -105,9 +105,9 @@ function inc_proxmine()
 }
 function inc_hive()
 {
-	var _index = ds_list_find_index(global.buildingTypes, "Hive");
+	var _index = ds_list_find_index(global.building_types, "Hive");
 	if (obj_player.weaponTokens >= global.next_hive_cost){
-		ds_list_replace(global.buildingMaxNumber, _index, ds_list_find_value(global.buildingMaxNumber, _index) + 1);
+		ds_list_replace(global.building_max_number, _index, ds_list_find_value(global.building_max_number, _index) + 1);
 		obj_player.weaponTokens -= global.next_hive_cost;
 		global.next_hive_cost = floor(global.next_hive_cost * global.hive_cost_multiplier);
 		increaseMaxBuild();//with(global.current_upgrader){buildingHealth -= 10000};

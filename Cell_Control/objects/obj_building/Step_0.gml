@@ -14,7 +14,7 @@ if (buildingHealth <= 0)
 {
 	instance_destroy();
 	//remove it from the total building count
-	ds_list_replace(global.buildingCount, index, ds_list_find_value(global.buildingCount, index) - 1);
+	ds_list_replace(global.building_count, index, ds_list_find_value(global.building_count, index) - 1);
 }
 
 // Add custom behavior based on building type
@@ -141,7 +141,7 @@ switch (type) {
 			//killing this building with damage causes two loot drops to happen (maybe not anymore, becuase of the increasing kill recquiremnt
 			instance_destroy();
 			//remove it from the total building count
-			ds_list_replace(global.buildingCount, index, ds_list_find_value(global.buildingCount, index) - 1);
+			ds_list_replace(global.building_count, index, ds_list_find_value(global.building_count, index) - 1);
 			
 			//increment feeder variables
 			global.enemy_kill_goal += 10;

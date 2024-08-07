@@ -18,9 +18,9 @@ for (var i = 0; i < 3; ++i) {
 //create building purchase buttons
 for (var i = 0; i < 7; ++i) {
 	var _x = ((display_get_gui_width()/2 - sprite_get_width(s_core_menu)) + 84);
-	var _y = display_get_gui_height()/2 - 162 + (i * 64);
-    var _tab_button = instance_create_layer(_x, _y, "UI", obj_button_buildingunlock);
-	_tab_button.my_building_index = i;
+	var _y = display_get_gui_height()/2 - 154 + (i * 62);
+    var _building_button = instance_create_layer(_x, _y, "UI", obj_button_buildingunlock);
+	_building_button.my_building_index = i;
 } 
 
 menu_up = false;

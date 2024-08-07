@@ -10,5 +10,5 @@ if (isDeployingWall) {
     var wallY = y + lengthdir_y(32, playerDirection);
 
     // Draw a preview of the wall
-    draw_sprite_ext(ds_list_find_value(global.buildingSprites, global.currentBuildingIndex), 0, wallX, wallY, 1, 1, playerDirection, c_white, .3);
+    draw_sprite_ext(ds_list_find_value(global.building_sprites, available_buildings[current_building_index]), 0, wallX, wallY, 1, 1, playerDirection, c_white, .3);
 }

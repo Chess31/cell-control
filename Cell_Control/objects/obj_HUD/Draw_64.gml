@@ -97,17 +97,17 @@ if (global.extra_info = true){
 
 	// Calculate the width and height of the rectangle based on the text size
 	var rect_width = 200; // Adjust as needed
-	var rect_height = ds_list_size(global.buildingTypes) * line_height + 2 * text_offset;
+	var rect_height = array_length(obj_player.available_buildings) * line_height + 2 * text_offset;
 
 	// Draw the outline of the building count box
-	var _rec_y = _y - line_height*(ds_list_size(global.buildingTypes)-2) - 2
+	var _rec_y = _y - line_height*(array_length(obj_player.available_buildings)-2) - 2
 	draw_rectangle(_x - 2, _rec_y, display_get_gui_width() - 2, display_get_gui_height() - 2, true);
 
 	// Loop through each building type
-	for (var i = 1; i < ds_list_size(global.buildingTypes); i++) {
-		var buildingType = ds_list_find_value(global.buildingTypes, i);
-		var currentCount = ds_list_find_value(global.buildingCount, i);
-		var maxCount = ds_list_find_value(global.buildingMaxNumber, i);
+	for (var i = 1; i < array_length(obj_player.available_buildings); i++) {
+		var buildingType = ds_list_find_value(global.building_types, i);
+		var currentCount = ds_list_find_value(global.building_count, i);
+		var maxCount = ds_list_find_value(global.building_max_number, i);
     
 		// Draw the building type and its current count
 		draw_text(_x, _y, string(buildingType) + ": " + string(currentCount) + "/" + string(maxCount));
@@ -119,7 +119,7 @@ if (global.extra_info = true){
 }
 
 //Currently Selected Building Type (Bottom Left)
-var _spritetodraw = ds_list_find_value(global.buildingSprites, global.currentBuildingIndex);
+var _spritetodraw = ds_list_find_value(global.building_sprites, obj_player.current_building_index);
 var _halfspritewidth = sprite_get_width(_spritetodraw) / 2;
 var _edgespacing = 10;
 
@@ -130,7 +130,7 @@ draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_sprite(_spritetodraw, 1, _halfspritewidth + _edgespacing, display_get_gui_height() - _halfspritewidth - _edgespacing);
 draw_rectangle((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) - _halfspritewidth, (_halfspritewidth + _edgespacing) + _halfspritewidth, (display_get_gui_height() - _halfspritewidth - _edgespacing) + _halfspritewidth, true);
-draw_text((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth*2 - _edgespacing*3), string(ds_list_find_value(global.buildingTypes, global.currentBuildingIndex)) + " (" + string(ds_list_find_value(global.buildingCosts, global.currentBuildingIndex)) + ")");
+draw_text((_halfspritewidth + _edgespacing) - _halfspritewidth, (display_get_gui_height() - _halfspritewidth*2 - _edgespacing*3), string(ds_list_find_value(global.building_types, obj_player.current_building_index)) + " (" + string(ds_list_find_value(global.building_costs, obj_player.current_building_index)) + ")");
 
 //Victory UI
 if (!instance_exists(obj_target)) {//(global.infections_destroyed > global.win_level){

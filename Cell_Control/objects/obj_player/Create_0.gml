@@ -13,11 +13,11 @@ walkSpeed = 7.0;
 //chunk_y = -1;
 
 //Define starting variables
-ammo = 15;
+ammo = 15000;
 initial_ammo = 10;
 playerHealth = 15;
 initialHealth = 15;
-weaponTokens = 0;
+weaponTokens = 10000;
 upgrade_parts = 0;
 global.playerAlive = true; // Player starts alive
 restartTimer = 3 * game_get_speed(gamespeed_fps);
@@ -31,6 +31,12 @@ global.current_upgrader = noone;
 can_shoot_cooldown = 15;
 can_shoot = true;
 distance_to_core = 0;
+
+//set up building placement
+available_buildings = [0,1,2]; //start with first three buildings unlocked (x,w,t)
+//test
+global_index = 0;
+current_building_index = 0;
 
 //Set Up weapon slots
 primarySlot = "primary1"; // default weapon initially
