@@ -1,12 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_button_tab",
+  "%Name":"obj_button_buildingunlock",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_button_tab",
+  "name":"obj_button_buildingunlock",
   "overriddenProperties":[],
   "parent":{
     "name":"Controllers and Systems",
@@ -34,9 +35,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_button_tab_placeholder",
-    "path":"sprites/s_button_tab_placeholder/s_button_tab_placeholder.yy",
+    "name":"s_button_building_placeholder",
+    "path":"sprites/s_button_building_placeholder/s_button_building_placeholder.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

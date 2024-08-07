@@ -29,6 +29,13 @@ global.buildingSprites = ds_list_create();
 global.buildingCosts = ds_list_create();
 global.buildingCount = ds_list_create();
 global.buildingMaxNumber = ds_list_create();
+//clear lists of initial 0 values
+ds_list_clear(global.buildingTypes);
+ds_list_clear(global.buildingHealths);
+ds_list_clear(global.buildingSprites);
+ds_list_clear(global.buildingCosts);
+ds_list_clear(global.buildingCount);
+ds_list_clear(global.buildingMaxNumber);
 
 // Add building types, healths, sprites, and costs
 if (global.available_buildings > -1) {
@@ -102,6 +109,16 @@ if (global.available_buildings > 6) {
 	ds_list_add(global.buildingCount, 0);
 	ds_list_add(global.buildingMaxNumber, 1);
 }
+
+//building unlock trackers
+global.wall_unlocked = true;
+global.turret_unlocked = true;
+global.forge_unlocked = false;
+global.upgrader_unlocked = false;
+global.proxmine_unlocked = false;
+global.feeder_unlocked = false;
+global.hive_unlocked = false;
+
 
 global.next_wall_cost = 1;
 global.wall_cost_multiplier = 1.0;
