@@ -24,6 +24,8 @@ switch (tab) {
 	case 1:
 		//Draw tab title
 		draw_text(_menu_x, _menu_y - 224, "Weapons");
+		//Draw Cost
+		draw_text(_menu_x, _menu_y - 194, "(Cost)");
 		break;
 	case 2:
 		//Draw tab title

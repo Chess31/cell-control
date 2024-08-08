@@ -37,20 +37,20 @@ ds_list_add(global.building_maxup_cost,			  1,	  1,		3,		 3,			12,				   2,     
 ds_list_add(global.building_levels,			      1,	  1,		1,		 1,			 1,				   1,        1,      1); //maxup cost
 ds_list_add(global.building_levelup_cost,		  1,	  5,		8,		15,			10,				   6,       25,     30); //levelup cost
 
-global.next_wall_cost = 1;
-global.wall_cost_multiplier = 1.0;
+//global.next_wall_cost = 1;
+//global.wall_cost_multiplier = 1.0;
 
-global.next_turret_cost = 3;
-global.turret_cost_multiplier = 1.2;
+//global.next_turret_cost = 3;
+//global.turret_cost_multiplier = 1.2;
 
-global.next_forge_cost = 5;
-global.forge_cost_multiplier = 1.3;
+//global.next_forge_cost = 5;
+//global.forge_cost_multiplier = 1.3;
 
-global.next_proxmine_cost = 8;
-global.proxmine_cost_multiplier = 1.4;
+//global.next_proxmine_cost = 8;
+//global.proxmine_cost_multiplier = 1.4;
 
-global.next_hive_cost = 24;
-global.hive_cost_multiplier = 1.5;
+//global.next_hive_cost = 24;
+//global.hive_cost_multiplier = 1.5;
 
 //Rifts
 global.rift_types = ds_list_create();

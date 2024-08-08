@@ -27,6 +27,33 @@ for (var i = 0; i < 7; ++i) {
 	}
 }
 
+//create weapon purchase buttons
+for (var i = 0; i < 3; ++i) {
+	var _x = ((display_get_gui_width()/2 - sprite_get_width(s_core_menu)) + 104);
+	var _y = display_get_gui_height()/2 - 124 + (i * 92);
+    var _weapon_button = instance_create_layer(_x, _y, "UI", obj_button_weaponunlock);
+	switch (i) {
+	    case 0:
+	        _weapon_button.button_text = "Disk Whisk";
+	        _weapon_button.my_weapon_index = 0;
+	        _weapon_button.price = 10;
+	        break;
+		case 1:
+	        _weapon_button.button_text = "Gravity Globber";
+	        _weapon_button.my_weapon_index = 1;
+			_weapon_button.price = 20;
+	        break;
+		case 2:
+	        _weapon_button.button_text = "Trippler Crippler";
+	        _weapon_button.my_weapon_index = 2;
+			_weapon_button.price = 30;
+	        break;
+	    default:
+	        // code here
+	        break;
+	}
+}
+
 menu_up = false;
 
 // Animation speed

@@ -28,7 +28,8 @@ activate_button = function()
 {
 	var _points_check = global.core_power >= 10; //unlock price
 	var _not_unlocked_check = !array_contains(obj_player.available_buildings, my_building_index + 1);
-	if (_points_check and _not_unlocked_check) {
+	var _correct_tab = obj_sliding_menu.tab == 0;
+	if (_points_check and _not_unlocked_check and _correct_tab) {
 		array_push(obj_player.available_buildings, my_building_index + 1);
 		global.core_power -= 10;
 		//create other buttons for the row
