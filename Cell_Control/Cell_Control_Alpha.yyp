@@ -57,6 +57,7 @@
     {"id":{"name":"obj_building","path":"objects/obj_building/obj_building.yy",},},
     {"id":{"name":"obj_bullet_small","path":"objects/obj_bullet_small/obj_bullet_small.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
+    {"id":{"name":"obj_button_building_upgrades","path":"objects/obj_button_building_upgrades/obj_button_building_upgrades.yy",},},
     {"id":{"name":"obj_button_buildingunlock","path":"objects/obj_button_buildingunlock/obj_button_buildingunlock.yy",},},
     {"id":{"name":"obj_button_cell_grid","path":"objects/obj_button_cell_grid/obj_button_cell_grid.yy",},},
     {"id":{"name":"obj_button_corepower","path":"objects/obj_button_corepower/obj_button_corepower.yy",},},

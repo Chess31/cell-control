@@ -21,7 +21,11 @@ for (var i = 0; i < 7; ++i) {
 	var _y = display_get_gui_height()/2 - 154 + (i * 62);
     var _building_button = instance_create_layer(_x, _y, "UI", obj_button_buildingunlock);
 	_building_button.my_building_index = i;
-} 
+	//create wall and turret buttons
+	if (_building_button.my_building_index = 0 or _building_button.my_building_index = 1) {
+		_building_button.generate_starting_buttons();
+	}
+}
 
 menu_up = false;
 

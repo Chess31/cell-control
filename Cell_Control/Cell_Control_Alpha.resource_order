@@ -23,6 +23,7 @@
     {"name":"obj_boss_parent","order":9,"path":"objects/obj_boss_parent/obj_boss_parent.yy",},
     {"name":"obj_building","order":2,"path":"objects/obj_building/obj_building.yy",},
     {"name":"obj_bullet_small","order":3,"path":"objects/obj_bullet_small/obj_bullet_small.yy",},
+    {"name":"obj_button_building_upgrades","order":21,"path":"objects/obj_button_building_upgrades/obj_button_building_upgrades.yy",},
     {"name":"obj_button_buildingunlock","order":20,"path":"objects/obj_button_buildingunlock/obj_button_buildingunlock.yy",},
     {"name":"obj_button_cell_grid","order":16,"path":"objects/obj_button_cell_grid/obj_button_cell_grid.yy",},
     {"name":"obj_button_corepower","order":17,"path":"objects/obj_button_corepower/obj_button_corepower.yy",},
