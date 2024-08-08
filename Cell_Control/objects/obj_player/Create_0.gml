@@ -44,6 +44,9 @@ shiftSlot = -1; // No weapon initially
 altSlot = -1; // No weapon initially
 comboSlot = -1; //test combo
 
+//create buildings and weapons hotbar
+instance_create_layer(0, 0, "UI", obj_buildings_hotbar);
+
 // AddAmmo Function
 function AddAmmo(_amount) {
     ammo += _amount;
