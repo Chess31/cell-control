@@ -61,6 +61,7 @@
     {"id":{"name":"obj_button_buildingunlock","path":"objects/obj_button_buildingunlock/obj_button_buildingunlock.yy",},},
     {"id":{"name":"obj_button_cell_grid","path":"objects/obj_button_cell_grid/obj_button_cell_grid.yy",},},
     {"id":{"name":"obj_button_corepower","path":"objects/obj_button_corepower/obj_button_corepower.yy",},},
+    {"id":{"name":"obj_button_defenceunlock","path":"objects/obj_button_defenceunlock/obj_button_defenceunlock.yy",},},
     {"id":{"name":"obj_button_reset","path":"objects/obj_button_reset/obj_button_reset.yy",},},
     {"id":{"name":"obj_button_tab","path":"objects/obj_button_tab/obj_button_tab.yy",},},
     {"id":{"name":"obj_button_weaponunlock","path":"objects/obj_button_weaponunlock/obj_button_weaponunlock.yy",},},

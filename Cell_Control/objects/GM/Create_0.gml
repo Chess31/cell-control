@@ -55,15 +55,15 @@ ds_list_add(global.building_levelup_cost,		  1,	  5,		8,		15,			10,				   6,    
 //Rifts
 global.rift_types = ds_list_create();
 
-if (global.available_rifts > 0) {
-	ds_list_add(global.rift_types, obj_rift_energy);
-}
-if (global.available_rifts > 1) {
-	ds_list_add(global.rift_types, obj_rift_heal);
-}
-if (global.available_rifts > 2) {
-	ds_list_add(global.rift_types, obj_rift_damage);
-}
+//if (global.available_rifts > 0) {
+//	ds_list_add(global.rift_types, obj_rift_energy);
+//}
+//if (global.available_rifts > 1) {
+//	ds_list_add(global.rift_types, obj_rift_heal);
+//}
+//if (global.available_rifts > 2) {
+//	ds_list_add(global.rift_types, obj_rift_damage);
+//}
 
 global.feeder_active = false;
 global.enemy_kill_goal = 10;

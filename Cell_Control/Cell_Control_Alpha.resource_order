@@ -27,6 +27,7 @@
     {"name":"obj_button_buildingunlock","order":20,"path":"objects/obj_button_buildingunlock/obj_button_buildingunlock.yy",},
     {"name":"obj_button_cell_grid","order":16,"path":"objects/obj_button_cell_grid/obj_button_cell_grid.yy",},
     {"name":"obj_button_corepower","order":17,"path":"objects/obj_button_corepower/obj_button_corepower.yy",},
+    {"name":"obj_button_defenceunlock","order":23,"path":"objects/obj_button_defenceunlock/obj_button_defenceunlock.yy",},
     {"name":"obj_button_reset","order":18,"path":"objects/obj_button_reset/obj_button_reset.yy",},
     {"name":"obj_button_tab","order":19,"path":"objects/obj_button_tab/obj_button_tab.yy",},
     {"name":"obj_button_weaponunlock","order":22,"path":"objects/obj_button_weaponunlock/obj_button_weaponunlock.yy",},
