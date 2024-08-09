@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"recalculate_hotbar_spacing",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"recalculate_hotbar_spacing",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

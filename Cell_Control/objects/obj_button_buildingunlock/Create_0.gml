@@ -40,6 +40,7 @@ activate_button = function()
 		_levelup_button.upgrade_type = 1;
 		_levelup_button.my_building_index = my_building_index;
 		show_button = false;
+		recalculate_hotbar_spacing();
 	}
 }
 

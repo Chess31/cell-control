@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_button",
-    "path":"sprites/s_button/s_button.yy",
+    "name":"s_button_hotbar",
+    "path":"sprites/s_button_hotbar/s_button_hotbar.yy",
   },
   "spriteMaskId":null,
   "visible":true,

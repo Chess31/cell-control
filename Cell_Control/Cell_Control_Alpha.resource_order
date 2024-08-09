@@ -108,6 +108,7 @@
     {"name":"instance_nearest_exclude_self","order":16,"path":"scripts/instance_nearest_exclude_self/instance_nearest_exclude_self.yy",},
     {"name":"PlayerWeapons","order":7,"path":"scripts/PlayerWeapons/PlayerWeapons.yy",},
     {"name":"ProcessCulls","order":14,"path":"scripts/ProcessCulls/ProcessCulls.yy",},
+    {"name":"recalculate_hotbar_spacing","order":20,"path":"scripts/recalculate_hotbar_spacing/recalculate_hotbar_spacing.yy",},
     {"name":"script_player_upgrades","order":17,"path":"scripts/script_player_upgrades/script_player_upgrades.yy",},
     {"name":"script_spawn_wells","order":19,"path":"scripts/script_spawn_wells/script_spawn_wells.yy",},
     {"name":"SparkParticles","order":4,"path":"scripts/SparkParticles/SparkParticles.yy",},
