@@ -11,7 +11,8 @@ function recalculate_hotbar_spacing(){
 	var _display_width = display_get_gui_width();
 
 	var _hotbar_size = array_length(obj_player.available_buildings);
-	var _spacing = 136;
+	//var _spacing = 136;
+	var _spacing = 144;
 	var _slot_width = sprite_get_width(s_button_hotbar);
 	for (var i = 0; i < _hotbar_size; ++i) {
 		var _x = (_slot_width + _spacing) * i;

@@ -16,8 +16,9 @@ var _sep = 12;
 var _width = 128;
 
 draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 
-draw_text_ext(x + 48, y - 32, _name, _sep, _width);
-draw_text_ext(x + 48, y - 8, "Cost: " + string(_cost), _sep, _width);
-draw_text_ext(x + 48, y + 6, string(_placed) + " / " + string (_max), _sep, _width);
-draw_text_ext(x + 48, y + 22, "Level: " + string(_level), _sep, _width);
+draw_text_ext(x + 48, y - 40, _name, _sep, _width);
+draw_text_ext(x + 48, y - 10, "Cost: " + string(_cost), _sep, _width);
+draw_text_ext(x + 48, y + 4, string(_placed) + " / " + string (_max), _sep, _width);
+draw_text_ext(x + 48, y + 20, "Level: " + string(_level), _sep, _width);
