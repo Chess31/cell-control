@@ -11,3 +11,6 @@ activate_button = function()
 {
 	obj_player.current_building_index = slot_index;
 }
+
+//set the buttons to be in front of the hotbar object
+depth = -1;

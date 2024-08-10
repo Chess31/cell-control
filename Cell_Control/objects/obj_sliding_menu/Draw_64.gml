@@ -18,14 +18,14 @@ switch (tab) {
         //Draw tab title
 		draw_text((_menu_x - _sprite_half) + 84, _menu_y - 224, "Buildings");
 		//Draw Max Placed (Cost) and Level (Cost)
-		draw_text(_menu_x, _menu_y - 194, "Max Placed (Cost)");
-		draw_text((_menu_x - _sprite_half) + 432, _menu_y - 194, "Level (Cost)");
+		draw_text(_menu_x, _menu_y - 174, "Max Placed (Cost)");
+		draw_text((_menu_x - _sprite_half) + 432, _menu_y - 174, "Level (Cost)");
         break;
 	case 1:
 		//Draw tab title
 		draw_text(_menu_x, _menu_y - 224, "Weapons");
 		//Draw Cost
-		draw_text(_menu_x, _menu_y - 194, "(Cost)");
+		//draw_text(_menu_x, _menu_y - 194, "(Cost)");
 		break;
 	case 2:
 		//Draw tab title

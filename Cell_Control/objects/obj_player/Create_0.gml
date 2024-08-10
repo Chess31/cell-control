@@ -23,6 +23,7 @@ global.playerAlive = true; // Player starts alive
 restartTimer = 3 * game_get_speed(gamespeed_fps);
 isDeployingWall = false; //If the player is building a wall currently
 player_color = c_white;
+mouse_over_button = false;
 global.damage_mod = 0;
 global.bullet_speed_mod = 0;
 global.primary_bullet_discount = 0;
