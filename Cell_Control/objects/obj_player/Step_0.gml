@@ -45,16 +45,8 @@ y = min(y, room_height - sprite_width/2);
 x = max(x, sprite_width/2);	//if statements each checking if x/y is greater/less than threshhold, then add or subtracts 1 so it doesn't get stuck
 y = max(y, sprite_width/2);
 
-//grid_x = floor(x div 8);
-//grid_y = floor(y div 8);
-
-//chunk_x = floor(grid_x div global.chunk_size);
-//chunk_y = floor(grid_y div global.chunk_size);
-
-mouse_over_button = get_mouse_on_button();
-
 // Shooting logic
-if (can_shoot_cooldown <= 0 && can_shoot = true and mouse_over_button = false){
+if (can_shoot_cooldown <= 0 && can_shoot = true and get_mouse_on_button() = false){
 	if (mouse_check_button(mb_left) && ammo > 0 && isDeployingWall = false) {
 		if (keyboard_check(vk_shift) && keyboard_check(vk_alt)){
 			comboWeapon(comboSlot);
@@ -69,75 +61,6 @@ if (can_shoot_cooldown <= 0 && can_shoot = true and mouse_over_button = false){
 } else {
 	can_shoot_cooldown--;
 }
-
-////Ability Usage
-
-//ability_cooldown[0] = max (0, ability_cooldown[0] - 1);
-//ability_cooldown[1] = max (0, ability_cooldown[1] - 1);
-//ability_cooldown[2] = max (0, ability_cooldown[2] - 1);
-
-//if (keyboard_check(ord("Q")) and ability_cooldown[0] = 0 and array_length(global.upgrades) > 0) {
-//	var _ability = array_get(global.upgrades,0);
-//	with (_ability) {
-//		effect_function(true);
-//		other.ability_cooldown[0] = cooldown;
-//		if (duration != infinity) { // remove effect after duration
-//			if (!instance_exists(obj_timeline_helper)) { //create the helper and add the ability to a new timeline
-//				global.tl_ability_durations = timeline_add();
-//				var _helper = instance_create_layer(0,0,"Instances",obj_timeline_helper);
-//				with (_helper) {
-//					timeline_moment_add_script(global.tl_ability_durations, other.duration, other.effect_function);
-//				}
-//			} else { //helper already exists so add the ability to the current timeline at the correct moment
-//				with (obj_timeline_helper) {
-//					timeline_moment_add_script(global.tl_ability_durations, other.duration + timeline_position, other.effect_function);
-//				}
-//			}
-//		}
-//	}
-//}
-
-//if (keyboard_check(ord("E")) and ability_cooldown[1] = 0 and array_length(global.upgrades) > 1) {
-//	var _ability = array_get(global.upgrades,1);
-//	with (_ability) {
-//		effect_function(true);
-//		other.ability_cooldown[1] = cooldown;
-//		if (duration != infinity) { // remove effect after duration
-//			if (!instance_exists(obj_timeline_helper)) { //create the helper and add the ability to a new timeline
-//				global.tl_ability_durations = timeline_add();
-//				var _helper = instance_create_layer(0,0,"Instances",obj_timeline_helper);
-//				with (_helper) {
-//					timeline_moment_add_script(global.tl_ability_durations, other.duration, other.effect_function);
-//				}
-//			} else { //helper already exists so add the ability to the current timeline at the correct moment
-//				with (obj_timeline_helper) {
-//					timeline_moment_add_script(global.tl_ability_durations, other.duration + timeline_position, other.effect_function);
-//				}
-//			}
-//		}
-//	}
-//}
-
-//if (keyboard_check(ord("C")) and ability_cooldown[2] = 0 and array_length(global.upgrades) > 2) {
-//	var _ability = array_get(global.upgrades,2);
-//	with (_ability) {
-//		effect_function(true);
-//		other.ability_cooldown[2] = cooldown;
-//		if (duration != infinity) { // remove effect after duration
-//			if (!instance_exists(obj_timeline_helper)) { //create the helper and add the ability to a new timeline
-//				global.tl_ability_durations = timeline_add();
-//				var _helper = instance_create_layer(0,0,"Instances",obj_timeline_helper);
-//				with (_helper) {
-//					timeline_moment_add_script(global.tl_ability_durations, other.duration, other.effect_function);
-//				}
-//			} else { //helper already exists so add the ability to the current timeline at the correct moment
-//				with (obj_timeline_helper) {
-//					timeline_moment_add_script(global.tl_ability_durations, other.duration + timeline_position, other.effect_function);
-//				}
-//			}
-//		}
-//	}
-//}
 
 // Health check
 if (playerHealth <= 0) {
@@ -209,7 +132,7 @@ if (isDeployingWall) {
     // Check for building placement
 	var _global_list_index = available_buildings[current_building_index];
 	global_index = _global_list_index;
-	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.building_costs, _global_list_index) and mouse_over_button = false) {
+	if (mouse_check_button_pressed(mb_left) && ammo >= ds_list_find_value(global.building_costs, _global_list_index) and get_mouse_on_button() = false) {
 	    // Create a building instance
 	    var _building = instance_create_layer(BuildingX, BuildingY, "Instances", obj_building);
 		//set its properties based on the current building type
@@ -242,7 +165,7 @@ if (isDeployingWall) {
 			//there are too many buildings so remove the one that was just created
 			instance_destroy(_building);
 		}
-	} else if (mouse_check_button_pressed(mb_left) and mouse_over_button = false){
+	} else if (mouse_check_button_pressed(mb_left) and get_mouse_on_button() = false){
 		var _warning_text = instance_create_layer(x, y - 30, "Instances", obj_message)
 		_warning_text.message_text = "Energy Needed"
 	}
