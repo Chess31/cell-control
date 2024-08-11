@@ -9,8 +9,8 @@
   "name":"obj_button_tab",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controllers and Systems",
-    "path":"folders/Objects/Controllers and Systems.yy",
+    "name":"Buttons",
+    "path":"folders/Objects/Controllers and Systems/Buttons.yy",
   },
   "parentObjectId":{
     "name":"obj_button",

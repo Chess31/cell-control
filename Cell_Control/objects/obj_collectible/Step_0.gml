@@ -11,7 +11,7 @@ if (point_distance(x, y, obj_player.x, obj_player.y) < collectDistance or speed 
 
 if (place_meeting(x,y,obj_player)){
 	instance_destroy();
-	if (obj_player.weaponTokens < 9999) {
+	//if (obj_player.weaponTokens < 9999) {
 		obj_player.AddAmmo(1);
-	}
+	//}
 }

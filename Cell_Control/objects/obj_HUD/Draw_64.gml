@@ -43,23 +43,23 @@ draw_set_valign(fa_top);
 var display_x = display_get_gui_width() - string_width(" Primary Attack: " + string(obj_player.primarySlot));
 var display_y = 10;
 
-// Draw primary weapon
-draw_text(display_x, display_y, "Primary Attack: " + string(obj_player.primarySlot));
+//// Draw primary weapon
+//draw_text(display_x, display_y, "Primary Attack: " + string(obj_player.primarySlot));
 
-// Draw shift weapon
-if (obj_player.shiftSlot != -1) {
-    draw_text(display_x, display_y + 20, "Shift Attack: " + string(obj_player.shiftSlot));
-}
+//// Draw shift weapon
+//if (obj_player.shiftSlot != -1) {
+//    draw_text(display_x, display_y + 20, "Shift Attack: " + string(obj_player.shiftSlot));
+//}
 
-// Draw alt weapon
-if (obj_player.altSlot != -1) {
-    draw_text(display_x, display_y + 40, "Alt Attack: " + string(obj_player.altSlot));
-}
+//// Draw alt weapon
+//if (obj_player.altSlot != -1) {
+//    draw_text(display_x, display_y + 40, "Alt Attack: " + string(obj_player.altSlot));
+//}
 
-// Draw combo weapon
-if (obj_player.comboSlot != -1) {
-    draw_text(display_x, display_y + 60, "Combo Attack: " + string(obj_player.comboSlot));
-}
+//// Draw combo weapon
+//if (obj_player.comboSlot != -1) {
+//    draw_text(display_x, display_y + 60, "Combo Attack: " + string(obj_player.comboSlot));
+//}
 
 //Victory UI
 if (!instance_exists(obj_target)) {//(global.infections_destroyed > global.win_level){

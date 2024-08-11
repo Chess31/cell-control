@@ -45,23 +45,6 @@ y = min(y, room_height - sprite_width/2);
 x = max(x, sprite_width/2);	//if statements each checking if x/y is greater/less than threshhold, then add or subtracts 1 so it doesn't get stuck
 y = max(y, sprite_width/2);
 
-// Shooting logic
-if (can_shoot_cooldown <= 0 && can_shoot = true and get_mouse_on_button() = false){
-	if (mouse_check_button(mb_left) && ammo > 0 && isDeployingWall = false) {
-		if (keyboard_check(vk_shift) && keyboard_check(vk_alt)){
-			comboWeapon(comboSlot);
-		} else if (keyboard_check(vk_shift)){
-			shiftWeapon(shiftSlot);
-		} else if (keyboard_check(vk_alt)){
-			altWeapon(altSlot);
-		} else {
-			primaryWeapon(primarySlot);
-		}
-	}
-} else {
-	can_shoot_cooldown--;
-}
-
 // Health check
 if (playerHealth <= 0) {
 	if (global.gamemode = 0) {
@@ -111,7 +94,8 @@ if (distance_to_core > 750) {
 
 // Placement Mode logic
 if (isDeployingWall) {
-	
+	//set sprite to not have a weapon
+	image_index = 0;
 	//these are supposed to be flipped because lists are weird
 	var _scroll_up = mouse_wheel_up();
 	var _scroll_down = mouse_wheel_down();
@@ -168,6 +152,31 @@ if (isDeployingWall) {
 	} else if (mouse_check_button_pressed(mb_left) and get_mouse_on_button() = false){
 		var _warning_text = instance_create_layer(x, y - 30, "Instances", obj_message)
 		_warning_text.message_text = "Energy Needed"
+	}
+} else { //gun mode logic
+	//these are supposed to be flipped because lists are weird
+	var _scroll_up = mouse_wheel_up();
+	var _scroll_down = mouse_wheel_down();
+	
+    // Check for cycling through building options
+	if (_scroll_up){
+		current_weapon_index = (current_weapon_index - 1 + array_length(available_weapons)) mod array_length(available_weapons);
+	}
+
+	if (_scroll_down){
+		current_weapon_index = (current_weapon_index + 1) mod array_length(available_weapons);
+	}
+	
+	//get weapon index from the list based on scroll wheel index
+	image_index = available_weapons[current_weapon_index] + 1;
+	
+	// Shooting logic
+	if (can_shoot_cooldown <= 0 && can_shoot = true and get_mouse_on_button() = false){
+		if (mouse_check_button(mb_left) && ammo > 0) {
+			use_weapon(available_weapons[current_weapon_index]);
+		}
+	} else {
+		can_shoot_cooldown--;
 	}
 }
 

@@ -17,8 +17,8 @@ ammo = 15000;
 initial_ammo = 10;
 playerHealth = 15;
 initialHealth = 15;
-weaponTokens = 10000;
-upgrade_parts = 0;
+//weaponTokens = 10000;
+//upgrade_parts = 0;
 global.playerAlive = true; // Player starts alive
 restartTimer = 3 * game_get_speed(gamespeed_fps);
 isDeployingWall = false; //If the player is building a wall currently
@@ -28,18 +28,21 @@ global.damage_mod = 0;
 global.bullet_speed_mod = 0;
 global.primary_bullet_discount = 0;
 
-global.current_upgrader = noone;
+//global.current_upgrader = noone;
+
 can_shoot_cooldown = 15;
 can_shoot = true;
 distance_to_core = 0;
 
 //set up building placement
 available_buildings = [0,1,2]; //start with first three buildings unlocked (x,w,t)
-//test
 global_index = 0;
 current_building_index = 0;
 
 //Set Up weapon slots
+available_weapons = [0];
+current_weapon_index = 0;
+
 primarySlot = "primary1"; // default weapon initially
 shiftSlot = -1; // No weapon initially
 altSlot = -1; // No weapon initially
@@ -59,6 +62,6 @@ function TakeDamage(_amount)
 	playerHealth -= _amount;
 }
 
-//Upgrades
-global.upgrades = [];
-ability_cooldown = array_create(3,0);
+////Upgrades
+//global.upgrades = [];
+//ability_cooldown = array_create(3,0);

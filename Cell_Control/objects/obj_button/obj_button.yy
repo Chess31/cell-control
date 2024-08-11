@@ -11,8 +11,8 @@
   "name":"obj_button",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controllers and Systems",
-    "path":"folders/Objects/Controllers and Systems.yy",
+    "name":"Buttons",
+    "path":"folders/Objects/Controllers and Systems/Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
