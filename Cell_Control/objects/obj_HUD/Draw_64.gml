@@ -5,6 +5,7 @@ draw_set_valign(fa_top);
 
 // Draw the HUD
 draw_text_transformed(10, 10, "Core Power: " + string(global.core_power),1.5,1.5,0);
+draw_text_transformed(10, 26, "Enemy Bases: " + string(instance_number(obj_well)) + " / 3" ,1.5,1.5,0);
 
 y = ystart - (obj_buildings_hotbar.hotbar_y_visible - obj_buildings_hotbar.hotbar_y);
 

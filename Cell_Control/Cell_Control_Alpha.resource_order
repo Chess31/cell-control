@@ -98,6 +98,7 @@
     {"name":"Room_StartScreen","order":1,"path":"rooms/Room_StartScreen/Room_StartScreen.yy",},
     {"name":"Room_Tutorial","order":6,"path":"rooms/Room_Tutorial/Room_Tutorial.yy",},
     {"name":"CellularAutomataScripts","order":6,"path":"scripts/CellularAutomataScripts/CellularAutomataScripts.yy",},
+    {"name":"create_infection_boarder","order":22,"path":"scripts/create_infection_boarder/create_infection_boarder.yy",},
     {"name":"CullObject","order":13,"path":"scripts/CullObject/CullObject.yy",},
     {"name":"DefineEnemyPacks","order":12,"path":"scripts/DefineEnemyPacks/DefineEnemyPacks.yy",},
     {"name":"EnemyMovements","order":2,"path":"scripts/EnemyMovements/EnemyMovements.yy",},

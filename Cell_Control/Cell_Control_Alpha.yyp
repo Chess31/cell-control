@@ -140,6 +140,7 @@
     {"id":{"name":"Room_StartScreen","path":"rooms/Room_StartScreen/Room_StartScreen.yy",},},
     {"id":{"name":"Room_Tutorial","path":"rooms/Room_Tutorial/Room_Tutorial.yy",},},
     {"id":{"name":"CellularAutomataScripts","path":"scripts/CellularAutomataScripts/CellularAutomataScripts.yy",},},
+    {"id":{"name":"create_infection_boarder","path":"scripts/create_infection_boarder/create_infection_boarder.yy",},},
     {"id":{"name":"CullObject","path":"scripts/CullObject/CullObject.yy",},},
     {"id":{"name":"DefineEnemyPacks","path":"scripts/DefineEnemyPacks/DefineEnemyPacks.yy",},},
     {"id":{"name":"EnemyMovements","path":"scripts/EnemyMovements/EnemyMovements.yy",},},
