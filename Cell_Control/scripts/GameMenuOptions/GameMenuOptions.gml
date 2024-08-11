@@ -34,6 +34,8 @@ function start_tutorial(){
 	global.gamemode = 0;
 	global.win_level = 5;
 	global.energy_rate = 6;
+	global.cell_health = 8;
+	global.core_power = 10;
 	room_goto(Room_Tutorial);
 }
 
@@ -41,18 +43,23 @@ function start_normal(){
 	randomize(); //sets a completely random seed
 	show_debug_message(random_get_seed()); //prints the seed
 	global.gamemode = 1;
-	global.win_level = 10;
-	//global.energy_rate = 10;
-	room_goto(rm_hub);
+	//global.win_level = 10;
+	global.energy_rate = 10;
+	global.cell_health = 8;
+	global.core_power = 10;
+	//room_goto(rm_hub);
+	room_goto(Room_Loading);
 }
 
 function start_challenge(){
 	randomize(); //sets a completely random seed
 	show_debug_message(random_get_seed()); //prints the seed
 	global.gamemode = 2;
-	global.win_level = 15;
-	//global.energy_rate = 16;
-	room_goto(rm_hub);
+	//global.win_level = 15;
+	global.energy_rate = 16;
+	global.cell_health = 4;
+	global.core_power = 0;
+	room_goto(Room_Loading);
 }
 
 function startLab(){

@@ -11,7 +11,5 @@ if (point_distance(x, y, obj_player.x, obj_player.y) < collectDistance) {
 
 if (place_meeting(x,y,obj_player)){
 	instance_destroy();
-	if (obj_player.weaponTokens < 999) {
-		obj_player.weaponTokens++;
-	}
+	global.core_power++;
 }

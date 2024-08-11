@@ -9,8 +9,8 @@
   "name":"obj_hook",
   "overriddenProperties":[],
   "parent":{
-    "name":"PlayerController",
-    "path":"folders/Objects/Controllers and Systems/PlayerController.yy",
+    "name":"Obsolete",
+    "path":"folders/Objects/Obsolete.yy",
   },
   "parentObjectId":null,
   "persistent":false,

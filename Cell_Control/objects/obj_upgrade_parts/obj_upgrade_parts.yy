@@ -9,8 +9,8 @@
   "name":"obj_upgrade_parts",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Obsolete",
+    "path":"folders/Objects/Obsolete.yy",
   },
   "parentObjectId":null,
   "persistent":false,

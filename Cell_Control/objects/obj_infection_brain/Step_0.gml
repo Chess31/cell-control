@@ -163,6 +163,7 @@ switch (state) {
 		
 		//increase global wave counter and reset variables
 		global.attacks_survived++;
+		global.core_power += 5;
 		enemies_per_attack = 3 + global.attacks_survived;
 		enemy_types = noone;
 		attack_timer = time_between_attacks;
