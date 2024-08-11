@@ -49,20 +49,20 @@ if (instance_exists(_nearest_wall)) && (point_distance(x,y, _nearest_wall.x, _ne
 //	}
 //}
 
-if (distance_to_object(obj_player) < wall_delete_range) {
-	shot_cooldown--;
+//if (distance_to_object(obj_player) < wall_delete_range) {
+//	shot_cooldown--;
 	
-	if (shot_cooldown <= 0) {
-		// Create a bullet object
-		var bullet = instance_create_layer(x, y, "Instances", obj_enemy_bullet);
+//	if (shot_cooldown <= 0) {
+//		// Create a bullet object
+//		var bullet = instance_create_layer(x, y, "Instances", obj_enemy_bullet);
 
-		// Set the bullet's direction and speed towards the player
-		bullet.direction = point_direction(x, y, obj_player.x, obj_player.y);
-		bullet.speed = 9; // Adjust the bullet speed as needed
-		bullet.my_speed = bullet.speed;
-		bullet.bcolor = c_green;
+//		// Set the bullet's direction and speed towards the player
+//		bullet.direction = point_direction(x, y, obj_player.x, obj_player.y);
+//		bullet.speed = 9; // Adjust the bullet speed as needed
+//		bullet.my_speed = bullet.speed;
+//		bullet.bcolor = c_green;
 
-		// Reset the shoot cooldown
-		shot_cooldown = shot_interval;
-	}
-}
+//		// Reset the shoot cooldown
+//		shot_cooldown = shot_interval;
+//	}
+//}

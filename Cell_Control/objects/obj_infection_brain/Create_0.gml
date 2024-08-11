@@ -6,7 +6,7 @@ actions_per_step = 1;
 enemy_types = noone;
 global.attacks_survived = 0;
 enemies_per_attack = 3 + global.attacks_survived;
-attack_timer = (30 * game_get_speed(gamespeed_fps)) - global.attacks_survived;
+attack_timer = (30 * game_get_speed(gamespeed_fps)) + (global.attacks_survived * 2);
 time_between_attacks = attack_timer;
 spawn_indicator = noone;
 attacks_between_bosses = 5;
@@ -14,19 +14,20 @@ global.barrier_count = 0;
 
 enum ACTION_COSTS
 {
-    BASIC = 25,
+    //BASIC = 25,
     BARRIER = 30,
     SPAWNER = 20,
     HEALER = 35,
-    HARVESTER = 40,
-    ALARM = 30,
-    VISION = 35,
-	ENERGYDRAIN = 50,
+    //HARVESTER = 40,
+    //ALARM = 30,
+    //VISION = 35,
+	//ENERGYDRAIN = 50,
 	//ENERGYBANK = 100, //piece that drops from a new enemy type and then nearby enemies use energy to fill it and create a fort
-	ENHANCER = 80,
-	EXPANDER = 60,
+	//ENHANCER = 80,
+	//EXPANDER = 60,
 	SHIELD = 45,
-	FORTIFICATION = 100
+	TURRET = 50
+	//FORTIFICATION = 100
 }
 
 function add_infection_piece(_piece_type, _cost, _image_index) {

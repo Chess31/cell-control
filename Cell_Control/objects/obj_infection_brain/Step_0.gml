@@ -23,93 +23,74 @@ switch (state) {
     case 0:
         // Growth Mode (swtich between attack mode (just spawn enemies) and grow ("Stunned time" so the player can break through to the core))
 		
-		//if (action_points > 150) {
-		//	var _random_basic_index = irandom(instance_number(obj_infection_basic) - 1);
-		//	var _basic_node = instance_find(obj_infection_basic, _random_basic_index);
-		//	with (_basic_node) {
-		//		if (branches < 2) {
-		//			branches++;
-		//			// Spawn a new piece off of the basic node
-		//			var _dir = parent_id.available_branches[branch_index][0];
-		//			var _len = irandom(150);
-		//			var _x = lengthdir_x(_len,_dir);
-		//			var _y = lengthdir_y(_len,_dir);
-		//			var _new_piece = instance_create_layer(_x,_y,"InfectionLayer",obj_infection_healer);
-		//			_new_piece.sprite_index = s_infection_pieces;
-		//			_new_piece.image_index = 3;
-		//			//_new_piece.branch_angle = _selected_angle;
-		//			_new_piece.parent_id = id;
-		//		}
-		//	}
-		//}
-		
         if (action_points > 100) {
 			//try to place up to four pieces using action points
 			for (var _actions_left = actions_per_step; _actions_left > 0; _actions_left--) {
-				var _choosen_action = irandom(11); //Number of actions available
-				//If a spawner does not exist, place one instead of a random piece
-				if (instance_number(obj_infection_spawner) < instance_number(obj_well)) {_choosen_action = 2};
-				if (instance_number(obj_infection_basic) < 1) {_choosen_action = 0};
-				
-				if (_choosen_action = 0 && action_points >= ACTION_COSTS.BASIC) {
-					//spawn a BASIC infection piece
-					add_infection_piece(obj_infection_basic, ACTION_COSTS.BASIC, 0);
-				}
+				var _choosen_action = irandom(3); //Number of actions available
 			
-				if (_choosen_action = 1 && action_points >= ACTION_COSTS.BARRIER) {
+				if (_choosen_action = 0 && action_points >= ACTION_COSTS.BARRIER) {
 					//spawn a BARRIER infection piece
 					add_infection_piece(obj_infection_barrier, ACTION_COSTS.BARRIER, 1);
 				}
-			
-				if (_choosen_action = 2 && action_points >= ACTION_COSTS.SPAWNER) {
+				
+				if (_choosen_action = 1 && action_points >= ACTION_COSTS.SPAWNER) {
 					//spawn a SPAWNER infection piece
 					add_infection_piece(obj_infection_spawner, ACTION_COSTS.SPAWNER, 2);
 				}
-			
-				if (_choosen_action = 3 && action_points >= ACTION_COSTS.HEALER) {
+				
+				if (_choosen_action = 2 && action_points >= ACTION_COSTS.TURRET) {
 					//spawn a HEALER infection piece
-					add_infection_piece(obj_infection_healer, ACTION_COSTS.HEALER, 3);
+					add_infection_piece(obj_infection_turret, ACTION_COSTS.TURRET, 12);
 				}
-			
-				if (_choosen_action = 4 && action_points >= ACTION_COSTS.HARVESTER) {
-					//spawn a HARVESTER infection piece
-					add_infection_piece(obj_infection_harvester, ACTION_COSTS.HARVESTER, 4);
-				}
-			
-				if (_choosen_action = 5 && action_points >= ACTION_COSTS.ALARM) {
-					//spawn a ALARM infection piece
-					add_infection_piece(obj_infection_alarm, ACTION_COSTS.ALARM, 5);
-				}
-			
-				if (_choosen_action = 6 && action_points >= ACTION_COSTS.VISION) {
-					//spawn a VISION infection piece
-					add_infection_piece(obj_infection_vision, ACTION_COSTS.VISION, 6);
-				}
-			
-				if (_choosen_action = 7 && action_points >= ACTION_COSTS.ENERGYDRAIN) {
-					//spawn a ENERGYDRAIN infection piece
-					add_infection_piece(obj_infection_energydrain, ACTION_COSTS.ENERGYDRAIN, 7);
-				}
-			
-				if (_choosen_action = 8 && action_points >= ACTION_COSTS.ENHANCER) {
-					//spawn a ENHANCER infection piece
-					add_infection_piece(obj_infection_enhancer, ACTION_COSTS.ENHANCER, 8);
-				}
-			
-				if (_choosen_action = 9 && action_points >= ACTION_COSTS.EXPANDER) {
-					//spawn a EXPANDER infection piece
-					add_infection_piece(obj_infection_expander, ACTION_COSTS.EXPANDER, 9);
-				}
-			
-				if (_choosen_action = 10 && action_points >= ACTION_COSTS.SHIELD) {
+				
+				if (_choosen_action = 3 && action_points >= ACTION_COSTS.SHIELD) {
 					//spawn a SHIELD infection piece
 					add_infection_piece(obj_infection_shield, ACTION_COSTS.SHIELD, 10);
 				}
+				
+				//If a spawner does not exist, place one instead of a random piece
+				//if (instance_number(obj_infection_spawner) < instance_number(obj_well)) {_choosen_action = 2};
+				//if (instance_number(obj_infection_basic) < 1) {_choosen_action = 0};
+				
+				//if (_choosen_action = 0 && action_points >= ACTION_COSTS.BASIC) {
+				//	//spawn a BASIC infection piece
+				//	add_infection_piece(obj_infection_basic, ACTION_COSTS.BASIC, 0);
+				//}
 			
-				if (_choosen_action = 11 && action_points >= ACTION_COSTS.FORTIFICATION) {
-					//spawn a FORTIFICATION infection piece
-					add_infection_piece(obj_infection_fortification, ACTION_COSTS.FORTIFICATION, 11);
-				}
+				//if (_choosen_action = 4 && action_points >= ACTION_COSTS.HARVESTER) {
+				//	//spawn a HARVESTER infection piece
+				//	add_infection_piece(obj_infection_harvester, ACTION_COSTS.HARVESTER, 4);
+				//}
+			
+				//if (_choosen_action = 5 && action_points >= ACTION_COSTS.ALARM) {
+				//	//spawn a ALARM infection piece
+				//	add_infection_piece(obj_infection_alarm, ACTION_COSTS.ALARM, 5);
+				//}
+			
+				//if (_choosen_action = 6 && action_points >= ACTION_COSTS.VISION) {
+				//	//spawn a VISION infection piece
+				//	add_infection_piece(obj_infection_vision, ACTION_COSTS.VISION, 6);
+				//}
+			
+				//if (_choosen_action = 7 && action_points >= ACTION_COSTS.ENERGYDRAIN) {
+				//	//spawn a ENERGYDRAIN infection piece
+				//	add_infection_piece(obj_infection_energydrain, ACTION_COSTS.ENERGYDRAIN, 7);
+				//}
+			
+				//if (_choosen_action = 8 && action_points >= ACTION_COSTS.ENHANCER) {
+				//	//spawn a ENHANCER infection piece
+				//	add_infection_piece(obj_infection_enhancer, ACTION_COSTS.ENHANCER, 8);
+				//}
+			
+				//if (_choosen_action = 9 && action_points >= ACTION_COSTS.EXPANDER) {
+				//	//spawn a EXPANDER infection piece
+				//	add_infection_piece(obj_infection_expander, ACTION_COSTS.EXPANDER, 9);
+				//}
+			
+				//if (_choosen_action = 11 && action_points >= ACTION_COSTS.FORTIFICATION) {
+				//	//spawn a FORTIFICATION infection piece
+				//	add_infection_piece(obj_infection_fortification, ACTION_COSTS.FORTIFICATION, 11);
+				//}
 			}
 		}
 		
