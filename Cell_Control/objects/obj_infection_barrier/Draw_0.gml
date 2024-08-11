@@ -14,9 +14,8 @@ draw_circle(parent_id.x, parent_id.y, _radius + 25, true);
 var _player_distance = point_distance(parent_id.x, parent_id.y, obj_player.x, obj_player.y);
 if (_player_distance <= _radius + 25) {
 	with (obj_player) {
-		move_and_collide(-7,-7,obj_cellWall);
+		if (other.parent_id.x >= x) { var _xspeed = -7 } else { var _xspeed = 7 };
+		if (other.parent_id.y >= y) { var _yspeed = -7 } else { var _yspeed = 7 };
+		move_and_collide(_xspeed, _yspeed, obj_cellWall);
 	}
 }
-//	obj_player.speed = -7;
-//	obj_player.direction = -1 * (point_direction(parent_id.x, parent_id.y, obj_player.x, obj_player.y));
-//}
