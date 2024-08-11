@@ -34,17 +34,17 @@ for (var i = 0; i < 3; ++i) {
     var _weapon_button = instance_create_layer(_x, _y, "UI", obj_button_weaponunlock);
 	switch (i) {
 	    case 0:
-	        _weapon_button.button_text = "Disk Whisk";
+	        _weapon_button.button_text = "Disk Launcher";
 	        _weapon_button.my_weapon_index = 0;
 	        _weapon_button.price = 10;
 	        break;
 		case 1:
-	        _weapon_button.button_text = "Gravity Globber";
+	        _weapon_button.button_text = "Gravity Well";
 	        _weapon_button.my_weapon_index = 1;
 			_weapon_button.price = 20;
 	        break;
 		case 2:
-	        _weapon_button.button_text = "Trippler Crippler";
+	        _weapon_button.button_text = "Tripple Shot";
 	        _weapon_button.my_weapon_index = 2;
 			_weapon_button.price = 30;
 	        break;
