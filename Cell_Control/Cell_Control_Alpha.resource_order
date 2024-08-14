@@ -24,7 +24,7 @@
     {"name":"obj_boss_parent","order":9,"path":"objects/obj_boss_parent/obj_boss_parent.yy",},
     {"name":"obj_building","order":2,"path":"objects/obj_building/obj_building.yy",},
     {"name":"obj_buildings_hotbar","order":17,"path":"objects/obj_buildings_hotbar/obj_buildings_hotbar.yy",},
-    {"name":"obj_bullet_small","order":3,"path":"objects/obj_bullet_small/obj_bullet_small.yy",},
+    {"name":"obj_bullet_tracker","order":3,"path":"objects/obj_bullet_tracker/obj_bullet_tracker.yy",},
     {"name":"obj_button_building_hotbar","order":1,"path":"objects/obj_button_building_hotbar/obj_button_building_hotbar.yy",},
     {"name":"obj_button_building_upgrades","order":2,"path":"objects/obj_button_building_upgrades/obj_button_building_upgrades.yy",},
     {"name":"obj_button_buildingunlock","order":3,"path":"objects/obj_button_buildingunlock/obj_button_buildingunlock.yy",},

@@ -2,6 +2,9 @@
 window_set_cursor(cr_none);
 cursor_sprite = s_cursor;
 
+//play soundtrack
+audio_play_sound(soundtrack_0, 1, true);
+
 // Set the timer for spawning collectibles
 spawnTimer = 16; // Initial energy timer
 //spawn_frequency = global.energy_rate; //frames between energy spawns

@@ -5,6 +5,14 @@ if (global.frozen = true) {
 
 speed = my_speed;
 
+//var _direction_to_target = point_direction(x,y,target_x,target_y);
+//var _angle_difference = angle_difference(_direction_to_target, direction);
+
+//if (_angle_difference > 45) {
+//	direction += _angle_difference * 0.1;
+//}
+
+
 // Destroy the bullet when it goes off-screen
 if (x < 0 || y < 0 || x > room_width || y > room_height) {
     instance_destroy();

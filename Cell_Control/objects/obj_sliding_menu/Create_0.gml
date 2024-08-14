@@ -28,7 +28,7 @@ for (var i = 0; i < _building_list_size - 1; ++i) {
 	}
 }
 //create weapon purchase buttons
-for (var i = 0; i < 3; ++i) {
+for (var i = 0; i < 4; ++i) {
 	var _x = ((display_get_gui_width()/2 - sprite_get_width(s_core_menu)) + 104);
 	var _y = display_get_gui_height()/2 - 124 + (i * 92);
     var _weapon_button = instance_create_layer(_x, _y, "UI", obj_button_weaponunlock);
@@ -47,6 +47,11 @@ for (var i = 0; i < 3; ++i) {
 	        _weapon_button.button_text = "Tripple Shot";
 	        _weapon_button.my_weapon_index = 2;
 			_weapon_button.price = 30;
+	        break;
+		case 3:
+	        _weapon_button.button_text = "Bit Blaster";
+	        _weapon_button.my_weapon_index = 3;
+			_weapon_button.price = 40;
 	        break;
 	    default:
 	        // code here
