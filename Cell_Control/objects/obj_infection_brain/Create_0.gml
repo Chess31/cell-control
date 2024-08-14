@@ -1,6 +1,6 @@
 //type = "Brain"
 action_points = 1000; //allow the infection to set ip starting defences
-action_point_rate = 0.10;
+action_point_rate = 10.10;
 state = 0; //growth mode (1 for attack mode)
 actions_per_step = 1;
 enemy_types = noone;
@@ -62,7 +62,7 @@ function add_infection_piece(_piece_type, _cost, _image_index) {
 		var _y = _random_core.y + lengthdir_y(_length, _selected_angle);
 	
 		var _new_piece = instance_create_layer(_x, _y, "InfectionLayer", _piece_type);
-		_new_piece.sprite_index = s_infection_pieces;
+		_new_piece.sprite_index = s_infection_seed;
 		_new_piece.image_index = _image_index;
 		//_new_piece.branch_angle = _selected_angle;
 		_new_piece.parent_id = _random_core;

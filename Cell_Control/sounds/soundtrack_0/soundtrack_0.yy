@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":112.54083,
+  "duration":113.455124,
   "name":"soundtrack_0",
   "parent":{
     "name":"Sounds",

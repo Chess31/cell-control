@@ -35,7 +35,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"s_infection_pieces",
+    "path":"sprites/s_infection_pieces/s_infection_pieces.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

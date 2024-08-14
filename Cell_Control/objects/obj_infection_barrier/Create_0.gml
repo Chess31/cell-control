@@ -17,6 +17,7 @@ var _x = _well.x + lengthdir_x(placement_radius, _dir_final);
 var _y = _well.y + lengthdir_y(placement_radius, _dir_final);
 
 image_angle = _dir_final - 90;
+image_index = 1;
 
 global.barrier_count++;
 

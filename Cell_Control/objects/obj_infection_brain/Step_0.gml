@@ -24,31 +24,34 @@ switch (state) {
         // Growth Mode (swtich between attack mode (just spawn enemies) and grow ("Stunned time" so the player can break through to the core))
 		
         if (action_points > 100) {
-			//try to place up to four pieces using action points
-			for (var _actions_left = actions_per_step; _actions_left > 0; _actions_left--) {
-				var _choosen_action = irandom(3); //Number of actions available
 			
-				if (_choosen_action = 0 && action_points >= ACTION_COSTS.BARRIER) {
-					//spawn a BARRIER infection piece
-					add_infection_piece(obj_infection_barrier, ACTION_COSTS.BARRIER, 1);
-				}
+			add_infection_piece(obj_infection_seed, 100, 0);
+			
+			////try to place up to four pieces using action points
+			//for (var _actions_left = actions_per_step; _actions_left > 0; _actions_left--) {
+			//	var _choosen_action = irandom(3); //Number of actions available
+			
+			//	if (_choosen_action = 0 && action_points >= ACTION_COSTS.BARRIER) {
+			//		//spawn a BARRIER infection piece
+			//		add_infection_piece(obj_infection_barrier, ACTION_COSTS.BARRIER, 1);
+			//	}
 				
-				if (_choosen_action = 1 && action_points >= ACTION_COSTS.SPAWNER) {
-					//spawn a SPAWNER infection piece
-					add_infection_piece(obj_infection_spawner, ACTION_COSTS.SPAWNER, 2);
-				}
+			//	if (_choosen_action = 1 && action_points >= ACTION_COSTS.SPAWNER) {
+			//		//spawn a SPAWNER infection piece
+			//		add_infection_piece(obj_infection_spawner, ACTION_COSTS.SPAWNER, 2);
+			//	}
 				
-				if (_choosen_action = 2 && action_points >= ACTION_COSTS.TURRET) {
-					//spawn a HEALER infection piece
-					add_infection_piece(obj_infection_turret, ACTION_COSTS.TURRET, 12);
-				}
+			//	if (_choosen_action = 2 && action_points >= ACTION_COSTS.TURRET) {
+			//		//spawn a HEALER infection piece
+			//		add_infection_piece(obj_infection_turret, ACTION_COSTS.TURRET, 12);
+			//	}
 				
-				if (_choosen_action = 3 && action_points >= ACTION_COSTS.SHIELD) {
-					//spawn a SHIELD infection piece
-					add_infection_piece(obj_infection_shield, ACTION_COSTS.SHIELD, 10);
-				}
+			//	if (_choosen_action = 3 && action_points >= ACTION_COSTS.SHIELD) {
+			//		//spawn a SHIELD infection piece
+			//		add_infection_piece(obj_infection_shield, ACTION_COSTS.SHIELD, 10);
+			//	}
 				
-			}
+			//}
 		}
 		
 		action_points += action_point_rate;

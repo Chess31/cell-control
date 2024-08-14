@@ -3,7 +3,7 @@ event_inherited();
 
 draw_self();
 
-if (target != noone) {
+if (instance_exists(target)) {
 	draw_set_color(c_white);
 	
     // Draw the line from the shield node to the target

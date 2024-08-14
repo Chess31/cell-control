@@ -9,7 +9,7 @@ if (target == noone) {
 }
 
 // If there's a target, check if it's within range and apply the shield
-if (target != noone) {
+if (instance_exists(target)) {
 	//Rotate to face target
 	image_angle = point_direction(x, y, target.x, target.y) - 90;
     // Ensure the target is within a reasonable range

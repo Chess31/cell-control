@@ -119,5 +119,5 @@ function quitToTitle(){
 	global.isPaused = false;
 	//game_restart(); //this is unlikely to be problem free in the future
 	//room_restart();
-	room_goto(rm_hub);
+	room_goto(Room_StartScreen);
 }
