@@ -32,7 +32,7 @@ if (_distance_to_target < ideal_range) {
 	var _speed_multiplier = 1.0; //move forwards
 }
 
-motion_set(direction, enemySpeed * _speed_multiplier);
+motion_set(direction, speed * _speed_multiplier);
 move_bounce_solid(true);
 image_angle = point_direction(x, y, target.x, target.y) - 90;
 

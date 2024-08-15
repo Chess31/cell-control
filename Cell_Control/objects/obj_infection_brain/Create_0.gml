@@ -12,6 +12,9 @@ spawn_indicator = noone;
 attacks_between_bosses = 5;
 global.barrier_count = 0;
 
+seed_timer = 0;
+seed_spawn_interval = 10 * game_get_speed(gamespeed_fps);
+
 enum ACTION_COSTS
 {
     //BASIC = 25,

@@ -2,6 +2,9 @@ if (global.frozen = true) {
 	exit;
 }
 
+// Inherit the parent event
+event_inherited();
+
 //Age the instance
 life -= 1;
 
@@ -33,7 +36,7 @@ displayRadius = gravityRadius;
 
 with (obj_enemy) {
 	if (gravity_affected = true) {
-		speed = 0;
+		//speed = 0;
 		// Calculate distance to the gravity source
 		var dist = point_distance(x, y, other.x, other.y);
 		if (dist < gravityRadius)
@@ -48,10 +51,10 @@ with (obj_enemy) {
 			direction -= angleDifference * (gravityStrength / dist);
 			
 			other.life -= 0.5;
-			enemySpeed += 0.05;
+			speed += 0.15;
 		} else
 		{
-			enemySpeed = ds_list_find_value(global.enemySpeeds, ds_list_find_index(global.enemyTypes, enemyType));
+			speed = enemySpeed;
 		}
 	}
 }
@@ -72,9 +75,9 @@ if (moving) {
         moving = false;
 		speed = 0;
     }
+} else {
+	x = target_x;
+	y = target_y;
 }
 
 if(life <= 0){instance_destroy()};
-
-// Inherit the parent event
-event_inherited();
