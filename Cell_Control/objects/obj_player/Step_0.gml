@@ -85,12 +85,12 @@ if (keyboard_check_pressed(vk_space)) {
 	obj_buildings_hotbar.menu_up = !obj_buildings_hotbar.menu_up;
 }
 
-distance_to_core = point_distance(x, y, obj_cell_core.x, obj_cell_core.y);
+//distance_to_core = point_distance(x, y, obj_cell_core.x, obj_cell_core.y);
 
-if (distance_to_core > 750) {
-	isDeployingWall = false;
-	obj_buildings_hotbar.menu_up = false;
-}
+//if (distance_to_core > 750) {
+//	isDeployingWall = false;
+//	obj_buildings_hotbar.menu_up = false;
+//}
 
 // Placement Mode logic
 if (isDeployingWall) {

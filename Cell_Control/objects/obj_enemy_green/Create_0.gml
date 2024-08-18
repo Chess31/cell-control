@@ -1,5 +1,5 @@
 // Initialize common variables
-enemySpeed = 2; // Adjust the enemy movement speed
+enemySpeed = 1; // Adjust the enemy movement speed
 shootCooldown = 150 + random(200); // Adjust the time between shots
 enemyHealth = 8; // Adjust the initial health as needed
 enemyType = "Green";

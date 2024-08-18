@@ -23,7 +23,7 @@ if (moveTimer <= 0) {
 }
 
 // Move the enemy
-motion_set(direction, enemySpeed);
+motion_set(direction, speed);
 move_bounce_solid(true);
 
 //Weapons

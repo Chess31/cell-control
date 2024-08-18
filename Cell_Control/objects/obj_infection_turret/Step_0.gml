@@ -21,7 +21,7 @@ if (distance_to_object(obj_player) < player_sight_range) {
 		bullet.direction = point_direction(x, y, obj_player.x, obj_player.y);
 		bullet.speed = 9; // Adjust the bullet speed as needed
 		bullet.my_speed = bullet.speed;
-		bullet.bcolor = c_green;
+		bullet.bcolor = c_fuchsia;
 
 		// Reset the shoot cooldown
 		shot_cooldown = shot_interval;

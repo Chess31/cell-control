@@ -1,3 +1,7 @@
+if (global.frozen = true) {
+	exit;
+}
+
 event_inherited();
 
 if (irandom(600) = 1) {

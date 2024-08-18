@@ -1,5 +1,8 @@
 if (global.frozen = true) {
+	speed = 0;
 	exit;
+} else {
+	speed = enemySpeed;
 }
 
 //Movement
@@ -16,8 +19,8 @@ if (instance_number(obj_building) > 0) {
 		moveTimer--;
 	}
 					
-	var moveX = lengthdir_x(enemySpeed, direction);
-	var moveY = lengthdir_y(enemySpeed, direction);
+	var moveX = lengthdir_x(speed, direction);
+	var moveY = lengthdir_y(speed, direction);
 
 	// Move towards the building
 	x += moveX;

@@ -6,6 +6,6 @@ node_health = 25;
 image_index = 12;
 
 shot_cooldown = 30;
-shot_interval = 20;
+shot_interval = 40;
 
 player_sight_range = 250;

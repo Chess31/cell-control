@@ -1,7 +1,7 @@
 /// @description Strong wall
 event_inherited();
 
-node_health = 50;
+node_health = 40;
 
 target = obj_cell_core; // The player's core object
 placement_radius = 150; // Distance from the infection core for subsequent barriers
