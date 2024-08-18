@@ -1,4 +1,4 @@
-if (global.frozen = true) {
+if (global.frozen = true or global.isPaused = true) {
 	exit;
 }
 
@@ -82,7 +82,7 @@ if (restartTimer == 0) {
 if (keyboard_check_pressed(vk_space)) {
     //Toggle Placement Mode
 	isDeployingWall = !isDeployingWall;
-	obj_buildings_hotbar.menu_up = !obj_buildings_hotbar.menu_up;
+	obj_buildings_hotbar.menu_up = isDeployingWall;
 }
 
 //distance_to_core = point_distance(x, y, obj_cell_core.x, obj_cell_core.y);

@@ -6,12 +6,15 @@ if (obj_sliding_menu.menu_up = false) {
 	    // Stop the game
 		global.frozen = true;
 		pauseMenu();
+		obj_buildings_hotbar.menu_up = false;
 	} else {
 		global.frozen = false;
 		with(obj_menu){
 			instance_destroy();
 		}
 	}
-} else {
-	obj_sliding_menu.menu_up = true;
-}
+} 
+
+//if (obj_sliding_menu.menu_up = true) {
+//	obj_sliding_menu.menu_up = false;
+//}

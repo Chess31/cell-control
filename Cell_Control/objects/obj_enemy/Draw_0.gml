@@ -36,3 +36,5 @@ if (time_to_draw > 0) {
 	draw_sprite_ext(s_enemy_health_bar, 0, _bar_x, _bar_y, bar_width, 1, 0, c_green, bar_alpha);
 	time_to_draw--;
 }
+
+draw_set_color(c_white);
