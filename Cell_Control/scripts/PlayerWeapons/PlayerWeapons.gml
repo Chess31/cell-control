@@ -13,6 +13,9 @@ function use_weapon(_index) {
 			// Subtract ammo
 			ammo -= (1 - global.primary_bullet_discount);
 			can_shoot_cooldown = 20;
+			
+			//shake screen
+			screen_shake(3,10);
 			break;
 			
 		case 1: //Disk launcher
@@ -31,6 +34,9 @@ function use_weapon(_index) {
 				ammo -= 5;
 				can_shoot_cooldown = 20;
 			};
+			
+			//shake screen
+			screen_shake(8,10);
 			break;
 			
 		case 2: //Gravity Gun
@@ -49,6 +55,9 @@ function use_weapon(_index) {
 				// Subtract ammo
 				ammo -= 10;
 				can_shoot_cooldown = 60;
+				
+				//shake screen
+				screen_shake(15,40);
 			}
 			break;
 		
@@ -80,10 +89,13 @@ function use_weapon(_index) {
 				// Subtract ammo
 				ammo -= 5;
 				can_shoot_cooldown = 25;
+				
+				//shake screen
+				screen_shake(2,8);
 			}
 	        break;
 			
-		case 4: //Nettler
+		case 4: //Tiny Bullets
 	        //if (ammo > 0){
 				// Calculate the direction to the player
 				var _direction_to_cursor = point_direction(x, y, mouse_x, mouse_y);
@@ -123,6 +135,9 @@ function use_weapon(_index) {
 				// Subtract ammo
 				ammo -= 1;
 				can_shoot_cooldown = 3;
+				
+				//shake screen
+				screen_shake(1.6,5);
 			//}
 	        break;
 			

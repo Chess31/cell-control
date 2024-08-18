@@ -155,6 +155,7 @@
     {"id":{"name":"PlayerWeapons","path":"scripts/PlayerWeapons/PlayerWeapons.yy",},},
     {"id":{"name":"ProcessCulls","path":"scripts/ProcessCulls/ProcessCulls.yy",},},
     {"id":{"name":"recalculate_hotbar_spacing","path":"scripts/recalculate_hotbar_spacing/recalculate_hotbar_spacing.yy",},},
+    {"id":{"name":"screen_shake","path":"scripts/screen_shake/screen_shake.yy",},},
     {"id":{"name":"script_player_upgrades","path":"scripts/script_player_upgrades/script_player_upgrades.yy",},},
     {"id":{"name":"script_spawn_wells","path":"scripts/script_spawn_wells/script_spawn_wells.yy",},},
     {"id":{"name":"SparkParticles","path":"scripts/SparkParticles/SparkParticles.yy",},},

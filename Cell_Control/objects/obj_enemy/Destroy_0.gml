@@ -18,3 +18,6 @@ if (global.feeder_active = true){
 
 // Clean up the loot pool
 ds_list_destroy(enemyLootPool);
+
+//shake screen
+screen_shake(12,30);

@@ -60,6 +60,8 @@ function AddAmmo(_amount) {
 function TakeDamage(_amount)
 {
 	playerHealth -= _amount;
+	//shake screen
+	screen_shake(10,30);
 }
 
 ////Upgrades

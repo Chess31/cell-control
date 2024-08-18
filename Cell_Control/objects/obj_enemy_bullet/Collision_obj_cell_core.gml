@@ -6,4 +6,8 @@ with (obj_cell_core) {
 	}
 	image_index++;
 }
+
+//shake screen
+screen_shake(15,20);
+
 instance_destroy();
