@@ -18,3 +18,6 @@ if ((type = "Proximity Mine") && primed)
 		}
 	}
 }
+
+//shake screen
+screen_shake(12,30);

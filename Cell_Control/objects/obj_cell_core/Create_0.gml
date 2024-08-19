@@ -20,7 +20,7 @@ x = room_width/2; //obj_camera.view_w_half;
 y = room_width/2; //obj_camera.view_h_half;
 
 //starting buildings
-var wallDistance = 128; // Adjust the distance of walls from the cell core
+var wallDistance = 64;
 
 // Place walls in the four cardinal directions
 var wallEast = instance_create_layer(x + wallDistance, y, "Instances", obj_building);

@@ -21,7 +21,9 @@ activate_button = function()
 				break;
 			case 1: //levelup
 				var _current_levelup_cost =  global.building_levelup_cost[|my_building_index + 1];
-				if (global.core_power >= _current_levelup_cost) {
+				var _level_max =  global.building_level_max[|my_building_index + 1];
+				var _current_level =  global.building_levels[|my_building_index + 1];
+				if (global.core_power >= _current_levelup_cost and _current_level < _level_max) {
 					global.building_levels[|my_building_index + 1]++;
 					global.core_power -= _current_levelup_cost;
 					global.building_levelup_cost[|my_building_index + 1] = _current_levelup_cost * 2;

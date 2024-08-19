@@ -35,7 +35,7 @@ function start_tutorial(){
 	global.win_level = 5;
 	global.energy_rate = 6;
 	global.cell_health = 8;
-	global.core_power = 10;
+	global.core_power = 10000;
 	room_goto(Room_Tutorial);
 }
 
@@ -90,18 +90,34 @@ function controlsOptions(){
 			["Shoot  -  Left Mouse",controlsOptions],
 			["Toggle Building Mode  -  Space",controlsOptions],
 			["Switch Building  -  Scroll",controlsOptions],
-			["Heal Core  -  R",controlsOptions],
+			["Open Menu  -  Ctrl",controlsOptions],
 			["Back", launchOptions]
 		],
 		"Controls"
 	);
 }
 
+////pause options
+//function pause_controls(){
+//	MenuCreate(room_width/2 - string_width("Toggle Building Mode  -  Space")/2, room_height/2,
+//		[
+//			["Movement  -  WASD",controlsOptions],
+//			["Shoot  -  Left Mouse",controlsOptions],
+//			["Toggle Building Mode  -  Space",controlsOptions],
+//			["Switch Building  -  Scroll",controlsOptions],
+//			["Open Menu  -  Ctrl",controlsOptions],
+//			["Back", pauseMenu]
+//		],
+//		"Controls"
+//	);
+//}
+
 //Pause Menu Stuff
 function pauseMenu(){
 	MenuCreate(display_get_gui_width()/2 - string_width("Game Paused")/2, display_get_gui_height() / 2,
 				[
 					["Continue",unPause],
+					//["Controls",pause_controls],
 					["Quit",quitToTitle]
 				],
 				"Game Paused"

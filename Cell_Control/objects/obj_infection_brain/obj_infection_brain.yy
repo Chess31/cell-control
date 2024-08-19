@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"s_effect_spawn",
+    "path":"sprites/s_effect_spawn/s_effect_spawn.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

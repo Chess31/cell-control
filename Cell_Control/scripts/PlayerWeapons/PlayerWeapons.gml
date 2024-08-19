@@ -15,7 +15,7 @@ function use_weapon(_index) {
 			can_shoot_cooldown = 20;
 			
 			//shake screen
-			screen_shake(3,10);
+			screen_shake(1,8);
 			break;
 			
 		case 1: //Disk launcher
