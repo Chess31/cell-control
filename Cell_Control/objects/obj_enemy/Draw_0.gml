@@ -37,4 +37,4 @@ if (time_to_draw > 0) {
 	time_to_draw--;
 }
 
-draw_set_color(c_white);
+//draw_set_color(c_white);

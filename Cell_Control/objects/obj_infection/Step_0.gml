@@ -1,19 +1,3 @@
-////Get action points
-//var _action_points = obj_infection_brain.action_points;
-
-////Use action points to move
-//var _nearest_neighbor = instance_nearest_exclude_self(x,y,obj_infection);
-
-//if (_nearest_neighbor != noone and point_distance(x, y, _nearest_neighbor.x, _nearest_neighbor.y) < 100 and _action_points > 1){
-//	var _dir = point_direction(x, y, _nearest_neighbor.x, _nearest_neighbor.y);
-//	x += lengthdir_x(1, _dir*-1);
-//	y += lengthdir_y(1, _dir*-1);
-//	obj_infection_brain.action_points--;
-//}
-
-// Get action points
-//var _action_points = obj_infection_brain.action_points;
-
 //Set min distance between instances
 var _min_dis = 100;
 
@@ -53,4 +37,11 @@ if (_neighbor_count > 0) {
         // Deduct action points
         obj_infection_brain.action_points--;
     }
+}
+
+//health bar things
+if (time_to_draw < 30) {
+	bar_alpha = lerp(bar_alpha, 0, 0.02);
+} else {
+	bar_alpha = 1;
 }

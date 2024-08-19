@@ -211,6 +211,7 @@
     {"id":{"name":"s_GravityBall","path":"sprites/s_GravityBall/s_GravityBall.yy",},},
     {"id":{"name":"s_health_list","path":"sprites/s_health_list/s_health_list.yy",},},
     {"id":{"name":"s_HealthBar","path":"sprites/s_HealthBar/s_HealthBar.yy",},},
+    {"id":{"name":"s_heart","path":"sprites/s_heart/s_heart.yy",},},
     {"id":{"name":"s_Hive","path":"sprites/s_Hive/s_Hive.yy",},},
     {"id":{"name":"s_infection_pieces","path":"sprites/s_infection_pieces/s_infection_pieces.yy",},},
     {"id":{"name":"s_infection_seed","path":"sprites/s_infection_seed/s_infection_seed.yy",},},

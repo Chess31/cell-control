@@ -1,7 +1,8 @@
 /// @description Targets and shields other pieces
 event_inherited();
 
-node_health = 10;
+node_health = 30;
+max_health = node_health;
 
 image_index = 10;
 

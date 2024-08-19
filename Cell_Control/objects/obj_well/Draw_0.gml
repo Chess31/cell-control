@@ -1,14 +1,13 @@
 draw_self();
 
-//draw_set_color(c_white);
-//draw_set_halign(fa_center);
-//draw_set_valign(fa_middle);
-
-//if (waves_left > 0) {
-//	draw_text(x, y, "Waves: " + string(waves_left));
-//	draw_text(x, y + 20, ceil(wave_timer / game_get_speed(gamespeed_fps)));
-//} else {
-//	draw_text(x, y, "Boss summons in: " + string(ceil(boss_countdown / game_get_speed(gamespeed_fps))));
-//}
-//draw_text(x + 70, y, global.difficulty_scalar);
-//draw_text(x + 70, y + 20, global.difficulty);
+//Health Bar
+if (time_to_draw > 0) {
+	var _bar_x = x;
+	var _bar_y = y - sprite_height/2 - 5;
+	// Calculate the width of the bar based on player's health
+	var _health_percentage = clamp(node_health / max_health, 0, 1); // Calculate health percentage
+	var _bar_width = 40 * _health_percentage; //constant should be the default bar length
+	//draw the bar
+	draw_sprite_ext(s_enemy_health_bar, 0, _bar_x, _bar_y, _bar_width, 1, 0, c_green, bar_alpha);
+	time_to_draw--;
+}

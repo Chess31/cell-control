@@ -161,6 +161,7 @@
     {"name":"s_GravityBall","order":2,"path":"sprites/s_GravityBall/s_GravityBall.yy",},
     {"name":"s_health_list","order":12,"path":"sprites/s_health_list/s_health_list.yy",},
     {"name":"s_HealthBar","order":3,"path":"sprites/s_HealthBar/s_HealthBar.yy",},
+    {"name":"s_heart","order":3,"path":"sprites/s_heart/s_heart.yy",},
     {"name":"s_Hive","order":7,"path":"sprites/s_Hive/s_Hive.yy",},
     {"name":"s_infection_seed","order":23,"path":"sprites/s_infection_seed/s_infection_seed.yy",},
     {"name":"s_item_bar","order":17,"path":"sprites/s_item_bar/s_item_bar.yy",},
