@@ -160,6 +160,7 @@
     {"id":{"name":"script_spawn_wells","path":"scripts/script_spawn_wells/script_spawn_wells.yy",},},
     {"id":{"name":"SparkParticles","path":"scripts/SparkParticles/SparkParticles.yy",},},
     {"id":{"name":"TeleportToRandomEnemyFunction","path":"scripts/TeleportToRandomEnemyFunction/TeleportToRandomEnemyFunction.yy",},},
+    {"id":{"name":"update_wall_health","path":"scripts/update_wall_health/update_wall_health.yy",},},
     {"id":{"name":"UpgraderOptions","path":"scripts/UpgraderOptions/UpgraderOptions.yy",},},
     {"id":{"name":"UpgradeSlotSwitchMenu","path":"scripts/UpgradeSlotSwitchMenu/UpgradeSlotSwitchMenu.yy",},},
     {"id":{"name":"Wall_Optimizer","path":"scripts/Wall_Optimizer/Wall_Optimizer.yy",},},

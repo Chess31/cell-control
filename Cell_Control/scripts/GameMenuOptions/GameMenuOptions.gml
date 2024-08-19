@@ -35,7 +35,7 @@ function start_tutorial(){
 	global.win_level = 5;
 	global.energy_rate = 6;
 	global.cell_health = 8;
-	global.core_power = 10000;
+	global.core_power = 10;
 	room_goto(Room_Tutorial);
 }
 
@@ -46,7 +46,7 @@ function start_normal(){
 	//global.win_level = 10;
 	global.energy_rate = 10;
 	global.cell_health = 8;
-	global.core_power = 10;
+	global.core_power = 1000;
 	//room_goto(rm_hub);
 	room_goto(Room_Loading);
 }

@@ -13,7 +13,7 @@ walkSpeed = 7.0;
 //chunk_y = -1;
 
 //Define starting variables
-ammo = 15;
+ammo = 15000;
 initial_ammo = 10;
 playerHealth = 15;
 initialHealth = 15;

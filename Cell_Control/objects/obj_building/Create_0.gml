@@ -9,7 +9,7 @@ maxBuildingCount = 1;
 maxDetectionRange = 300;
 turretBulletSpeed = 6;
 fireTimer = 0;
-firingRate = room_speed / 3;
+firingRate = game_get_speed(gamespeed_fps) / 3;
 
 //Upgrader specific variables
 interactionRange = 100;

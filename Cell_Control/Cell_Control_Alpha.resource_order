@@ -117,6 +117,7 @@
     {"name":"script_spawn_wells","order":19,"path":"scripts/script_spawn_wells/script_spawn_wells.yy",},
     {"name":"SparkParticles","order":4,"path":"scripts/SparkParticles/SparkParticles.yy",},
     {"name":"TeleportToRandomEnemyFunction","order":9,"path":"scripts/TeleportToRandomEnemyFunction/TeleportToRandomEnemyFunction.yy",},
+    {"name":"update_wall_health","order":24,"path":"scripts/update_wall_health/update_wall_health.yy",},
     {"name":"UpgraderOptions","order":1,"path":"scripts/UpgraderOptions/UpgraderOptions.yy",},
     {"name":"UpgradeSlotSwitchMenu","order":18,"path":"scripts/UpgradeSlotSwitchMenu/UpgradeSlotSwitchMenu.yy",},
     {"name":"Wall_Optimizer","order":15,"path":"scripts/Wall_Optimizer/Wall_Optimizer.yy",},

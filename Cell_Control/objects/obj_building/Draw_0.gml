@@ -25,6 +25,8 @@ if (playerInRange) {
 // Mine radius visualization
 if (primed) {
     draw_set_color(c_white); // Reset drawing color to white
+	var _leveled_radius = explosionRadius  + ((global.building_levels[|index] - 1) * 16);
+	draw_circle(x, y, _leveled_radius, true);
 	draw_circle(x, y, explosionRadius, true);
 }
 

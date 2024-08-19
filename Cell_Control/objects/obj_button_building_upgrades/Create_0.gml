@@ -27,6 +27,9 @@ activate_button = function()
 					global.building_levels[|my_building_index + 1]++;
 					global.core_power -= _current_levelup_cost;
 					global.building_levelup_cost[|my_building_index + 1] = _current_levelup_cost * 2;
+					if (my_building_index = 0) {
+						update_wall_health();
+					}
 				}
 				break;
 		    default:

@@ -42,7 +42,8 @@ switch (type) {
 
     case "Forge":
         // periodically spawn a collectible
-        if (random(110) < 1) { // % chance every step
+		var _spawn_chance = 110 - (global.building_levels[|index] * 30);
+        if (random(_spawn_chance) < 1) { // % chance every step
             // Spawn Collectible
             instance_create_layer(x + lengthdir_x(50, random(360)), y + lengthdir_y(50, random(360)), "Collectibles", obj_collectible);
         }
@@ -57,10 +58,11 @@ switch (type) {
 	            // Shoot a bullet at the nearest enemy
 	            var directionToEnemy = point_direction(x, y, nearestEnemy.x, nearestEnemy.y);
 	            var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
-				// Set the bullet's direction and speed
+				// Set the bullet's direction, speed, and damage
 				bullet.direction = directionToEnemy;
 				bullet.speed = turretBulletSpeed;
 				bullet.my_speed = bullet.speed;
+				bullet.damage = global.building_levels[|index];
 				//point sprite towards enemy
 				image_angle = point_direction(x, y, nearestEnemy.x, nearestEnemy.y) + 90;
 	        }
@@ -71,25 +73,22 @@ switch (type) {
         fireTimer -= 1;
         break;
 
-	case "Upgrader":
-        // Upgrader-specific behavior
-        var playerDistance = point_distance(x, y, obj_player.x, obj_player.y);
+	//case "Upgrader":
+    //    // Upgrader-specific behavior
+    //    var playerDistance = point_distance(x, y, obj_player.x, obj_player.y);
 
-        // Check if the player is within the interaction range
-        playerInRange = (playerDistance < interactionRange);
+    //    // Check if the player is within the interaction range
+    //    playerInRange = (playerDistance < interactionRange);
 
-        // Check for opening the menu
-        if (playerInRange && keyboard_check_pressed(ord("F"))) {
-            //spawn menu with shop options
-			mainUpgraderOptions();
-        }
-		//instance find is the way to delete this building from the menu probably
-        break;
+    //    // Check for opening the menu
+    //    if (playerInRange && keyboard_check_pressed(ord("F"))) {
+    //        //spawn menu with shop options
+	//		mainUpgraderOptions();
+    //    }
+	//	//instance find is the way to delete this building from the menu probably
+    //    break;
 
 	case "Proximity Mine":
-		// Get the total number of instances of obj_enemy
-		var totalEnemies = instance_number(obj_enemy);
-
 		// Rotate the mine during the priming phase
 		if (!primed) {
 		    //set image speed
@@ -112,6 +111,9 @@ switch (type) {
 		if (primed) {
 		    //set image speed
 			image_speed = 1;
+			
+			// Get the total number of instances of obj_enemy
+			var totalEnemies = instance_number(obj_enemy);
 			
 			for (var i = 0; i < totalEnemies; i++) {
 		        //find all enemies
@@ -148,15 +150,15 @@ switch (type) {
 			global.feeders_complete ++;
 			
 			//drop weapon tokens
-			for (var i = 0; i < irandom_range(5,15); i++){
+			var _range_adjustment = (global.building_levels[|index] - 1) * 5;
+			for (var i = 0; i < irandom_range(5 + _range_adjustment, 15 + _range_adjustment); i++){
 				instance_create_layer(x + irandom_range(-120, 120), y + irandom_range(-120, 120), "Instances", obj_weapon_token);
 			}
 		}
         break;
 		
-    // Add more cases for other building types if needed
 	case "Hive":
-		if (my_drones < max_drones){
+		if (my_drones < max_drones + (global.building_levels[|index] - 1)){
 			var _new_drone = instance_create_layer(x,y,"Instances",obj_drone)
 			_new_drone.home = id;
 			_new_drone.state = drone_mode;
