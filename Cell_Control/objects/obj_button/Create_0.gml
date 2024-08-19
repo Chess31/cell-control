@@ -3,6 +3,8 @@ clicked = false;
 
 button_text = "Default"
 
+text_color = c_white;
+
 activate_button = function() 
 {
 	

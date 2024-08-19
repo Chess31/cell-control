@@ -21,7 +21,12 @@ draw_level = function()
 {
 	//draw level and cost in the third column
 	var _current_level = ds_list_find_value(global.building_levels, my_building_index + 1);
-	draw_text(x + 354, y, string(_current_level) + " (" + string(global.building_levelup_cost[|my_building_index + 1]) + ")");
+	var _level_max =  global.building_level_max[|my_building_index + 1];
+	if (_current_level != _level_max) {
+		draw_text(x + 354, y, string(_current_level) + " (" + string(global.building_levelup_cost[|my_building_index + 1]) + ")");
+	} else {
+		draw_text_color(x + 354, y, string(_current_level) + " (max)", c_aqua, c_aqua, c_aqua, c_aqua, 1);
+	}
 }
 
 activate_button = function()
