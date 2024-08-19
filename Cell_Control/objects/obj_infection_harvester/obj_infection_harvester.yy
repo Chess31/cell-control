@@ -8,8 +8,8 @@
   "name":"obj_infection_harvester",
   "overriddenProperties":[],
   "parent":{
-    "name":"Infection AI",
-    "path":"folders/Objects/Infection AI.yy",
+    "name":"Obsolete",
+    "path":"folders/Objects/Obsolete.yy",
   },
   "parentObjectId":{
     "name":"obj_infection",

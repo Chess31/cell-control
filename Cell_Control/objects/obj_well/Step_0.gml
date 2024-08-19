@@ -12,6 +12,10 @@ if (instance_exists(_nearest_wall)) && (point_distance(x,y, _nearest_wall.x, _ne
 	}
 }
 
+//if (node_health <= 0) {
+//	instance_destroy();
+//}
+
 //health bar things
 if (time_to_draw < 30) {
 	bar_alpha = lerp(bar_alpha, 0, 0.02);

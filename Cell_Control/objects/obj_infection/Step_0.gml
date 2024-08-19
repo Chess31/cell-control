@@ -39,6 +39,8 @@ if (_neighbor_count > 0) {
     }
 }
 
+//destory at zero health
+
 //health bar things
 if (time_to_draw < 30) {
 	bar_alpha = lerp(bar_alpha, 0, 0.02);

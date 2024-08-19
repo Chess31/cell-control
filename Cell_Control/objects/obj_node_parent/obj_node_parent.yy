@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Old node system",
-    "path":"folders/Objects/Infection AI/Old node system.yy",
+    "path":"folders/Objects/Obsolete/Old node system.yy",
   },
   "parentObjectId":null,
   "persistent":false,

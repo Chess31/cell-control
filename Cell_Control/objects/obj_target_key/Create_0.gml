@@ -1,4 +1,8 @@
-follow_distance = 150;
-follow_speed = 5; // Speed at which the follower moves towards the player
+follow_distance = 110;
+follow_speed = 5;
 player = obj_player;
 player_found = false;
+fired = false;
+fired_speed = 8;
+direction_to_launch = 0;
+is_next = false;

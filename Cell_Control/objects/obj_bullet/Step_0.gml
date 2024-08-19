@@ -5,10 +5,7 @@ if (global.frozen = true) {
 
 speed = my_speed;
 
-// Destroy the bullet when it goes off-screen
-if (x < 0 || y < 0 || x > room_width || y > room_height) {
-    instance_destroy();
-}
+destroy_offscreen();
 
 // Check for collision with enemies and damage them
 if (place_meeting(x, y, obj_enemy)) {
