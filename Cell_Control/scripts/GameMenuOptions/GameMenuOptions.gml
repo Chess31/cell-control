@@ -97,31 +97,31 @@ function controlsOptions(){
 	);
 }
 
-////pause options
-//function pause_controls(){
-//	MenuCreate(room_width/2 - string_width("Toggle Building Mode  -  Space")/2, room_height/2,
-//		[
-//			["Movement  -  WASD",controlsOptions],
-//			["Shoot  -  Left Mouse",controlsOptions],
-//			["Toggle Building Mode  -  Space",controlsOptions],
-//			["Switch Building  -  Scroll",controlsOptions],
-//			["Open Menu  -  Ctrl",controlsOptions],
-//			["Back", pauseMenu]
-//		],
-//		"Controls"
-//	);
-//}
+//pause options
+function pause_controls(){
+	MenuCreate(display_get_gui_width()/2 - string_width("Toggle Building Mode  -  Space")/2, display_get_gui_height() / 2,
+		[
+			["Movement  -  WASD",controlsOptions],
+			["Shoot  -  Left Mouse",controlsOptions],
+			["Toggle Building Mode  -  Space",controlsOptions],
+			["Switch Building  -  Scroll",controlsOptions],
+			["Open Menu  -  Ctrl",controlsOptions],
+			["Back", pauseMenu]
+		],
+		"Controls"
+	);
+}
 
 //Pause Menu Stuff
 function pauseMenu(){
 	MenuCreate(display_get_gui_width()/2 - string_width("Game Paused")/2, display_get_gui_height() / 2,
-				[
-					["Continue",unPause],
-					//["Controls",pause_controls],
-					["Quit",quitToTitle]
-				],
-				"Game Paused"
-			);
+			[
+				["Continue",unPause],
+				["Controls",pause_controls],
+				["Quit",quitToTitle]
+			],
+			"Game Paused"
+		);
 }
 
 function unPause(){
