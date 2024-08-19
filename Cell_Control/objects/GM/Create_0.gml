@@ -46,7 +46,7 @@ ds_list_add(global.building_count,			      0,	  0,	    0,		 0,				   0,        0
 ds_list_add(global.building_max_number,			  1,	 20,		6,		 5,			 	   4,        1,          3); //max
 ds_list_add(global.building_maxup_cost,			  1,	  1,		3,		 3,				   2,       20,         30); //maxup cost
 ds_list_add(global.building_levels,			      1,	  1,		1,		 1,				   1,        1,          1); //maxup cost
-ds_list_add(global.building_levelup_cost,		  1,	  5,	   25,		10,				   8,       25,         30); //levelup cost
+ds_list_add(global.building_levelup_cost,		  1,	  5,	   20,		10,				   8,       15,         30); //levelup cost
 ds_list_add(global.building_level_max,			  1,	  5,		3,		 5,				   5,        5,          3); //maxlevel
 
 //Rifts

@@ -1,4 +1,5 @@
 if (global.frozen = true) {
+	speed = 0;
 	exit;
 }
 
@@ -50,11 +51,11 @@ switch (state) {
 	case "healing":
 		if (current_collection > 0){
 			// Shoot logic
-	        var nearestEnemy = instance_nearest(x, y, obj_building);
-			if (fireTimer <= 0) && (nearestEnemy.buildingHealth < ds_list_find_value(global.buildingHealths, nearestEnemy.index)){
-		        if (nearestEnemy != noone && point_distance(x, y, nearestEnemy.x, nearestEnemy.y) < maxDetectionRange) {
+	        var _nearest_building = instance_nearest(x, y, obj_building);
+			if (fireTimer <= 0) && (_nearest_building.buildingHealth < ds_list_find_value(global.building_healths, _nearest_building.index)){
+		        if (_nearest_building != noone && point_distance(x, y, _nearest_building.x, _nearest_building.y) < maxDetectionRange) {
 		            // Shoot a bullet at the nearest enemy
-		            var directionToEnemy = point_direction(x, y, nearestEnemy.x, nearestEnemy.y);
+		            var directionToEnemy = point_direction(x, y, _nearest_building.x, _nearest_building.y);
 		            var bullet = instance_create_layer(x, y, "Instances", obj_enemy_bullet);
 					// Set the bullet's direction and speed
 					bullet.direction = directionToEnemy;
@@ -62,7 +63,7 @@ switch (state) {
 					bullet.my_speed = bullet.speed;
 					bullet.damage = -1; //negative so it heals buildings and also players if you use it right I guess
 					//point sprite towards target
-					image_angle = point_direction(x, y, nearestEnemy.x, nearestEnemy.y) + 90;
+					image_angle = point_direction(x, y, _nearest_building.x, _nearest_building.y) + 90;
 					//subtract the bullet from the ammo reserve
 					current_collection--;
 		        }
