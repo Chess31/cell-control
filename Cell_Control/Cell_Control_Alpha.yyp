@@ -126,6 +126,7 @@
     {"id":{"name":"obj_target_key","path":"objects/obj_target_key/obj_target_key.yy",},},
     {"id":{"name":"obj_target","path":"objects/obj_target/obj_target.yy",},},
     {"id":{"name":"obj_timeline_helper","path":"objects/obj_timeline_helper/obj_timeline_helper.yy",},},
+    {"id":{"name":"obj_tooltip","path":"objects/obj_tooltip/obj_tooltip.yy",},},
     {"id":{"name":"obj_tutorial_display","path":"objects/obj_tutorial_display/obj_tutorial_display.yy",},},
     {"id":{"name":"obj_tutorial","path":"objects/obj_tutorial/obj_tutorial.yy",},},
     {"id":{"name":"obj_upgrade_parts","path":"objects/obj_upgrade_parts/obj_upgrade_parts.yy",},},

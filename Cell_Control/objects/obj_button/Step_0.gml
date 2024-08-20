@@ -29,4 +29,40 @@ else if (hovering)
 else 
 {
 	image_index = 0;
-} 
+}
+
+//show tooltip if the button has one
+if (tooltip_text != -1) {
+	var _visible = true;
+	
+	if (object_index = obj_button_buildingunlock or object_index = obj_button_building_upgrades)
+	{
+		if (obj_sliding_menu.tab != 0) {
+			_visible = false;
+		}
+	}
+	
+	if (object_index = obj_button_weaponunlock)
+	{
+		if (obj_sliding_menu.tab != 1) {
+			_visible = false;
+		}
+	}
+	
+	if (object_index = obj_button_defenceunlock)
+	{
+		if (obj_sliding_menu.tab != 2) {
+			_visible = false;
+		}
+	}
+	
+	if (hovering and _visible) {
+		hover_time++;
+	} else {
+		hover_time = 0;
+	}
+
+	if (hover_time > 60 and !instance_exists(obj_tooltip)) {
+		create_tooltip(device_mouse_x_to_gui(0) + 20, device_mouse_y_to_gui(0), tooltip_text, id);
+	}
+}

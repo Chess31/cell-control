@@ -6,11 +6,6 @@ show_button = true;
 
 my_building_index = 0;
 
-//draw_highlight = function()
-//{
-//	//draw a box around the unlocked row
-//	draw_rectangle(x - 50, y - 20, x + 402, y + 19, true);
-//}
 draw_max = function()
 {
 	//draw max placed building in the second column
@@ -44,6 +39,35 @@ activate_button = function()
 		_maxup_button.my_building_index = my_building_index;
 		_levelup_button.upgrade_type = 1;
 		_levelup_button.my_building_index = my_building_index;
+		switch (my_building_index) {
+		    //case 0:
+		    //    // Wall
+			//	_levelup_button.tooltip_text = "Increase wall durability";
+		    //    break;
+			//case 1:
+		    //    // Turret
+			//	_levelup_button.tooltip_text = "Increase turret bullet damage";
+		    //    break;
+			case 2:
+		        // Forge
+				_levelup_button.tooltip_text = "Increase energy generation rate";
+		        break;
+			case 3:
+		        // Bomb
+				_levelup_button.tooltip_text = "Increase blast radius";
+		        break;
+			case 4:
+		        // Feeder
+				_levelup_button.tooltip_text = "Increase power generation";
+		        break;
+			case 5:
+		        // Hive
+				_levelup_button.tooltip_text = "Increase drone maximum";
+		        break;
+		    default:
+		        // code here
+		        break;
+		}
 		show_button = false;
 		recalculate_hotbar_spacing();
 	}
@@ -58,5 +82,15 @@ generate_starting_buttons = function()
 	_maxup_button.my_building_index = my_building_index;
 	_levelup_button.upgrade_type = 1;
 	_levelup_button.my_building_index = my_building_index;
+	switch (my_building_index) {
+		    case 0:
+		        // Wall
+				_levelup_button.tooltip_text = "Increase wall durability";
+		        break;
+			case 1:
+		        // Turret
+				_levelup_button.tooltip_text = "Increase turret bullet damage";
+		        break;
+	}
 	show_button = false;
 }
