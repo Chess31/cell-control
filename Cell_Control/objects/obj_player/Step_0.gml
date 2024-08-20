@@ -29,12 +29,18 @@ var _key_left = keyboard_check(ord("A"));
 var _key_right = keyboard_check(ord("D"));
 var _key_up = keyboard_check(ord("W"));
 var _key_down = keyboard_check(ord("S"));
+var _key_slow = keyboard_check(vk_shift);
 
 var _input_direction = point_direction(0, 0, _key_right - _key_left, _key_down - _key_up);
 var _input_magnitude = (_key_right - _key_left != 0) || (_key_down - _key_up != 0);
 
 hSpeed = lengthdir_x(_input_magnitude * walkSpeed, _input_direction);
 vSpeed = lengthdir_y(_input_magnitude * walkSpeed, _input_direction);
+
+if (_key_slow) {
+	hSpeed = hSpeed * 0.5;
+	vSpeed = vSpeed * 0.5;
+}
 
 //move the player based on movement calculation
 move_and_collide(hSpeed, vSpeed, obj_cellWall);
