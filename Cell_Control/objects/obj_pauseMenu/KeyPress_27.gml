@@ -15,6 +15,7 @@ if (obj_sliding_menu.menu_up = false) {
 	}
 } 
 
-//if (obj_sliding_menu.menu_up = true) {
-//	obj_sliding_menu.menu_up = false;
-//}
+if (obj_sliding_menu.menu_up = true) {
+	obj_sliding_menu.menu_up = false;
+	global.frozen = !global.frozen;
+}
