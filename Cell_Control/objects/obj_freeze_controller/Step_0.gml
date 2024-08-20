@@ -9,7 +9,7 @@ if (global.gamemode = 0){
 			}
 		}
 		if (!bars_explained && global.tutorial_to_show = 1 && !instance_exists(obj_tutorial)) {
-			display_tutorial(120,display_get_gui_height()-200,TUTORIAL_BARS,"Health and Energy");
+			display_tutorial(display_get_gui_width()/2 - 192, display_get_gui_height()-240,TUTORIAL_BARS,"Health and Energy");
 			bars_explained = true;
 		}
 		if (!enemies_explained && global.tutorial_to_show = 2 && !instance_exists(obj_tutorial)) {
@@ -25,20 +25,20 @@ if (global.gamemode = 0){
 			death_explained = true;
 		}
 		if (!wells_explained && global.tutorial_to_show = 4 && !instance_exists(obj_tutorial)) {
-			display_tutorial(display_get_gui_width()/2 - 192,display_get_gui_height()/2 + 100,TUTORIAL_WELLS, "Infection Wells");
+			display_tutorial(display_get_gui_width()/2 - 192,display_get_gui_height()/2 + 100,TUTORIAL_WELLS, "Infection Bases");
 			wells_explained = true;
 		}
 		if (!buildmode_explained && global.tutorial_to_show = 5 && !instance_exists(obj_tutorial)) {
 			display_tutorial(display_get_gui_width()/2 - 192,display_get_gui_height()/2 - 250,TUTORIAL_BUILDMODE, "Build Mode");
 			buildmode_explained = true;
 		}
-		if (!special_explained && global.tutorial_to_show = 6 && !instance_exists(obj_tutorial)) {
-			display_tutorial(50,display_get_gui_height()/2,TUTORIAL_SPECIAL, "Special Energy");
-			special_explained = true;
+		if (!bossdrops_explained && global.tutorial_to_show = 6 && !instance_exists(obj_tutorial)) {
+			display_tutorial(50,display_get_gui_height()/2,TUTORIAL_BOSSDROPS, "Boss Defeated!");
+			bossdrops_explained = true;
 		}
-		if (!upgrader_explained && global.tutorial_to_show = 7 && !instance_exists(obj_tutorial)) {
-			display_tutorial(display_get_gui_width()/2 - 192,display_get_gui_height()/2 - 250,TUTORIAL_UPGRADER, "Upgrader");
-			upgrader_explained = true;
+		if (!corepower_explained && global.tutorial_to_show = 7 && !instance_exists(obj_tutorial)) {
+			display_tutorial(10, 70,TUTORIAL_COREPOWER, "Core Power");
+			corepower_explained = true;
 		}
 	}
 } else {

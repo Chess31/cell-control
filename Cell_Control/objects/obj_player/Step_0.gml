@@ -3,7 +3,7 @@ if (global.frozen = true or global.isPaused = true) {
 }
 
 if (global.gamemode = 0){
-	if (!obj_freeze_controller.bars_explained && ammo != initial_ammo){global.frozen = true; global.tutorial_to_show = 1}
+	if (!obj_freeze_controller.bars_explained && obj_freeze_controller.buildmode_explained){global.frozen = true; global.tutorial_to_show = 1}
 	if (instance_exists(obj_enemy)){
 		var	_enemy = instance_nearest(x,y,obj_enemy);
 		if (!obj_freeze_controller.enemies_explained && point_distance(x,y,_enemy.x,_enemy.y) < 430){global.frozen = true; global.tutorial_to_show = 2}
@@ -17,8 +17,8 @@ if (global.gamemode = 0){
 			}
 	}
 	if (!obj_freeze_controller.buildmode_explained && isDeployingWall) {global.frozen = true; global.tutorial_to_show = 5}
-	if (!obj_freeze_controller.special_explained && weaponTokens != 0) {global.frozen = true; global.tutorial_to_show = 6}
-	if (!obj_freeze_controller.upgrader_explained && instance_exists(global.current_upgrader)) {global.frozen = true; global.tutorial_to_show = 7}
+	if (!obj_freeze_controller.corepower_explained && obj_freeze_controller.bars_explained) {global.frozen = true; global.tutorial_to_show = 7}
+	if (!obj_freeze_controller.bossdrops_explained && instance_exists(obj_target_key)) {global.frozen = true; global.tutorial_to_show = 6}
 }
 
 // Set the player's image angle to the calculated direction

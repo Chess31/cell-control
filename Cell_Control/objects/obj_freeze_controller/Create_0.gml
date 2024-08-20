@@ -1,19 +1,26 @@
 global.frozen = false;
 global.tutorial_to_show = -1;
 
-#macro TUTORIAL_CORE "This is the Cell Core. Make sure it stays healthy! Place buildings near the core by pressing 'Space'."
+#macro TUTORIAL_CORE "This is the Cell Core. Make sure it stays healthy! Core health is displayed in the top right. Dying reduced core health. Place buildings near the core by pressing 'Space'."
 core_explained = false;
+
 #macro TUTORIAL_BARS "The red bar displays your health and the blue bar displays your Energy Level."
 bars_explained = false;
+
 #macro TUTORIAL_ENEMIES "Watch out! Looks like the infection has created some enemies to attack the core. Shoot to destroy them by pressing 'Left Mouse'."
 enemies_explained = false;
+
 #macro TUTORIAL_DEATH "You Died. . . try not to have that happen"
 death_explained = false;
-#macro TUTORIAL_WELLS "Infection Wells have a limited number of waves of enemies, and each Well contains specific types of enemies. After the waves are defeated, the Well is destroyed and a boss is spawned. Avoid going near the Wells."
+
+#macro TUTORIAL_WELLS "Infection bases defend the infection core with heavy shields. The bases must all be destoyed before the infection core can be defeated. Over time, infection bases will grow structures to defend themselves."
 wells_explained = false;
-#macro TUTORIAL_UPGRADER "The Upgrader is a powerful building that allows you to heal yourself, get more building slots, or create more weapons. Press 'F' when near the Upgrader to open its menu."
-upgrader_explained = false;
-#macro TUTORIAL_BUILDMODE "Pressing space will make you enter build mode. While in build mode 'Left Mouse' will place buildings instead of shooting. You can only be in build mode if you are close to the Core."
+
+#macro TUTORIAL_BUILDMODE "Pressing space will make you enter build mode. While in build mode 'Left Mouse' will place buildings instead of shooting."
 buildmode_explained = false;
-#macro TUTORIAL_SPECIAL "You have collected Special Energy. Your Special Energy reserve is displayed in the dark blue bar on the left. Spend it at the Upgrader to place more buildings or create a new weapon."
-special_explained = false;
+
+#macro TUTORIAL_BOSSDROPS "Defeating the boss enemy created a Mini Core! Use it to destroy the infection."
+bossdrops_explained = false;
+
+#macro TUTORIAL_COREPOWER "Core power is displayed is displayed in the top left. Gain power by clearing waves of enemies, defeating bosses, or placing special buildings. Press 'CTRL' to open the upgrade menu to spend core power."
+corepower_explained = false;
