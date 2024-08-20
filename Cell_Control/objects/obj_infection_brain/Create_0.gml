@@ -37,10 +37,9 @@ function add_infection_piece(_piece_type, _cost, _image_index) {
 	//Choose a infection core to grow
 	var _random_core = instance_find(obj_well, irandom(instance_number(obj_well) - 1))
 	
-	if (instance_exists(_random_core) && _random_core.branches < 5) {
+	if (instance_exists(_random_core) && _random_core.branches < 5 + (global.infection_bases_destroyed*3)) {
 		//Select where the piece will go
 		var _length = irandom_range(50, 150);
-		//var _direction = choose(72, 144, 216, 288, 360);
 		
 		var _core_branch_array = _random_core.available_branches;
 		
@@ -53,11 +52,17 @@ function add_infection_piece(_piece_type, _cost, _image_index) {
 			}
 		}
 		
-		var _random_available_index = irandom(ds_list_size(_direction_list) - 1);
-		var _random_index = ds_list_find_value(_direction_list,_random_available_index);
-		var _selected_angle = _core_branch_array[_random_index][0];
-		//set the branch to not available
-		_core_branch_array[_random_index][1] = false;
+		//use 5 evenly spread angles first, then randomly place after that
+		if (_random_core.branches < 5) {
+			var _random_available_index = irandom(ds_list_size(_direction_list) - 1);
+			var _random_index = ds_list_find_value(_direction_list,_random_available_index);
+			var _selected_angle = _core_branch_array[_random_index][0];
+			//set the branch to not available
+			_core_branch_array[_random_index][1] = false;
+		} else {
+			var _random_index = -1;
+			var _selected_angle = irandom(360);
+		}
 		
 		ds_list_destroy(_direction_list);
 		

@@ -16,7 +16,7 @@ death_explained = false;
 #macro TUTORIAL_WELLS "Infection bases defend the infection core with heavy shields. The bases must all be destoyed before the infection core can be defeated. Over time, infection bases will grow structures to defend themselves."
 wells_explained = false;
 
-#macro TUTORIAL_BUILDMODE "Pressing space will make you enter build mode. While in build mode 'Left Mouse' will place buildings instead of shooting."
+#macro TUTORIAL_BUILDMODE "Pressing space will make you enter build mode. While in build mode 'Left Mouse' will place buildings instead of shooting. Hold 'SHIFT' to move slower for more precise placement"
 buildmode_explained = false;
 
 #macro TUTORIAL_BOSSDROPS "Defeating the boss enemy created a Mini Core! Use it to destroy the infection."

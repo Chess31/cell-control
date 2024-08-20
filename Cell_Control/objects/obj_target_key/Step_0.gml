@@ -53,11 +53,24 @@ if (mouse_check_button_pressed(mb_right) and fired = false and is_next = true) {
 	direction_to_launch = point_direction(x, y, mouse_x, mouse_y);
 }
 
-// Check for collision with the well object
-if (place_meeting(x, y, obj_infection) and fired = true) {
+//if near an infection, change direction to point towards it
+var _nearest_infection = instance_nearest(x, y, obj_infection);
+var _distance_to_infeciton = point_distance(x, y, _nearest_infection.x, _nearest_infection.y);
+
+if (_distance_to_infeciton < infection_homing_distance) {
+	var _direction_to_infection = point_direction(x, y, _nearest_infection.x, _nearest_infection.y);
+	var _diff = angle_difference(direction, _direction_to_infection);
+	direction += _diff * 0.11;
+}
+
+// Check for collision with the infection
+if (place_meeting(x, y, obj_infection) and fired = true and chains_remaining > 0) {
     var _infection_instance = instance_place(x, y, obj_infection);
-    if (_infection_instance != noone) {
-        instance_destroy(_infection_instance);
-		instance_destroy();
-    }
+    //if (_infection_instance != noone) {
+	chains_remaining--;
+	direction = point_direction(x, y, _nearest_infection.x, _nearest_infection.y);
+    instance_destroy(_infection_instance);
+	blue_spark_particles();
+	instance_destroy();
+    //}
 }

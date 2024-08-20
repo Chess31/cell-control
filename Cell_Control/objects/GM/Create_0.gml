@@ -58,7 +58,7 @@ global.feeder_active = false;
 global.enemy_kill_goal = 10;
 global.feeders_complete = 0;
 
-//global.infections_destroyed = 0;
+global.infection_bases_destroyed = 0;
 
 //global.difficulty = 0;
 //global.difficulty_scalar = 0.05;

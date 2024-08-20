@@ -26,7 +26,10 @@ var enemy5 = {
     sprite: s_enemyY,
     description: "Yellow: Shoots lots of projectiles and splits into 3 Red when defeated."
 };
-
+var enemy6 = {
+    sprite: s_target,
+    description: "Infection Heart: Destroy this to permanently kill the infection."
+};
 var building1 = {
     sprite: s_Wall,
     description: "Wall: Simple defensive structure good for blocking projectiles."
@@ -39,10 +42,6 @@ var building3 = {
     sprite: s_Forge,
     description: "Forge: Generates energy for the player to collect."
 };
-var building4 = {
-    sprite: s_Upgrader,
-    description: "Upgrader: Essential for healing the player and unlocking more buildings to place."
-};
 
 var building5 = {
     sprite: s_ProxMine,
@@ -53,7 +52,7 @@ var building6 = {
     description: "Feeder: Generates Special Energy for the player to collect."
 };
 var building7 = {
-    sprite: s_Hive,
+    sprite: s_Upgrader,
     description: "Hive: Automatically collects Energy and stores it. The player can choose to take a hive's energy reserve or have the hive enter one of its modes. Defend mode will have the hive attack enemies, and heal mode will have the hive heal nearby buildings."
 };
 
@@ -63,10 +62,11 @@ ds_list_add(enemies, enemy2);
 ds_list_add(enemies, enemy3);
 ds_list_add(enemies, enemy4);
 ds_list_add(enemies, enemy5);
-ds_list_add(enemies, building1);
+ds_list_add(enemies, enemy6);
+ds_list_add(buildings, building1);
 ds_list_add(buildings, building2);
 ds_list_add(buildings, building3);
-ds_list_add(buildings, building4);
+//ds_list_add(buildings, building4);
 ds_list_add(buildings, building5);
 ds_list_add(buildings, building6);
 ds_list_add(buildings, building7);

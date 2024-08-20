@@ -4,7 +4,7 @@ if (global.frozen = true) {
 
 event_inherited();
 
-if (irandom(600) = 1 and instance_exists(parent_id)) {
+if (irandom(random_tick) = 1 and instance_exists(parent_id)) {
 	image_index++;
 	stage++
 }

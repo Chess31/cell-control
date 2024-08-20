@@ -1,5 +1,6 @@
 if (!loading) {
 	draw_set_halign(fa_left);
+	draw_set_color(c_white);
 	
 	// Draw first column
 	var _x = start_x;
@@ -60,6 +61,7 @@ if (!loading) {
 	}
 	
 	draw_set_halign(fa_center);
+	draw_set_color(c_aqua);
 	draw_text(display_get_gui_width()/2,display_get_gui_height() - 40, "Press 'Space' to Continue");
 	
 } else {

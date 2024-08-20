@@ -11,8 +11,8 @@
   "name":"obj_well",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Infection AI",
+    "path":"folders/Objects/Infection AI.yy",
   },
   "parentObjectId":{
     "name":"obj_infection",
