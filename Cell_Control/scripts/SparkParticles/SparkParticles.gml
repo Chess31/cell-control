@@ -34,9 +34,9 @@ function blue_spark_particles(){
 	part_type_scale(_ptype1, 0.1, 0.1);
 	part_type_speed(_ptype1, 2, 3, 0, 0);
 	part_type_direction(_ptype1, 0, 360, 0, 0);
-	part_type_gravity(_ptype1, 0.4, 270);
+	part_type_gravity(_ptype1, 0, 0);
 	part_type_orientation(_ptype1, 0, 0, 0, 0, true);
-	part_type_colour3(_ptype1, $00FFFF, $00AEFF, $00FFDF);
+	part_type_colour3(_ptype1, #00FFFF, #00AEFF, #00FFDF);
 	part_type_alpha3(_ptype1, 1, 1, 1);
 	part_type_blend(_ptype1, false);
 	part_type_life(_ptype1, 20, 25);
