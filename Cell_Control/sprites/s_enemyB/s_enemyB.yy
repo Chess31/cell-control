@@ -26,6 +26,7 @@
   "height":64,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"6d0829d5-b769-4399-94b7-1d08956a07f0","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"6d0829d5-b769-4399-94b7-1d08956a07f0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"c4a0e61e-aa62-42ec-9353-18e4761d8257","blendMode":0,"displayName":"default","isLocked":false,"name":"c4a0e61e-aa62-42ec-9353-18e4761d8257","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"s_enemyB",

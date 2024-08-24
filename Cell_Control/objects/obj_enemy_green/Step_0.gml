@@ -7,39 +7,45 @@ if (global.frozen = true) {
 
 //Movement
 // Check if there are buildings in the room
-if (instance_number(obj_building) > 0) {
+if (instance_exists(obj_building)) {
 	// Find the nearest building
 	var nearestBuilding = instance_nearest(x, y, obj_building);
 
-	// Move towards the nearest building
+	target = nearestBuilding;
+
+	//Assing Direction
 	if (moveTimer <= 0){
-	direction = point_direction(x, y, nearestBuilding.x, nearestBuilding.y);
+	direction = point_direction(x, y, target.x, target.y);
 	moveTimer = room_speed/6;
 	} else {
 		moveTimer--;
 	}
-					
-	var moveX = lengthdir_x(speed, direction);
-	var moveY = lengthdir_y(speed, direction);
+	
+	//Assign Speed
+	var _distance_to_target = point_distance(target.x,target.y,x,y);
+	
+	if (_distance_to_target > ideal_range) {
+		var moveX = lengthdir_x(speed, direction);
+		var moveY = lengthdir_y(speed, direction);
 
-	// Move towards the building
-	x += moveX;
-	y += moveY;
+		// Move towards the building
+		x += moveX;
+		y += moveY;
+	} else {
+		speed = 0;
+	}
 }
 
 //Weapons
 shootCooldown -= 1;
 				
 if (shootCooldown <= 0 && instance_exists(obj_building)) {
-	// Find the nearest building
-	var nearestBuilding = instance_nearest(x, y, obj_building);
-
+	var _distance_to_target = point_distance(target.x,target.y,x,y);
 	// Check if the green enemy is touching the building
-	if (place_meeting(x, y, obj_building)) {
-		// Damage the building (adjust the damage value as needed)
-		nearestBuilding.buildingHealth -= 1; // Adjust the damage amount
-						
-		//spawn particles
+	if (_distance_to_target <= ideal_range) {
+		// Damage target
+		target.buildingHealth -= 1;		
+		//Spawn particles
 		SparkParticles();
 	}
 	shootCooldown = 50;

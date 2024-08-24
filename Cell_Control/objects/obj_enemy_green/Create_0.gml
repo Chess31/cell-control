@@ -1,8 +1,15 @@
 // Initialize common variables
-enemySpeed = 1; // Adjust the enemy movement speed
+enemySpeed = 0.5; // Adjust the enemy movement speed
 shootCooldown = 150 + random(200); // Adjust the time between shots
 enemyHealth = 8; // Adjust the initial health as needed
 enemyType = "Green";
+
+if (instance_exists(obj_building)) {
+	target = instance_nearest(x,y, obj_building);
+} else {
+	target = noone;
+}
+ideal_range = 32;
 
 canBeHit = true;
 iframes = 0;
