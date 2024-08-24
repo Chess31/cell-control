@@ -19,5 +19,5 @@ if (_desc) {
 if (current_time - creation_time > 3000) {
 	draw_set_halign(fa_center);
 	draw_set_color(c_aqua);
-	draw_text(display_get_gui_width()/2, 10, "Press 'Enter' to Continue");
+	draw_text(display_get_gui_width()/2, display_get_gui_height()/2 + 128, "Press 'Enter' to Continue");
 }

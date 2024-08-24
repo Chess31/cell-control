@@ -40,7 +40,30 @@ if (global.gamemode = 0){
 			display_tutorial(10, 70,TUTORIAL_COREPOWER, "Core Power");
 			corepower_explained = true;
 		}
+		if (!green_explained && global.tutorial_to_show = 8 && !instance_exists(obj_tutorial)) {
+			
+			var _enemy = instance_nearest(obj_player.x,obj_player.y,obj_enemy_green);
+			obj_camera.follow = _enemy;
+			if (point_distance(_enemy.x,_enemy.y,obj_camera.x,obj_camera.y) < 50){
+				display_tutorial(display_get_gui_width()/2 - 192,display_get_gui_height()/2 + 40,TUTORIAL_GREEN, "Green Enemies");
+				green_explained = true;
+			}
+			
+		}
+		if (!purple_explained && global.tutorial_to_show = 9 && !instance_exists(obj_tutorial)) {
+			
+			var _enemy = instance_nearest(obj_player.x,obj_player.y,obj_enemy_purple);
+			obj_camera.follow = _enemy;
+			if (point_distance(_enemy.x,_enemy.y,obj_camera.x,obj_camera.y) < 50){
+				display_tutorial(display_get_gui_width()/2 - 192,display_get_gui_height()/2 + 40,TUTORIAL_PURPLE, "Purple Enemies");
+				purple_explained = true;
+			}
+			
+		}
 	}
 } else {
 	instance_destroy()
 }
+
+if (!green_explained and instance_exists(obj_enemy_green)) {global.frozen = true; global.tutorial_to_show = 8;}
+if (!purple_explained and instance_exists(obj_enemy_purple)) {global.frozen = true; global.tutorial_to_show = 9;}

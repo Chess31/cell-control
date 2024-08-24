@@ -19,8 +19,15 @@ wells_explained = false;
 #macro TUTORIAL_BUILDMODE "Pressing space will make you enter build mode. While in build mode 'Left Mouse' will place buildings instead of shooting. Hold 'SHIFT' to move slower for more precise placement"
 buildmode_explained = false;
 
-#macro TUTORIAL_BOSSDROPS "Defeating the boss enemy created a Mini Core! Use it to destroy the infection."
+#macro TUTORIAL_BOSSDROPS "Defeating the boss enemy created a Mini Core! Use it to destroy the infection. Press 'Right Mouse' to launch it. Be careful where you aim!"
 bossdrops_explained = false;
 
 #macro TUTORIAL_COREPOWER "Core power is displayed is displayed in the top left. Gain power by clearing waves of enemies, defeating bosses, or placing special buildings. Press 'CTRL' to open the upgrade menu to spend core power."
 corepower_explained = false;
+
+//Enemies
+#macro TUTORIAL_GREEN "Green enemies will only target buildings! They are highly effective at breaking into the core. Use the proximity mine to quickly destroy them."
+green_explained = false;
+
+#macro TUTORIAL_PURPLE "Purple enemies teleport to and heal nearby enemies."
+purple_explained = false;
