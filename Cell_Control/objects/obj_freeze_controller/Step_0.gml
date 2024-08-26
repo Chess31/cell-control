@@ -64,6 +64,3 @@ if (global.gamemode = 0){
 } else {
 	instance_destroy()
 }
-
-if (!green_explained and instance_exists(obj_enemy_green)) {global.frozen = true; global.tutorial_to_show = 8;}
-if (!purple_explained and instance_exists(obj_enemy_purple)) {global.frozen = true; global.tutorial_to_show = 9;}

@@ -34,7 +34,7 @@ if (_distance_to_target < ideal_range) {
 
 motion_set(direction, speed * _speed_multiplier);
 move_bounce_solid(true);
-image_angle = point_direction(x, y, target.x, target.y) - 90;
+image_angle = point_direction(x, y, target.x, target.y) + 90;
 
 //Weapons
 shootCooldown -= 1;

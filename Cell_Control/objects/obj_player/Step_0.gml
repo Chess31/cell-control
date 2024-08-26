@@ -10,15 +10,30 @@ if (global.gamemode = 0){
 	}
 	if (instance_exists(obj_well)){
 		var	_well = instance_nearest(x,y,obj_well);
-		if (!obj_freeze_controller.wells_explained && point_distance(x,y,_well.x,_well.y) < 330){
+		if (!obj_freeze_controller.wells_explained && point_distance(x,y,_well.x,_well.y) < 430) {
 				global.frozen = true; 
 				global.tutorial_to_show = 4; 
 				obj_camera.follow = _well;
-			}
+		}
 	}
 	if (!obj_freeze_controller.buildmode_explained && isDeployingWall) {global.frozen = true; global.tutorial_to_show = 5}
 	if (!obj_freeze_controller.corepower_explained && obj_freeze_controller.bars_explained) {global.frozen = true; global.tutorial_to_show = 7}
 	if (!obj_freeze_controller.bossdrops_explained && instance_exists(obj_target_key)) {global.frozen = true; global.tutorial_to_show = 6}
+	
+	if (instance_exists(obj_enemy_green)) {
+		var _nearest_green = instance_nearest(x,y,obj_enemy_green);
+		if (!obj_freeze_controller.green_explained and point_distance(x,y,_nearest_green.x,_nearest_green.y) < 430) {
+			global.frozen = true;
+			global.tutorial_to_show = 8;
+		}
+	}
+	if (instance_exists(obj_enemy_purple)) {
+		var _nearest_purple = instance_nearest(x,y,obj_enemy_purple);
+		if (!obj_freeze_controller.purple_explained and point_distance(x,y,_nearest_purple.x,_nearest_purple.y) < 430) {
+			global.frozen = true;
+			global.tutorial_to_show = 9;
+		}
+	}
 }
 
 // Set the player's image angle to the calculated direction

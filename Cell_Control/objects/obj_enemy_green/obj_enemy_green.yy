@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_enemyG",
-    "path":"sprites/s_enemyG/s_enemyG.yy",
+    "name":"s_enemy_green",
+    "path":"sprites/s_enemy_green/s_enemy_green.yy",
   },
   "spriteMaskId":null,
   "visible":true,

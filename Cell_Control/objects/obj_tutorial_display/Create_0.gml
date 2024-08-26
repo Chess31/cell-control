@@ -7,23 +7,23 @@ buildings = ds_list_create();
 
 // Add entities (enemies/buildings) to the list
 var enemy1 = {
-    sprite: s_NewArtTest,
+    sprite: s_enemy_red,
     description: "Red: A basic enemy that moves towards and shoots at the player."
 };
 var enemy2 = {
-    sprite: s_enemyB,
+    sprite: s_enemy_blue,
     description: "Blue: Slow-moving and shoots 3 projectiles."
 };
 var enemy3 = {
-    sprite: s_enemyG,
+    sprite: s_enemy_green,
     description: "Green: Ignores walls and attacks buildings."
 };
 var enemy4 = {
-    sprite: s_enemyP,
+    sprite: s_enemy_purple,
     description: "Purple: Heals nearby enemies."
 };
 var enemy5 = {
-    sprite: s_enemyY,
+    sprite: s_enemy_yellow,
     description: "Yellow: Shoots lots of projectiles and splits into 3 Red when defeated."
 };
 var enemy6 = {

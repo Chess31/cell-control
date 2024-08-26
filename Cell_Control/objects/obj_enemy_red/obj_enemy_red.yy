@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_NewArtTest",
-    "path":"sprites/s_NewArtTest/s_NewArtTest.yy",
+    "name":"s_enemy_red",
+    "path":"sprites/s_enemy_red/s_enemy_red.yy",
   },
   "spriteMaskId":null,
   "visible":true,

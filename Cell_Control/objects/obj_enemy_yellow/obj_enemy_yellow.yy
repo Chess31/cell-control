@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_enemyY",
-    "path":"sprites/s_enemyY/s_enemyY.yy",
+    "name":"s_enemy_yellow",
+    "path":"sprites/s_enemy_yellow/s_enemy_yellow.yy",
   },
   "spriteMaskId":null,
   "visible":true,

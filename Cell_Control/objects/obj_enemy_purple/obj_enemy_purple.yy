@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_enemyP",
-    "path":"sprites/s_enemyP/s_enemyP.yy",
+    "name":"s_enemy_purple",
+    "path":"sprites/s_enemy_purple/s_enemy_purple.yy",
   },
   "spriteMaskId":null,
   "visible":true,

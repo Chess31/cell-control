@@ -62,7 +62,7 @@ if (tooltip_text != -1) {
 		hover_time = 0;
 	}
 
-	if (hover_time > 60 and !instance_exists(obj_tooltip)) {
+	if (hover_time > 30 and !instance_exists(obj_tooltip)) {
 		create_tooltip(device_mouse_x_to_gui(0) + 20, device_mouse_y_to_gui(0), tooltip_text, id);
 	}
 }
