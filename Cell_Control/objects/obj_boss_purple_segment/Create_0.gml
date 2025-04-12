@@ -17,6 +17,8 @@ time_to_draw = 0;
 bar_alpha = 1;
 max_health = segment_health;
 
+shootCooldown = 200;
+
 //Call when hit
 function TakeDamage(_damage)
 {

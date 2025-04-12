@@ -46,7 +46,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"Cell_Control_Alpha",
   "resources":[
@@ -245,6 +245,7 @@
     {"id":{"name":"s_special_bar","path":"sprites/s_special_bar/s_special_bar.yy",},},
     {"id":{"name":"s_target","path":"sprites/s_target/s_target.yy",},},
     {"id":{"name":"s_Temp_Alt","path":"sprites/s_Temp_Alt/s_Temp_Alt.yy",},},
+    {"id":{"name":"s_tileset","path":"sprites/s_tileset/s_tileset.yy",},},
     {"id":{"name":"s_Turret","path":"sprites/s_Turret/s_Turret.yy",},},
     {"id":{"name":"s_upgrade_list","path":"sprites/s_upgrade_list/s_upgrade_list.yy",},},
     {"id":{"name":"s_upgrade_part","path":"sprites/s_upgrade_part/s_upgrade_part.yy",},},
@@ -254,6 +255,7 @@
     {"id":{"name":"s_weapons","path":"sprites/s_weapons/s_weapons.yy",},},
     {"id":{"name":"s_WeaponToken","path":"sprites/s_WeaponToken/s_WeaponToken.yy",},},
     {"id":{"name":"s_Well","path":"sprites/s_Well/s_Well.yy",},},
+    {"id":{"name":"ts_walls","path":"tilesets/ts_walls/ts_walls.yy",},},
     {"id":{"name":"tl_ability_remover","path":"timelines/tl_ability_remover/tl_ability_remover.yy",},},
   ],
   "resourceType":"GMProject",

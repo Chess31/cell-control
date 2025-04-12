@@ -192,6 +192,7 @@
     {"name":"s_special_bar","order":8,"path":"sprites/s_special_bar/s_special_bar.yy",},
     {"name":"s_target","order":21,"path":"sprites/s_target/s_target.yy",},
     {"name":"s_Temp_Alt","order":4,"path":"sprites/s_Temp_Alt/s_Temp_Alt.yy",},
+    {"name":"s_tileset","order":2,"path":"sprites/s_tileset/s_tileset.yy",},
     {"name":"s_Turret","order":2,"path":"sprites/s_Turret/s_Turret.yy",},
     {"name":"s_upgrade_list","order":13,"path":"sprites/s_upgrade_list/s_upgrade_list.yy",},
     {"name":"s_upgrade_part","order":19,"path":"sprites/s_upgrade_part/s_upgrade_part.yy",},

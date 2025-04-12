@@ -1,3 +1,5 @@
+speed = 4;
+
 segment_count = 8;
 
 segments = ds_list_create();

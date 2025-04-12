@@ -87,9 +87,15 @@ function create_wall_instances() {
 	    for (var _y = 0; _y < array_length(global.grid[0]); _y++) {
 	        if (global.grid[_x][_y] == 1) {
 	            // Create the wall object
-	            var wall_id = instance_create_layer(_x * 8, _y * 8, "Instances", obj_cellWall);
-            
-	            // Determine which chunk this cell belongs to
+	           
+			    var wall_id = instance_create_layer(_x * 8, _y * 8, "Instances", obj_cellWall);
+				//var wall_id = 1;//instance_create_layer(_x * 8, _y * 8, "Instances", obj_cellWall);
+				
+				//var lay_id = layer_get_id("tile_walls");
+				//var map_id = layer_tilemap_get_id(lay_id);
+				//tilemap_set(map_id, 1, _x, _y);
+				
+				// Determine which chunk this cell belongs to
 	            var chunkX = _x div global.chunk_size;
 	            var chunkY = _y div global.chunk_size;
             
