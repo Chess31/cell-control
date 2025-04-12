@@ -16,6 +16,7 @@ var _cost = global.building_costs[|_player_building_list];
 var _sep = 12;
 var _width = 128;
 //draw stats
+draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_text_ext(x + 48, y - 40, _name, _sep, _width);

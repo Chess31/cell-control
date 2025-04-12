@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_Bullet",
-    "path":"sprites/s_Bullet/s_Bullet.yy",
+    "name":"s_bullet_hit_01",
+    "path":"sprites/s_bullet_hit_01/s_bullet_hit_01.yy",
   },
   "spriteMaskId":null,
   "visible":true,

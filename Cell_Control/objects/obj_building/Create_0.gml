@@ -31,3 +31,5 @@ drone_mode = "collecting";
 my_drones = 0;
 my_drone_capacity = 25;
 max_drones = 1;
+
+alarm[0] = 1;

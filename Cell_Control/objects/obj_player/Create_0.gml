@@ -32,7 +32,7 @@ global.primary_bullet_discount = 0;
 
 can_shoot_cooldown = 15;
 can_shoot = true;
-distance_to_core = 0;
+//distance_to_core = 0;
 
 //set up building placement
 available_buildings = [0,1,2]; //start with first three buildings unlocked (x,w,t)
@@ -63,6 +63,9 @@ function TakeDamage(_amount)
 	//shake screen
 	screen_shake(10,30);
 }
+
+//natural enemy generation
+enemy_spawn_cooldown = irandom_range(200,600);
 
 ////Upgrades
 //global.upgrades = [];

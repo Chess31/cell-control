@@ -31,19 +31,19 @@ if (_hit_building != noone) {
 }
 
 // Check for collision with cell walls
-if (place_meeting(x, y, obj_cellWall)) {
-	var _wall = instance_place(x, y, obj_cellWall);
-	if (piercing < 1){
-		instance_destroy()
-	} else {
-		piercing -= 1;
-	}
-	_wall.buildingHealth -= damage;
-	with(_wall) {
-		if (buildingHealth <= 0) {
-			instance_destroy();
-		}
-	}
+if (place_meeting(x, y, obj_terrain_piece)) {
+	//var _wall = instance_place(x, y, obj_terrain_piece);
+	//if (piercing < 1){
+	instance_destroy()
+	//} else {
+	//	piercing -= 1;
+	//}
+	//_wall.buildingHealth -= damage;
+	//with(_wall) {
+	//	if (buildingHealth <= 0) {
+	//		instance_destroy();
+	//	}
+	//}
 }
 
 

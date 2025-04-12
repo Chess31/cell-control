@@ -1,5 +1,5 @@
 collectDistance = 55;
 
-if (place_meeting(x, y, obj_cellWall)){
+if (place_meeting(x, y, obj_terrain_piece)){
 	instance_destroy();
 }

@@ -12,7 +12,8 @@ if (place_meeting(x, y, obj_enemy)) {
     var _enemy = instance_place(x, y, obj_enemy);
 	if(_enemy.canBeHit = true){
 		if (piercing < 1){
-			instance_destroy()
+			image_speed = 2;
+			my_speed = 0;
 		} else {
 			piercing -= 1;
 		}
@@ -28,13 +29,19 @@ if (place_meeting(x, y, obj_enemy)) {
 //}
 
 // Check for collision with cell walls
-if (place_meeting(x, y, obj_cellWall)) {
-	var _wall = instance_place(x, y, obj_cellWall);
+if (place_meeting(x, y, obj_terrain_piece)) {
+	//var _wall = instance_place(x, y, obj_terrain_piece);
+	
+	image_speed = 2;
+	speed = 0;
+	//_wall.buildingHealth -= damage;
+	//with(_wall) {
+	//	if (buildingHealth <= 0) {
+	//		instance_destroy();
+	//	}
+	//}
+}
+
+if (image_index = image_number - 1) {
 	instance_destroy();
-	_wall.buildingHealth -= damage;
-	with(_wall) {
-		if (buildingHealth <= 0) {
-			instance_destroy();
-		}
-	}
 }

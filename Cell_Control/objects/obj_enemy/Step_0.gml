@@ -29,7 +29,7 @@ if (pos_check_timer <= 0)
 		var _nearest_well = instance_nearest(x, y, obj_well);
 		var _dir = point_direction(x, y, _nearest_well.x, _nearest_well.y);
 		
-		while (place_meeting(x, y, obj_cellWall))
+		while (place_meeting(x, y, obj_terrain_piece))
 		{
 			var _x_move = lengthdir_x(5,_dir);
 			var _y_move = lengthdir_y(5,_dir);

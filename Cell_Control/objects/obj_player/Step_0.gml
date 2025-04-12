@@ -45,6 +45,7 @@ var _key_right = keyboard_check(ord("D"));
 var _key_up = keyboard_check(ord("W"));
 var _key_down = keyboard_check(ord("S"));
 var _key_slow = keyboard_check(vk_shift);
+var _key_dash = mouse_check_button_pressed(mb_right);
 
 var _input_direction = point_direction(0, 0, _key_right - _key_left, _key_down - _key_up);
 var _input_magnitude = (_key_right - _key_left != 0) || (_key_down - _key_up != 0);
@@ -58,7 +59,13 @@ if (_key_slow) {
 }
 
 //move the player based on movement calculation
-move_and_collide(hSpeed, vSpeed, obj_cellWall);
+move_and_collide(hSpeed, vSpeed, obj_terrain_piece);
+
+//dash
+//if (_key_dash) {
+//	x += lengthdir_x(50,_player_angle);
+//	y += lengthdir_y(50,_player_angle);
+//}
 
 //Make sure the player is in the room bounds
 x = min(x, room_width - sprite_width/2);
@@ -147,7 +154,7 @@ if (isDeployingWall) {
 	    _building.sprite_index = ds_list_find_value(global.building_sprites, _global_list_index);
 	    _building.constructionCost = ds_list_find_value(global.building_costs, _global_list_index);
 		_building.image_angle = _player_angle;
-
+		
 		if (ds_list_find_value(global.building_count, _global_list_index) < ds_list_find_value(global.building_max_number, _global_list_index)) {
 		    ds_list_replace(global.building_count, _global_list_index, ds_list_find_value(global.building_count, _global_list_index) + 1);
 			AddAmmo(-_building.constructionCost);
@@ -198,6 +205,23 @@ if (isDeployingWall) {
 		}
 	} else {
 		can_shoot_cooldown--;
+	}
+}
+
+//natural enemy spawning
+var _distance_to_core = point_distance(x, y, obj_cell_core.x, obj_cell_core.y);
+if (_distance_to_core > 600) {
+	enemy_spawn_cooldown--;
+	if (enemy_spawn_cooldown <= 0) {
+		var _enemy_count = irandom_range(1,5)
+		for (var i = 0; i < _enemy_count; ++i) {
+			var _direction = irandom(360);
+			var _length = irandom_range(50,300);
+			var _x = lengthdir_x(_length, _direction);
+			var _y = lengthdir_y(_length, _direction);
+			instance_create_layer(x + _x, y + _y, "InfectionLayer", obj_enemy_seed)
+		}
+		enemy_spawn_cooldown = irandom_range(600,1200);
 	}
 }
 

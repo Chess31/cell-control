@@ -7,12 +7,12 @@ for (var i = 0; i < numberOfItems; i++) {
     var selectedItem = ds_list_find_value(enemyLootPool, randomIndex);
 
     // Spawn the selected item at the enemy's position
-    instance_create_layer(x + random_range(-10, 10), y + random_range(-10, 10), "Instances", selectedItem);
+    instance_create_layer(x + random_range(-10, 10), y + random_range(-10, 10), "Collectibles", selectedItem);
 }
 
 if (global.feeder_active = true){
 	//spawn the "soul" particle and move it to the feeder
-	var _particle = instance_create_layer(x, y, "Instances", obj_particle);
+	var _particle = instance_create_layer(x, y, "Collectibles", obj_particle);
 	_particle.target = global.current_feeder;
 }
 

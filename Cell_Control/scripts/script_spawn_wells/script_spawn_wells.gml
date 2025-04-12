@@ -17,7 +17,7 @@ function script_spawn_well(){
 	    // Check distance from the center
 	    if (point_distance(pos_x, pos_y, room_center_x, room_center_y) > center_exclusion_radius) {
 	        // Place the object
-	        instance_create_layer(pos_x, pos_y, "Instances", object_to_place);
+	        instance_create_layer(pos_x, pos_y, "InfectionLayer", object_to_place);
 	        object_placed = true;
 	    }
 	}

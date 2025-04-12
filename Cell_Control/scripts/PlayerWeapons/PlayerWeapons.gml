@@ -6,7 +6,7 @@ function use_weapon(_index) {
 
 			// Set the bullet's direction and speed
 			bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-			bullet.speed = 8 + global.bullet_speed_mod;
+			bullet.speed = 16 + global.bullet_speed_mod;
 			bullet.my_speed = bullet.speed;
 			bullet.damage = 1 + global.damage_mod;
 

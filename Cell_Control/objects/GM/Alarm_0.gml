@@ -4,7 +4,7 @@ repeat (3) {
 	//instance_create_layer(x,y,"Instances",obj_well);
 }
 
-instance_create_layer(x,y,"Instances",obj_infection_brain);
+instance_create_layer(x,y,"InfectionLayer",obj_infection_brain);
 
 ////play soundtrack
 //if (!audio_is_playing(soundtrack_0)) {
