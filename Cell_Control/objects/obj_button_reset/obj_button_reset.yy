@@ -8,8 +8,8 @@
   "name":"obj_button_reset",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Controllers and Systems/Buttons.yy",
+    "name":"Obsolete",
+    "path":"folders/Objects/Obsolete.yy",
   },
   "parentObjectId":{
     "name":"obj_button",

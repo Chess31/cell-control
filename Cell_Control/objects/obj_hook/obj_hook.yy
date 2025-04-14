@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"s_ArmSegment",
-    "path":"sprites/s_ArmSegment/s_ArmSegment.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

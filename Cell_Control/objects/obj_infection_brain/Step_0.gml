@@ -72,7 +72,7 @@ switch (state) {
 				var _random_enemy = random(ds_list_size(enemy_types));
 				var _enemy_to_spawn = ds_list_find_value(enemy_types, _random_enemy);
 				var _offset = irandom_range(-75,75);
-				instance_create_layer(spawn_indicator[0] + _offset, spawn_indicator[1] + _offset, "Instances", _enemy_to_spawn);
+				instance_create_layer(spawn_indicator[0] + _offset, spawn_indicator[1] + _offset, "InfectionLayer", _enemy_to_spawn);
 			}
 		}
 		

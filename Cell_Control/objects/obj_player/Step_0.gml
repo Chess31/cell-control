@@ -68,10 +68,10 @@ move_and_collide(hSpeed, vSpeed, obj_terrain_piece);
 //}
 
 //Make sure the player is in the room bounds
-x = min(x, room_width - sprite_width/2);
-y = min(y, room_height - sprite_width/2);
-x = max(x, sprite_width/2);	//if statements each checking if x/y is greater/less than threshhold, then add or subtracts 1 so it doesn't get stuck
-y = max(y, sprite_width/2);
+//x = min(x, room_width - sprite_width/2);
+//y = min(y, room_height - sprite_width/2);
+//x = max(x, sprite_width/2);	//if statements each checking if x/y is greater/less than threshhold, then add or subtracts 1 so it doesn't get stuck
+//y = max(y, sprite_width/2);
 
 // Health check
 if (playerHealth <= 0) {
@@ -112,13 +112,6 @@ if (keyboard_check_pressed(vk_space)) {
 	isDeployingWall = !isDeployingWall;
 	obj_buildings_hotbar.menu_up = isDeployingWall;
 }
-
-//distance_to_core = point_distance(x, y, obj_cell_core.x, obj_cell_core.y);
-
-//if (distance_to_core > 750) {
-//	isDeployingWall = false;
-//	obj_buildings_hotbar.menu_up = false;
-//}
 
 // Placement Mode logic
 if (isDeployingWall) {
@@ -219,7 +212,7 @@ if (_distance_to_core > 600) {
 			var _length = irandom_range(50,300);
 			var _x = lengthdir_x(_length, _direction);
 			var _y = lengthdir_y(_length, _direction);
-			instance_create_layer(x + _x, y + _y, "InfectionLayer", obj_enemy_seed)
+			instance_create_layer(x + _x, y + _y, "Instances", obj_enemy_seed)
 		}
 		enemy_spawn_cooldown = irandom_range(600,1200);
 	}

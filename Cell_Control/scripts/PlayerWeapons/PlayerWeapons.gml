@@ -140,6 +140,30 @@ function use_weapon(_index) {
 				screen_shake(1.6,5);
 			//}
 	        break;
+	
+		case 5: //Homing bullets
+		        if ((ammo - 3) >= 0){
+					// Create a bullet object instance
+					var bullet = instance_create_layer(x, y, "Instances", obj_bullet_tracker);
+
+					// Set the bullet's direction and speed
+					var _dir = point_direction(x, y, mouse_x, mouse_y)
+					bullet.direction = _dir;
+					bullet.speed = 12 + global.bullet_speed_mod;
+					bullet.my_speed = bullet.speed;
+					//bullet.fired_speed = bullet.speed;
+					bullet.damage = 3 + global.damage_mod;
+					bullet.direction_to_launch = _dir;
+					bullet.image_angle= irandom(360);
+
+					// Subtract ammo
+					ammo -= 3;
+					can_shoot_cooldown = 10;
+					
+					//shake screen
+					screen_shake(2,5);
+				};
+			break;
 			
 		default:
 			// code here

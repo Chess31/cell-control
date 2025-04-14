@@ -8,8 +8,8 @@
   "name":"obj_boss_summon",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Cell_Control_Alpha",
+    "path":"Cell_Control_Alpha.yyp",
   },
   "parentObjectId":null,
   "persistent":false,

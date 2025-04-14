@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_bullet_small",
-    "path":"sprites/s_bullet_small/s_bullet_small.yy",
+    "name":"s_bullet_tracker",
+    "path":"sprites/s_bullet_tracker/s_bullet_tracker.yy",
   },
   "spriteMaskId":null,
   "visible":true,

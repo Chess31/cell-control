@@ -57,9 +57,9 @@ for (var i = 0; i < _building_list_size - 1; ++i) {
 	}
 }
 //create weapon purchase buttons
-for (var i = 0; i < 4; ++i) {
+for (var i = 0; i < 5; ++i) {
 	var _x = ((display_get_gui_width()/2 - sprite_get_width(s_core_menu)) + 104);
-	var _y = display_get_gui_height()/2 - 124 + (i * 92);
+	var _y = display_get_gui_height()/2 - 124 + (i * 62);
     var _weapon_button = instance_create_layer(_x, _y, "UI", obj_button_weaponunlock);
 	switch (i) {
 	    case 0:
@@ -85,6 +85,12 @@ for (var i = 0; i < 4; ++i) {
 	        _weapon_button.my_weapon_index = 3;
 			_weapon_button.price = 40;
 			_weapon_button.tooltip_text = "Double rapid firing cannons.";
+	        break;
+		case 4:
+	        _weapon_button.button_text = "Chlorophyte Rifle";
+	        _weapon_button.my_weapon_index = 4;
+			_weapon_button.price = 0;
+			_weapon_button.tooltip_text = "Never misses.";
 	        break;
 	    default:
 	        // code here
