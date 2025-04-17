@@ -13,7 +13,7 @@ walkSpeed = 7.0;
 //chunk_y = -1;
 
 //Define starting variables
-ammo = 150;
+ammo = 1500000;
 initial_ammo = 10;
 playerHealth = 15;
 initialHealth = 15;
@@ -43,10 +43,10 @@ current_building_index = 0;
 available_weapons = [0];
 current_weapon_index = 0;
 
-primarySlot = "primary1"; // default weapon initially
-shiftSlot = -1; // No weapon initially
-altSlot = -1; // No weapon initially
-comboSlot = -1; //test combo
+//primarySlot = "primary1"; // default weapon initially
+//shiftSlot = -1; // No weapon initially
+//altSlot = -1; // No weapon initially
+//comboSlot = -1; //test combo
 
 //create buildings and weapons hotbar
 instance_create_layer(0, 0, "UI", obj_buildings_hotbar);

@@ -21,22 +21,21 @@ function use_weapon(_index) {
 		case 1: //Disk launcher
 	        if ((ammo - 5) >= 0){
 				// Create a bullet object instance
-				var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
+				var bullet = instance_create_layer(x, y, "Instances", obj_bullet_disk);
 
 				// Set the bullet's direction and speed
 				bullet.direction = point_direction(x, y, mouse_x, mouse_y);
 				bullet.speed = 16 + global.bullet_speed_mod;
 				bullet.my_speed = bullet.speed;
 				bullet.damage = 5 + global.damage_mod;
-				bullet.sprite_index = s_cursor;
 
 				// Subtract ammo
 				ammo -= 5;
 				can_shoot_cooldown = 20;
+				
+				//shake screen
+				screen_shake(8,10);
 			};
-			
-			//shake screen
-			screen_shake(8,10);
 			break;
 			
 		case 2: //Gravity Gun
@@ -85,7 +84,7 @@ function use_weapon(_index) {
 					bullet.damage = 1 + global.damage_mod;
 					bullet.piercing = 2;
 				}
-					
+				
 				// Subtract ammo
 				ammo -= 5;
 				can_shoot_cooldown = 25;
@@ -107,28 +106,24 @@ function use_weapon(_index) {
 						var _y = lengthdir_y(17, _direction_to_cursor - 90);
 						//var _offset = lengthdir_y(16, _direction_to_cursor);
 						
-						var _bullet = instance_create_layer(x + _x, y + _y , "Instances", obj_bullet_tracker);
+						var _bullet = instance_create_layer(x + _x, y + _y , "Instances", obj_bullet_small);
 						 // Set the bullet's stats
 					    _bullet.direction = _direction_to_cursor;
 					    _bullet.speed = 9 + global.bullet_speed_mod;
 						_bullet.my_speed = _bullet.speed;
 						_bullet.damage = 0.5 + global.damage_mod;
-						_bullet.target_x = mouse_x;
-						_bullet.target_y = mouse_y;
 					}
 					
 					if (i = 1) {
 						var _x = lengthdir_x(18, _direction_to_cursor + 90);
 						var _y = lengthdir_y(18, _direction_to_cursor + 90);
 						
-						var _bullet = instance_create_layer(x + _x, y + _y, "Instances", obj_bullet_tracker);
+						var _bullet = instance_create_layer(x + _x, y + _y, "Instances", obj_bullet_small);
 						 // Set the bullet's stats
 					    _bullet.direction = _direction_to_cursor;
 					    _bullet.speed = 9 + global.bullet_speed_mod;
 						_bullet.my_speed = _bullet.speed;
 						_bullet.damage = 0.5 + global.damage_mod;
-						_bullet.target_x = mouse_x;
-						_bullet.target_y = mouse_y;
 					}
 				}
 					

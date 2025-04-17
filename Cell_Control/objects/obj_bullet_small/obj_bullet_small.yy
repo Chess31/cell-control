@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_hub_controller",
+  "%Name":"obj_bullet_small",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_hub_controller",
+  "name":"obj_bullet_small",
   "overriddenProperties":[],
   "parent":{
-    "name":"Obsolete",
-    "path":"folders/Objects/Obsolete.yy",
+    "name":"Bullet Types",
+    "path":"folders/Objects/Bullet Types.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_bullet",
+    "path":"objects/obj_bullet/obj_bullet.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"s_bullet_small",
+    "path":"sprites/s_bullet_small/s_bullet_small.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

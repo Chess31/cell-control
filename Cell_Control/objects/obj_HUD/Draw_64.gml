@@ -41,8 +41,8 @@ draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
-var display_x = display_get_gui_width() - string_width(" Primary Attack: " + string(obj_player.primarySlot));
-var display_y = 10;
+//var display_x = display_get_gui_width() - string_width(" Primary Attack: " + string(obj_player.primarySlot));
+//var display_y = 10;
 
 //Victory UI
 if (!instance_exists(obj_target)) {//(global.infections_destroyed > global.win_level){

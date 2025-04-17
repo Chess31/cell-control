@@ -16,6 +16,9 @@ function SparkParticles(){
 	part_type_alpha3(_ptype1, 1, 1, 1);
 	part_type_blend(_ptype1, false);
 	part_type_life(_ptype1, 20, 25);
+	//var _layer = layer_get_id("Collectibles");
+	//var _depth = layer_get_depth(_layer);
+	//part_system_depth(_ps, _depth);
 
 	var _pemit1 = part_emitter_create(_ps);
 	part_emitter_region(_ps, _pemit1, -16, 16, -4, 4, ps_shape_rectangle, ps_distr_linear);
@@ -40,6 +43,9 @@ function blue_spark_particles(){
 	part_type_alpha3(_ptype1, 1, 1, 1);
 	part_type_blend(_ptype1, false);
 	part_type_life(_ptype1, 20, 25);
+	//var _layer = layer_get_id("Collectibles");
+	//var _depth = layer_get_depth(_layer);
+	//part_system_depth(_ps, _depth);
 
 	var _pemit1 = part_emitter_create(_ps);
 	part_emitter_region(_ps, _pemit1, -16, 16, -4, 4, ps_shape_rectangle, ps_distr_linear);
